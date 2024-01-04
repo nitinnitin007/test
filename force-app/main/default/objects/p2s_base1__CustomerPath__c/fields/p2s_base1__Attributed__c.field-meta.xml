@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Attributed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The attribution job will check this box when it is finished attribution the customer path record.  Clearing this flag will cause all related CampaignAttribution records to be removed and the Attribution job will rescore the Customer Path record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The attribution job will check this box when it is finished attribution the customer path record.  Clearing this flag will cause all related CampaignAttribution records to be removed and the Attribution job will rescore the Customer Path record.</inlineHelpText>
+    <label>Attributed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

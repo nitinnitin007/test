@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Per_Diem_Fields_Required</fullName>
+    <active>true</active>
+    <description>Both Per Diem fields have to be either blank or filled in if the Expense Policy is Per Diem.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Expense_Policy__c, &quot;Per Diem&quot;),
+    AND(
+      ISBLANK(Per_Diem_Domestic__c),
+      NOT(ISBLANK(Per_Diem_International__c))
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Expense_Policy__c</errorDisplayField>
+    <errorMessage>If the Expense Policy is Per Diem, both the Per Diem (Domestic) and Per Diem (International) fields must either be filled out or blank.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Configuration__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Configuration</label>
+    <referenceTo>p2s_base1__Configuration__c</referenceTo>
+    <relationshipLabel>Campaign Member Field Settings</relationshipLabel>
+    <relationshipName>CampaignMember_Custom_Field_Settings</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

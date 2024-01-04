@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>amorgan__OppOwnerField__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Owner Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CreatedById</fullName>
+                <default>false</default>
+                <label>CreatedById</label>
+            </value>
+            <value>
+                <fullName>LastModifiedById</fullName>
+                <default>false</default>
+                <label>LastModifiedById</label>
+            </value>
+            <value>
+                <fullName>OwnerId</fullName>
+                <default>true</default>
+                <label>OwnerId</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Balances</fullName>
+    <columns>p2s_base1__RecordLink__c</columns>
+    <columns>p2s_base1__ToLifecycleStage__c</columns>
+    <columns>p2s_base1__Count__c</columns>
+    <columns>p2s_base1__CalendarFromDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>p2s_base1__Statistic__c</field>
+        <operation>equals</operation>
+        <value>Lifecycle Balance</value>
+    </filters>
+    <label>Balances</label>
+</ListView>

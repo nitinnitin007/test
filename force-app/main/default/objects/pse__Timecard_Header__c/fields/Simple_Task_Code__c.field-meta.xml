@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Simple_Task_Code__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(LEFT(TEXT(Task_Code__c),2),
+  &quot;CB&quot;,&quot;Customer Billable&quot;,
+  &quot;CN&quot;,&quot;Customer Non-Billable&quot;,
+  &quot;AC&quot;,&quot;Admin Customer&quot;,
+  &quot;AI&quot;,&quot;Admin Internal&quot;,
+  &quot;KM&quot;,&quot;Knowledge Management&quot;,
+  &quot;TO&quot;,&quot;Time Off&quot;,
+  &quot;Other&quot;
+)</formula>
+    <label>Simple Task Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

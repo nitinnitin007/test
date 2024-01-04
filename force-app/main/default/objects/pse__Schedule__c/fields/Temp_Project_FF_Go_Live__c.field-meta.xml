@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Project_FF_Go_Live__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This field will only be used for the Financial Force go-live. It will be deleted thereafter.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will only be used for the Financial Force go-live. It will be deleted thereafter.</inlineHelpText>
+    <label>Temp Project (FF Go Live)</label>
+    <referenceTo>pse__Proj__c</referenceTo>
+    <relationshipLabel>Schedules</relationshipLabel>
+    <relationshipName>Schedules</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

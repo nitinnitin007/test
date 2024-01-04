@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Management_Milestone</fullName>
+    <active>true</active>
+    <description>Please use this Milestone if you are creating Milestones for Project Management only (i.e. not for revenue generating milestones)</description>
+    <label>Project Management Milestone</label>
+    <picklistValues>
+        <picklist>Invoice_Status__c</picklist>
+        <values>
+            <fullName>Exception</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not-Synced</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Synced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>pse__Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

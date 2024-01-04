@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValorX__App_Attribute__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field is managed by Valorx Design Studio.</description>
+    <externalId>false</externalId>
+    <label>App Attribute</label>
+    <length>20000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,14 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<font color="#000000" name="Arial" face="Arial, sans-serif" style="color: rgb(0, 0, 0);">Hi&nbsp;{!Contact.FirstName},<br><br>Following the 
+completion of the Intapp [Product] project, please would you provide us with 
+feedback on the delivery of the project - myself as the project manager, [Name] 
+as the consultant, and [Name] as the engineer. <br><br>Our approach to delivery 
+is continuously reviewed and improved and customer feedback is vital to this. We 
+strive for a 10 out of 10 (of course) and where you feel we have fallen short, 
+we would like to know. And also what you feel went well. Where you feel we 
+scored 7 or less, one of our directors will reach out to discuss your feedback 
+further.</font><div style="color: rgb(0, 0, 0);"><font color="#000000" name="Arial" face="Arial, sans-serif"><br></font></div><div><font color="#000000" name="Arial" face="Arial, sans-serif"><a href="https://www.intapp.com/services-survey?c={!pse__Milestone__c.pse__ProjectId__c}&amp;cid={!Contact.Id}&amp;acctid={!pse__Milestone__c.MilestoneAccountID__c}&amp;mstn={!pse__Milestone__c.Id}&amp;prdct={!pse__Milestone__c.MilestoneProduct__c}&amp;pm={!pse__Milestone__c.MilestonePM__c}&amp;se={!pse__Milestone__c.MilestoneSEId__c}&amp;csm={!pse__Milestone__c.MilestoneCSMId__c}&amp;pc={!pse__Milestone__c.Milestone_Principal_ConsultantId__c}&amp;sa={!pse__Milestone__c.Milestone_Solution_ArchitectId__c}%22%3E%20%3C/a%3E%3C/p%3E%3C/font%3E%3Cp%3E%3Ca%20href=%22https://www.intapp.com/services-survey?c={!pse__Milestone__c.pse__ProjectId__c}&amp;cid={!Contact.Id}&amp;acctid={!pse__Milestone__c.MilestoneAccountID__c}&amp;mstn={!pse__Milestone__c.Id}&amp;prdct={!pse__Milestone__c.MilestoneProduct__c}&amp;pm={!pse__Milestone__c.MilestonePM__c}&amp;se={!pse__Milestone__c.MilestoneSEId__c}&amp;csm={!pse__Milestone__c.MilestoneCSMId__c}&amp;pc={!pse__Milestone__c.Milestone_Principal_ConsultantId__c}&amp;sa={!pse__Milestone__c.Milestone_Solution_ArchitectId__c}" style="color: rgb(0, 0, 0);">Click here to take the survey</a><br><br>Many thanks in advance,</font></div><div><font color="#000000" name="Arial" face="Arial, sans-serif"><br><div>{!pse__Milestone__c.MilestoneProjectPMFullName__c}</div><div>{!pse__Milestone__c.MilestoneProjectPMTitle__c} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>Intapp,Inc.&nbsp;</div><div>http://www.intapp.com&nbsp;</div></font></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__FirstRespondedDateTime__c</fullName>
+    <deprecated>false</deprecated>
+    <description>A time stamp of when the CampaignMember record first was set to a Responded Status</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A time stamp of when the CampaignMember record first was set to a Responded Status</inlineHelpText>
+    <label>First Responded Date/Time</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

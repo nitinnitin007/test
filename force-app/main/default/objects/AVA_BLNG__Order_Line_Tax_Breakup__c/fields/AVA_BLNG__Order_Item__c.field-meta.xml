@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_BLNG__Order_Item__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Order Item</label>
+    <referenceTo>OrderItem</referenceTo>
+    <relationshipLabel>Order Line Tax Breakups</relationshipLabel>
+    <relationshipName>Order_Line_Tax_Breakups</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

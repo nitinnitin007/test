@@ -1,0 +1,10 @@
+[]CongaSP_This_Contacts_Activities,
+[Activities]CongaSP_This_Contacts_Activities?pv0={!Contact.Id}~pv1=+~pv2=+,
+[Activities2]CongaSP_This_Contacts_Activities?pv0={!Contact.Id},
+[Activities3]CongaSP_This_Contacts_Activities?pv0={!Contact.Id}~pv1=Test+Subject,
+[Activities4]CongaSP_This_Contacts_Activities?pv0={!Contact.Id}~pv1=+~pv2=00Tj0000006NaBn,
+[Activities5]CongaSP_This_Contacts_Activities,
+[Activities6]CongaSP_This_Contacts_Activities?pv0=,
+[Activities7]CongaSP_This_Contacts_Activities?pv0=TestData,
+[]CongaSP_This_Contacts_Activities?pv0=TestData2,
+[]CongaSP_This_Contacts_Activities?pv0=TestData3

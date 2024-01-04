@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Intapp_Action__c</fullName>
+    <externalId>false</externalId>
+    <label>Pending Intapp Action</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Invoice_Pending_Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Services in conversation with client</controllingFieldValue>
+            <controllingFieldValue>Concession</controllingFieldValue>
+            <controllingFieldValue>Recommend write off</controllingFieldValue>
+            <controllingFieldValue>Pending update from AM</controllingFieldValue>
+            <controllingFieldValue>Pending update from CSS</controllingFieldValue>
+            <controllingFieldValue>Pending Order dispute/correction</controllingFieldValue>
+            <controllingFieldValue>Pending Contract Change</controllingFieldValue>
+            <controllingFieldValue>Pending Cancellation</controllingFieldValue>
+            <controllingFieldValue>Pending with ClientOps/PSOps</controllingFieldValue>
+            <valueName>Yes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No Items Pending</controllingFieldValue>
+            <valueName>No</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

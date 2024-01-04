@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closing_doc_completed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is the project closing document completed?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is the project closing document completed?</inlineHelpText>
+    <label>Closing doc completed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

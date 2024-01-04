@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approve_Credit_Note_Before_Posting</fullName>
+    <active>false</active>
+    <description>BIZ-45181</description>
+    <errorConditionFormula>TEXT(blng__Status__c)=&quot;Posted&quot; &amp;&amp;
+(
+NOT(TEXT(blng__CreditNoteSourceAction__c)=&quot;Cancel &amp; Rebill&quot;) || NOT(TEXT(blng__CreditNoteSourceAction__c)=&quot;Negative Lines Conversion&quot;)
+)
+&amp;&amp; NOT(ISPICKVAL(Approval_Status__c, &quot;Approved&quot;))</errorConditionFormula>
+    <errorDisplayField>blng__Account__c</errorDisplayField>
+    <errorMessage>Please submit this Credit Note for approval</errorMessage>
+</ValidationRule>

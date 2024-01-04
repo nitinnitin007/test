@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><font face="arial">An expense report is awaiting your approval.&nbsp;</font></div><div><br></div><div><font face="arial"><b>Project:</b> {!pse__Expense_Report__c.pse__Project__c}</font></div><div><font face="arial"><b>Resource:</b> {!pse__Expense_Report__c.pse__Resource__c}</font></div><div><font face="arial"><b>Billable Amount: </b>{!pse__Expense__c.pse__Amount_To_Bill__c}</font></div><div><font face="arial"><br></font></div><div><font face="arial">Click this link to view the Expense Report: {!pse__Expense_Report__c.Link}</font></div><div><font face="arial"><br></font></div><div><font face="arial">Have a great day!</font></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLZV6BP__CLZ_RETC__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Revenue Estimated To Complete = (Expected Revenue - REV)/(RPI*SPI)</description>
+    <externalId>false</externalId>
+    <label>Revenue ETC</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Suppport Survey Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TS_Letterhead</letterhead>
+    <name>Support Survey</name>
+    <style>formalLetter</style>
+    <subject>Intapp Support Survey for {!Account.Name}</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+We are always looking to strengthen the partnership we have with our customers. You have recently worked with our Support Team and we appreciate any feedback you may have on that experience.
+
+
+If you have a couple of minutes to fill out the following brief survey, it will help us continue to improve our support services.
+
+
+
+Click here to take the survey
+
+
+Thank you very much,
+
+Intapp Support
+Intapp,Inc.
+http://support.intapp.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="arial">Please go through the following Credit note details created on&nbsp;{!blng__CreditNote__c.CreatedDate} and approve the request.</font><br><br><font face="arial">Account Name :&nbsp;{!blng__CreditNote__c.blng__Account__c}</font><br><font face="arial">Credit Note Number :&nbsp;{!blng__CreditNote__c.Name}</font><div><font face="arial">Source :&nbsp;{!blng__CreditNote__c.blng__CreditNoteSourceAction__c}</font><br><font face="arial">Total (with tax) :&nbsp;{!blng__CreditNote__c.blng__TotalAmount__c}</font><br><br><font face="arial">Thanks,</font><br><font face="arial">{!blng__CreditNote__c.CreatedBy}</font><br></div>]]></td>
+</tr>
+</table>

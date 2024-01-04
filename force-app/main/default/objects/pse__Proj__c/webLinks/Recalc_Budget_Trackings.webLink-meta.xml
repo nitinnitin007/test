@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recalc_Budget_Trackings</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Recalc Budget Trackings</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/34.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/34.0/apex.js&quot;)} 
+var result = sforce.apex.execute(&quot;BudgetTrackerCalculationWebService&quot;,&quot;RecalculateProject&quot;,{projectID:&quot;{! pse__Proj__c.Id }&quot;}); 
+alert(&quot;Budget Tracking Recalculation in progress&quot;); 
+window.location.reload();</url>
+</WebLink>

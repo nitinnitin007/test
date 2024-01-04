@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Type__c</fields>
+    <fields>Applied_To_Internal_ID__c</fields>
+    <fields>Applied_To_Link__c</fields>
+    <fields>Applied_To_Doc_Number__c</fields>
+    <fields>Internal_ID__c</fields>
+    <fields>OSA_Contract_Number_from_Salesforce__c</fields>
+    <fields>Document_Number__c</fields>
+    <fields>Formula_Text__c</fields>
+    <fields>Date__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

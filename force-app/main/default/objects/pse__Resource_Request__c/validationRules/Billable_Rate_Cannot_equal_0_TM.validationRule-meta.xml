@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billable_Rate_Cannot_equal_0_TM</fullName>
+    <active>false</active>
+    <description>For fixed fee projects, the bill rate has to be zero.</description>
+    <errorConditionFormula>AND( 
+  ISPICKVAL(pse__Project__r.pse__Billing_Type__c,&quot;Time and Materials&quot;), 
+  ISPICKVAL(pse__Project__r.pse__Project_Type__c, &quot;Customer Project&quot;),
+  OR(
+    pse__Requested_Bill_Rate__c=0,
+    ISBLANK(pse__Requested_Bill_Rate__c)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>pse__Requested_Bill_Rate__c</errorDisplayField>
+    <errorMessage>For Time and Materials projects, the Bill Rate must not be equal to zero.</errorMessage>
+</ValidationRule>

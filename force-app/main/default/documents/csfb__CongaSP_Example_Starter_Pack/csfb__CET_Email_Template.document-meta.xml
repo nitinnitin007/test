@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Subject of the email goes here</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>ExampleCETGroup</keywords>
+    <name>Email</name>
+    <public>false</public>
+</Document>

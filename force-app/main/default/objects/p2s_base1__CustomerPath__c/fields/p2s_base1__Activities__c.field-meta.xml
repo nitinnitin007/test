@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Activities__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this field is checked, Engagio Activities have been attributed for this Customer Path.  To re-attrbute, uncheck the box.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this field is checked, Engagio Activities have been attributed for this Customer Path.  To re-attrbute, uncheck the box.</inlineHelpText>
+    <label>Activities</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

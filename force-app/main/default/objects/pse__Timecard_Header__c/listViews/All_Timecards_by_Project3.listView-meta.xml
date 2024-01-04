@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Timecards_by_Project3</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Assignment__c</columns>
+    <columns>Timecard_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Approver__c</columns>
+    <columns>pse__Resource__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_ID__c</field>
+        <operation>equals</operation>
+        <value>PR-007505</value>
+    </filters>
+    <label>All Timecards by Project</label>
+    <language>en_US</language>
+</ListView>

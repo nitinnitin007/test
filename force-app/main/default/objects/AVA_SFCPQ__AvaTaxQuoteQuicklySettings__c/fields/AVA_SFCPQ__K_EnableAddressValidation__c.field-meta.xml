@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_SFCPQ__K_EnableAddressValidation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Enable AvaTax Address Validation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To enable the AvaTax Address Validation Service. Address Validation service is available for US and Canada only</inlineHelpText>
+    <label>Validate Addresses</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

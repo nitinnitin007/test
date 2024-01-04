@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clarizen_Template__c</fullName>
+    <externalId>false</externalId>
+    <label>Desired Clarizen Template</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin Projects</fullName>
+                <default>false</default>
+                <label>Admin Projects</label>
+            </value>
+            <value>
+                <fullName>Basic Shell</fullName>
+                <default>false</default>
+                <label>Basic Shell</label>
+            </value>
+            <value>
+                <fullName>Small/Short Project Plan</fullName>
+                <default>false</default>
+                <label>Small Project Plan</label>
+            </value>
+            <value>
+                <fullName>Intapp Client Experience NPI</fullName>
+                <default>false</default>
+                <label>Intapp Client Experience NPI</label>
+            </value>
+            <value>
+                <fullName>CID-CWD-CIWD Project</fullName>
+                <default>false</default>
+                <label>CID-CWD-CIWD Project</label>
+            </value>
+            <value>
+                <fullName>Intapp Walls</fullName>
+                <default>false</default>
+                <label>Intapp Walls</label>
+            </value>
+            <value>
+                <fullName>Intapp Open</fullName>
+                <default>false</default>
+                <label>Intapp Open</label>
+            </value>
+            <value>
+                <fullName>Intapp Open-Cloud</fullName>
+                <default>false</default>
+                <label>Intapp Open-Cloud</label>
+            </value>
+            <value>
+                <fullName>Intapp Open Terms</fullName>
+                <default>false</default>
+                <label>Intapp Open Terms</label>
+            </value>
+            <value>
+                <fullName>Intapp Time</fullName>
+                <default>false</default>
+                <label>Intapp Time</label>
+            </value>
+            <value>
+                <fullName>Intapp Time Cloud</fullName>
+                <default>false</default>
+                <label>Intapp Time Cloud</label>
+            </value>
+            <value>
+                <fullName>Intapp Time - Zero Effort</fullName>
+                <default>false</default>
+                <label>Intapp Time - Zero Effort</label>
+            </value>
+            <value>
+                <fullName>Intapp Open - Zero Effort</fullName>
+                <default>false</default>
+                <label>Intapp Open - Zero Effort</label>
+            </value>
+            <value>
+                <fullName>Basic Agile Plan</fullName>
+                <default>false</default>
+                <label>Basic Agile Plan</label>
+            </value>
+            <value>
+                <fullName>Basic Agile Plan - Resource Tasks</fullName>
+                <default>false</default>
+                <label>Basic Agile Plan - Resource Tasks</label>
+            </value>
+            <value>
+                <fullName>Intapp Open R2i-Release 1</fullName>
+                <default>false</default>
+                <label>Intapp Open R2i-Release 1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

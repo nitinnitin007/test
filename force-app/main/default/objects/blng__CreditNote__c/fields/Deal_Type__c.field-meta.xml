@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Deal Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acquired_Contract</fullName>
+                <default>false</default>
+                <label>Acquired_Contract</label>
+            </value>
+            <value>
+                <fullName>AddOn</fullName>
+                <default>false</default>
+                <label>AddOn</label>
+            </value>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Contract_Replacement</fullName>
+                <default>false</default>
+                <label>Contract_Replacement</label>
+            </value>
+            <value>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+                <label>Expansion</label>
+            </value>
+            <value>
+                <fullName>New_Software</fullName>
+                <default>false</default>
+                <label>New_Software</label>
+            </value>
+            <value>
+                <fullName>NextYear_MultiYear</fullName>
+                <default>false</default>
+                <label>Next Year_Multi-Year</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PlatformConversion_INTERNAL</fullName>
+                <default>false</default>
+                <label>Platform Conversion_Internal</label>
+            </value>
+            <value>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+                <label>Renewal</label>
+            </value>
+            <value>
+                <fullName>Services_Only</fullName>
+                <default>false</default>
+                <label>Services_Only</label>
+            </value>
+            <value>
+                <fullName>Services_Replacement</fullName>
+                <default>false</default>
+                <label>Services_Replacement</label>
+            </value>
+            <value>
+                <fullName>Uplift</fullName>
+                <default>false</default>
+                <label>Uplift</label>
+            </value>
+            <value>
+                <fullName>Platform_Fee</fullName>
+                <default>false</default>
+                <label>Platform_Fee</label>
+            </value>
+            <value>
+                <fullName>Services Replacement</fullName>
+                <default>false</default>
+                <label>Services Replacement</label>
+            </value>
+            <value>
+                <fullName>Acquired Contract</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Acquired Contract</label>
+            </value>
+            <value>
+                <fullName>Add-On</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add-On</label>
+            </value>
+            <value>
+                <fullName>Contract Replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract Replacement</label>
+            </value>
+            <value>
+                <fullName>New Software</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Software</label>
+            </value>
+            <value>
+                <fullName>Next Year, Multi-Year</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Next Year, Multi-Year</label>
+            </value>
+            <value>
+                <fullName>Platform Conversion - Internal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Platform Conversion - Internal</label>
+            </value>
+            <value>
+                <fullName>Platform Fee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Platform Fee</label>
+            </value>
+            <value>
+                <fullName>Services Only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Services Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

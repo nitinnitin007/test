@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>35:Repstor Limited EUR</label>
+    <protected>false</protected>
+    <values>
+        <field>Address_subsidiary__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Subsidiary_Payment_info__c</field>
+        <value xsi:type="xsd:string">By Wire Transfer &amp; ACH
+Currency: EUR
+Sort Code: 950611
+Account Number: 50049573
+BIC Code: DABAGB2B
+IBAN: GB47 DABA 9506 1150 0495 73
+
+Bank Address:
+Danske Bank
+Donegall Square West
+Belfast, BT1 6JS
+United Kingdom</value>
+    </values>
+</CustomMetadata>

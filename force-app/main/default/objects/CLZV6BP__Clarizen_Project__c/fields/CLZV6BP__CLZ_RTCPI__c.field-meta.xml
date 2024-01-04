@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLZV6BP__CLZ_RTCPI__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Revenue To Complete Performance Index = (Revenue Estimated At Complete - REV)/(Expected Revenue-Actual Revenue)</description>
+    <externalId>false</externalId>
+    <label>RTCPI</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

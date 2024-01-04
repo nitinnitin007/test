@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC
+	"-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+  <head>
+
+  <script src="/soap/ajax/8.0/connection.js" 
+          type="text/javascript"></script>
+
+  <script>
+
+function showButton(id) {
+		//safe function to show an element with a specified id
+
+		if (document.getElementById) { // DOM3 = IE5, NS6
+			document.getElementById(id).style.visibility = 'visible';
+		}
+		
+	}
+
+
+    function setupPage() {
+      //function contains all code to execute after page is rendered
+
+      var state = { //state that you need when the callback is called
+          output : document.getElementById("myDiv"),
+          startTime : new Date().getTime()};
+
+      var callback = {
+          //call layoutResult if the request is successful
+          onSuccess: layoutResults, 
+          //call queryFailed if the api request fails
+          onFailure: queryFailed, 
+          source: state};
+
+      sforce.connection.query(
+          "SELECT Id,ImWithThisOrder__c,Appliance_Serial__c, InProcess__c, BeenDeployed__c,Type_of_Appliance__c FROM Appliance__c", 
+           callback);
+  }
+
+  function queryFailed(error, source) {
+    var errorMessage = "An error has occurred: " + error;
+	alert(errorMessage);
+  }
+
+  /**
+  * This method will be called when the toolkit receives a successful
+  * response from the server.
+  * @queryResult - result that server returned
+  * @source - state passed into the query method call.
+  */
+  function layoutResults(queryResult, source) {
+    if (queryResult.size > 0) {
+
+      //get the records array
+      var records = queryResult.getArray('records');
+      var listApps = new Array();
+	  var k = 0;
+      //loop through the records and construct html string
+      for (var i = 0; i < records.length; i++) {
+        var neatoApps = records[i];
+		var amIUsedAlready = neatoApps.ImWithThisOrder__c;
+		var currentOrderIdent = '{!Order_Header__c.Id}';
+		if(amIUsedAlready == currentOrderIdent){
+		 	document.getElementById('myControl').innerHTML = "Appliance "+ neatoApps.Appliance_Serial__c +" associated ";
+			return 0;
+		}
+		if(neatoApps.InProcess__c == 'false'){
+			  listApps[i-k] = neatoApps.Appliance_Serial__c;
+		}else{
+			k= k+1;
+		}			
+      }
+
+    //render the generated html string
+  
+    var re = /,/g; 
+	str = listApps.toString(); 
+	str = str.replace(re,'</option><option>'); 
+	str = '<option>'+str; 
+	str = str + '</option>'; 
+
+
+	var newHTML = "<select id='ApplianceList'>"+ str + "</select>"; 
+	//write form
+	document.getElementById('myDiv').innerHTML = newHTML;
+
+
+
+	showButton("myButton");
+
+    }
+  }
+
+
+function sorryICantRockOut(){
+	
+	alert('error! this appliance is currently being processed, refresh and try again!')
+}
+
+
+function submitOrder(selectedAppliance){
+	
+//get the value and flip the processing text
+	
+	var userAppliance = document.getElementById("ApplianceList").value;
+	document.getElementById('myControl').innerHTML = "Processing, please wait";
+
+//define some stuff we will need
+
+    var currentAppSerial = "{!Order_Header__c.Appliance_Serial_Number__c}";
+
+	
+//check appliance for processing
+  document.getElementById('myControl').innerHTML = "Getting current appliance properties...";
+  var queryCurrentSerial = sforce.connection.query(
+        "SELECT Id,Name, InProcess__c, ImWithThisOrder__c,BeenDeployed__c,Type_of_Appliance__c,Appliance_Serial__c FROM Appliance__c WHERE Appliance_Serial__c = '" + userAppliance +"'"); 
+
+//check to make sure we got one back or fail
+	if (queryCurrentSerial.size != 1){
+		sorryICantRockOut();
+		return;
+	}
+//record1app object = The current appliance record that was selected by the user		
+  	var record1 = queryCurrentSerial.getArray('records'); 
+  	var record1App = record1[0];
+  	var myObj = new sforce.SObject("Appliance__c");
+	var AMSidtosend = record1App.Name;
+
+//check if its in process
+    document.getElementById('myControl').innerHTML = "Checking to see if appliance is in process...";
+  	if(record1App.InProcess__c == 'true'){
+		sorryICantRockOut();
+		return;
+	}
+	
+//flip processing for appliance
+  document.getElementById('myControl').innerHTML = "Locking appliance for processing...";
+  myObj.Id = record1App.Id; 
+  myObj.InProcess__c = 1; 
+  sforce.connection.update([myObj]);
+//set additional parameters
+  myObj.BeenDeployed__c = 1;
+  myObj.ImWithThisOrder__c = "{!Order_Header__c.Id}";
+  var myupdate = sforce.connection.update([myObj]);
+
+  if (myupdate[0].getBoolean("success")) {
+    document.getElementById('myControl').innerHTML = "Appliance ready for shipping!";;
+  } else {
+    document.getElementById('myControl').innerHTML = "failed to update, try again!";
+  }
+ 
+	updateOrderSerial(userAppliance, AMSidtosend);
+
+}
+function updateOrderSerial(serial, AMSid){
+	
+  var state = { //state that you need when the callback is called
+	    output : document.getElementById("myDiv"),
+	    startTime : new Date().getTime()};
+  var callback2 = {
+//call layoutResult if the request is successful
+  onSuccess: finishOrder, 
+ //call queryFailed if the api request fails
+  onFailure: queryFailed, 
+  source: state};
+//update the current order header 
+  document.getElementById('myControl').innerHTML = "Updating record...";
+  var queryOrderHeaderSerial = sforce.connection.query("SELECT Id, Appliance_Serial_Number__c FROM Order_Header__c WHERE Id = '{!Order_Header__c.Id}'");
+  var record2 = queryOrderHeaderSerial.getArray('records'); 
+  var myObj2 = new sforce.SObject("Order_Header__c"); 
+//update with these variables 
+  myObj2.Id = record2[0].Id; 
+  myObj2.Appliance_Serial_Number__c = serial; 
+  myObj2.performOrder__c = 1;
+  myObj2.AMSIdofAppliance__c  = AMSid;
+
+  sforce.connection.update([myObj2], callback2);
+}
+
+function finishOrder()
+{
+	
+window.parent.location.href="/{!Order_Header__c.Id}";
+document.getElementById('myControl').innerHTML = "IntApp Order Submitted!";
+}
+
+
+  </script>
+  </head>
+
+<body onload="setupPage()" BGCOLOR="#F3F3EC">
+<div id="myControl">	   
+<form action="javascript:get(document.getElementById('userForm'));" name="userForm" id="userForm">
+		<div id="myDiv"> loading.... </div>
+		<div id="myButton" style="visibility:hidden" > <input type="button" name="button" value="Send this appliance!" 
+		   onclick="javascript:submitOrder(this.parentNode);">
+ </div>
+</form>
+</div>
+</body>
+</html>

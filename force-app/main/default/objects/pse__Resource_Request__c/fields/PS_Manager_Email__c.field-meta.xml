@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Manager_Email__c</fullName>
+    <description>Display&apos;s the PS Manager&apos;s Email Address.  Set equal to the Project PS Manager Email Field.</description>
+    <externalId>false</externalId>
+    <label>PS Manager Email</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

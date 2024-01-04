@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bre__BR_Event__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>BR Event</label>
+    <referenceTo>bre__BR_Event__c</referenceTo>
+    <relationshipLabel>AC Participations</relationshipLabel>
+    <relationshipName>BR_Participations</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

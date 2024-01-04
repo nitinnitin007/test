@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>XactlyExpress__Positive_TIC</fullName>
+    <active>true</active>
+    <errorConditionFormula>XactlyExpress__TIC__c    &lt;&gt;  null   &amp;&amp;    XactlyExpress__TIC__c    &lt;= 0</errorConditionFormula>
+    <errorDisplayField>XactlyExpress__TIC__c</errorDisplayField>
+    <errorMessage>Enter a positive TIC</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_project_closed_end_date_past</fullName>
+    <active>true</active>
+    <description>If a project is closed, the end date must be in the past.</description>
+    <errorConditionFormula>AND(
+  CONTAINS(TEXT(pse__Stage__c),&quot;Pending&quot;),
+  pse__End_Date__c&gt;TODAY(),
+  NOT($Profile.Id=&quot;00e30000000bvR3&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>pse__End_Date__c</errorDisplayField>
+    <errorMessage>If the project is closed, please make sure that the end date is in the past.</errorMessage>
+</ValidationRule>

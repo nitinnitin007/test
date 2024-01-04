@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_Invoice_Line__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>T_Invoice_Line</label>
+    <referenceTo>blng__InvoiceLine__c</referenceTo>
+    <relationshipLabel>QtC Mig CreditMemoLines Temp Table</relationshipLabel>
+    <relationshipName>QtC_Mig_CreditMemoLines_Temp_Table</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

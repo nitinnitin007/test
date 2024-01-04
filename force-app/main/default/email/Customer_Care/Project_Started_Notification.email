@@ -1,0 +1,9 @@
+Project {!pse__Proj__c.Name} has moved from Open - Not Started to Open - In Process. 
+
+Please update the Customer Lifecycle on the corresponding subscription accordingly.
+
+Project Link: {!pse__Proj__c.Link}
+
+
+
+Rule Code: PR-036Exxx

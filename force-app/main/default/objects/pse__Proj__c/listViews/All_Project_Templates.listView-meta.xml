@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Project_Templates</fullName>
+    <columns>pse__Account__c</columns>
+    <columns>Intapp_Project_Type__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Project_Type__c</columns>
+    <columns>pse__Billing_Type__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>pse__Is_Template__c</columns>
+    <columns>pse__Is_Billable__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Is_Template__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Project Templates: All</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLZV6BP__All</fullName>
+    <columns>CREATEDBY_USER</columns>
+    <columns>NAME</columns>
+    <columns>CLZV6BP__Name__c</columns>
+    <columns>CLZV6BP__Clarizen_ID__c</columns>
+    <columns>CLZV6BP__CLZ_Importance__c</columns>
+    <columns>CLZV6BP__CLZ_PercentCompleted__c</columns>
+    <columns>CLZV6BP__CLZ_RemainingEffort__c</columns>
+    <columns>CLZV6BP__CLZ_StartDate__c</columns>
+    <columns>CLZV6BP__CLZ_DueDate__c</columns>
+    <columns>CLZV6BP__CLZ_ProjectManager__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Resource_Request1</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Account__c</columns>
+    <columns>psa_report__Project_Name__c</columns>
+    <columns>Project_Manager__c</columns>
+    <columns>Product_Line__c</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Staffer_Resource__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Start_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>12/31/2015</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Draft,Ready to Staff</value>
+    </filters>
+    <label>Open Resource Request</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>PS_Geo_Leads</group>
+        <group>PS_Resource_Managers</group>
+    </sharedTo>
+</ListView>

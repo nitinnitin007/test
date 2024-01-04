@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Rule Code%3A GSR-001xFxx</fullName>
+        <actions>
+            <name>Uncheck_Health_Still_Accurate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_CSM_Health_Rating_Last_Modified</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_CSM_Health_Rating_Previous</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: GSR-001xFxx 
+SC-000005
+Update CSM Health Rating Metrics
+Updates the &quot;CSM Health Rating - Last Modified&quot; field whenever the &quot;Health Still Accurate&quot; box is checked. Also unchecks the &quot;Health Still Accurate&quot; box.</description>
+        <formula>OR(
+  AND(
+    LastModifiedBy.Profile.Id!=&quot;00e30000000bvR3&quot;,
+    ISCHANGED(CSM_Health_Rating__c)
+  ),
+  Health_Still_Accurate__c=TRUE
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A GSR-002xFxx</fullName>
+        <actions>
+            <name>Update_CSM_Health_Rating</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Customer_Lifecycle_Stage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Product_Implementation_Phase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: GSR-002xFxx 
+Lapsed Product Customer
+Updates the Product Implementation Phase, CSM Health Rating, and the Customer Lifecycle Stage when a Product Customer becomes inactive.</description>
+        <formula>AND(
+  ISCHANGED(Status__c),
+  Status__c=&quot;Inactive&quot;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

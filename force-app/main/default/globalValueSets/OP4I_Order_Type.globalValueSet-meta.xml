@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Amendment</fullName>
+        <default>false</default>
+        <label>Amendment</label>
+    </customValue>
+    <customValue>
+        <fullName>Intapp journal entry</fullName>
+        <default>false</default>
+        <label>Intapp journal entry</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing Event</fullName>
+        <default>false</default>
+        <label>Marketing Event</label>
+    </customValue>
+    <customValue>
+        <fullName>New Hardware</fullName>
+        <default>false</default>
+        <label>New Hardware</label>
+    </customValue>
+    <customValue>
+        <fullName>New license sale</fullName>
+        <default>false</default>
+        <label>New license sale</label>
+    </customValue>
+    <customValue>
+        <fullName>Renewal</fullName>
+        <default>false</default>
+        <label>Renewal</label>
+    </customValue>
+    <customValue>
+        <fullName>Renewal-Exception</fullName>
+        <default>false</default>
+        <label>Renewal-Exception</label>
+    </customValue>
+    <customValue>
+        <fullName>Services Agreement</fullName>
+        <default>false</default>
+        <label>Services Agreement</label>
+    </customValue>
+    <customValue>
+        <fullName>Services Agreement–T&amp;M Usage</fullName>
+        <default>false</default>
+        <label>Services Agreement–T&amp;M Usage</label>
+    </customValue>
+    <masterLabel>OP4I Order Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

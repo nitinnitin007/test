@@ -1,0 +1,744 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta name="Copyright" content="salesforce.com">
+<meta name="Author" content="Jeff Challis, with a lot of thanks to code from Ron Hess">
+<meta name="version" content="1.2 Sept 2006">
+<title>Mass Convertor</title>
+<link href="/dCSS/Theme2/default/common.css" type="text/css" rel="stylesheet">
+<script src="https://www.salesforce.com/services/lib/ajax/beta3.3/sforceclient.js" type="text/javascript"></script>
+<script language="JavaScript1.3" src="/js/functions.js"></script>
+<script type="text/javascript" language="JavaScript1.2">
+/* AJAX scontrol to convert a lead, looks like the normal process.
+ * except, 
+  1) does not send emails, or ask to send emails
+  2) does try to match the record type label on the lead with a record type in the contact table.
+ *
+ */
+var testDrive = false;
+
+var retUrl = "/{!Campaign_ID}";
+var rtinfo; 
+var leadDesc; 
+var contDesc;
+var selMatchMethod = "";
+var owner_Id = "";
+	
+var dateFormat;
+var multConFound = "Error: Multiple matching records found";
+var multUsrFound = "Error: Multiple matching users found";
+var youMust = 'Error: You must enter a value';
+var genErr = 'Error: Invalid Data. <br>Review all error messages below to correct your data.';
+var selMust = 'Error: You must select a value.';
+var notDate = 'Error: Invalid date';
+var noMatch = 'Error: No matching users found';
+var noSearchTerm = 'Error: please enter at least 2 charactors for user search';
+
+function sforceInit() { 
+	sforceClient.init("{!API_Session_ID}", "{!API_Partner_Server_URL_70}"); // AJAX 
+	if ( sforceClient.userInfo && sforceClient.userInfo.faultcode && 
+		sforceClient.userInfo.faultcode.indexOf("API_DISABLED_FOR_ORG")>0) {
+		alert( sforceClient.userInfo.faultstring +
+			"\nThis custom link utilizes the AppExchange API.\n" +
+			"It appears that the Salesforce.com edition you are using does not have this feature enabled."
+		);
+		jumpback(retUrl); return; 
+	}
+//	try { 
+	dateFormat = localeParseDateFormat("{!Today}");
+
+	sforceClient.DescribeSObject("Task", load_picklists); // while screen is drawing
+	var soql = "Select l.Id, l.MasterLabel, l.SortOrder From LeadStatus l where IsConverted = true";
+	sforceClient.Query(soql, load_conv_picklist);
+
+	var soql = "Select l.Id, l.MasterLabel, l.SortOrder From LeadStatus l where IsConverted = false";
+	sforceClient.Query(soql, load_from_picklist);
+	
+	if (testDrive == true) {
+		var ele = document.getElementById('test_drive_msg')
+		ele.style.visibility = 'visible'; 
+		ele.innerHTML = '** Please note that Test Drive Version will not actually update/Convert any Leads ** ';
+	} else {
+		var ele = document.getElementById('test_drive_msg')
+		ele.style.visibility = 'hidden'; 
+		ele.innerHTML = '';
+	}
+			
+//	} catch(e) { alert("error thrown "+ e); } 
+}
+
+function RemoveDuplicates() {
+	// loop through each of the campaign members for this campaign
+	//   - locate the lead (A) for this campaign member
+	// 	 - loop through all leads (B) that have the same email address as lead (A)
+	//		- Check to see if the lead (B) is on the current campaign.
+	//			- If lead (B) on campaign, check to see if Created Datetime before lead (A)
+	//				- Delete lead (B).  Duplicate.
+//    var qrCampaignMembers = sforceClient.query("Select Id, LeadId, Status From CampaignMember where CampaignId = '{!Campaign_ID}' and ContactId = '' and LeadId <> ''"); 
+    var qrCampaignMembers = sforceClient.query("Select Id, LeadId, Status From CampaignMember where CampaignId = '{!Campaign_ID}' and LeadId <> ''"); 
+
+    if (qrCampaignMembers == "Fault") { 
+        alert("There was an error: " + qrCampaignMembers.toString()); 
+    } else { 
+        if (qrCampaignMembers.size > 0) { 
+        	// *** loop through each of the campaign members for this campaign
+        	for (var i=0;i<qrCampaignMembers.records.length;i++) { 
+				// *** locate the lead (A) for this campaign member			
+				var leadId = qrCampaignMembers.records[i].get("LeadId");
+			    var qrLeads = sforceClient.query("Select Id, LastName, FirstName, Company, Email, IsConverted, ConvertedDate, ConvertedAccountId, ConvertedContactId, ConvertedOpportunityId, CreatedDate, LastModifiedDate, SystemModstamp From Lead Where Id = '" + leadId + "'");
+	 	   
+			    if (qrLeads == "Fault") { 
+			        alert("There was an error: " + qrLeads.toString()); 
+			    } else {		     
+			        if (qrLeads.size > 0) {
+			        	// If already converted, then not match tha can be done.  So, go to next Campaign member
+			        	// This condition should not happen as initial query checks on campaign member for contact = ''
+			        	// if (qrLeads.records[0].get("IsConverted") == true || qrLeads.records[0].get("Email") == null) {continue};
+			        	if (qrLeads.records[0].get("Email") == null) {continue};
+
+						// *** loop through all leads (B) that have the same email address as lead (A)						
+						leadEmail = qrLeads.records[0].get("Email");							
+
+			    		var qrLeadsEmail = sforceClient.query("Select Id, LastName, FirstName, Company, Email From Lead Where Email = '" + leadEmail + "'");
+					    if (qrLeadsEmail == "Fault") { 
+					        alert("There was an error: " + qrLeadsEmail.toString()); 
+					    } else { 	
+
+					        if (qrLeadsEmail.size > 1) { 
+		       					for (var i2=0;i2<qrLeadsEmail.size;i2++) { 
+									if (qrLeadsEmail.records[i2].get("id") == leadId) {continue;}								
+									if (selMatchMethod == "eMailAccount" && qrLeadsEmail.records[i2].get("Company") != qrLeads.records[0].get("Company")) {continue;} 								
+									if (selMatchMethod == "eMailContactAccount" && (qrLeadsEmail.records[i2].get("Company") != qrLeads.records[0].get("Company") || qrLeadsEmail.records[i2].get("LastName") != qrLeads.records[0].get("LastName") || qrLeadsEmail.records[i2].get("FirstName") != qrLeads.records[0].get("FirstName"))) {continue;} 									
+		       						// *** Check to see if the lead (B) is on the current campaign.
+								    var qrLeadsEmailCMs = sforceClient.query("Select Id, LeadId, Status From CampaignMember where CampaignId = '{!Campaign_ID}' and LeadId = '" + qrLeadsEmail.records[i2].get("Id") + "'"); 						   
+								    if (qrLeadsEmailCMs == "Fault") { 
+								        alert("There was an error: " + qrLeadsEmailCMs.toString()); 
+								    } else { 
+								        if (qrLeadsEmailCMs.size > 0) { 										    
+										    var qrLeadsEmailCMLeads = sforceClient.query("Select Id, LastName, FirstName, Company, Email, IsConverted, ConvertedDate, ConvertedAccountId, ConvertedContactId, ConvertedOpportunityId, CreatedDate, LastModifiedDate, SystemModstamp From Lead Where Id = '" + qrLeadsEmailCMs.records[0].get("LeadId") + "'");			   
+										    if (qrLeadsEmailCMLeads == "Fault") { 
+										        alert("There was an error: " + qrLeadsEmailCMLeads.toString()); 
+										    } else { 
+										    	// *** If lead (B) on campaign, check to see if Created Datetime before lead (A)
+										        if (qrLeadsEmailCMLeads.size > 0 && qrLeads.records[0].get("CreatedDate") <= qrLeadsEmailCMLeads.records[0].get("CreatedDate")) { 
+										        	// *** Delete lead (B).  Duplicate.
+										        	sforceClient._delete(qrLeads.records[0].get("Id"));										        
+													break;
+										        }					        	
+										    }
+										}
+									}
+								}
+					        } 
+					    }						
+			        } 
+			    }
+			}
+		}
+	}
+		
+}
+
+
+function buildStatusWindow() {
+	var windowHTML = "<html><head><title>Mass Campaign Lead Conversion Status</title>" + "\n";
+	windowHTML += '<link href="/css/ie_global.css" rel="stylesheet" type="text/css">' + "\n";
+	windowHTML += '<link href="/css/ie_navigation.css" rel="stylesheet" type="text/css">' + "\n";
+
+	windowHTML += '<script  type="text/javascript">' + "\n";
+	windowHTML += '<!--' + "\n";
+	// Default to true so user will have to confirm if they try to close window
+	windowHTML += 'var userClose = true;' + "\n";
+	// get account id scontrol launched from
+	windowHTML += 'var accId = "{!Account_ID}"; ' + "\n";
+	// If we are programmatically closing the window, set flag so user is not asked to confirm
+	windowHTML += 'function closeWindow(){' + "\n";
+	windowHTML += 'userClose = false;' + "\n";
+	windowHTML += 'window.close(); }' + "\n";
+	windowHTML += 'function onBeforeUnload() {' + "\n";
+	  // Check to see if user initiated the close or if we tried to close it due to script completion
+	windowHTML +=  'if (userClose) {' + "\n";
+	windowHTML +=  'event.returnValue = "salesforce.com is currently Mass Converting Leads for this Company.  If you close this window, the update may not complete.  Please click \'Cancel\' to allow completion.";' + "\n";
+	windowHTML +=  '} // if (userclose)' + "\n";
+	windowHTML += '} // function onBeforeUnload' + "\n";
+	windowHTML += 'function onBlur() {' + "\n";
+	windowHTML += '  self.focus();' + "\n";
+	windowHTML += '  return false;' + "\n";
+	windowHTML += '} // function onBlur	' + "\n";	
+	windowHTML += ' -->' + "\n";
+	windowHTML += '<\/script>' + "\n";
+
+	windowHTML += '</head>' + "\n";
+	windowHTML += '<body bgcolor="#FFFFFF" onBeforeUnload="onBeforeUnload();">' + "\n";
+	windowHTML += '<center><br>' + "\n";
+	windowHTML += '<table width="100%"><tr><td align=center>' + "\n";
+	windowHTML += '<span class="moduleTitle">Mass Converting Campaign Leads\n... Please Wait</span></td></tr><tr>' + "\n";
+	windowHTML += '<td>&nbsp;</td></tr><tr><td align=center>' + "\n";
+	windowHTML += '<img src="/img/waiting_dots.gif" border="0" width=156 height=34>' + "\n";
+	windowHTML += '</td></tr></table></center>' + "\n";
+	windowHTML += '</body></html>' + "\n";
+	
+	return windowHTML;
+}
+
+function MassConvert() {
+	if ( ! checkInputValues()) { return ; }
+	
+	// get the radio button match method
+	for (var i = 0;i<document.editPage.MatchMethod.length;i++) {
+		if (document.editPage.MatchMethod[i].checked) {
+			selMatchMethod = document.editPage.MatchMethod[i].value;
+		}
+	}
+
+    var rd = document.getElementById("removeDuplicates").checked;    
+	var fs = document.getElementById("frstatus").value;
+
+	var statusWindow = window.open("","","width=300,height=200");
+
+	statusWindow.document.write(buildStatusWindow());
+	statusWindow.focus();
+
+	var selCampaignMembers = "Select Id, LeadId, Status From CampaignMember where CampaignId = '{!Campaign_ID}' and ContactId = '' and LeadId <> ''";
+    if (fs != "*ALL*") {selCampaignMembers = selCampaignMembers + " and Status = '" + fs + "'"};
+    
+    if (fs == "*ALL*" && rd == true && testDrive != true) {RemoveDuplicates()}; 
+
+    var qrCampaignMembers = sforceClient.query(selCampaignMembers); 
+    if (qrCampaignMembers == "Fault") { 
+        alert("There was an error: " + qrCampaignMembers.toString()); 
+    } else { 
+        if (qrCampaignMembers.size > 0) { 
+        	for (var i=0;i<qrCampaignMembers.records.length;i++) { 
+				var leadId = qrCampaignMembers.records[i].get("LeadId");
+				if (testDrive != true) {
+					convert(leadId);
+				}
+	        }
+        } 
+    }
+	statusWindow.closeWindow();
+	jumpback(retUrl);    
+}
+
+function convert(convLeadId) { 
+	try { // check input may throw search errors
+	
+	var cs = document.getElementById('cstatus');
+	// locate the current lead from the Campaign Members list
+    var qrLead = sforceClient.query("Select Id, LastName, FirstName, Company, Email, OwnerId, IsConverted From Lead where Id = '" + convLeadId+ "' and Email <> '' and IsConverted = false"); 
+    if (qrLead == "Fault") { 
+        alert("There was an error: " + qrLead.toString()); 
+    } else {     
+        if (qrLead.size > 0) { 
+			leadRec = qrLead.records[0];
+ 			var acctId = "";
+ 			var acctName = "";
+ 			var contId = "";
+ 			var acctOwnerId = "";
+ 			var leadMatch = false;
+		    var qrContacts = sforceClient.query("Select Id, AccountId, LastName, FirstName, Email From Contact where Email = '" + leadRec.get("Email") + "'"); 
+		    if (qrContacts == "Fault") { 
+		       alert("There was an error: " + qrContacts.toString()); 
+		    } else { 			    	    
+		       if (qrContacts.size > 0) { 		       	       
+		       		for (var i=0;i<qrContacts.records.length;i++) { 						
+					    var qrAccounts = sforceClient.query("Select Id, OwnerId, Name From Account where Id = '" + qrContacts.records[i].get("AccountId") + "'"); 
+					    if (qrAccounts == "Fault") { 
+					       alert("There was an error: " + qrAccounts.toString()); 
+					    } else { 
+					    	var acctName = qrAccounts.records[0].get("Name");
+				 			var acctId = qrContacts.records[i].get("AccountId");
+				 			var acctOwnerId = qrAccounts.records[0].get("OwnerId");
+				 			var contId = qrContacts.records[i].get("Id");				 								    	
+							if (selMatchMethod == "email") {
+								leadMatch = true;						
+							 	break;					 			
+							} else{
+									if (selMatchMethod == "eMailAccount" && qrLead.records[0].get("Company") == qrAccounts.records[0].get("Name")) {
+										leadMatch = true;
+							 			break;							 			
+					 				}																
+									if (selMatchMethod == "eMailContactAccount" && qrLead.records[0].get("Company") == qrAccounts.records[0].get("Name") && qrLead.records[0].get("FirstName") == qrContacts.records[i].get("FirstName") && qrLead.records[0].get("LastName") == qrContacts.records[i].get("LastName")) {
+										leadMatch = true;
+							 			break;						
+									}
+							}
+						}						
+			        }
+		        } 
+		   }
+		   
+		   if (document.getElementById("convertMatched").checked == true && leadMatch == false) {return;}
+		    
+		   owner_Id = document.getElementById('owner_id_lkid').value;
+		   if ( owner_Id.value == null || owner_Id.value == "" ) {owner_Id = acctOwnerId;}
+		    			 			    
+			// run the convert	
+			var leadCons = new Sforce.LeadConvert();
+			leadCons.leadId = convLeadId;
+			leadCons.ownerId = owner_Id;
+			leadCons.convertedStatus = document.editPage.cstatus.value; 			
+			if (document.editPage.nooppti.checked == true) {
+				leadCons.doNotCreateOpportunity = true;
+			} else {
+				leadCons.opportunityName = acctName + " - " + "{!Campaign_Name}";
+				leadCons.doNotCreateOpportunity = false;
+				}		
+			leadCons.overwriteLeadSource = new Boolean(false); // default this
+			leadCons.accountId = acctId;
+			leadCons.contactId = contId;
+		
+			var lc = sforceClient.ConvertLead(leadCons)[0];
+			if ( lc.className != "LeadConvertResult" ) { throw ("<pre>sforceClient.ConvertLead() " + lc.toString() + "</pre>" ); } 			
+			if ( lc.success != true ) { 
+				throw ("could not convert lead " + convLeadId + " " + leadRec.get("FirstName") + " " + leadRec.get("LastName") + "<br>"+ lc.errors[0].message); } 		
+			acctId = lc.accountId;
+			contId = lc.contactId;
+//			var oppId = lc.opportunityId;	
+			
+			// after convert modify the contact record type if we can find a match for the lead record type
+			if ( ! contId || ! acctId ) { 
+				throw ("could not create new Contact " + convLeadId + "<br>"+ lc.errors[0].message); 
+			} else {
+				// if the task info is filled in, now we need to create a task related to the contact and account
+				createTask(contId,acctId); 			
+			}					
+        } 
+    }
+	
+	} catch ( e) {document.body.style.cursor="default"; generalError(e); return; } 	
+
+}
+
+function createTask (tskWho,tskWhat) {
+	if ( document.editPage.tsk5.value == "" ) { return; } // no task create was requested
+	
+	var task = new Sforce.Dynabean("Task"); 	// create single normal task
+	task.set("OwnerId", owner_Id );
+	task.set("Subject", document.editPage.tsk5.value );
+	task.set("Priority", document.editPage.inputPriority.value);
+	task.set("Status", document.editPage.inputStatus.value);
+	var duedate = document.editPage.tsk4.value;
+	if (duedate != "") {	task.set("ActivityDate", localeParseDate(duedate)); }
+	
+	task.set("Description", document.editPage.tsk6.value );	// comment area
+	if ( tskWho) task.set("WhoId", tskWho);
+	if (tskWhat) task.set("WhatId", tskWhat);
+			
+	var saveResults = sforceClient.Create([task]); 
+	if (saveResults[0].success != true) { 
+		throw("There was a problem creating the task <br>please review the input data<br>" + 
+			saveResults[0].errors[0].message ); 
+	}
+}
+
+function checkInputValues(rtype) { // uses global document to access all variables and UI elements
+	var err = 0;
+	var errGeneral = document.getElementById('error_General');
+	var errSubject = document.getElementById('error_inputSubject');
+//	var errStatus = document.getElementById('error_inputStatus');
+//	var errPriority = document.getElementById('error_inputPriority');
+	var errDueDate = document.getElementById('error_inputDueDate');
+	var errorMsgUser = document.getElementById('errorMsgUser');
+	
+	var subject = document.editPage.tsk5.value;
+//	var prio = document.editPage.inputPriority.value;
+//	var status = document.editPage.inputStatus.value;
+	var duedate = document.editPage.tsk4.value;
+
+	if (document.getElementById("frstatus").value == "" ) { 
+		drawShow(document.getElementById("frstatus_err"),"<br>"+selMust);	
+		err = 10;
+	} else { drawHide(document.getElementById("frstatus_err") ); }
+			
+	if (document.getElementById("cstatus").value == "" ) { 
+		drawShow(document.getElementById("cstatus_err"),"<br>"+selMust);	
+		err = 9;
+	} else { drawHide(document.getElementById("cstatus_err") ); } 
+
+	// check on record owner 
+	var userName = document.getElementById('owner_id');
+	var userId = document.getElementById('owner_id_lkid');
+	if ((userName.length < 1) || (userName.value == "")) { 
+		userId.value = "";
+	} else if ( userName.value.length == 1 ) { // only one char, search will gack
+		drawShow(errorMsgUser, noSearchTerm ); 	err = 1;
+	} else if ( userId.value == null || userId.value == "" ) { 
+		var found = searchUserTable(userName.value); 		// it's changed , find zero, one or more
+		switch ( found.length ) { 
+		case 0: drawShow(errorMsgUser, noMatch);		err = 1;	break;
+		case 1: // good case
+			var fulName = found[0].get("FirstName") + " " + found[0].get("LastName");
+			userName.value = fulName; 
+			userId.value = found[0].get("Id"); 
+			drawHide(errorMsgUser);
+			break;
+		default : drawShow(errorMsgUser, multUsrFound); err = 1; // too many
+		} 
+	} else { drawHide(errorMsgUser); }
+		
+	// check on required field subject, well really check due date if subject is set
+	// if the subject is not filled in, it's ok, we won't create a task...
+	if (subject != "") { 
+		drawHide(errSubject)
+		if (duedate == "") { drawHide(errDueDate); } 
+		else {
+			var parsedDate = localeParseDate(duedate);
+			if (parsedDate != null) { drawHide(errDueDate); }
+			else {
+				drawShow(errDueDate,notDate);
+				err = 5;
+			}
+		}
+	}
+	//	else {	drawShow(errSubject,"<br>"+youMust);	err = 2;	}	// not needed , if no subject, no task
+	
+	// draw overall error msg if we saw any issues
+	if (err == 0) {	generalErrorClear(); return true; } 
+	else { generalError( genErr );	return false; }
+}
+
+function generalError(msg) { drawShow( document.getElementById('error_General'), msg); }
+function generalErrorClear() { 
+	var ele = document.getElementById('error_General')
+	ele.style.visibility = 'hidden'; 
+	ele.innerHTML = '';
+}
+function drawShow(ele,msg) { if(msg) {ele.innerHTML=msg;} ele.style.visibility = 'visible'; }
+function drawHide(ele) { 
+	ele.style.visibility = 'hidden'; 
+	ele.innerHTML = '';
+} 
+ 
+function qcallback(qr) { 
+	if (qr.className != "QueryResult") {throw("SOQL error " +qr.className +"\tcould not query " + qr.toString() );	}
+	return qr.records; 
+}
+
+
+function jumpback(url) { 
+	if ( ! url ) { if ( retUrl ) { url = retUrl;} else { url = "/home/home.jsp";} } 
+	if ( window.opener && typeof(window.opener) == 'object' ) { 
+		setTimeout("window.close();",100); 
+		window.opener.location.href = url;
+	}
+	else { window.parent.parent.location.href = url; }
+}
+
+String.prototype.trim = function() { // trim a string
+	a = this.replace(/^\s+/, '');
+	return a.replace(/\s+$/, '');
+};
+
+function preferEuro () { // do we prefer to have our dates formated in europe style , return true if so
+	if ( ! sforceClient.userInfo || ! sforceClient.userInfo.userLocale ) { 
+		throw ( "sforceClient.userInfo not initialized" ); 
+	} 
+	// if not in USA, prefer euro formats, which normaly start with day,month,year
+	return ( /US/.test(sforceClient.userInfo.userLocale) != true ) ;  // simple test, are we in US or not.
+} 
+
+function localeParseDate (d) { // wrapper to remove leading spaces and append user locale info
+	return Sforce.Util.ParseDate(d.trim(), preferEuro() );
+} 
+
+function localeParseDateFormat (val ) {
+	/* Lang comes from API Name: LocaleSidKey Type: picklist 
+	 * given a date and a user locale, parse this into a forat string that can be used
+	 * to format other dates to look the same as this one 
+	 */
+	var pEuro = preferEuro();
+	generalFormats=new Array('y-M-d','MMM d, y','MMM d,y','y-MMM-d','d-MMM-y','MMM d');
+	monthFirst=new Array('M/d/y','M-d-y','M.d.y','MMM-d','M/d','M-d');
+	dateFirst =new Array('d/MM/y','d-M-y','d.M.y','d-MMM','d/M','d-M');
+	var checkList= new Array(generalFormats, pEuro ? dateFirst:monthFirst, pEuro ? monthFirst:dateFirst);
+	var d=null;
+	for (var i=0; i<checkList.length; i++) {
+		var l=checkList[i];
+		for (var j=0; j<l.length; j++) {
+			d=Sforce.Util.GetDateFromFormat(val,l[j]);
+			if (d!=0) { return l[j] }
+		}
+	}
+	
+	return  "M/d/y"; // default is us format
+} 
+
+function load_conv_picklist(qr) {  // TODO should use the sort order we got from the leadstatus query
+	var lss = qcallback(qr);
+	var element = document.getElementById("cstatus");	
+	element.options[0] = new Option("--None--","");
+	for (var j=0; j < lss.length ; j++) {
+		element.options[j+1] = new Option(lss[j].get("MasterLabel"),lss[j].get("MasterLabel"));
+	}
+} 
+
+function load_from_picklist(qr) {  // TODO should use the sort order we got from the leadstatus query
+	var lss = qcallback(qr);
+	var element = document.getElementById("frstatus");	
+	element.options[0] = new Option("*ALL*","*ALL*");
+	for (var j=0; j < lss.length ; j++) {
+		element.options[j+1] = new Option(lss[j].get("MasterLabel"),lss[j].get("MasterLabel"));
+	}
+} 
+function 	load_picklists(describeTaskResult) { 
+	var fldMapArray = describeTaskResult.fieldMap;
+	// set priority label & select options
+    var fldPriority = describeTaskResult.fieldMap.getItem("priority");
+	var selPrio = document.getElementById("inputPriority");
+	for (var j=0;j<fldPriority.picklistValues.length;j++) {
+		if (fldPriority.picklistValues[j].active) {
+			selPrio.options[j] = new Option(fldPriority.picklistValues[j].label, fldPriority.picklistValues[j].value);
+			//selPrio.options[j].defaultSelected = fldPriority.picklistValues[j].defaultValue;
+			var is_sel = fldPriority.picklistValues[j].defaultValue;
+			if (is_sel == true) { 
+				selPrio.options[j].selected = true;
+			}
+		}
+	}	
+	
+	// set status label & select options
+    var fldStatus =  describeTaskResult.fieldMap.getItem("status");
+	var selStatus = document.getElementById("inputStatus");
+	for (var j=0;j<fldStatus.picklistValues.length;j++) {
+		if (fldStatus.picklistValues[j].active) {
+			selStatus.options[j] = new Option(fldStatus.picklistValues[j].label, fldStatus.picklistValues[j].value);
+			var is_sel = fldStatus.picklistValues[j].defaultValue;
+			if (is_sel == true) { 
+				selStatus.options[j].selected = true;
+			}
+		}
+	}		
+}
+
+function searchUserTable(who) { // given a partial name, we need to look up the user 
+	return searchTable(who,"User","id,firstname,lastname");
+}
+function searchConTable(who) { // given a partial name, we need to look up the contact
+	return searchTable(who,"Contact","id,firstname,lastname");
+}
+function searchTable(who,table,fields) { // given a partial name, we need to look up the object
+	// and find exactly one, return the ID, otherwise fail and return null 
+	who = who.replace(/([\&\|\!\(\)\{\}\[\]\^~\:\\\+\-])/g, "\\$1");
+	var sstr = 	"find {" + who + "*} in NAME FIELDS RETURNING "+table+"("+ fields+ ")"
+	var sr = sforceClient.Search(sstr); 
+	if (sr.className != "SearchResult" ) {
+		throw ( "Error: could not search "+table+" table"); 
+	}		
+	return sr.searchRecords;
+} 
+function makeTable(p) {
+	var table = createTag(p,"table",{ 'class':'list','width':'100%','border':'0','cellspacing':'0','cellpadding':'0'} );
+	table.tbody = createTag(table,'tbody');
+	return table
+}
+function makeRow(atts) { return createTag(null,'TR',atts); }
+function createTag(parent, name, keyvalPairs) {
+	var ret; 
+	if (sforceClient.appType == Sforce.Application.Type.InternetExplorer) {
+		var trTag = "<"+name+" ";
+		for (key in keyvalPairs) {
+				trTag += key + "=\"" + keyvalPairs[key] + "\"";
+		}
+		trTag += ">";
+		ret = document.createElement(trTag);
+	} else { 
+		ret = document.createElement(name);
+		for (key in keyvalPairs) {
+			ret.setAttribute(key, keyvalPairs[key]);
+		}
+	} 
+	if (parent) parent.appendChild(ret);
+	ret.active = false; // what does this add?
+	return ret;
+}
+
+Sforce.Client.prototype.setUserInfo = function(uinfo) { 	// fix for the beta 3.3 version 
+	this.userInfo = uinfo; 	// save uinfo into this client
+};
+
+</script>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+<body onload="javascript:sforceInit();" class="lead "> 
+
+<a name="skiplink"><img src="/s.gif" height='1' width='1' alt="Content Starts Here" class="skiplink"></a>
+<div class="bPageTitle"><div class="ptBody secondaryPalette">
+<div class="content"><img src="/s.gif" alt="Lead"  class="pageTitleIcon">
+<h1 class="pageType">Mass Convert Leads</h1>
+<h2 class="pageType"><span class="pageDescription">Campaign: {!Campaign_Name}</span></h2>
+</div>
+</div><div class="ptBreadcrumb"></div></div>
+
+
+<form  action="#" id="editPage" name="editPage" >
+
+<table border="0" cellspacing="2" cellpadding="0">
+    <tr>
+      <td colspan="4">This option will  convert all leads for the campaign that match the selection criteria.<br>
+          You should only convert leads once you have identified them as qualified.<br>
+          After leads have been converted, they can no longer be viewed or edited as a lead, but can be viewed in lead reports.<br>
+        <span class="style1">Before running this routine, you should always ensure a Data Export has  successfully completed. </span><br>
+        <div class=errorMsg id="test_drive_msg"></div></td>
+    </tr>
+</table>
+<div class="bPageBlock bEditBlock secondaryPalette" id="ep"><div class="pbHeader">
+<TABLE  cellpadding="0" cellspacing="0" border="0"><TR><TD class="pbTitle">
+<img src="/s.gif" alt="" title="" width=1 height=1 class="minWidth"><h2 class="mainTitle"></h2></TD>
+<TD class="pbButton"><input value="Convert"  class="btn" type="button" title="Convert" name="save"  onClick="javascript:MassConvert();"> 
+<input value="Cancel"  class="btn" type=button title="Cancel" name="cancel" onClick="javascript:jumpback();" >
+<div class=errorMsg id="error_General"></div>
+</TD></TR>
+</TABLE></div><div class="pbBody">
+<div class="pbSubheader first tertiaryPalette" id="head_1_ep">
+<span class="pbSubExtra"><span class="requiredLegend">
+<span class="requiredExampleOuter"><span class="requiredExample">&nbsp;</span></span>
+<span  class="requiredText"> = Required Information</span></span></span>
+<h3>Convert Leads<span  class="titleSeparatingColon">:</span></h3>
+</div><div class="pbSubsection">
+<TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+  <TR>
+    <TD class="labelCol requiredInput"><label for="owner_id"><span class="requiredMark">*</span>Record Owner</label>    </TD>
+    <TD class="data2Col" colspan="3">
+      <div class="requiredBlock"></div>
+      <input type="hidden" name="owner_id_lkid" id="owner_id_lkid" value="">
+        <input type="hidden" name="owner_id_lkold" id="owner_id_lkold" value="">
+        <input type="hidden" name="owner_id_lktp" id="owner_id_lktp" value="005">
+        <input type="hidden" name="owner_id_lspf" id="owner_id_lspf" value="0">
+        <input type="hidden" name="owner_id_mod" id="owner_id_mod" value="0">        <span class="lookupInput">
+        <input  value="" maxlength="80" type="text" 
+	onchange="document.getElementById('owner_id_lkid').value='';document.getElementById('owner_id_mod').value='1';" 
+	id="owner_id" size="20" name="owner_id">
+    <a href="JavaScript: openLookup('/_ui/common/data/LookupPage?lknm=owner_id&lkfm=editPage&lktp=' + document.getElementById('owner_id_lktp').value,670,document.getElementById('owner_id_mod').value,'&lksrch=' + escapeUTF(document.getElementById('owner_id').value),'maxw')" 
+	title="Record Owner Lookup (New Window)" onclick="setLastMousePosition(event)" 
+	id="owner_id_lkwgt"><img src="/s.gif" 
+	alt="Record Owner Lookup (New Window)"  class="lookupPopup"></a></span> <span class="errorMsg" id="errorMsgUser"></span> <br>
+	(If left blank then Account Owner will be used) </TD>
+  </TR>
+
+	
+<!--  <TR><TD class="labelCol"><label for="sem">Send Email to the Owner</label></TD>
+<TD class="data2Col" colspan="3"><input  value="1" type="checkbox" id="sem" name="sem" /></TD></TR>
+ -->
+
+
+<TR><TD width="168" class="labelCol requiredInput"><label for=""><span class="requiredMark">*</span>Matching Method </label></TD><TD width="1182" colspan="3" class="data2Col" >
+<div class="requiredInput"><div class="requiredBlock"></div>
+  <label>
+  <input name="MatchMethod" type="radio" value="email">
+  Email only</label>
+  &nbsp;<br>
+  <label>
+  <input name="MatchMethod" type="radio" value="eMailAccount"> 
+  Email and Account Name</label>
+  <br>
+  <label>
+  <input name="MatchMethod" type="radio" value="eMailContactAccount" checked>
+Email, Contact First &amp; Last Name and Account Name </label>
+  <br>
+</div>
+</TD></TR>
+
+<TR>
+  <TD height="44" class="labelCol requiredInput ">&nbsp;</TD>
+  <TD class="data2Col " colspan="3"><span class="requiredInput">
+    <label>
+    <input id="convertMatched" name="convertMatched" type="checkbox" value="checkbox" checked>
+Convert matched leads</label>
+    only<br>
+    <label>
+    <input type="checkbox" id="removeDuplicates" name="removeDuplicates" value="checkbox">
+Remove Campaign duplicates</label>
+  </span></TD>
+</TR>
+<TR><TD class="labelCol requiredInput "><label for="frstatus">
+<span class="requiredMark">*</span>From Status</label>
+<TD class="data2Col " colspan="3"><div class="requiredInput">
+<div class="requiredBlock"></div><select  id="frstatus" name="frstatus">
+</select>
+<span class="errorMsg" id="frstatus_err"></span></div></TD></TR>
+<TR><TD class="labelCol requiredInput "><label for="cstatus">
+<span class="requiredMark">*</span>Converted Status</label></TD>
+<TD class="data2Col " colspan="3"><div class="requiredInput">
+<div class="requiredBlock"></div><select  id="cstatus" name="cstatus">
+</select>
+<span class="errorMsg" id="cstatus_err"></span></div></TD></TR>
+<TR>
+  <TD class="labelCol requiredInput ">Opportunity</TD>
+  <TD class="data2Col " colspan="3"><span class="requiredInput">
+    <input name="nooppti" type="checkbox" 
+ id="nooppti" value="1" checked />
+    <label for="nooppti">Do not create a new opportunity upon conversion.</label>
+  </span></TD>
+</TR>
+</TABLE>
+</div>
+
+<div class="pbSubheader tertiaryPalette" id="head_2_ep">
+<h3>Task Information<span  class="titleSeparatingColon">:</span></h3></div>
+<div class="pbSubsection"><TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+<TR><TD class="labelCol requiredInput"><label for="tsk5">
+<span class="requiredMark">*</span>Subject</label></TD><TD class="dataCol col02">
+<div class="requiredInput"><div class="requiredBlock"></div>
+<input  maxlength="80" type="text" id="tsk5" size="20" name="tsk5" />
+<span class="errorMsg" id="error_inputSubject"></span>
+</div></TD>
+
+<TD class="labelCol requiredInput"><label for="tsk12">
+<span class="requiredMark">*</span>Status</label></TD><TD class="dataCol"><div class="requiredInput">
+<div class="requiredBlock"></div><select id="inputStatus" name="inputStatus"></select>
+<span class="errorMsg" id="error_inputStatus"></span>
+</div></TD></TR>
+
+<TR><TD class="labelCol"><label for="tsk4">Due Date</label></TD><TD class="dataCol col02">
+<span class="dateInput"><input  type="text" id="tsk4" size="12" name="tsk4" />
+<a href="javascript:openPopupFocus('/home/calendar.jsp?form=editPage&field=tsk4&mo=0', '_blank', 186, 170, 'width=186,height=170,resizable=yes,toolbar=no,status=no,scrollbars=no,menubar=no,directories=no,location=no,dependant=yes', true, true);" 
+class="datePicker" title="Pick A Date (New Window)" onclick="setLastMousePosition(event)" id="tsk4PopCal"><img src="/s.gif" alt="Pick A Date (New Window)"  class="datePickerIcon"></a>
+<span class="dateFormat">[&nbsp;<a href="#" onclick="var inputField = getElementByIdCS('tsk4'); if (inputField && inputField.disabled == false) { inputField.value = '5/11/2006'; if (inputField.onchange) {inputField.onchange();}}return false;">{!Today}</a>&nbsp;]</span></span>
+<span class="errorMsg" id="error_inputDueDate"></span>
+</TD>
+<TD class="labelCol empty">&nbsp;</TD><TD class="dataCol empty">&nbsp;</TD></TR>
+
+<TR><TD class="labelCol requiredInput last"><label for="tsk13"><span class="requiredMark">*</span>Priority</label></TD>
+<TD class="dataCol col02 last"><div class="requiredInput"><div class="requiredBlock"></div><span>
+<select  id="inputPriority" name="inputPriority"></select></span>
+
+</div></TD><TD class="labelCol empty last">&nbsp;</TD><TD class="dataCol empty last">&nbsp;</TD></TR>
+</TABLE></div><div class="pbSubheader tertiaryPalette" id="head_3_ep">
+<h3>Description Information<span  class="titleSeparatingColon">:</span></h3></div>
+<div class="pbSubsection"><TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+
+<TR><TD class="labelCol"><label for="tsk6">Comments</label><div class="textCounterOuter">
+<div class="textCounterMiddle"><div class="textCounter" id="tsk6_counter">32000 remaining</div></div></div></TD>
+<TD class="data2Col" colspan="3"><textarea  cols="75" 
+	onkeyup="handleTextAreaElementChange('tsk6', 32000, 'remaining', 'over limit');" rows="6" maxlength="32000" 
+	type="text" onclick="handleTextAreaElementChange('tsk6', 32000, 'remaining', 'over limit');" 
+	onkeydown="handleTextAreaElementChange('tsk6', 32000, 'remaining', 'over limit');" wrap="soft" 
+	onmousedown="handleTextAreaElementChange('tsk6', 32000, 'remaining', 'over limit');" 
+	onchange="handleTextAreaElementChange('tsk6', 32000, 'remaining', 'over limit');" id="tsk6" 
+	name="tsk6"></textarea></TD></TR>
+
+<!--  <tr  class="detailRow last"><td colspan='4'><input  value="1" type="checkbox" id="email_followup" name="email" />
+<label for="email_followup">Send Notification Email</label></td></tr>
+ -->
+</TABLE></div></div>
+
+
+<div class="pbBottomButtons"><TABLE  cellpadding="0" cellspacing="0" border="0">
+<TR><TD class="pbTitle"><img src="/s.gif" alt="" title="" width=1 height=1 class="minWidth">&nbsp;</TD>
+
+<TD class="pbButtonb"><input value="Convert"  class="btn" type="button" title="Convert" name="save" onClick="javascript:MassConvert();"> 
+<input value="Cancel"  class="btn" tabindex="150" type="button" 
+		title="Cancel" name="cancel" onClick="javascript:jumpback();">
+		</TD></TR>
+</TABLE></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>
+
+</form>
+
+
+</body>
+</html>

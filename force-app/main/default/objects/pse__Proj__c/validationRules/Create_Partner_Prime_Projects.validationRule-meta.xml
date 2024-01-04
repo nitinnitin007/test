@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Partner_Prime_Projects</fullName>
+    <active>true</active>
+    <description>Displays an error message if specified users select a billing type other than partner prime.</description>
+    <errorConditionFormula>AND(
+  OR(
+    NOT(ISCHANGED(Go_Live_Date__c)),
+    NOT(ISCHANGED(Closing_Survey__c)),
+    NOT(ISCHANGED(Closing_Survey_Notes__c))
+  ),
+  OR(
+    $User.Id=&quot;005500000016Vt4&quot;,
+    $User.Id=&quot;00550000002r5na&quot;
+   ),
+   NOT(ISPICKVAL(pse__Billing_Type__c, &quot;Partner Prime&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>pse__Billing_Type__c</errorDisplayField>
+    <errorMessage>Please select Partner Prime as the Billing Type.</errorMessage>
+</ValidationRule>

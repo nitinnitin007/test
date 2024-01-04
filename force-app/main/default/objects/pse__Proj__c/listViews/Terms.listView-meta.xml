@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Terms</fullName>
+    <columns>Project_Manager_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Project_ID__c</columns>
+    <columns>pse__Planned_Hours__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>pse__Project_Phase__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>Go_Live_Date__c</columns>
+    <columns>Clarizen_Overall_Summary__c</columns>
+    <columns>pse__Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Practice__c</field>
+        <operation>contains</operation>
+        <value>terms</value>
+    </filters>
+    <label>Terms</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>CSMs</group>
+        <group>Professional_Services</group>
+    </sharedTo>
+</ListView>

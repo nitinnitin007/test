@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>refedge__Refedge_Invitation_Latterhead</letterhead>
+    <name>Invitation Email Template</name>
+    <style>freeForm</style>
+    <subject>{!refedge__Invitation__c.refedge__Subject__c}</subject>
+    <textOnly>{!refedge__Invitation__c.refedge__Message__c}
+
+Microsite link: {!refedge__Invitee__c.refedge__View_Microsite__c}
+
+Please note this invitation will expire on {!refedge__Invitation__c.refedge__Invitation_Expiration__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

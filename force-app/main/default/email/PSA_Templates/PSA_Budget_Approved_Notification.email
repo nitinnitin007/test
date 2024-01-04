@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">A Budget had been approved:</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div><div><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b>Project Name:</b>&nbsp;</font><font face="arial">{!pse__Budget__c.pse__Project__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Please make sure that the sold hours are updated accordingly.</div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div><div><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Click the following link for additional details:&nbsp;</font><font face="arial">{!pse__Budget__c.Link}</font></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecommendationStrategy xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextRecordType>SBQQ__Quote__c</contextRecordType>
+    <description>Guide the users to take the quote to the next stage</description>
+    <label>Quote Action</label>
+    <union>
+        <label>Output</label>
+        <name>Output_020a6bb8d86b47e888182a609918f3e9</name>
+    </union>
+</RecommendationStrategy>

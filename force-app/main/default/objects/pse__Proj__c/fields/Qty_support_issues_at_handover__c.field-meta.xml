@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qty_support_issues_at_handover__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>How many support issues will be inherited by Support team on handover?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many support issues will be inherited by Support team on handover?</inlineHelpText>
+    <label>Qty support issues at handover</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

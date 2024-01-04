@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSA_Project_Require_Level_2_Practice</fullName>
+    <active>false</active>
+    <description>Users must select a Practice with a Hierarchy Depth of at least 2.</description>
+    <errorConditionFormula>AND(
+   pse__Practice__r.pse__Hierarchy_Depth__c &lt; 2,
+   ISPICKVAL(pse__Project_Type__c , &quot;Customer Project&quot;),
+   pse__Is_Template__c = false,
+   NOT(Id = &apos;a2350000002663r&apos;)
+)</errorConditionFormula>
+    <errorMessage>Choose a Practice with a lower hierarchy level.</errorMessage>
+</ValidationRule>

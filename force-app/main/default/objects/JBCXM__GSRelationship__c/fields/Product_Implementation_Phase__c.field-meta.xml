@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Implementation_Phase__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Implementation Phase</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Project not started yet</fullName>
+                <default>false</default>
+                <label>Project not started yet</label>
+            </value>
+            <value>
+                <fullName>Implementation</fullName>
+                <default>false</default>
+                <label>Implementation</label>
+            </value>
+            <value>
+                <fullName>Lapsed</fullName>
+                <default>false</default>
+                <label>Lapsed</label>
+            </value>
+            <value>
+                <fullName>Within 90 days of Production</fullName>
+                <default>false</default>
+                <label>Within 90 days of Production</label>
+            </value>
+            <value>
+                <fullName>In Production</fullName>
+                <default>false</default>
+                <label>In Production</label>
+            </value>
+            <value>
+                <fullName>In Production - Deployed to End Users Firm Wide</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>In Production - Deployed to End Users Firm Wide</label>
+            </value>
+            <value>
+                <fullName>In Production - Deployed to some End Users</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>In Production - Deployed to some End Users</label>
+            </value>
+            <value>
+                <fullName>In Production - Not Deployed to End Users</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>In Production - Not Deployed to End Users</label>
+            </value>
+            <value>
+                <fullName>Price Commitment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Price Commitment</label>
+            </value>
+            <value>
+                <fullName>Trial - Competitive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trial - Competitive</label>
+            </value>
+            <value>
+                <fullName>Trial - Inactive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trial - Inactive</label>
+            </value>
+            <value>
+                <fullName>Trial - Non-Competitive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Trial - Non-Competitive</label>
+            </value>
+            <value>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Upgrade</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

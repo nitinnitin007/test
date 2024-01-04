@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>XactlyExpress__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Post</fullName>
+                <default>false</default>
+                <label>Post</label>
+            </value>
+            <value>
+                <fullName>Import</fullName>
+                <default>false</default>
+                <label>Import</label>
+            </value>
+            <value>
+                <fullName>Close period</fullName>
+                <default>false</default>
+                <label>Close period</label>
+            </value>
+            <value>
+                <fullName>Release</fullName>
+                <default>false</default>
+                <label>Release</label>
+            </value>
+            <value>
+                <fullName>UndoRelease</fullName>
+                <default>false</default>
+                <label>UndoRelease</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Clean Deal</fullName>
+                <default>false</default>
+                <label>Clean Deal</label>
+            </value>
+            <value>
+                <fullName>Clean Result</fullName>
+                <default>false</default>
+                <label>Clean Result</label>
+            </value>
+            <value>
+                <fullName>Clean Import</fullName>
+                <default>false</default>
+                <label>Clean Import</label>
+            </value>
+            <value>
+                <fullName>AdjustRelease</fullName>
+                <default>false</default>
+                <label>AdjustRelease</label>
+            </value>
+            <value>
+                <fullName>ConvertDeals</fullName>
+                <default>false</default>
+                <label>ConvertDeals</label>
+            </value>
+            <value>
+                <fullName>Finalize Payment</fullName>
+                <default>false</default>
+                <label>Finalize Payment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

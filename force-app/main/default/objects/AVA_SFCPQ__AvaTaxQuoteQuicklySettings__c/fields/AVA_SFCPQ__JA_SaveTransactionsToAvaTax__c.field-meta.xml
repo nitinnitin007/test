@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_SFCPQ__JA_SaveTransactionsToAvaTax__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If checked, Order transactions will be posted to AvaTax admin console (AvaTax Update).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If checked, Order transactions will be posted to AvaTax Update</inlineHelpText>
+    <label>Save transactions to AvaTax</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

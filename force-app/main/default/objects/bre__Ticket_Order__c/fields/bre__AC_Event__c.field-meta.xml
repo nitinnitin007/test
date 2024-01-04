@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>bre__AC_Event__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>AC Event</label>
+    <referenceTo>bre__BR_Event__c</referenceTo>
+    <relationshipLabel>AC Ticket Orders</relationshipLabel>
+    <relationshipName>AC_Ticket_Orders</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
