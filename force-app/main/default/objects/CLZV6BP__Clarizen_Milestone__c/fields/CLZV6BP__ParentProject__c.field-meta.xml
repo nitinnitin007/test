@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLZV6BP__ParentProject__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Parent Project</label>
+    <referenceTo>CLZV6BP__Clarizen_Project__c</referenceTo>
+    <relationshipLabel>Clarizen Milestones</relationshipLabel>
+    <relationshipName>Clarizen_Milestones</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

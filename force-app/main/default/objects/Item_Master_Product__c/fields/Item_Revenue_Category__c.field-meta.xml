@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item_Revenue_Category__c</fullName>
+    <description>Custom field as per BIZ-51029</description>
+    <externalId>false</externalId>
+    <label>Item Revenue Category</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Deal Cloud</fullName>
+                <default>false</default>
+                <label>Deal Cloud</label>
+            </value>
+            <value>
+                <fullName>Intapp Cloud Renewal</fullName>
+                <default>false</default>
+                <label>Intapp Cloud Renewal</label>
+            </value>
+            <value>
+                <fullName>Intapp Renewal</fullName>
+                <default>false</default>
+                <label>Intapp Renewal</label>
+            </value>
+            <value>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+                <label>Professional Services</label>
+            </value>
+            <value>
+                <fullName>Upfront Posting</fullName>
+                <default>false</default>
+                <label>Upfront Posting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

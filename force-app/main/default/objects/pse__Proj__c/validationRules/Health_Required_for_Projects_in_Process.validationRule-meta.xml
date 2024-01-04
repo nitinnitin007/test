@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Required_for_Projects_in_Process</fullName>
+    <active>false</active>
+    <description>Projects who are in process require a health rating.</description>
+    <errorConditionFormula>AND(
+   OR(
+      ISPICKVAL(pse__Stage__c,&quot;Open - In Process&quot;),
+      ISPICKVAL(pse__Stage__c,&quot;Open - On Hold&quot;)
+   ),
+   OR(
+      ISPICKVAL(pse__Project_Status__c,&quot;&quot;),
+      ISPICKVAL(Schedule_Status__c,&quot;&quot;),
+      ISPICKVAL(Budget_Status__c,&quot;&quot;),
+      ISPICKVAL(Technical_Status__c,&quot;&quot;),
+      ISPICKVAL(Customer_Status__c,&quot;&quot;)
+   )
+)</errorConditionFormula>
+    <errorMessage>Please populate the status indicators with the RAG status.</errorMessage>
+</ValidationRule>

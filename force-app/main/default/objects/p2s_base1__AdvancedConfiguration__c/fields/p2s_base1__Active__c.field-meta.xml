@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Activate the advanced configuration item.  Contact Dash customer support for assistance.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Activate the advanced configuration item.  Contact Dash customer support for assistance.</inlineHelpText>
+    <label>Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

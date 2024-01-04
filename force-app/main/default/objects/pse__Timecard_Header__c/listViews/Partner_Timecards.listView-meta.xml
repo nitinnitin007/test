@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Timecards</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Total_Hours__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>pse__End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__External_Resource__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>equals</operation>
+        <value>Saved,Submitted</value>
+    </filters>
+    <filters>
+        <field>Practice__c</field>
+        <operation>notContain</operation>
+        <value>open</value>
+    </filters>
+    <label>Partner Timecards</label>
+    <sharedTo>
+        <role>SolutionEngineer</role>
+    </sharedTo>
+</ListView>

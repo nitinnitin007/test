@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreatedFromServiceBillingBatch__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag indicates that this record has been created from ServiceBillingProcessBatch process.</description>
+    <externalId>false</externalId>
+    <label>CreatedFromServiceBillingBatch?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

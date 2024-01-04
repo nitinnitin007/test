@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Status__c</fullName>
+    <description>Used to designate the status of the NetSuite Integration and Invoicing status.</description>
+    <externalId>false</externalId>
+    <label>Invoice Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not-Synced</fullName>
+                <default>false</default>
+                <label>Not-Synced</label>
+            </value>
+            <value>
+                <fullName>Synced</fullName>
+                <default>false</default>
+                <label>Synced</label>
+            </value>
+            <value>
+                <fullName>Invoiced</fullName>
+                <default>false</default>
+                <label>Invoiced</label>
+            </value>
+            <value>
+                <fullName>Paid</fullName>
+                <default>false</default>
+                <label>Paid</label>
+            </value>
+            <value>
+                <fullName>Exception</fullName>
+                <default>false</default>
+                <label>Exception</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

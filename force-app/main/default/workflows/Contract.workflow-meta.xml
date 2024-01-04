@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Contract Approved Notifcation</fullName>
+        <actions>
+            <name>Contract_Approved</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Email notification for when a contract is Approval Status is set to Approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-001Exxx</fullName>
+        <actions>
+            <name>EmailtoKyle</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Shipping_Status__c</field>
+            <operation>contains</operation>
+            <value>Fulfilled</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Type__c</field>
+            <operation>notEqual</operation>
+            <value>Services Only</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-001Exxx
+Recognize Revenue
+Sends an email notification  to Finance whenever Contract shipping status changes to &quot;Fulfilled&quot;, to recognize revenue on this deal.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-002xxxT</fullName>
+        <actions>
+            <name>PrepareBridgewayAppliance</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>contains</operation>
+            <value>Bridgeway</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>contains</operation>
+            <value>contract finalized</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-002xxxT
+Bridgeway Closing
+Creates and assign a task to the SE&apos;s and Accounting with instructions for proceeding, When a Bridgeway deal closes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-003xxxT</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>contains</operation>
+            <value>Bridgeway</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>contains</operation>
+            <value>shipping data entered</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-003xxxT
+Bridgeway Invoice
+Creates and assign a task to accounting When the shipping is completed</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-004Exxx</fullName>
+        <actions>
+            <name>ContractReadytoSend</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>notContain</operation>
+            <value>Bridgeway</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>contains</operation>
+            <value>quote approved</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-004Exxx
+Quote Ready to Send
+Sends an email notification to the Sales Manager that the quote is ready to send, when the quote has been approved by the Sales and SE Directors.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-005Exxx</fullName>
+        <actions>
+            <name>NotifySalesOpsofContractCreation</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.CreatedDate</field>
+            <operation>greaterOrEqual</operation>
+            <value>2/2/2002</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-005Exxx
+Contract Created Notification
+Sends an email notification to sales op&apos;s that a contract has been created.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-006Txxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Type__c</field>
+            <operation>equals</operation>
+            <value>Services Only</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-006Txxx
+Send Invoice (Services Only)
+When contract status changes to &quot;Contract Executied&quot; and type is &quot;Services Only&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-007Exxx</fullName>
+        <actions>
+            <name>SoftwareDeliveryNeeded</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-007Exxx
+Software Delivery Notification
+To let Sales Admin know that a contract has been signed so software delivery can be arranged.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-008Exxx</fullName>
+        <actions>
+            <name>SoftwareOnlyContractExecuted</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Type__c</field>
+            <operation>equals</operation>
+            <value>Software Only</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-008Exxx
+Send Invoice (Software Only)
+When contract status changes to &quot;Contract Executied&quot; and type is &quot;Software Only&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-009%2E1Exxx</fullName>
+        <actions>
+            <name>Contract_Executed_Please_Invoice_1</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>In Force</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OSA_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Legacy Rekoop Paper,Services Change Order (Internal)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OSA_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Services Change Order</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-009.1Exxx
+Send Invoice
+Sends an email notification when contract status changes to &quot;In Force&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-009Exxx</fullName>
+        <actions>
+            <name>ContractExecutedPleaseInvoice</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>In Force</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OSA_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Legacy Rekoop Paper,Services Change Order (Internal)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OSA_Type__c</field>
+            <operation>equals</operation>
+            <value>Services Change Order</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-009Exxx
+Send Invoice
+Sends an email notification when contract status changes to &quot;In Force&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-010EFxx</fullName>
+        <actions>
+            <name>Update_Notification_Send_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Send_Notification__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.External_Notification_Sent__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: CTR-010EFxx
+Contract - Send Notification
+Sends an email notification when &quot;Send External Notification&quot; field is checked and the &quot;External Notification Sent&quot; is blank. Also updates the &quot;External Notification Sent&quot; with the current date.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-011Exxx</fullName>
+        <actions>
+            <name>Processing_Billing_Pause</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Billing_Pause_Status__c</field>
+            <operation>equals</operation>
+            <value>Processing Pause</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-011Exxx
+Notify CRM when Billing Pause is being processed
+Sends an email notification whenever the Billing Pause Status is &quot;Processing Pause&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-012Exxx</fullName>
+        <actions>
+            <name>Billing_Pause_Signed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Billing_Pause_Status__c</field>
+            <operation>equals</operation>
+            <value>Received Signature</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-012Exxx
+Notify CRM when Billing Pause is signed
+Sends an email notification whenever the Billing Pause Status is set to &quot;Received Signature&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-013xFxx</fullName>
+        <actions>
+            <name>Veras_Email_Address</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CTR-013xFxx
+Populate Vera&apos;s Email Address
+Populates Vera&apos;s email address so that she can be copied on the emails that the contacts receive.</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-014Exxx</fullName>
+        <actions>
+            <name>Tariq_s_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CTR-014Exxx
+Tariq&apos;s Email Notification
+Sends an email notification to Tariq whenever Don is the approver on a record</description>
+        <formula>AND(
+  ISCHANGED(Approval_Status__c),
+  Approval_Status__c=&quot;Pending&quot;,
+  OR(
+    Approver_1__r.Id=&quot;00530000000byF9&quot;,
+    Approver_2__r.Id=&quot;00530000000byF9&quot;,
+    Approver_3__r.Id=&quot;00530000000byF9&quot;,
+    Approver_4__r.Id=&quot;00530000000byF9&quot;,
+    Approver_5__r.Id=&quot;00530000000byF9&quot;,
+    Exception_Approver_1__r.Id=&quot;00530000000byF9&quot;,
+    Exception_Approver_2__r.Id=&quot;00530000000byF9&quot;,
+    Exception_Approver_3__r.Id=&quot;00530000000byF9&quot;,
+    Exception_Approver_4__r.Id=&quot;00530000000byF9&quot;,
+    Exception_Approver_5__r.Id=&quot;00530000000byF9&quot;
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-015Exxx</fullName>
+        <actions>
+            <name>Jason_s_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CTR-015Exxx
+Stephen&apos;s Email Notification
+Sends an email notification to Jason whenever Stephen is the approver on a record</description>
+        <formula>AND(
+  ISCHANGED(Approval_Status__c),
+  Approval_Status__c=&quot;Pending&quot;,
+  OR(
+     Approver_1__r.LastName=&quot;Robertson&quot;,
+     Approver_2__r.LastName=&quot;Robertson&quot;,
+     Approver_3__r.LastName=&quot;Robertson&quot;,
+     Approver_4__r.LastName=&quot;Robertson&quot;,
+     Approver_5__r.LastName=&quot;Robertson&quot;,
+     Approver_6__r.LastName=&quot;Robertson&quot;,
+     Exception_Approver_1__r.LastName=&quot;Robertson&quot;,
+     Exception_Approver_2__r.LastName=&quot;Robertson&quot;,
+     Exception_Approver_3__r.LastName=&quot;Robertson&quot;,
+     Exception_Approver_4__r.LastName=&quot;Robertson&quot;,
+     Exception_Approver_5__r.LastName=&quot;Robertson&quot;,
+     Exception_Approver_6__r.LastName=&quot;Robertson&quot;
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-016Exxx</fullName>
+        <actions>
+            <name>Rekoop_Contract_Executed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OSA_Type__c</field>
+            <operation>equals</operation>
+            <value>Legacy Rekoop Paper</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-016Exxx
+Send Invoice - Rekoop
+Sends an email notification when contract status changes to &quot;Contract Executed&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-017xxxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Shipping_Status__c</field>
+            <operation>equals</operation>
+            <value>Shipping Data Entered</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-017xxxx
+Shipping Notification
+After shipping data has been entered by Sales Ops, a notification is sent to Support to ship.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-018xxxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-018xxxx
+Contract Signed Notification
+To let our SE Team know that a contract has been signed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-019Exxx</fullName>
+        <actions>
+            <name>ShippingInformationNeeded</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Shipping_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Shipping Data Entered,Fulfilled,Shipping Data Confirmed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Type__c</field>
+            <operation>notEqual</operation>
+            <value>Services Only</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-019Exxx
+Shipping Info Request
+To notify Sales Ops to complete shipping wizard on finalized contract.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-020ExxT</fullName>
+        <actions>
+            <name>ActivateContract</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>PaymentReceivedEmailLegal</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Paymentreceivedsendlicense</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Payment_Received__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>notContain</operation>
+            <value>Bridgeway</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Type__c</field>
+            <operation>notEqual</operation>
+            <value>Services Only</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-020ExxT
+Customer Entitled to Permanent License - Payment Received
+When a customer pays IntApp, they can then receive their permanent license from the SE team.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-021Exxx</fullName>
+        <actions>
+            <name>BridgewayContracttobeActivated</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Payment_Status__c</field>
+            <operation>contains</operation>
+            <value>Received</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>contains</operation>
+            <value>Bridgeway</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-021Exxx
+Bridgeway Activate Contract
+When accounting changes payment status to &quot;received&quot;, the sales specialist receives an e-mail informing him/her to &quot;activate&quot; the contract.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-022Exxx</fullName>
+        <actions>
+            <name>Contract_Reference_Program_email_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Contract Executed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.OSA_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Services Change Order (Internal),Legacy Rekoop Paper</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Reference_Program__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-022Exxx
+Reference Program Notification
+Sends an email notification when Reference Program checkbox is checked on Contract record along with Contract closure.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-023Exxx</fullName>
+        <actions>
+            <name>Processing_Pause_is_ready_to_send</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Billing_Pause_Status__c</field>
+            <operation>equals</operation>
+            <value>Processing Pause</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-023Exxx
+Billing Pause - Processing pause</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-024Exxx</fullName>
+        <actions>
+            <name>Processing_Pause_is_ready_for_processing</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Billing_Pause_Status__c</field>
+            <operation>equals</operation>
+            <value>Received Signature</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-024Exxx 
+Billing Pause - Received Signature</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-025Exxx</fullName>
+        <active>true</active>
+        <description>Rule Code: CTR-025Exxx
+Contract Created Notification with Opportunity fulfilling entity = Intapp
+Sends an email notification to sales op&apos;s that a contract has been created.</description>
+        <formula>AND( NOT(ISBLANK( SBQQ__Opportunity__c )), ISPICKVAL(SBQQ__Opportunity__r.Fulfilling_Entity__c, &apos;Intapp&apos;) )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-026Exxx</fullName>
+        <active>true</active>
+        <description>Rule Code: CTR-026Exxx
+Contract Updated with Opportunity where Fulfilling Entity = Intapp Notification
+Sends an email notification to sales op&apos;s that a contract has been created.</description>
+        <formula>AND( PRIORVALUE(SBQQ__Opportunity__c) = &apos;&apos;, ISCHANGED( SBQQ__Opportunity__c ),  ISPICKVAL(SBQQ__Opportunity__r.Fulfilling_Entity__c, &apos;Intapp&apos;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-028Exxx</fullName>
+        <actions>
+            <name>Amendment_is_ready_to_send</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Amendment_Status__c</field>
+            <operation>equals</operation>
+            <value>Processing Amendment</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-028Exxx
+Amendment - Ready to Send when status is Processing Amendment</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CTR-044Exxx</fullName>
+        <actions>
+            <name>trial_expired</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Cancelled / Lapsed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Type__c</field>
+            <operation>equals</operation>
+            <value>Trial</value>
+        </criteriaItems>
+        <description>Rule Code: CTR-044Exxx
+Deactivate Trial notification</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule code%3A CTR-100xFxx</fullName>
+        <actions>
+            <name>non_standard_cloud_location</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Non_Standard_Cloud_Location__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Contract: Non-Standard Cloud Location - this dealNOT EQUAL TOnull</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

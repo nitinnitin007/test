@@ -1,0 +1,1036 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>IntApp Contract Wizard</title>
+	<!-- fd-datepicker.js -->
+	<script type="text/javascript" src="/servlet/servlet.FileDownload?file=015500000007DoH"></script>
+	<link href="/servlet/servlet.FileDownload?file=015500000007DoQ" rel="stylesheet" type="text/css" />
+
+
+    <link  href="/dCSS/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+    <script language="javascript" src="https://www.salesforce.com/services/lib/ajax/beta3.3/sforceclient.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="https://na3.salesforce.com/favicon.ico">
+
+
+
+	<!--date time library-->
+	<script language="javascript" type="text/javascript" src="/servlet/servlet.FileDownload?file=0155000000079yg"></script>
+
+<script>
+	<!--
+	
+	//initialization
+	var contractId = "";
+	var contractName = "";
+	var contractNumber = "";
+	var contractAccountName = "";
+	var contractNotes = "";
+	var contractSpecialTerms = "";
+	var accountId = "";
+	var shipmentsValid = false;
+	var shipmentsErrorMessages = new Array();
+	var contactCache = new Array();
+	var productComponentsForContractIdList = new Array();
+	var defaultAddress = null;
+	var productComponentCache = new Array();
+	var productComponentsForContractCache = new Array();
+	var contactsForAccountHtml = "";
+	var productComponentsForContractHtml = "";
+	
+	function initPage() {
+       sforceClient.registerInitCallback(setup);
+       sforceClient.init("{!API_Session_ID}", "https://na3.salesforce.com/services/Soap/u/7.0", true);
+    }
+    
+    //collect parameters passed from salesforce via merge fields
+    function collectParams() {
+    	contractId = "{!Contract_ID}";
+    	accountId = "{!Contract_Account_ID}";
+		contractNumber = "{!Contract_ContractNumber}";
+		contractAccountName = "{!Contract_Account}";
+		
+    }
+    
+   
+	function getExtendedContractInfo(id) {
+    	var query = "Select c.id, c.name, c.SpecialTerms, c.Notes__c From Contract c where c.id = '" + id + "'";
+   		var result  = sforceClient.query(query);
+       
+    	if (result.className != "Fault") {
+     		if (result.records.length == 1) {
+     			//load the caseNumberCache
+     			
+	     		contractSpecialTerms = result.records[0].get("specialterms");
+     			contractNotes = result.records[0].get("notes__c");	
+				contractName = result.records[0].get("name");	
+     			 		
+     		}     		
+     	}
+    }
+    
+
+	function addSelectedItemsToLocation() {
+		for (var i=0; i< selectedShipmentItems.length; i++) {
+			//add location reference to each shipment item
+		}
+	}
+	
+	//special processing for tag
+	function parseTagForId(tagId) {
+		var tagArray = tagId.split(":");
+		return tagArray[0];
+	}
+	
+	function parseTagForInstance(tagId) {
+		var tagArray = tagId.split(":");
+		return tagArray[1];
+	}
+	
+	function validateShipments() {
+	
+		var defaultAddressUsed = false;
+	
+		//check if all fields are filled in with generic object checker
+		for (var i=0; i<productComponentsForContractIdList.length; i++) {
+			var productComponentItem = productComponentsForContractCache[productComponentsForContractIdList[i]];
+			
+			//console.log("Checking component address for " + productComponentItem.id);
+			
+			if (productComponentItem.location == null) {
+				////console.log("default address used, location not found");
+				defaultAddressUsed = true;				
+			} else {	//this is a non default addressed order
+				//console.log("specific address used, location found");
+				validateAddress(productComponentItem.location);
+			}	
+		}
+	
+		//check if defaultAddress is not null, only if there are items that are marked as default address
+		if (defaultAddressUsed) {
+			if (defaultAddress == null) {
+				shipmentsErrorMessages.push("Please fill in default address!");
+				shipmentsValid = false;
+				return;
+			} else {
+				 if (!validateAddress(defaultAddress)) {
+				 	return;
+				 }
+			}
+		}
+		
+		//this should only be reached if all tests pass
+		shipmentsValid = true;
+		
+	}
+	
+	function returnToContract() {
+		//build the URL
+		var location = "/" + contractId;
+		top.location.href = location;
+	}	
+	
+	function validateAddress(address) {
+	
+		var messageList = new Array();
+		
+		if (address.companyName.trim() == "") {
+			messageList.push("Fill in company name");
+		}
+		
+		if (address.recipientName.trim() == "") {
+			messageList.push("Fill in recipient name");
+		}
+		
+		if (address.addressLine1.trim() == "") {
+			messageList.push("Fill in address");
+		}
+		
+		if (address.city.trim() == "") {
+			messageList.push("Fill in city");
+		}
+
+		if (address.state.trim() == "") {
+			messageList.push("Fill in state");
+		}
+
+		if (address.postalCode.trim() == "") {
+			messageList.push("Fill in postal code");
+		}
+
+		if (address.phone.trim() == "") {
+			messageList.push("Fill in phone");
+		}		
+		
+		
+		if (messageList.length > 0) {
+			//console.log("Blanks found");
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	//process shipments
+	function processShipments() {
+		//process each contract product component item and just create an order header object for each with the shipping information
+		validateShipments();
+		
+		
+		
+		if (shipmentsValid) {
+			//console.log("Shipment processing starting...");
+			
+
+			//console.log(productComponentsForContractIdList.length + " shippable products found");
+			document.getElementById("messages").innerHTML = "Shipment processing starting...";
+			
+			for (var i=0; i<productComponentsForContractIdList.length; i++) {
+				var productComponentItem = productComponentsForContractCache[productComponentsForContractIdList[i]];
+				createOrderForContractProductComponent(productComponentItem);	
+			}
+			
+			top.location.href = "/" + contractId;
+		} else {
+			//display the error messages and halt processing
+			document.getElementById("messages").innerHTML = shipmentsErrorMessages.join("<br>");
+			
+		}
+	}
+	
+	function createOrderForContractProductComponent(productComponentEntry) {
+		
+		var productComponent = productComponentCache[productComponentEntry.productComponentId];
+		
+		//console.log("Creating order for " + productComponentEntry.name + ", " + productComponentEntry.id);
+		
+		var newOrder = new Sforce.Dynabean("order_header__c");
+		//record type of new purchase
+		newOrder.set("recordtypeid", "0125000000099dYAAQ");
+		newOrder.set("description__c", productComponent.name);
+		newOrder.set("Contract__c", contractId);
+		newOrder.set("Account__c", accountId);
+		//set shipping dimensions fields
+		newOrder.set("shipping_weight__c", productComponent.shippingWeight);
+		newOrder.set("shipping_height__c", productComponent.shippingHeight);
+		newOrder.set("shipping_length__c", productComponent.shippingLength);
+		newOrder.set("replacement_value__c", productComponent.replacementValue);
+		newOrder.set("shipping_width__c", productComponent.shippingWidth);
+		//set note fields
+		newOrder.set("Contract_Notes__c", contractNotes);
+		newOrder.set("Contract_Special_Terms__c", contractSpecialTerms);
+		newOrder.set("Account__c", accountId);
+		newOrder.set("Contract_Product_Component__c", productComponentEntry.id);
+		//set the type of product component this is
+		newOrder.set("Product_Component__c", productComponentEntry.productComponentId);
+			
+		var currentLocation;	
+		
+		if (productComponentEntry.location == null) {
+			//console.log("location not found, using zip of " + defaultAddress.postalCode);
+			currentLocation = defaultAddress;
+		} else {
+			//console.log("location found, using zip of " + location.postalCode);
+			currentLocation = productComponentEntry.location;			
+		}
+
+		
+		newOrder.set("Recipient_Company__c", currentLocation.companyName);
+		newOrder.set("Recipient_Name__c", currentLocation.recipientName);
+		newOrder.set("Shipping_Address_Line_1__c", currentLocation.addressLine1);
+		newOrder.set("Shipping_Address_Line_2__c", currentLocation.addressLine2);
+		newOrder.set("Shipping_City__c", currentLocation.city);
+		newOrder.set("Shipping_State__c", currentLocation.state);
+		newOrder.set("Shipping_Country__c", currentLocation.country);
+		newOrder.set("Shipping_Postal_Code__c", currentLocation.postalCode);
+		newOrder.set("Phone__c", currentLocation.phone);
+		
+		//save newOrder
+		var orderSaveResult = newOrder.save();
+		
+		if (orderSaveResult.success == true) {
+			var newOrderId = orderSaveResult.id;
+			//console.log("New order header saved as " + newOrderId);
+			
+			//update the contract product component too
+			var existingContractProductComponent = new Sforce.Dynabean("contract_product_component__c");
+			existingContractProductComponent.set("Id", productComponentEntry.id);
+			existingContractProductComponent.set("Order_Header__c", newOrderId);
+			
+			var existingContractProductComponentSaveResult = existingContractProductComponent.save();
+			
+			if (existingContractProductComponentSaveResult.success == true) {
+				//console.log("Contract Product Component updated: " + productComponentEntry.id);
+			} else {
+				//console.log("Error updating ContractProductComponent: " + existingContractProductComponentSaveResult);
+			}
+			
+			//TODO implement some type of rollback feature here
+		} else {
+			//console.log("Error saving order: " + orderSaveResult);
+			return;
+		}
+	}
+	
+	function saveDefaultAddress() {
+    	var locationAddress = 
+			{
+				companyName: document.getElementById("defaultCompanyName").value,
+				recipientName: document.getElementById("defaultRecipientName").value,
+				addressLine1: document.getElementById("defaultAddressLine1").value, 
+				addressLine2: document.getElementById("defaultAddressLine2").value,
+				city: document.getElementById("defaultCity").value,
+				state: document.getElementById("defaultState").value,
+				country: document.getElementById("defaultCountry").value,
+				postalCode: document.getElementById("defaultPostalCode").value,
+				phone: document.getElementById("defaultPhone").value
+			};
+			
+			//get the id of the selected component line
+			if (!validateAddress(locationAddress)) {
+				displayMessage("Please fill in the default address properly");
+				return;
+			} else {
+				displayMessage("Default address saved");
+			}
+
+			defaultAddress = locationAddress;
+
+	}
+	
+	function saveSpecificAddress() {
+		
+		//console.log("processing specific address for " + document.getElementById("productComponentForContractId").value);
+		
+		var locationAddress = 
+			{
+				companyName: document.getElementById("specificCompanyName").value,
+				recipientName: document.getElementById("specificRecipientName").value,
+				addressLine1: document.getElementById("specificAddressLine1").value, 
+				addressLine2: document.getElementById("specificAddressLine2").value,
+				city: document.getElementById("specificCity").value,
+				state: document.getElementById("specificState").value,
+				country: document.getElementById("specificCountry").value,
+				postalCode: document.getElementById("specificPostalCode").value,
+				phone: document.getElementById("specificPhone").value
+			};
+			
+		if (!validateAddress(locationAddress)) {
+			displayMessage("Please fill in the specific address properly");
+			return;
+		} else {
+			displayMessage("Specific address saved");
+		}
+	
+		if (productComponentsForContractCache[document.getElementById("productComponentForContractId").value] != null) {
+			productComponentsForContractCache[document.getElementById("productComponentForContractId").value].location = locationAddress;
+		}
+		
+		//update the component line item display
+		if (document.getElementById("addressPostalCode" + document.getElementById("productComponentForContractId").value) != null) {
+			document.getElementById("addressPostalCode" + document.getElementById("productComponentForContractId").value).innerHTML = locationAddress.addressLine1 + "/" + locationAddress.postalCode;
+			
+			//console.log("specific address set for " + document.getElementById("productComponentForContractId").value);
+			
+			if (document.getElementById("contractComponentCheckbox" + document.getElementById("productComponentForContractId").value).checked == true) {
+				//activate this to uncheck the box
+				document.getElementById("contractComponentCheckbox" + document.getElementById("productComponentForContractId").value).click();
+			}
+		}
+		
+		
+		
+	}
+	
+	function displayMessage(message) {
+		document.getElementById("messages").innerHTML = message;
+	}
+
+	function handleEditAddressClick(tagId) {
+		//see if the address is specified for this value
+		
+		//clear out the specific address form
+		var location;
+		
+		//console.log("Setting form tag to " + tagId);
+		document.getElementById("productComponentForContractId").value = tagId;
+		
+		if (productComponentsForContractCache[tagId].location != null ) {
+			location = productComponentsForContractCache[tagId].location;
+			//console.log ("location found for " + tagId);
+			//fill in the specific address fields
+			refreshSpecificAddressForm(location);			
+		} else {
+			//console.log ("location not found for " + tagId);
+			//clear out the specific field
+			prepareSpecificAddressFormForNew();
+		}
+	}
+
+
+    
+    function displayContractInfo() {
+    	document.getElementById("contractNameHtml").innerHTML = contractName;
+    	document.getElementById("contractNumberHtml").innerHTML = contractNumber;
+    }
+    
+        //Use this function as the entry point for your DHTML and JAVASCRIPT processing
+    function setup() {  
+    	//collect values from merge fields
+		collectParams();
+		getExtendedContractInfo(contractId);
+		displayContractInfo();
+		loadProductComponentsSync();
+		displayContactsForAccountAsync(accountId);
+		displayProductComponentsForContractAsync(contractId);
+    }
+    
+    //asynchronous
+    function loadProductComponentsAsync() {   		
+   		var query = "Select p.Id, p.Name, p.Type__c, p.Shipping_Required__c From Product_Component__c p";
+   		var result  = sforceClient.query(query, executeQueryForProductComponents);
+    	
+    }
+    
+    //synchronous
+    function loadProductComponentsSync() {
+    	var query = "Select p.Id, p.Name, p.shipping_height__c, p.shipping_length__c, p.shipping_width__c, p.shipping_weight__c, p.insured_value__c, p.Type__c, p.Shipping_Required__c From Product_Component__c p";
+   		var result  = sforceClient.query(query);
+   		
+   		//release the contents of the cache
+    	productComponentCache = new Array();
+        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     			//load the caseNumberCache
+     			for (var i = 0; i < result.records.length; i++) {
+	     			var singleProductComponent = result.records[i];
+     				     			
+	     			//add value to the cache
+	     			if (singleProductComponent.get("id")) {
+	     				
+	     				var productComponentEntry = 
+	     				{
+	     					id: singleProductComponent.get("id"),
+	     					name: singleProductComponent.get("name"),
+	     					type: singleProductComponent.get("type__c"),
+	     					shippingLength: singleProductComponent.get("shipping_length__c"),
+	     					shippingWidth:singleProductComponent.get("shipping_width__c"),
+	     					shippingHeight:singleProductComponent.get("shipping_height__c"),
+	     					shippingWeight:singleProductComponent.get("shipping_weight__c"),
+	     					replacementValue:singleProductComponent.get("insured_value__c"),
+	     					shippingRequired: singleProductComponent.get("Shipping_Required__c")
+	     				};
+	     				
+	     				productComponentCache[singleProductComponent.get("id")] = productComponentEntry; 
+	     				
+
+	     			}
+     			}  		
+     		}     		
+     	}
+    }
+
+    
+    function handleSpecificLocationContactSelect() {
+    	//alert (document.getElementById("contractRecipSelect").value);
+    	var contactEntry = contactCache[document.getElementById("specificContact").value];
+    	
+    	if (contactEntry != null) {   	
+    		if (document.getElementById("specificAddressApplyOnlyAddress").checked != true) {  
+		    	document.getElementById("specificRecipientName").value = contactEntry.name;
+		    	document.getElementById("specificPhone").value = contactEntry.phone;
+	    	}
+	    	
+	    	document.getElementById("specificCompanyName").value = contractAccountName;
+	    	document.getElementById("specificAddressLine1").value = contactEntry.street;
+	    	document.getElementById("specificCity").value = contactEntry.city;
+	    	document.getElementById("specificState").value = contactEntry.state;
+	    	document.getElementById("specificCountry").value = contactEntry.country;
+	    	document.getElementById("specificPostalCode").value = contactEntry.postalCode;
+	    	
+    	} else {
+    		//not found
+    	}
+    }
+    
+    function resetToDefaultAddress() {
+    	if (defaultAddress != null) {
+	    	document.getElementById("defaultRecipientName").value = defaultAddress.recipientName;
+	    	document.getElementById("defaultCompanyName").value = defaultAddress.companyName;
+	    	document.getElementById("defaultAddressLine1").value = defaultAddress.addressLine1;
+	    	document.getElementById("defaultAddressLine2").value = defaultAddress.addressLine2;
+	    	document.getElementById("defaultCity").value = defaultAddress.city;
+	    	document.getElementById("defaultState").value = defaultAddress.state;
+	    	document.getElementById("defaultCountry").value = defaultAddress.country;
+	    	document.getElementById("defaultPostalCode").value = defaultAddress.postalCode;
+	    	document.getElementById("defaultPhone").value = defaultAddress.phone;
+    	} else {
+   	    	document.getElementById("defaultRecipientName").value = "";
+	    	document.getElementById("defaultCompanyName").value = "";
+	    	document.getElementById("defaultAddressLine1").value = "";
+	    	document.getElementById("defaultAddressLine2").value = "";
+	    	document.getElementById("defaultCity").value = "";
+	    	document.getElementById("defaultState").value = "";
+	    	document.getElementById("defaultCountry").value = "";
+	    	document.getElementById("defaultPostalCode").value = "";
+	    	document.getElementById("defaultPhone").value = "";
+    	}
+    }
+    
+    function resetToSpecificAddress() {
+    	var id = document.getElementById("productComponentForContractId").value;
+    	var address = null;
+    	
+    	if (id.trim() != "") {		//if id is not blank
+    		if (productComponentsForContractCache[id] != null) {
+    			if (productComponentsForContractCache[id].location != null) {
+    				address = productComponentsForContractCache[id].location;
+    			}    			
+    		}
+    	}
+    	
+    	if (address != null) {
+	    	document.getElementById("specificRecipientName").value = address.recipientName;
+	    	document.getElementById("specificCompanyName").value = address.companyName;
+	    	document.getElementById("specificAddressLine1").value = address.addressLine1;
+	    	document.getElementById("specificAddressLine2").value = address.addressLine2;
+	    	document.getElementById("specificCity").value = address.city;
+	    	document.getElementById("specificState").value = address.state;
+	    	document.getElementById("specificCountry").value = address.country;
+	    	document.getElementById("specificPostalCode").value = address.postalCode;
+	    	document.getElementById("specificPhone").value = address.phone;
+    	} else {
+   	    	document.getElementById("specificRecipientName").value = "";
+	    	document.getElementById("specificCompanyName").value = "";
+	    	document.getElementById("specificAddressLine1").value = "";
+	    	document.getElementById("specificAddressLine2").value = "";
+	    	document.getElementById("specificCity").value = "";
+	    	document.getElementById("specificState").value = "";
+	    	document.getElementById("specificCountry").value = "";
+	    	document.getElementById("specificPostalCode").value = "";
+	    	document.getElementById("specificPhone").value = "";
+    	}
+    }    
+    
+    function handleDefaultLocationContactSelect() {
+    	//alert (document.getElementById("contractRecipSelect").value);
+    	
+    	var contactEntry = contactCache[document.getElementById("defaultContact").value];
+    	
+    	if (contactEntry != null) {   	
+    		if (document.getElementById("defaultAddressApplyOnlyAddress").checked != true) {   	
+		    	document.getElementById("defaultRecipientName").value = contactEntry.name;
+		    	document.getElementById("defaultPhone").value = contactEntry.phone;
+	    	} 
+	    	
+	    	document.getElementById("defaultCompanyName").value = contractAccountName;
+	    	document.getElementById("defaultAddressLine1").value = contactEntry.street;
+	    	document.getElementById("defaultCity").value = contactEntry.city;
+	    	document.getElementById("defaultState").value = contactEntry.state;
+	    	document.getElementById("defaultCountry").value = contactEntry.country;
+	    	document.getElementById("defaultPostalCode").value = contactEntry.postalCode;
+	    	
+	    	
+    	} else {
+    		//not found
+    	}
+    }
+    
+    //start block to display contacts for an account   
+    function displayContactsForAccountAsync(accountId) {
+		retrieveContactsForAccountAsync(accountId, displaySpecificContactsForAccountHtml);
+		retrieveContactsForAccountAsync(accountId, displayDefaultContactsForAccountHtml);
+	}   
+	
+	function displayDefaultContactsForAccountHtml(htmlContent) {
+		//print out here
+		document.getElementById("defaultContactSelectHtml").innerHTML = "<select name=\"defaultContact\" id=\"defaultContact\" onchange=\"handleDefaultLocationContactSelect()\">" + 
+								"<option value=\"\">Select name</option>" + 
+								htmlContent + "</select>";
+		//after we've used this content once, expire it
+		displayContactsForAccountHtml = "";
+	}
+	
+	function displaySpecificContactsForAccountHtml(htmlContent) {
+		//print out here
+		document.getElementById("specificContactSelectHtml").innerHTML = "<select name=\"specificContact\" id=\"specificContact\" onchange=\"handleSpecificLocationContactSelect()\">" + 
+								"<option value=\"\">Select name</option>" + 
+								htmlContent + "</select>";
+		//after we've used this content once, expire it
+		displayContactsForAccountHtml = "";
+	}
+    
+    function retrieveContactsForAccountAsync(id, processContactsForAccount) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForContacts(result);
+   			processContactsForAccount(contactsForAccountHtml);
+   		};
+   		
+   		var query = "select firstname, lastname, title, mailingstreet, phone, mailingcity, mailingstate, mailingpostalcode, mailingcountry, id from Contact where accountid = '" + id + "'";
+   		sforceClient.query(query, processResult);
+    	
+    }
+    
+	function addToDefaultShippingList(idTag) {
+		//process idTag
+		var idTag;
+		//remove left characters
+		var id = idTag.substring(25);
+		
+		//also remove location from the cached object
+		if (productComponentsForContractCache[id] != null) {
+			productComponentsForContractCache[id].location = null;
+			//console.log("location removed from " + id);
+			
+		} else {
+			//console.log("no location removed from " + idTag);
+			
+		}
+		
+		//clear radio button
+		if (document.getElementById("productComponentForContractEntryRadio" + id) != null) {
+			document.getElementById("productComponentForContractEntryRadio" + id).checked = false;
+			prepareSpecificAddressFormForNew();
+		}
+		
+		//clear out component line address/postal code
+		if (document.getElementById("addressPostalCode" + id) != null) {
+			document.getElementById("addressPostalCode" + id).innerHTML = "";
+		}
+		
+		//clear out specific address
+		//console.log("number of shippable items: " + productComponentsForContractCache.length);
+		//console.log("Tag of " + idTag + " added to default shipping, id:" + id);
+		
+	}
+
+    
+    function executeQueryForContacts(result) {
+    	//release the contents of the cache
+    	contactNameCache = new Array();
+        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     			//load the caseNumberCache
+     			for (var i = 0; i < result.records.length; i++) {
+	     			var singleContact = result.records[i];
+	     			//contactsForAccountHtml = "";
+	     			
+	     			contactsForAccountHtml +=     					
+	     					"<option value=\"" + singleContact.get("id") + "\">" + 
+	     					singleContact.get("firstname") + " " + 
+	     					singleContact.get("lastname") + "</option>";
+	     			
+	     			//add value to the cache
+	     			if (singleContact.get("id")) {
+	     			
+		     			var contactEntry = 
+		     				{
+			     				id:singleContact.get("id"),
+			     				firstName:singleContact.get("firstname"),
+			     				lastName:singleContact.get("lastname"),
+		     					name:singleContact.get("firstname") + " " + singleContact.get("lastname"),
+		     					street:singleContact.get("mailingstreet"),
+		     					city:singleContact.get("mailingcity"),
+		     					state:singleContact.get("mailingstate"),
+		     					postalCode:singleContact.get("mailingpostalcode"),
+		     					country:singleContact.get("mailingcountry"),
+		     					phone:singleContact.get("phone")
+		     				};
+		     				
+		     				contactCache[singleContact.get("id")] = contactEntry;
+
+	     			}
+     			}  		
+     		}     		
+     	} 
+    }
+    
+    
+    function prepareSpecificAddressFormForNew() {
+    		//document.getElementById("productComponentForContractId").value = "";
+			document.getElementById("specificCompanyName").value = "";
+			document.getElementById("specificRecipientName").value = "";
+			document.getElementById("specificAddressLine1").value = ""; 
+			document.getElementById("specificAddressLine2").value = "";
+			document.getElementById("specificCity").value = "";
+			document.getElementById("specificState").value = "";
+			document.getElementById("specificCountry").value = "";
+			document.getElementById("specificPostalCode").value = "";
+			document.getElementById("specificPhone").value = "";
+    }
+    
+    function prepareDefaultAddressFormForNew() {
+			document.getElementById("defaultCompanyName").value = "";
+			document.getElementById("defaultRecipientName").value = "";
+			document.getElementById("defaultAddressLine1").value = ""; 
+			document.getElementById("defaultAddressLine2").value = "";
+			document.getElementById("defaultCity").value = "";
+			document.getElementById("defaultState").value = "";
+			document.getElementById("defaultCountry").value = "";
+			document.getElementById("defaultPostalCode").value = "";
+			document.getElementById("defaultPhone").value = "";
+    }    
+    
+    function refreshSpecificAddressForm(location) {
+    
+    	if (location != null) {
+			document.getElementById("specificCompanyName").value = location.companyName;
+			document.getElementById("specificRecipientName").value = location.recipientName;
+			document.getElementById("specificAddressLine1").value = location.addressLine1; 
+			document.getElementById("specificAddressLine2").value = location.addressLine2;
+			document.getElementById("specificCity").value = location.city;
+			document.getElementById("specificState").value = location.state;
+			document.getElementById("specificCountry").value = location.country;
+			document.getElementById("specificPostalCode").value = location.postalCode;
+			document.getElementById("specificPhone").value = location.phone;
+		}
+    }
+    
+    
+
+
+    
+    function executeQueryForProductComponents(result) {
+    	//release the contents of the cache
+    	productComponentCache = new Array();
+        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     			//load the caseNumberCache
+     			for (var i = 0; i < result.records.length; i++) {
+	     			var singleProductComponent = result.records[i];
+     				     			
+	     			//add value to the cache
+	     			if (singleProductComponent.get("id")) {
+	     				
+	     				var productComponentEntry = 
+	     				{
+	     					id: singleProductComponent.get("id"),
+	     					name: singleProductComponent.get("name"),
+	     					type: singleProductComponent.get("type__c"),
+	     					shippingRequired: singleProductComponent.get("Shipping_Required__c")
+	     				};
+	     				
+	     				productComponentCache[singleProductComponent.get("id")] = productComponentEntry; 
+	     				
+	     			}
+     			}  		
+     		}     		
+     	} 
+    }
+    
+	//start block to display product components for an opportunity   
+    function displayProductComponentsForContractAsync(id) {
+		retrieveProductComponentsForContractAsync(id, displayProductComponentsForContractHtml);
+	}   
+	
+	function displayProductComponentsForContractHtml(htmlContent) {
+		//print out here
+		document.getElementById("productComponentsForContractListHtml").innerHTML = htmlContent;
+		//after we've used this content once, expire it
+		displayProductComponentsForContractHtml = "";
+		
+	}
+    
+    function retrieveProductComponentsForContractAsync(id, processProductComponentsForContract) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForProductComponentsForContract(result);
+   			processProductComponentsForContract(productComponentsForContractHtml);
+   		};
+   		
+   		var query = "Select c.Id, c.Name, c.Contract__c, c.Product_Component__c, c.Quantity__c From Contract_Product_Component__c c where c.Contract__c = '" + id + "'";
+   		sforceClient.query(query, processResult);
+    	
+    }
+    
+
+    function executeQueryForProductComponentsForContract(result) {
+        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     		
+     			//load the productComponentForContractCache
+     			for (var i = 0; i < result.records.length; i++) {
+	     			var singleProductComponentForContract = result.records[i];
+	     			
+	     			//create object that will hold a single ProductComponent found in this contract
+	     			var productComponentForContractEntry = 
+	     				{
+	     					id: singleProductComponentForContract.get("id"),
+	     					name: singleProductComponentForContract.get("name"),
+	     					productComponentId: singleProductComponentForContract.get("Product_Component__c"),
+	     					contractId: singleProductComponentForContract.get("Contract__c"),
+	     					location: null	     					
+	     				};
+	     				
+     				var quantity = 0;
+     				
+     				if (singleProductComponentForContract.get("Quantity__c") != null) {
+     					quantity = parseInt(singleProductComponentForContract.get("Quantity__c"));
+     				}
+     				
+     				//console.log(productComponentForContractEntry.name + ": Quantity " + quantity);
+	     				
+	     			//display only product components that require shipping		
+	     			if 	(productComponentCache[productComponentForContractEntry.productComponentId].shippingRequired == true) {
+	     				
+	     				for (var iQuantity=1; iQuantity <= quantity; iQuantity++) {		
+		     				//build the ID
+		     				
+		     				var componentForContractId = buildProductComponentForContractId(productComponentForContractEntry.id, iQuantity);
+		     				productComponentsForContractIdList.push(componentForContractId);
+		     				
+		     				productComponentsForContractCache[componentForContractId] = productComponentForContractEntry;
+		     				//console.log("component items size: " + productComponentsForContractCache[componentForContractId].name);
+		     				
+		     				//console.log("added " + productComponentsForContractCache[componentForContractId].name + " to items needing shipping: " + componentForContractId);
+		     				//default behavior, add to default shipping list
+		     				addToDefaultShippingList(componentForContractId);
+		     				
+		     				//handle quantity, with each line representing only one item
+		     				productComponentsForContractHtml += "<tr><td>" + productComponentForContractEntry.name + "</td>" + 
+		     								"<td><div id=\"addressPostalCode" + componentForContractId + "\"></div></td>" + 
+		     								"<td><input type=\"checkbox\" checked onClick=\"if (this.checked) {addToDefaultShippingList(this.id)}\" id=\"contractComponentCheckbox" + componentForContractId +  "\"></td>" + 
+		     								"<td><input type=\"radio\" onclick=\"handleEditAddressClick('" + componentForContractId + "')\" value=\"" + componentForContractId + "\" name=\"productComponentForContractEntryRadio\" id=\"productComponentForContractEntryRadio" + componentForContractId + "\"></td>" +
+		     							"</tr>";
+	     				}
+	     			}
+	     			
+     			}  	
+     			
+     			productComponentsForContractHtml = "<TABLE  class=\"detailList\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">" +
+     									"<tr class=\"headerRow\">" + 
+     									"<th scope=\"col\" class=\"\" nowrap>Appliance/Product</th>" + 
+     									"<th scope=\"col\" class=\"\" nowrap>Address/Postal Code</th>" +
+		                                "<th scope=\"col\" class=\"\">Default Address</th>" +
+		                                "<th scope=\"col\" class=\"\">Alternate Address</th>" +
+	                                	"</tr>" + 
+     									productComponentsForContractHtml + 
+     									"</table>";
+     				
+     		}     		
+     	} else {
+     		alert (result);
+     	}
+    }
+    
+    function buildProductComponentForContractId(id, num) {
+    	return id + ":" + num;   
+   	}
+    
+    
+
+ 
+-->
+</script>
+
+</head>
+<body onload="initPage()" class="contract  detailPage">
+    <!-- Main Body Starts Here -->
+    <div class="bPageHeader">
+
+        
+    </div>
+    <form id="shipmentCreation" name="shipmentCreation">
+    <table class="outer" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <!-- Start page content table -->
+        
+        <tr>
+            <td class="oRight">
+                <!-- Start page content --> 
+                <a name="skiplink">
+                <img src="/s.gif" height="1" width="1" alt="Content Starts Here" class="skiplink">
+                </a>
+                <div class="bPageTitle">
+                    <div class="ptBody secondaryPalette">
+                        <div class="content">
+                            <img src="/s.gif" alt="Contract"  class="pageTitleIcon"><h1 class="pageType">IntApp Shipping Wizard
+                            <span  class="titleSeparatingColon">
+                            :
+                            </span>
+                            </h1><h2 class="pageDescription"><div id="opportunityNameHeader"></div></h2>
+                            <div class="blank">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="links">
+                            
+                        </div>
+                    </div>
+                    <div class="ptBreadcrumb">
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="bPageBlock secondaryPalette" id="ep">
+                    <div class="pbHeader">
+                        <TABLE  cellpadding="0" cellspacing="0" border="0">
+                            <TR>
+                                <TD class="pbTitle"><img src="/s.gif" alt="" title="" width="1" height="1" class="minWidth">
+                                    <h2 class="mainTitle"></h2>
+                                </TD>
+                            </TR>
+                        </TABLE>
+                    </div>                    
+                   <div class="pbBody">
+	                    <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+	                            <h3>Contract: <div id="contractNumberHtml"></div><div id="contractNameHtml"></div></h3>
+	                    </div>
+
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <h3>Items that Require Shipment</h3>&nbsp;&nbsp;&nbsp;&nbsp;<input value=" Incomplete items? Return to Contract "  class="btn" type="button" title="Delete" onclick="returnToContract()" name="del">
+                        </div>
+                        <div class="pbSubsection">
+							<div id="productComponentsForContractListHtml">loading...</div>
+									
+                                
+                        </div>
+
+						<div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <h3>Address Details</h3>
+                        </div>
+                       
+						<TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+                                <TR>
+									<td>
+									<table align="left" cellpadding=0 cellspacing=0 border=0 width="100%">
+									<TR>
+	                                    <TD class="labelCol"><h3>Default Address</h3></TD>
+	                                    <TD class="dataCol col02"><input type="checkbox" id="defaultAddressApplyOnlyAddress"> Apply only to physical address</TD>                                    
+	                                </TR>	
+									
+									<TR>
+	                                    <TD class="labelCol">Prefill with</TD>
+	                                    <TD class="dataCol col02"><div id="defaultContactSelectHtml">loading...</div></TD>                                    
+	                                </TR>
+
+	                                <TR>
+	                                    <TD class="labelCol">Recipient Name</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="defaultRecipientName" id="defaultRecipientName"></TD>                                    
+	                                </TR>
+									<TR>
+	                                    <TD class="labelCol">Phone Number</TD>
+	                                    <TD class="dataCol col02"><input size=20 type=text name="defaultPhone" id="defaultPhone"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Company Name</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="defaultCompanyName" id="defaultCompanyName"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Address Line 1</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="defaultAddressLine" id="defaultAddressLine1"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Address Line 2</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="defaultAddressLine2" id="defaultAddressLine2"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">City</TD>
+	                                    <TD class="dataCol col02"><input size=20 type=text name="defaultCity" id="defaultCity"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">State/Province</TD>
+	                                    <TD class="dataCol col02"><input size=4 type=text name="defaultState" id="defaultState"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Postal Code</TD>
+	                                    <TD class="dataCol col02"><input size=8 type=text name="defaultPostalCode" id="defaultPostalCode"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Country</TD>
+	                                    <TD class="dataCol col02"><input size=8 type=text name="defaultCountry" id="defaultCountry"></TD>                                    
+	                                </TR>
+
+	                                <tr><td>&nbsp;</td><td><input type="button" value="save" onClick="saveDefaultAddress()">
+	                                <input type="button" value="revert" onClick="resetToDefaultAddress()"></td></tr>
+	                                </table>
+									</td>
+									<td>
+									
+									<table align="right" cellpadding=0 cellspacing=0 border=0 width="100%">
+									<input type=hidden id="productComponentForContractId" value="">
+									<TR>
+	                                    <TD class="labelCol" nowrap><h3>Alternate Address</h3></TD>
+	                                    <TD class="dataCol col02"><input type="checkbox" id="specificAddressApplyOnlyAddress"> Apply only to physical address</TD>                                    
+	                                </TR>
+									<TR>
+	                                    <TD class="labelCol">Prefill with</TD>
+	                                    <TD class="dataCol col02"><div id="specificContactSelectHtml">loading...</div></TD>                                    
+	                                </TR>
+
+	                                <TR>
+	                                    <TD class="labelCol">Recipient Name</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="specificRecipientName" id="specificRecipientName"></TD>                                    
+	                                </TR>
+									<TR>
+	                                    <TD class="labelCol">Phone Number</TD>
+	                                    <TD class="dataCol col02"><input size=20 type=text name="specificPhone" id="specificPhone"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Company Name</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="specificCompanyName" id="specificCompanyName"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Address Line 1</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="specificAddressLine" id="specificAddressLine1"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Address Line 2</TD>
+	                                    <TD class="dataCol col02"><input size=30 type=text name="specificAddressLine2" id="specificAddressLine2"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">City</TD>
+	                                    <TD class="dataCol col02"><input size=20 type=text name="specificCity" id="specificCity"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">State/Province</TD>
+	                                    <TD class="dataCol col02"><input size=4 type=text name="specificState" id="specificState"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Postal Code</TD>
+	                                    <TD class="dataCol col02"><input size=8 type=text name="specificPostalCode" id="specificPostalCode"></TD>                                    
+	                                </TR>
+	                                <TR>
+	                                    <TD class="labelCol">Country</TD>
+	                                    <TD class="dataCol col02"><input size=8 type=text name="specificCountry" id="specificCountry"></TD>                                    
+	                                </TR>
+
+	                                <tr><td>&nbsp;</td><td><input type="button" value="save" onClick="saveSpecificAddress()">
+	                                <input type="button" value="revert" onClick="resetToSpecificAddress()">
+	                                </td></tr>
+	                                </table>
+                                    <!--  end shipping specific listing -->
+                                    </TD>
+                                </TR>
+                                
+                        </TABLE>
+
+                        <div id="messages">
+                        
+                        </div>
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <input value=" Create Orders and Shipments "  class="btn" type="button" title="Edit" onclick="if (window.confirm('Are you sure?')) processShipments()" name="Create Order">
+                            </h3>
+                   </div>
+                    </div>
+
+                    <div class="pbFooter secondaryPalette">
+                        <div class="bg">
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <!-- End page content --></td>
+        </tr>
+        
+    </table>
+    </form>
+    
+</body>
+</html>

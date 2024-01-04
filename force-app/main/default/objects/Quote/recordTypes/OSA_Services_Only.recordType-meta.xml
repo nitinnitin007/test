@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OSA_Services_Only</fullName>
+    <active>true</active>
+    <description>Use this record type for Services Only OSAs and Change Orders</description>
+    <label>OSA: Services Only</label>
+    <picklistValues>
+        <picklist>CRM_Program__c</picklist>
+        <values>
+            <fullName>Acquisition - Billstream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquisition - Repstor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billstream - Legacy Contract Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship Intelligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walls Special Program</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_2_3__c</picklist>
+        <values>
+            <fullName>CPQ%C2%A0Integration%C2%A0Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect SOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other-Contract%2F CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_3__c</picklist>
+        <values>
+            <fullName>CPQ%C2%A0Integration%C2%A0Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect SOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other-Contract%2F CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_CPQintissue__c</picklist>
+        <values>
+            <fullName>Comments%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacts%C2%A0Didn%27t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0Updates%C2%A0Didn%E2%80%99t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0segmenting%C2%A0issue%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal%C2%A0header%C2%A0updates%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delay%C2%A0in%C2%A0integration%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deleted%C2%A0line%C2%A0items%C2%A0were%C2%A0not%C2%A0removed%C2%A0from%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue%C2%A0with%C2%A0address%C2%A0fields%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line%C2%A0item%C2%A0did%C2%A0not%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misalignment%C2%A0of%C2%A0software%C2%A0terms%C2%A0between%C2%A0OP4i%C2%A0%26%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly%C2%A0Net%C2%A0Unit%C2%A0Price%C2%A0re-calculation%C2%A0in%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity%2Fquote%C2%A0were%C2%A0not%C2%A0created%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote%C2%A0Line%C2%A0Creation%C2%A0Incomplete%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User%C2%A0Error%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_Deal__c</picklist>
+        <values>
+            <fullName>Address Fields %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agreement %28Repstore%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bill To %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculations %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Name %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Effective%2C Expiry%2C End%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Status %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meter Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing MSSA %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing SOW  %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Attachments %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment%2FCurrency %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Book %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proof of Receipt %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKU Error %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signature Block %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_Incorrect_MSSA__c</picklist>
+        <values>
+            <fullName>Annex %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPA  %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liability Payment Terms %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Version %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support SLA %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_Other_contract__c</picklist>
+        <values>
+            <fullName>Instruction%2FNotes %28Other-Contract%2F CRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Other-Contract%2FCRM%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1_System_Error__c</picklist>
+        <values>
+            <fullName>API %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculation %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1__c</picklist>
+        <values>
+            <fullName>Dates %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entity%2FLegal Name %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Reference %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need Updated Version %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scoping Detail %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Status %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_2_1_3__c</picklist>
+        <values>
+            <fullName>API %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Address Fields %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agreement %28Repstore%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annex %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bill To %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculation %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculations %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comments%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacts%C2%A0Didn%27t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Name %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0Updates%C2%A0Didn%E2%80%99t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0segmenting%C2%A0issue%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPA  %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Effective%2C Expiry%2C End%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Status %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal%C2%A0header%C2%A0updates%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delay%C2%A0in%C2%A0integration%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deleted%C2%A0line%C2%A0items%C2%A0were%C2%A0not%C2%A0removed%C2%A0from%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entity%2FLegal Name %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruction%2FNotes %28Other-Contract%2F CRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue%C2%A0with%C2%A0address%C2%A0fields%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liability Payment Terms %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line%C2%A0item%C2%A0did%C2%A0not%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Reference %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Version %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meter Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misalignment%C2%A0of%C2%A0software%C2%A0terms%C2%A0between%C2%A0OP4i%C2%A0%26%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing MSSA %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing SOW  %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly%C2%A0Net%C2%A0Unit%C2%A0Price%C2%A0re-calculation%C2%A0in%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need Updated Version %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity%2Fquote%C2%A0were%C2%A0not%C2%A0created%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Other-Contract%2FCRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Attachments %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment%2FCurrency %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Book %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proof of Receipt %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote%C2%A0Line%C2%A0Creation%C2%A0Incomplete%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKU Error %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scoping Detail %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signature Block %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Status %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support SLA %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User%C2%A0Error%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_2_2_3__c</picklist>
+        <values>
+            <fullName>API %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Address Fields %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agreement %28Repstore%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annex %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bill To %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculation %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculations %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comments%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacts%C2%A0Didn%27t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Name %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0Updates%C2%A0Didn%E2%80%99t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0segmenting%C2%A0issue%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPA  %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Effective%2C Expiry%2C End%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Status %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal%C2%A0header%C2%A0updates%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delay%C2%A0in%C2%A0integration%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deleted%C2%A0line%C2%A0items%C2%A0were%C2%A0not%C2%A0removed%C2%A0from%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entity%2FLegal Name %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruction%2FNotes %28Other-Contract%2F CRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue%C2%A0with%C2%A0address%C2%A0fields%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liability Payment Terms %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line%C2%A0item%C2%A0did%C2%A0not%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Reference %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Version %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meter Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misalignment%C2%A0of%C2%A0software%C2%A0terms%C2%A0between%C2%A0OP4i%C2%A0%26%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing MSSA %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing SOW  %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly%C2%A0Net%C2%A0Unit%C2%A0Price%C2%A0re-calculation%C2%A0in%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need Updated Version %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity%2Fquote%C2%A0were%C2%A0not%C2%A0created%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Other-Contract%2FCRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Attachments %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment%2FCurrency %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Book %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proof of Receipt %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote%C2%A0Line%C2%A0Creation%C2%A0Incomplete%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKU Error %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scoping Detail %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signature Block %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Status %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support SLA %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User%C2%A0Error%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>In Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terms_a_and_d__c</picklist>
+        <values>
+            <fullName>Existing Terms</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>URL Terms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terms_b_and_bI__c</picklist>
+        <values>
+            <fullName>FF Change Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FF Statement of Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26M Change Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26M Statement of Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Terms_c__c</picklist>
+        <values>
+            <fullName>Fixed Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard No Retainer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard No Retainer with Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Retainer with Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard With Retainer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

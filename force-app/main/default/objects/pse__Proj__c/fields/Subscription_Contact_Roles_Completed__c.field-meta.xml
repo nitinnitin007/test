@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subscription_Contact_Roles_Completed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>IT Admin, Lead User, Trainer Subscription Contact Roles have been provided to the CRM Team.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>IT Admin, Lead User, Trainer Subscription Contact Roles have been provided to the CRM Team.</inlineHelpText>
+    <label>Product Customer Contact Roles Completed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

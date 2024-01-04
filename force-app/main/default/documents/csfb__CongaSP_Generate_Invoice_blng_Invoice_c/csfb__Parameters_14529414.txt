@@ -1,0 +1,11 @@
+&FP0=1
+&AC1=Invoice Generated
+&SC0=1
+&SC1=SalesforceFile
+&OFN=Invoice+for+{!blng__Invoice__c.blng__Account__c}+-+{!TEXT(TODAY())}
+&AC0=1
+&TemplateGroup=Invoice
+&XDO=CIA
+&ContactId={!blng__Invoice__c.blng__BillToContactId__c}
+&XDO2=GenerateInvoice
+&GEO={!$User.Country}

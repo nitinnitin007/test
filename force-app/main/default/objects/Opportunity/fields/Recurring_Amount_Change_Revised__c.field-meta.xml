@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recurring_Amount_Change_Revised__c</fullName>
+    <externalId>false</externalId>
+    <label>Recurring Amount Change - Revised</label>
+    <summarizedField>Opportunity_Product_Component__c.Recurring_Amount_Change__c</summarizedField>
+    <summaryForeignKey>Opportunity_Product_Component__c.Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

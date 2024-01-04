@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Document</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Invoice Document</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;userName={!$User.Username}
+&amp;Id={!blng__Invoice__c.Id}
+&amp;QueryId= [LineItems]aHxD7000000CbQTKA0,[LineItems1]aHxD7000000CbQYKA0, [Acct]aHxD7000000CbQdKAK,[Order]aHxD7000000CbQiKAK
+&amp;TemplateId=aI5D70000008P70KAE
+&amp;FP0=1
+&amp;AC1=Invoice Generated
+&amp;SC0=1
+&amp;SC1=SalesforceFile
+&amp;OFN=Invoice for {!blng__Invoice__c.blng__Account__c} - {!TEXT(TODAY())}
+&amp;AC0=1
+&amp;TemplateGroup=Invoice
+&amp;XDO=CIA
+&amp;ContactId={!blng__Invoice__c.blng__BillToContactId__c}
+&amp;XDO2=GenerateInvoice
+&amp;GEO={!$User.Country}</url>
+</WebLink>

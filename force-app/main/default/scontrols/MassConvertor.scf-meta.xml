@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>Version 1.0 s-control that is placed on the Campaign Detail page.  It provides the ability to convert all leads at once.  It is particularly useful when used in conjunction with HTML emails and the web-to-leads.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Mass Convertor</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

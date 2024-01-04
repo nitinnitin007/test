@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PSA - Edit capability comment field of Timecard</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Timecard_Header__c.Comments__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PSA - Edit capability comment field of Timecard</label>
+    <license>Salesforce</license>
+</PermissionSet>

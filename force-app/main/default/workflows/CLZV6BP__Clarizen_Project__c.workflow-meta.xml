@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Rule Code%3A CP-001xxOx</fullName>
+        <actions>
+            <name>SendClarizenProjectToDTE</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CP-001xxOx
+UpdateClarizenProjectInDTE
+Sends an outbound message to DTE to update clz Project in it</description>
+        <formula>ISNEW() ||
+ISCHANGED(CLZV6BP__CLZ_DueDate__c) || 
+ISCHANGED(CLZV6BP__CLZ_StartDate__c) || 
+ISCHANGED(CLZV6BP__ParentProject__c) || 
+ISCHANGED(Go_Live_Date__c) ||
+ISCHANGED(Project_Phase__c) ||
+ISCHANGED(Project_Status__c) ||
+ISCHANGED(Project_Status_Notes__c) ||
+ISCHANGED(Internal_to_Intapp_Notes__c) ||
+ISCHANGED (CLZV6BP__CLZ_ClosingNotes__c)||
+ISCHANGED(ProjectKickoffDate__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>clz_078b77ce-be7d-467d-ae98-5ad0117ca680</fullName>
+        <active>false</active>
+        <description>clz_078b77ce-be7d-467d-ae98-5ad0117ca680</description>
+        <formula>(CLZV6BP__Created_from_an_event__c=False)&amp;&amp;(CLZV6BP__CLZ_SYSID__c=null)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>clz_0d4774fa-e04d-441e-bd38-17dab4249da9</fullName>
+        <active>false</active>
+        <description>clz_0d4774fa-e04d-441e-bd38-17dab4249da9</description>
+        <formula>(CLZV6BP__Created_from_an_event__c=False)&amp;&amp;(CLZV6BP__CLZ_SYSID__c=null)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>clz_127d5697-418c-4b54-80df-e831ef494769</fullName>
+        <active>false</active>
+        <description>clz_127d5697-418c-4b54-80df-e831ef494769</description>
+        <formula>(CLZV6BP__Created_from_an_event__c=False)&amp;&amp;(CLZV6BP__CLZ_SYSID__c=null)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>clz_2420ff7e-71ce-4f6b-ac16-da595a9e662d</fullName>
+        <active>false</active>
+        <description>clz_2420ff7e-71ce-4f6b-ac16-da595a9e662d</description>
+        <formula>(CLZV6BP__Created_from_an_event__c=False)&amp;&amp;(CLZV6BP__CLZ_SYSID__c=null)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>clz_f6a4a5cb-ddaa-49bf-90e6-fec54e84c48f</fullName>
+        <actions>
+            <name>clz_7ac724eda18146b38332318e08dae67b</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <description>clz_f6a4a5cb-ddaa-49bf-90e6-fec54e84c48f</description>
+        <formula>(CLZV6BP__Created_from_an_event__c=False)&amp;&amp;(CLZV6BP__CLZ_SYSID__c=null)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

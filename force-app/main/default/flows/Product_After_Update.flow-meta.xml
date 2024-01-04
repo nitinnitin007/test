@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <description>To check whether to Update the record or not.</description>
+        <name>Conditions_for_Update</name>
+        <label>Conditions for Update</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Product_and_Price_book_entry</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Retired</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Uncheck_Active_Checkbox</targetReference>
+            </connector>
+            <label>Update Product and Price book entry</label>
+        </rules>
+    </decisions>
+    <description>Uncheck the active checkbox on product record as well as corresponding pricebook entries records once the product has been marked as retired.
+Built according to user story BIZ - 45081.</description>
+    <environments>Default</environments>
+    <interviewLabel>Product : After Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Product : After Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Uncheck_Active_Checkbox</name>
+        <label>Uncheck Active Checkbox</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Update_Related_Pricebook_Entries</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>IsActive</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>In the related Pricebook entries uncheck active checkbox.</description>
+        <name>Update_Related_Pricebook_Entries</name>
+        <label>Update Related Pricebook Entries</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ProductCode</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ProductCode</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>IsActive</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>PricebookEntry</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Conditions_for_Update</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Retired</stringValue>
+            </value>
+        </filters>
+        <object>Product2</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

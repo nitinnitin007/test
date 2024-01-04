@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proforma_Invoice_Document</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Proforma Invoice Document</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;userName={!$User.Username}
+&amp;Id={!Proforma_Invoice__c.Id}
+&amp;QueryId= [QuoteLineRenewal]aHkD70000004DsDKAU,[RenewalLetter]aHkD70000004DsNKAU
+&amp;TemplateId=aHsD70000008PtMKAU
+&amp;FP0=1
+&amp;AC1=Proforma Invoice Generated
+&amp;SC0=1
+&amp;SC1=SalesforceFile
+&amp;OFN= Renewal Letter for {!Proforma_Invoice__c.Account_Name__c} - {!TEXT(TODAY())}
+&amp;AC0=1
+&amp;TemplateGroup=ProformaInvoice
+&amp;XDO=CIA
+&amp;XDO2=GenerateInvoice
+&amp;GEO={!$User.Country}</url>
+</WebLink>

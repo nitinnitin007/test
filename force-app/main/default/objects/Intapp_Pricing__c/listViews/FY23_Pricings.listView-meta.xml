@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FY23_Pricings</fullName>
+    <columns>NAME</columns>
+    <columns>Product_Code__c</columns>
+    <columns>Premium_price__c</columns>
+    <columns>Price_Book__c</columns>
+    <columns>Price__c</columns>
+    <columns>Tiered_Pricing__c</columns>
+    <columns>Tier__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Price_Book__c</field>
+        <operation>contains</operation>
+        <value>23</value>
+    </filters>
+    <label>FY23 Pricings</label>
+    <language>en_US</language>
+</ListView>

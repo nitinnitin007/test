@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Rule Code%3A QUO-003xFxx</fullName>
+        <actions>
+            <name>Update_Tax</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: QUO-003xFxx
+Update Tax
+Populate Tax field with 0 if it is blank</description>
+        <formula>ISBLANK(Tax)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-004xFxx</fullName>
+        <actions>
+            <name>Update_Terms_a</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: QUO-004xFxx
+Update Terms a
+Update the field (a) whenever Terms_a_and_d__c is changed.</description>
+        <formula>OR( 
+  ISNEW(), 
+  ISCHANGED(Terms_a_and_d__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-005xFxx</fullName>
+        <actions>
+            <name>Update_b</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: QUO-005xFxx
+Update Terms b
+Update field (b) whenever Terms_b_and_bI__c is changed</description>
+        <formula>OR( 
+  ISNEW(), 
+  ISCHANGED(Terms_b_and_bI__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-006xFxx</fullName>
+        <actions>
+            <name>Update_bI</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: QUO-006xFxx
+Update Terms b.I
+Updates field (b.I) whenever Terms_b_and_bI__c is changed</description>
+        <formula>OR( 
+  ISNEW(), 
+  ISCHANGED(Terms_b_and_bI__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-007xFxx</fullName>
+        <actions>
+            <name>Update_Terms_c</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: QUO-007xFxx
+Update Terms c
+Updates field (c) whenever Terms_c__c is changed</description>
+        <formula>OR( 
+  ISCHANGED(Terms_c__c), 
+  ISNEW() 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-008xFxx</fullName>
+        <actions>
+            <name>Update_additional_tax_language</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_d</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: QUO-008xFxx
+Update Terms d
+Updates fields (d) and Additional Tax Language whenever Terms_a_and_d__c is changed</description>
+        <formula>OR( 
+  ISNEW(), 
+  ISCHANGED(Terms_a_and_d__c) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

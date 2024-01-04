@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hot_List_Stoplight__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE( CASE(  TEXT(Project_Name__r.pse__Project_Status__c),
+&quot;Green&quot;, &quot;/img/samples/light_green.gif&quot;,
+&quot;Amber&quot;, &quot;/img/samples/light_yellow.gif&quot;,
+&quot;Red&quot;, &quot;/img/samples/light_red.gif&quot;, &quot;/s.gif&quot;), &quot;status color&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Client RAG Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

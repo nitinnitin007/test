@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closing_Comments_must_be_filled_out</fullName>
+    <active>true</active>
+    <description>Closing Comments must be filled out for all Closed Projects</description>
+    <errorConditionFormula>AND( 
+ISCHANGED(pse__Stage__c), 
+CONTAINS(TEXT(pse__Stage__c) , &quot;Pending Closure&quot;),
+NOT($Profile.Id=&apos;00e30000000bvR3&apos;), 
+NOT($Profile.Id=&apos;00e50000001BeRg&apos;), 
+NOT($User.Id=&apos;00550000001NiJb&apos;), 
+NOT($User.Id=&apos;00550000002ngng&apos;), 
+ISBLANK(Closing_Comments__c)
+)</errorConditionFormula>
+    <errorMessage>You must fill out the Closing Comments text area before you can mark this Project as Closed.</errorMessage>
+</ValidationRule>

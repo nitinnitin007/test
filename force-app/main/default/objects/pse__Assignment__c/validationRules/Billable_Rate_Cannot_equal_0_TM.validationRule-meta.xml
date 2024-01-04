@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billable_Rate_Cannot_equal_0_TM</fullName>
+    <active>false</active>
+    <description>T&amp;M assignments may not have a Bill Rate of 0.</description>
+    <errorConditionFormula>AND(
+   T_M_Assignment__c=TRUE,
+   pse__Bill_Rate__c=0,
+   NOT($Profile.Id=&quot;00e30000000bvR3&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Bill_Rate__c</errorDisplayField>
+    <errorMessage>The bill rate for T&amp;M assignments may not be zero. Please contact PS Ops if you need assistance.</errorMessage>
+</ValidationRule>

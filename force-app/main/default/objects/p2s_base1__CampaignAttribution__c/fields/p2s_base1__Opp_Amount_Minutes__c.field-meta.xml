@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Opp_Amount_Minutes__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(p2s_base1__CustomerPath__r.p2s_base1__ReferenceOpportunity__c )),
+p2s_base1__CustomerPath__r.p2s_base1__ReferenceOpportunity__r.Amount *  p2s_base1__EngagementMinutesWeight__c ,
+p2s_base1__CustomerPath__r.p2s_base1__Opportunity__r.Amount * p2s_base1__EngagementMinutesWeight__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opp Amount (Minutes)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

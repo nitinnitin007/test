@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timecard_Status_Cannot_be_Changed</fullName>
+    <active>true</active>
+    <description>Prevents the timecard status from being changed once it has been set.</description>
+    <errorConditionFormula>AND(
+  NOT(
+    OR(
+      $Profile.Id!=&apos;00e50000001BmUZ&apos;,
+      $Profile.Id!=&apos;00e50000000hvYe&apos;,
+      $Profile.Id!=&apos;00e30000000bvR3&apos;
+    )
+  ),
+  PRIORVALUE(pse__Status__c)!=NULL,
+  ISCHANGED(pse__Status__c)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Status__c</errorDisplayField>
+    <errorMessage>The status of the timecard may not be changed.</errorMessage>
+</ValidationRule>

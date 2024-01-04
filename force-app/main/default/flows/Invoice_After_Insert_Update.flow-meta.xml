@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Conga_invoice_mail</name>
+        <label>Send Conga invoice mail</label>
+        <locationX>143</locationX>
+        <locationY>600</locationY>
+        <actionName>blng__Invoice__c.Conga_Trigger_SendEmail</actionName>
+        <actionType>outboundMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>blng__Invoice__c.Conga_Trigger_SendEmail</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Check_Invoice_status</name>
+        <label>Check Invoice status</label>
+        <locationX>473</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_not_posted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.blng__InvoiceStatus__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Posted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__Order__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__InvoiceRunCreatedBy__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__TaxStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_status_as_Posted</targetReference>
+            </connector>
+            <label>If not posted</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_Invoice_is_Posted</name>
+        <label>If Invoice is Posted</label>
+        <locationX>275</locationX>
+        <locationY>492</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Invoice_Posted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.blng__InvoiceStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Posted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Latest_Document_Id__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Conga_invoice_mail</targetReference>
+            </connector>
+            <label>Invoice Posted</label>
+        </rules>
+    </decisions>
+    <description>Delaying Invoice Posting to allow time for tax calculation to complete. Checking Tax status</description>
+    <environments>Default</environments>
+    <interviewLabel>Invoice : After Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Invoice : After Insert Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_status_as_Posted</name>
+        <label>Update status as Posted</label>
+        <locationX>275</locationX>
+        <locationY>384</locationY>
+        <connector>
+            <targetReference>If_Invoice_is_Posted</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>blng__InvoiceStatus__c</field>
+            <value>
+                <stringValue>Posted</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <object>blng__Invoice__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Post_Invoice_after_2_mins</name>
+            <connector>
+                <targetReference>Check_Invoice_status</targetReference>
+            </connector>
+            <label>Post Invoice after 2 mins</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

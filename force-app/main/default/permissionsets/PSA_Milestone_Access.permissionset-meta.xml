@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Access to PSA Milestone</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PSA Milestone Access</label>
+    <license>Salesforce</license>
+    <recordTypeVisibilities>
+        <recordType>pse__Milestone__c.Billing_Milestone</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>pse__Milestone__c.Project_Management_Milestone</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

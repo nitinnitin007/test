@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__EngagioAPIAdditionalActivityFldsStr__c</fullName>
+    <deprecated>false</deprecated>
+    <description>You can select more fields to be returned by the Engagio API.  See the Engagio Activities API documentation for examples.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>You can select more fields to be returned by the Engagio API.  See the Engagio Activities API documentation for examples.</inlineHelpText>
+    <label>Engagio API Additional Activity Fields</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

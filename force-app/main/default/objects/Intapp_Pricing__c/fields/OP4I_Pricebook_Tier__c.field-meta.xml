@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OP4I_Pricebook_Tier__c</fullName>
+    <description>This field will have to concatenate all the information that is checked on the OP4I Pricebook Names fields along with Tier and Pricebook</description>
+    <externalId>false</externalId>
+    <formula>IF(Repstor__c == true,Price_book_Code__c &amp; &apos; &apos; &amp; &apos;Repstor&apos; &amp; &apos; &apos; &amp; Tier_Formula__c &amp; &apos;;&apos;, &apos;&apos;)  &amp;
+
+IF(FS_Ops_Only__c == true,Price_book_Code__c &amp; &apos; &apos; &amp; &apos;FS Ops Only&apos; &amp; &apos; &apos; &amp; Tier_Formula__c &amp; &apos;;&apos;, &apos;&apos;) &amp;
+
+IF(PS_Ops_Only__c == true,Price_book_Code__c &amp; &apos; &apos; &amp; &apos;PS Ops Only&apos; &amp; &apos; &apos; &amp; Tier_Formula__c &amp; &apos;;&apos;, &apos;&apos;)  &amp;
+
+IF(G_Cloud__c == true,Price_book_Code__c &amp; &apos; &apos; &amp; &apos;G-Cloud&apos; &amp; &apos; &apos; &amp; Tier_Formula__c &amp; &apos;;&apos;, &apos;&apos;)  &amp;
+
+IF(FS_Sales__c == true,Price_book_Code__c &amp; &apos; &apos; &amp; &apos;FS Sales&apos;  &amp; &apos; &apos; &amp; Tier_Formula__c &amp; &apos;;&apos;, &apos;&apos;) &amp;
+
+IF(PS_Sales__c== true,Price_book_Code__c &amp; &apos; &apos; &amp; &apos;PS Sales&apos; &amp; &apos; &apos; &amp; Tier_Formula__c, &apos;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>OP4I Pricebook Tier</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

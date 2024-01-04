@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>This s-control is opened by a contract and allows the user to select an opportunity .  After selecting the opportunity, the products and components will be copied into deployments and deployment components.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Add Purchased Products</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

@@ -1,0 +1,10 @@
+&OFN=Account Statement for {!blng__Invoice__c.blng__Account__c} - {!Today()}
+&ContactId={!blng__Invoice__c.blng__BillToContactId__c}
+&DS7=13
+&BML=Generating Account Statement for {!blng__Invoice__c.blng__Account__c}
+&XDO=CIA
+&AC0=1
+&AC1=Account Statement Generated
+&XDO=CIA
+&XDO2=AccountStatement
+&GEO={!$User.Country}

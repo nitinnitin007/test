@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__ConvertedLead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this field is checked, this Customer Journey has gone through a Lead Conversion</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this field is checked, this Customer Journey has gone through a Lead Conversion</inlineHelpText>
+    <label>Converted Lead</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

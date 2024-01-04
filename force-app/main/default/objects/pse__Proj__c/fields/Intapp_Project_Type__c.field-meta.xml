@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Intapp_Project_Type__c</fullName>
+    <description>Identifies the type of Professional Services project.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>&quot;New Install&quot; criteria: 
+- virgin customer 
+- first installation of a product 
+- installation of AT for a WB customer. 
+- installation of WB for an AT customer. 
+- phase 1 of cases matching above criteria; subsequent phases do not count.</inlineHelpText>
+    <label>Project Type</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Services Only</fullName>
+                <default>false</default>
+                <label>Services Only</label>
+            </value>
+            <value>
+                <fullName>New Product Install</fullName>
+                <default>false</default>
+                <label>New Product Install</label>
+            </value>
+            <value>
+                <fullName>Solution Extension / Module</fullName>
+                <default>false</default>
+                <label>Solution Extension / Module</label>
+            </value>
+            <value>
+                <fullName>Upgrade - without Solution Extension</fullName>
+                <default>false</default>
+                <label>Upgrade - without Solution Extension</label>
+            </value>
+            <value>
+                <fullName>Upgrade - with Solution Extension</fullName>
+                <default>false</default>
+                <label>Upgrade - with Solution Extension</label>
+            </value>
+            <value>
+                <fullName>New Product Introduction</fullName>
+                <default>false</default>
+                <label>New Product Introduction</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Intapp Prime</fullName>
+                <default>false</default>
+                <label>Intapp Prime</label>
+            </value>
+            <value>
+                <fullName>TFG - EOL Conversion</fullName>
+                <default>false</default>
+                <label>TFG - EOL Conversion</label>
+            </value>
+            <value>
+                <fullName>Customer Training</fullName>
+                <default>false</default>
+                <label>Customer Training</label>
+            </value>
+            <value>
+                <fullName>Internal Project</fullName>
+                <default>false</default>
+                <label>Internal Project</label>
+            </value>
+            <value>
+                <fullName>Work At Risk</fullName>
+                <default>false</default>
+                <label>Work At Risk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

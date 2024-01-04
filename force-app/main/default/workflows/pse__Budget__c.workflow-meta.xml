@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Budget_Approved_North_America</fullName>
+        <description>Budget Approved North America</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chitra.chandran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Budget_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Budget_Approved_APAC</fullName>
+        <description>New Budget Approved - APAC</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chitra.chandran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Budget_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Budget_Approved_EMEA</fullName>
+        <description>Send Budget Approved - EMEA</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chitra.chandran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>neil.vickers@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Budget_Approved_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>PSA_Budget_Set_Approved_Flag</fullName>
+        <field>pse__Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Budget Set Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Budget_Set_Include_in_FI_Checkbox</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Budget Set Include in FI Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Budget_Uncheck_Include_FI_Checkbox</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>0</literalValue>
+        <name>PSE Budget Uncheck Include FI Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

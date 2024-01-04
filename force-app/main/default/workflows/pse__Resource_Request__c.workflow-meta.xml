@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_Resource_of_Assignment</fullName>
+        <description>Notify Resource of Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Staffer_Resource__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/Assignment_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert</fullName>
+        <description>PSA Resource Request Creation Alert PS Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PS_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert_ES_Manager</fullName>
+        <description>PSA Resource Request Creation Alert ES Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ES_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>ashley.goodchild@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert_Kathy_Englar</fullName>
+        <ccEmails>heather.curry@intapp.com</ccEmails>
+        <description>PSA Resource Request Creation Alert Kathy Englar</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert_Region_Owner</fullName>
+        <description>PSA Resource Request Creation Alert Region Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>PS_Resource_Request_Update_PS_Mgr_Email</fullName>
+        <field>PS_Manager_Email__c</field>
+        <formula>pse__Project__r.PS_Manager_Email__c</formula>
+        <name>PS Resource Request Update PS Mgr Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PS_Resource_Request_Update_Reg_Own_Email</fullName>
+        <field>Region_Owner_Email__c</field>
+        <formula>pse__Project__r.Region_Owner_Email__c</formula>
+        <name>PS Resource Request Update Reg Own Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ES_Manager_Email</fullName>
+        <field>ES_Manager_Email__c</field>
+        <formula>pse__Project__r.ES_Manager_Email__c</formula>
+        <name>Set ES Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Requested_Bill_Rate</fullName>
+        <field>pse__Requested_Bill_Rate__c</field>
+        <formula>IF(
+  OR(
+    ISPICKVAL(pse__Project__r.pse__Stage__c,&quot;Fixed Price&quot;),
+    ISPICKVAL(pse__Project__r.pse__Stage__c,&quot;Partner Prime&quot;),
+    AND(
+      ISPICKVAL(pse__Project__r.pse__Stage__c,&quot;Blended&quot;),
+      NOT(ISPICKVAL(pse__Resource_Role__c,&quot;Project Manager&quot;))
+    )
+  ),
+  0,
+  NULL
+)</formula>
+        <name>Set Requested Bill Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>Task Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CB03- Project Admin/Governance</fullName>
+                <default>false</default>
+                <label>CB03- Project Admin/Governance</label>
+            </value>
+            <value>
+                <fullName>CB07- Configuration of Software</fullName>
+                <default>false</default>
+                <label>CB07- Configuration of Software</label>
+            </value>
+            <value>
+                <fullName>CB09- Quality Assurance</fullName>
+                <default>false</default>
+                <label>CB09- Quality Assurance</label>
+            </value>
+            <value>
+                <fullName>CB11- Training Customers</fullName>
+                <default>false</default>
+                <label>CB11- Training Customers</label>
+            </value>
+            <value>
+                <fullName>CB16- Business Design</fullName>
+                <default>false</default>
+                <label>CB16- Business Design</label>
+            </value>
+            <value>
+                <fullName>CB17- Technical Design</fullName>
+                <default>false</default>
+                <label>CB17- Technical Design</label>
+            </value>
+            <value>
+                <fullName>CB20- Billable Travel</fullName>
+                <default>false</default>
+                <label>CB20- Billable Travel</label>
+            </value>
+            <value>
+                <fullName>AC06- Creating re-usable assets</fullName>
+                <default>false</default>
+                <label>AC06- Creating re-usable assets</label>
+            </value>
+            <value>
+                <fullName>AC07- Partner Training, Enablement, &amp; Support</fullName>
+                <default>false</default>
+                <label>AC07- Partner Training, Enablement, &amp; Support</label>
+            </value>
+            <value>
+                <fullName>AC09- Product Development</fullName>
+                <default>false</default>
+                <label>AC09- Product Development</label>
+            </value>
+            <value>
+                <fullName>AC16- Recruiting</fullName>
+                <default>false</default>
+                <label>AC16- Recruiting</label>
+            </value>
+            <value>
+                <fullName>AC17- Training / Mentorship</fullName>
+                <default>false</default>
+                <label>AC17- Training / Mentorship</label>
+            </value>
+            <value>
+                <fullName>AI01- Administrative Time</fullName>
+                <default>false</default>
+                <label>AI01- Administrative Time</label>
+            </value>
+            <value>
+                <fullName>AI02- Non-Contract Travel</fullName>
+                <default>false</default>
+                <label>AI02- Non-Contract Travel</label>
+            </value>
+            <value>
+                <fullName>AI03- Bid/Proposal Work (SOW)</fullName>
+                <default>false</default>
+                <label>AI03- Bid/Proposal Work (SOW)</label>
+            </value>
+            <value>
+                <fullName>KM01- Training / Knowledge Acquisition</fullName>
+                <default>false</default>
+                <label>KM01- Training / Knowledge Acquisition</label>
+            </value>
+            <value>
+                <fullName>TO02- Paid designated holiday</fullName>
+                <default>false</default>
+                <label>TO02- Paid designated holiday</label>
+            </value>
+            <value>
+                <fullName>TO03- Paid time not worked</fullName>
+                <default>false</default>
+                <label>TO03- Paid time not worked</label>
+            </value>
+            <value>
+                <fullName>TO03- Paid Personal Time Off</fullName>
+                <default>false</default>
+                <label>TO03- Paid Personal Time Off</label>
+            </value>
+            <value>
+                <fullName>TO01- Vacation</fullName>
+                <default>false</default>
+                <label>TO01- Vacation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

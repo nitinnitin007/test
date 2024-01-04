@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Fulfilling_entity</name>
+        <label>Fulfilling entity</label>
+        <locationX>211</locationX>
+        <locationY>1545</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Fulfilling_Entity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue> Intapp</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myRule_11</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>fulfilling_entity_Intapp</name>
+        <label>fulfilling entity Intapp</label>
+        <locationX>295</locationX>
+        <locationY>2224</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Fulfilling_Entity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Intapp</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Reset_adjustment_checkbox_on_cloned_Opp</name>
+        <label>Reset adjustment checkbox on cloned Opp</label>
+        <locationX>309</locationX>
+        <locationY>546</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Old_Opportunity_needs_adjustment__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myRule_3</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Fulfilling_Entity</name>
+        <label>Update Fulfilling Entity</label>
+        <locationX>268</locationX>
+        <locationY>1183</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Fulfilling_Entity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_1_myRule_5_A1_1408298077</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Services_Partner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formula_2_myRule_5_A1_0365525144</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myRule_9</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_New_Deal</name>
+        <label>Update New Deal</label>
+        <locationX>231</locationX>
+        <locationY>834</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.New_Deal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myRule_5</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>update_owner_manager</name>
+        <label>update owner manager</label>
+        <locationX>287</locationX>
+        <locationY>1891</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account_owner_manager__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Owner.ManagerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myRule_13</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>myRule_1</name>
+        <label>Cloned Opportunity</label>
+        <locationX>450</locationX>
+        <locationY>433</locationY>
+        <defaultConnector>
+            <targetReference>Update_the_PriceBook_Id2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Cloned Opportunity</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Old_Opportunity_needs_adjustment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.New_Deal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_PriceBook_Id</targetReference>
+            </connector>
+            <label>TRUE_Cloned Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_11</name>
+        <label>Populate account owner manager</label>
+        <locationX>456</locationX>
+        <locationY>1725</locationY>
+        <defaultConnector>
+            <targetReference>myRule_13</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Populate account owner manager</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account_owner_manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>update_owner_manager</targetReference>
+            </connector>
+            <label>TRUE_Populate account owner manager</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_13</name>
+        <label>Consulting services internal</label>
+        <locationX>456</locationX>
+        <locationY>2062</locationY>
+        <defaultConnectorLabel>FALSE_Consulting services internal</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Services_Project_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Consulting Services – Internal</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>fulfilling_entity_Intapp</targetReference>
+            </connector>
+            <label>TRUE_Consulting services internal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_3</name>
+        <label>Type is New Customer or New Product</label>
+        <locationX>446</locationX>
+        <locationY>715</locationY>
+        <defaultConnector>
+            <targetReference>myRule_5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Type is New Customer or New Product</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>01250000000Hd58AAC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>01250000000Hq3WAAS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Old_Opportunity_needs_adjustment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_New_Deal</targetReference>
+            </connector>
+            <label>TRUE_Type is New Customer or New Product</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_5</name>
+        <label>Populate Fulfilling Entity</label>
+        <locationX>446</locationX>
+        <locationY>1013</locationY>
+        <defaultConnector>
+            <targetReference>myRule_9</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_Populate Fulfilling Entity</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>01250000000NBx2AAG</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Fulfilling_Entity</targetReference>
+            </connector>
+            <label>TRUE_Populate Fulfilling Entity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>myRule_9</name>
+        <label>strategic consulting</label>
+        <locationX>456</locationX>
+        <locationY>1392</locationY>
+        <defaultConnector>
+            <targetReference>myRule_11</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FALSE_strategic consulting</defaultConnectorLabel>
+        <rules>
+            <name>TRUE_myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Services_Project_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Consulting</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fulfilling_entity</targetReference>
+            </connector>
+            <label>TRUE_strategic consulting</label>
+        </rules>
+    </decisions>
+    <description>BIZ-986 // Process Builder - Set Price Book for New Deal.BIZ-46250,Populate the pricebook Id</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_1_myRule_5_A1_1408298077</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Account.Primary_Services_Provider__r.Name = &apos;Intapp&apos;}, &apos;Intapp&apos;, &apos;	Partner - Partner paper&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>formula_2_myRule_5_A1_0365525144</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Account.Primary_Services_Provider__r.Name = &apos;Intapp&apos;},  {!$Label.Primary_Services_Provider_Id}, 	{!$Record.Account.Primary_Services_Provider__c })</expression>
+    </formulas>
+    <interviewLabel>Opportunity Before Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Before Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Pricebook_Id</name>
+        <label>Get Pricebook Id</label>
+        <locationX>738</locationX>
+        <locationY>331</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>myRule_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.PricebookId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Pricebook2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>BIZ-46250</description>
+        <name>Update_the_PriceBook_Id</name>
+        <label>Update the PriceBook Id</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>Reset_adjustment_checkbox_on_cloned_Opp</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Pricebook2Id</field>
+            <value>
+                <elementReference>Get_Pricebook_Id.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>BIZ-46250</description>
+        <name>Update_the_PriceBook_Id2</name>
+        <label>Update the PriceBook Id</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <connector>
+            <targetReference>myRule_3</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Pricebook2Id</field>
+            <value>
+                <elementReference>Get_Pricebook_Id.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>330</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Pricebook_Id</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

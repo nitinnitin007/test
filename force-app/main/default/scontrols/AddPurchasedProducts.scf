@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>IntApp RapidOrder</title>
+    <link  href="/dCSS/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+    <link  href="/dCSS/Theme2/default/custom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+    <link  href="/css/assistive.css" type="text/css" media="aural,braille,embossed" rel="stylesheet" >
+    <script language="javascript" src="https://www.salesforce.com/services/lib/ajax/beta3.3/sforceclient.js?browser=true" type="text/javascript"></script>
+    <link rel="shortcut icon" href="https://na3.salesforce.com/favicon.ico">
+
+	<script>
+	<!--
+	
+	var contractId = "";
+	var accountId = "";
+	var accountName = "";
+	var contractOwner = "";
+	var contractNumber = "";
+	var productCache = new Array(); // cache for later lookups
+	
+	function initPage() {
+       sforceClient.registerInitCallback(setup);
+       sforceClient.init("{!API_Session_ID}", "https://na3.salesforce.com/services/Soap/u/7.0", true);
+       
+    }
+    
+    function populateOpportunities() {
+    	var query = "select name, id from opportunity where accountid = '" + accountId + "'";
+    	var result = sforceClient.query(query, displayOpportunities);
+    	
+    }
+    
+    //Use this function as the entry point for your DHTML and JAVASCRIPT processing
+    function setup() {      
+      collectContractDetails();       
+      populateOpportunities();
+
+      loadProductNames();
+      
+    }
+    
+    function loadProductNames() {
+    	var query = "Select name, id from Product2";
+    	var result = sforceClient.query(query, loadProductNamesBackground);
+    }
+    
+    function loadProductNamesBackground(result) {
+    	var productCache = new Array();
+    
+    	if (result.className == "Fault") {
+    		//error has occurred
+    	} else {
+    		var products = result.records;
+    		var icount = 0;
+    		
+    		if (products.length > 0) {
+    			for (var i = 0;i < products.length; i++) {
+    				var product = products[i];
+    				//there is an issue with this assignment statement
+    				var productId = product.get("id");
+    				productCache[productId] = product.get("name").toString();
+    			}
+    			
+    			//alert(productCache["01t50000000bPu1AAE"]);
+    			//alert(products[0].get("id").length);
+    			//alert(products[0].get("id"));
+    		}
+    	}
+    	
+    }
+    
+    
+    
+	function  getProductName( whatid) { // foreign key name of a contact or user
+		/*
+		if (!whatid) { return " "} //alert('missing param to fkname');
+		if ( productCache[whatid] ) { return productCache[whatid]; } 
+		var qr; 
+
+			qr= sforceClient.query("select name from Product2 where id = '"+whatid+"'");
+		} 
+		if (qr.className != "QueryResult") { return " "} 
+		if (qr.records.length < 1) { return " "} 
+		var ret = qr.records[0].get('Name');
+		productCache[whatid]=ret;
+		*/
+		return productCache[whatid];
+	}
+    
+    function displayOpportunities(result) {
+    	if (result.className == "Fault") {
+    		//error has occurred
+    	} else {
+    		var opportunities = result.records;
+    		var opportunityDropdownHtml = "";
+    	
+    		if (opportunities.length > 0) {
+    			//there are opportunities found
+				for (var i=0;i < opportunities.length; i++) {
+					var opportunity = opportunities[i];
+					opportunityDropdownHtml += "<option value=\"" + opportunity.get("id") + "\">" + opportunity.get("name") + "</option>";					
+				}
+				
+				//write this to the opportunity dropdown
+				
+				    
+    			opportunityDropdownHtml = "<select id=\"opportunityDropdown\" name=\"opportunity\">" + opportunityDropdownHtml + "</select>";
+				document.getElementById("opportunityDropdownHtml").innerHTML = opportunityDropdownHtml;
+    		} else {
+    			//no opportunities found
+    		}
+    	}
+    }
+    
+
+
+	function collectContractDetails() {
+		contractId = "{!Contract_ID}";
+  		accountId = "{!Contract_Account_ID}";
+  		accountName = "{!Contract_Account}";
+  		contractNumber = "{!Contract_ContractNumber}";
+  		contractOwner = "{!ContractOwner_FullName}";
+   }
+   
+   function processPreview() {
+   		//grab the selected opportunity
+   		var opportunityId = "";
+   		
+   		if (document.forms.selectOpportunityForm.opportunityDropdown.value != "") {
+   			opportunityId = document.forms.selectOpportunityForm.opportunityDropdown.value;
+   			processPreviewBackground(opportunityId);
+   			//alert(opportunityId);
+   		} 
+   }
+   
+   function processPreviewBackground(id) {
+   		//now we need to grab all the attached products and product components
+   		var query = "Select o.Id, o.OpportunityId, o.SortOrder, o.PricebookEntryId, o.ProductId, o.Quantity, " + 
+   					"o.TotalPrice, o.UnitPrice, o.ListPrice, o.ServiceDate, o.Description, o.CreatedDate, " +
+   					"o.CreatedById, o.LastModifiedDate, o.LastModifiedById, o.SystemModstamp, o.Additional_Information__c " + 
+   					"From OpportunityLineItem o where opportunityid = '" + id + "'"; 
+   					
+   		//alert(query);
+   		var lineItemsResult = sforceClient.query(query, processPreviewOpportunityLineItems);
+   					
+   }
+   
+       //returns variable of records from salesforce
+    function execQuery(queryString) {
+    
+    	queryString = queryString.trim();
+    	
+     	if (queryString.length == 0) {
+     		return;
+     	}
+     	
+     	var result = sforceClient.query(queryString); 
+     	
+     	if (result.className != "Fault") {
+     		return result.records;
+     	} else {
+     		alert("There was an error: " + result.toString());
+     	}
+    	
+    } 
+   
+   function processPreviewOpportunityLineItems(lineItemsResult) {
+   		//alert("processing");
+   		if (lineItemsResult.className == "Fault") {
+    		//error has occurred
+    		alert(lineItemsResult);
+    	} else {
+    		var lineItems = lineItemsResult.records;
+    		
+    		
+    		if (lineItems.length > 0) {
+    			//alert(productCache.length);
+    			
+    			//process each opportunity line item
+    			for (var i=0;i<lineItems.length;i++) {
+    				var lineItem = lineItems[i];
+    				alert("Processing " + lineItem.get("ProductId"));
+    				//do something with each lineitem
+    				//likely process the productId, price, and quantity
+    				var deployment = new Sforce.Dynabean("deployment__c");
+    				//set the values
+    				//alert(contractId);
+    				deployment.set("Contract__c", contractId);
+    				//alert("contractId");
+    				deployment.set("Account__c", accountId);
+    				
+    				
+    				var query = "select name, id from Product where id = '" + lineItem.get("ProductId") + "'";
+    				//alert(query);
+    				
+    				var products = execQuery(query);
+    				
+    				//now hit the product2 table
+    				var query = "select name, id, recordtypeid from Product2 where id = '" + products[0].get("id") + "'";
+    				alert(query);
+    				
+    				var products = execQuery(query);
+    				
+    				deployment.set("Name", alert(products[0].get("name")));		
+    				deployment.set("RecordTypeId", products[0].get("recordtypeid"));
+    				deployment.set("Product2__c", products[0].get("id"));
+    				
+    				//need crossmapping between product recordtype and deployment recordtype
+    				
+    				
+
+    				
+    				//need to get extended product info by querying
+    				
+    				//var lineItemsResult = sforceClient.query(query, processPreviewOpportunityLineItems);
+    				
+    				//save this object
+    				//var deploymentResult = deployment.save();
+    				alert(deploymentResult);
+    				
+    				//if (deploymentResult.success != true) {
+    				//	alert(deploymentResult);
+    				//}
+    			}   			   			
+    		}
+    	}
+   }
+ 
+	-->
+	</script>
+
+</head>
+    <body onload="initPage()" class="contract  detailPage">
+    <!-- Main Body Starts Here -->
+    <form name="selectOpportunityForm">
+    
+	<div id="opportunityDropdownHtml"></div>
+	<div id="opportunityPreviewButtonHtml"><input type="button" value="preview" onclick="processPreview()"></div>
+	
+    </form>
+    
+    <div id="products
+    </body>
+</html>

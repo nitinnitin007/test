@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__All</fullName>
+    <columns>NAME</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>pse__Project__c</columns>
+    <columns>pse__Milestone__c</columns>
+    <columns>pse__Total_Hours__c</columns>
+    <columns>Narrative__c</columns>
+    <columns>pse__Billable__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Status__c</columns>
+    <columns>pse__Submitted__c</columns>
+    <columns>pse__Approved__c</columns>
+    <columns>Weekly_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Resource__c</field>
+        <operation>contains</operation>
+        <value>Max</value>
+    </filters>
+    <filters>
+        <field>pse__Project__c</field>
+        <operation>equals</operation>
+        <value>Dechert - Open Intake and Conflicts Implementation</value>
+    </filters>
+    <label>10-12-13 forward</label>
+    <language>en_US</language>
+</ListView>

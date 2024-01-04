@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Elapsed_Days__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    ISPICKVAL(pse__Stage__c,&quot;Closed - Completed&quot;),
+    ISPICKVAL(pse__Stage__c,&quot;Closed - Canceled&quot;),
+    ISPICKVAL(pse__Stage__c,&quot;Closed - Abandoned&quot;)
+  ),
+  (pse__End_Date__c-pse__Start_Date__c),
+  (TODAY()-pse__Start_Date__c)
+)</formula>
+    <label>Elapsed Days</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

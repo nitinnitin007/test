@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Susan_Shevelenko_s_Projects</fullName>
+    <columns>pse__Project_ID__c</columns>
+    <columns>NAME</columns>
+    <columns>pse__Stage__c</columns>
+    <columns>pse__Project_Phase__c</columns>
+    <columns>Go_Live_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>Confidence_in_Completion_Date__c</columns>
+    <columns>pse__Project_Status__c</columns>
+    <columns>Contract_Hours_B__c</columns>
+    <columns>Total_Hours__c</columns>
+    <columns>Complete__c</columns>
+    <columns>Intapp_Project_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Project_Manager__c</field>
+        <operation>equals</operation>
+        <value>Susan Shevelenko</value>
+    </filters>
+    <filters>
+        <field>pse__Stage__c</field>
+        <operation>equals</operation>
+        <value>Open - Not Started,Open - In Process,Open - On Hold</value>
+    </filters>
+    <label>Susan Shevelenko&apos;s Projects</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Professional_Services_CSMs</group>
+    </sharedTo>
+</ListView>

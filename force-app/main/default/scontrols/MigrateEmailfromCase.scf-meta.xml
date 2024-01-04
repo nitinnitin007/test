@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scontrol xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contentSource>HTML</contentSource>
+    <description>This migrates email from one case to another.  It&apos;s intended to take the captured email from email2case and move it to another open case with the intention of deleting existing case.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Migrate Email from Case</name>
+    <supportsCaching>true</supportsCaching>
+</Scontrol>

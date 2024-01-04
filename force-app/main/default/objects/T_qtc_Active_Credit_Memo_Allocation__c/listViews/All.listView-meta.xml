@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Applied_To_Internal_ID__c</columns>
+    <columns>Applied_To_Link__c</columns>
+    <columns>Applied_To_Doc_Number__c</columns>
+    <columns>Internal_ID__c</columns>
+    <columns>OSA_Contract_Number_from_Salesforce__c</columns>
+    <columns>Document_Number__c</columns>
+    <columns>Formula_Text__c</columns>
+    <columns>Date__c</columns>
+    <columns>Applied_To_Amt__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

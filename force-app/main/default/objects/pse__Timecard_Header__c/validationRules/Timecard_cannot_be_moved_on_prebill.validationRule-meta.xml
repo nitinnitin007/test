@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timecard_cannot_be_moved_on_prebill</fullName>
+    <active>true</active>
+    <description>Timecards cannot be moved once they are attached to a Pre-Bill.</description>
+    <errorConditionFormula>AND(
+  ISCHANGED(pse__Project__c),
+  NOT(ISBLANK(Time_Billing__c)),
+  ISPICKVAL(Invoice_Status__c, &quot;Not-Synced&quot;),
+  NOT($Profile.Id=&quot;00e30000000bvR3&quot;) 
+)</errorConditionFormula>
+    <errorDisplayField>Time_Billing__c</errorDisplayField>
+    <errorMessage>Timecards cannot be moved once they are linked to a pre-bill. Please delete the Time Billing field value if changes need to be made.</errorMessage>
+</ValidationRule>

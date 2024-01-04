@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Milestone_Is_Closed_Populate_Actual</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   ISCHANGED(pse__Status__c),
+   NOT($Profile.Id=&quot;00e50000001BmUZ&quot;),
+   NOT($Profile.Id=&quot;00e30000000bvR3&quot;),
+   OR(
+      ISPICKVAL(pse__Status__c,&quot;Approved&quot;),
+      ISPICKVAL(pse__Status__c,&quot;Canceled&quot;)
+   ),
+   ISBLANK(pse__Actual_Date__c)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Status__c</errorDisplayField>
+    <errorMessage>Please close the Milestone by marking it as &quot;Approved&quot; or &quot;Canceled&quot; if you have an actual date populated.</errorMessage>
+</ValidationRule>

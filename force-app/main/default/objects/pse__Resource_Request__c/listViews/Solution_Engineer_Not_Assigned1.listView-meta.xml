@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_Engineer_Not_Assigned1</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+    <columns>NAME</columns>
+    <columns>pse__Opportunity__c</columns>
+    <columns>psa_report__Project_Name__c</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>pse__End_Date__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>pse__SOW_Hours__c</columns>
+    <columns>pse__Resource__c</columns>
+    <columns>Contract__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Status__c</field>
+        <operation>notEqual</operation>
+        <value>Assigned</value>
+    </filters>
+    <filters>
+        <field>pse__Resource_Role__c</field>
+        <operation>equals</operation>
+        <value>Solution Engineer</value>
+    </filters>
+    <filters>
+        <field>psa_report__Project_Name__c</field>
+        <operation>notContain</operation>
+        <value>Template</value>
+    </filters>
+    <filters>
+        <field>pse__Practice__c</field>
+        <operation>contains</operation>
+        <value>Time,DTE</value>
+    </filters>
+    <filters>
+        <field>pse__Region__c</field>
+        <operation>equals</operation>
+        <value>North America</value>
+    </filters>
+    <label>Time Solution Engineer - Not Assigned</label>
+</ListView>

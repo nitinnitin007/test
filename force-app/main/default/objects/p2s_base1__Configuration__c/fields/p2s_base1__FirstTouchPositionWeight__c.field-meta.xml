@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__FirstTouchPositionWeight__c</fullName>
+    <defaultValue>40</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Use this field to define how much attribution will be applied to the first touch campaign</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Use this field to define how much attribution will be applied to the first touch campaign</inlineHelpText>
+    <label>First Touch Position Weight</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,815 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>IntApp Contract Wizard</title>
+	<!-- fd-datepicker.js -->
+	<script type="text/javascript" src="/servlet/servlet.FileDownload?file=015500000007DoH"></script>
+	<link href="/servlet/servlet.FileDownload?file=015500000007DoQ" rel="stylesheet" type="text/css" />
+
+
+    <link  href="/dCSS/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+    <!-- 
+    <link  href="/dCSS/Theme2/default/custom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" >
+    -->
+    <!--     <link  href="/css/assistive.css" type="text/css" media="aural,braille,embossed" rel="stylesheet" > -->
+
+    <script language="javascript" src="https://www.salesforce.com/services/lib/ajax/beta3.3/sforceclient.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="https://na3.salesforce.com/favicon.ico">
+
+
+
+<!--date time library-->
+<script language="javascript" type="text/javascript" src="/servlet/servlet.FileDownload?file=0155000000079yg"></script>
+
+<script>
+	<!--
+	
+	//initialization
+	var opportunityId = "";
+	var opportunityName = "";
+	var opportunityAccountId = "";
+	var opportunityAccountName = "";
+	
+	//product component cache
+	var componentsByProductIdCache = new Array();
+	var productComponentCache = new Array();
+	
+	//contact cache
+	var contactCache = new Array();
+	var contactNameCache = new Array();	
+	var contactTitleCache = new Array();	
+	var contactStreetCache = new Array();
+	var contactCityCache = new Array();
+	var contactStateCache = new Array();
+	var contactPhoneCache = new Array();
+	var contactPostalCodeCache = new Array();
+	var contactCountryCache = new Array();
+	var oppyLineItemIdPricebookEntryIdCache = new Array();
+	var pricebookEntryIdProduct2IdCache = new Array();
+	var productNameCache = new Array();
+	var oppyLineItemPriceCache = new Array();
+	var oppyLineItemQuantityCache = new Array();
+	var accountCache = new Array();
+	var contactsForAccountHtml = "";
+	var productsForOppyHtml = "";
+	var newContractId = "";
+	
+	//Async indicator flags
+	var loadContactInProcess = false;
+	
+	function validateForm() {
+	
+		var errorMessages = new Array();
+	
+		//contract name
+		if (document.getElementById("contractName").value == "") {
+			errorMessages.push("Fill in contract name");
+		}
+	
+		//check if dates are blank
+		if (document.getElementById("startDate").value == "") {
+			errorMessages.push("Fill in Start Date");
+		}
+		
+		if (document.getElementById("validThroughDate").value == "") {
+			errorMessages.push("Fill in Valid Through Date");
+		}
+		
+		//date comparison, make sure the valid through date is greater than the start date
+		if (compareDates(document.getElementById("validThroughDate").value, "M-d-yyyy", document.getElementById("startDate").value, "M-d-yyyy") != 1) {
+			console.log("start date: ", document.getElementById("startDate").value);
+			console.log("valid through date: ", document.getElementById("validThroughDate").value);
+			errorMessages.push("Valid Through Date is not later than Start Date");
+		}
+		
+		//recip name
+		if (document.getElementById("contractRecipient").value == "") {
+			errorMessages.push("Select a Contract Recipient");
+		}
+		
+		console.log("Errors found: ", errorMessages.length);
+		
+		if (errorMessages.length > 0) {
+			//display error messages
+			var errorMessageText  = "";
+			
+			for (var iError=0; iError < errorMessages.length; iError++) {
+				errorMessageText += errorMessages[iError] + "<br>";
+			}
+			
+			document.getElementById("messages").innerHTML = "<div class=\"pbSubheader tertiaryPalette\" id=\"head_01B30000001VaWc_ep\"><h3>Please Correct these Errors</h3></div>" +
+			"<div class=\"pbSubsection\">" + errorMessageText + "</div>";
+		
+			return false;
+		} else {		
+			return true;			
+		}
+	
+		
+	
+	}
+	
+	function returnToOppy() {
+		//build the URL
+		var location = "/" + opportunityId;
+		top.location.href = location;
+	}
+	
+	function addToTotal(idTag) {
+		//process idTag
+		var idTag;
+		//remove left 7 characters
+		var id = idTag.substring(11);
+		console.log("Tag of " + idTag + " processed for adding, id:" + id);
+		var newValue = parseFloat(document.getElementById("totalOpportunityPrice").value) + parseFloat(oppyLineItemPriceCache[id]);
+		document.getElementById("totalOpportunityPrice").value = newValue.toFixed(2);
+		
+	}
+	
+	
+	function subtractFromTotal(idTag) {
+		//process idTag
+		var idTag;
+		var id = idTag.substring(11);
+		console.log("Tag of " + idTag + " processed for subtracting, id:" + id);
+		var newValue = parseFloat(document.getElementById("totalOpportunityPrice").value) - parseFloat(oppyLineItemPriceCache[id]);
+		document.getElementById("totalOpportunityPrice").value = newValue.toFixed(2);
+
+	}
+	
+	function processForm() {
+		//perform error checking
+		if (!validateForm()) {
+			return;
+		} else {
+			//display processing message
+			document.getElementById("messages").innerHTML = "<div class=\"pbSubheader tertiaryPalette\" id=\"head_01B30000001VaWc_ep\"><h3>Processing Contract...</h3></div>" +
+			"<div class=\"pbSubsection\">" + "You will be directed to the new contract shortly" + "</div>";
+		}
+	
+		//get ready to create new draft and contract
+		var newContract = new Sforce.Dynabean("contract");
+    	//set record type to RB 3.x, if necessary
+    	//newContract.set("RecordTypeId", "0125000000097hEAAQ");
+    	
+    	//set basic contract information
+    	newContract.set("name", document.getElementById("contractName").value);
+    	//set status to constant value
+    	//newContract.set("Status", "Waiting for Specialist approval to send");
+    	newContract.set("contract_recipient__c", contactNameCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("recipient_phone__c", contactPhoneCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("recipient_s_title__c", document.getElementById("contractRecipientTitle").value);
+    	newContract.set("AccountId", opportunityAccountId);
+    	newContract.set("SpecialTerms", document.getElementById("specialTerms").value);
+    	//set billing address if we can
+    	newContract.set("BillingStreet", contactStreetCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("BillingCity", contactCityCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("BillingState", contactStateCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("BillingPostalCode", contactPostalCodeCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("BillingCountry", contactCountryCache[document.getElementById("contractRecipient").value]);
+    	newContract.set("Description", document.getElementById("notes").value);
+    	//grab the contract dates
+    	var startDateProcessed = parseDate(document.getElementById("startDate").value);
+    	var endDateProcessed = parseDate(document.getElementById("validThroughDate").value);
+    	//alert(endDateProcessed);
+    	
+    	newContract.set("StartDate", startDateProcessed);
+    	newContract.set("EndDate", endDateProcessed);
+    	//newContract.set("notes", );
+    	
+    	//create skeleton contract	
+    	var contractSaveResult = newContract.save();
+    	var contractSaveErrorMessages = "";
+    	var saveErrorMessages = "";
+    	var draftSaveErrorMessages = "";
+    	
+    	//attempt to save
+    	if (contractSaveResult.success == true) {
+    		//grab the id of the newly created contract
+    		newContractId = contractSaveResult.id;
+    		
+    		//create the association (draft), need autogenerate name for draft
+    		
+    		var currentDate = new Date();
+    		var draftName = formatDate(currentDate, "yyyyMMdd") + " " + opportunityAccountName + " draft";
+    		var newContractDraft = new Sforce.Dynabean("Contract_Draft__c");
+    		
+    		//create association between this link object and the contract and opportunity
+    		newContractDraft.set("Opportunity__c", opportunityId);
+    		newContractDraft.set("Contract__c", newContractId);
+    		newContractDraft.set("name", draftName);
+    		
+    		var contractDraftSaveResult = newContractDraft.save();
+    		var newContractDraftId = "";
+    		
+    		//opportunity line items selected to be added to the contract
+    		var oppyLineIdToAdd = new Array();
+    		
+    		//now we need to create the contractproducts, first find out what products were approved to be added
+    		for (var lineItemId in oppyLineItemIdPricebookEntryIdCache) {		//process all associated products for this opportunity
+    			//for each of these found products, check to see if it was marked to be added to the contract
+    			//rebuild the checkbox id
+    			var checkBoxId = "addOppyLine" + lineItemId;
+    			//if the checkbox is selected
+    			//alert(checkBoxId);
+    			
+    			// should change checked = true
+    			if (document.getElementById(checkBoxId).checked == true) {
+    				//add this element to the array if it's not already there
+    				oppyLineIdToAdd.push(lineItemId);
+    				console.log("Added Opportunity Product Line: " + lineItemId);
+    			}
+    		}
+    		
+    		//now that we've collected the products and their quantities, add them as contractproducts
+    		console.log("adding " + oppyLineIdToAdd.length + " products to contract");
+    		
+    		for (var iOppyLine=0;iOppyLine< oppyLineIdToAdd.length; iOppyLine++) {
+    			var oppyLineId = oppyLineIdToAdd[iOppyLine];
+    			var productId = pricebookEntryIdProduct2IdCache[oppyLineItemIdPricebookEntryIdCache[oppyLineId]];
+    			var quantity = oppyLineItemQuantityCache[oppyLineId];
+    			var price = oppyLineItemPriceCache[oppyLineId];
+    			
+    			console.log("contractproduct objects", oppyLineId, productId, quantity, price);
+    			
+    			//for each found productId, create appropriate object
+    			var newContractProduct = new Sforce.Dynabean("Contract_Product_Line__c");
+    			//contract
+    			newContractProduct.set("Contract__c", newContractId);
+    			//product
+    			newContractProduct.set("Product2__c", productId);
+    			//price
+    			newContractProduct.set("Price__c", price);
+    			//quantity
+    			newContractProduct.set("Quantity__c", quantity);
+    			//name
+    			newContractProduct.set("Name", productNameCache[productId]);
+    			//save it
+    			var newContractProductSaveResult = newContractProduct.save();
+    			
+    			if (newContractProductSaveResult.success == true) {
+    				//capture the newly saved draft id
+    				newContractProductId = newContractProductSaveResult.id;
+    				console.log("ContractProduct created: " + newContractProductId);
+    				
+    				//handle products that do not have components associated with them
+    				if (componentsByProductIdCache[productId] != null) {
+	    				var componentsList = componentsByProductIdCache[productId];   				
+	    				
+	    				console.log("Number of found components: ", componentsList.length);
+	    				
+	    				for (var i=0; i< componentsList.length; i++) {
+	    					
+	    					var componentEntry = componentsList[i];	    				
+		    				var newContractComponent = new Sforce.Dynabean("Contract_Product_Component__c");
+							
+		    				newContractComponent.set("Contract__c", newContractId);
+		    				newContractComponent.set("Product_Component__c", componentEntry.productComponentId);
+		    				newContractComponent.set("Quantity__c", componentEntry.quantity);
+		    				newContractComponent.set("Name", componentEntry.name);
+		    				
+		    				var newContractComponentSaveResult = newContractComponent.save();
+		    			
+		    				if (newContractComponentSaveResult.success == true) {
+		    					var newContractComponentId = newContractComponentSaveResult.id;
+		    					console.log("ContractComponent created: " + newContractComponentId);
+		    					
+		    				} else {
+		    					console.log("Error with saving contract component", newContractComponentSaveResult);
+		    				}
+	   					}
+   					
+   					}
+    				
+	    		} else {
+	    			alert(newContractProductSaveResult);
+	    		}
+    		}
+    		
+    		if (contractDraftSaveResult.success == true) {
+    			//capture the newly saved draft id
+    			newContractDraftId = contractDraftSaveResult.id;
+    		} else {
+    			draftSaveErrorMessages = contractDraftSaveResult;
+    			alert(contractDraftSaveResult);
+    		}
+    		
+    	} else { //handle error
+    		contractSaveErrorMessages = contractSaveResult;
+    		alert(contractSaveResult);
+    	}
+    	
+    	saveErrorMessages = contractSaveErrorMessages  + draftSaveErrorMessages;
+    	    	
+    	if (saveErrorMessages != "") {
+    		alert(saveErrorMessages);
+    	} else {
+    		//create a new approval and set the status of the contract
+    		
+    		top.location.href = "/" + newContractId;
+    	}
+    	
+	}
+
+	
+	function initPage() {
+       sforceClient.registerInitCallback(setup);
+       sforceClient.init("{!API.Session_ID}", "https://na3.salesforce.com/services/Soap/u/7.0", true);
+    }
+    
+    //collect parameters passed from salesforce via merge fields
+    function collectParams() {
+    	opportunityId = "{!Opportunity.Id}";
+    	opportunityName = "{!Opportunity.Name}";
+    	opportunityAccountId = "{!Opportunity.AccountId}";
+    	opportunityAccountName = "{!Opportunity.Account}";
+
+    }
+
+	function displayBasicValues() {
+		document.getElementById("contractAccountName").innerHTML = opportunityAccountName;
+		document.getElementById("contractName").value = opportunityAccountName;
+		document.getElementById("opportunityNameHeader").value = opportunityName;
+	}
+        
+    //Use this function as the entry point for your DHTML and JAVASCRIPT processing
+    function setup() {  
+    	//collect values from merge fields
+		collectParams();
+		loadProductComponentsAsync()		
+		displayBasicValues();
+		displayContactsForAccountAsync(opportunityAccountId);
+		displayProductsForOppyAsync(opportunityId);
+    }
+    
+    function handleContractRecipSelect() {
+    	//alert (document.getElementById("contractRecipSelect").value);
+    	document.getElementById("contractRecipientTitle").value = contactTitleCache[document.getElementById("contractRecipient").value];
+    	document.getElementById("contractRecipientPhone").value = contactPhoneCache[document.getElementById("contractRecipient").value];
+    }
+
+    //start block to display contacts for an account   
+    function displayContactsForAccountAsync(accountId) {
+		retrieveContactsForAccountAsync(accountId, displayContactsForAccountHtml);
+	}   
+	
+	function displayContactsForAccountHtml(htmlContent) {
+		//print out here
+		document.getElementById("contractRecipSelectHtml").innerHTML = "<select name=\"contractRecipient\" id=\"contractRecipient\" onchange=\"handleContractRecipSelect()\">" + htmlContent + "</select>";
+		//after we've used this content once, expire it
+		contactsForAccountHtml = "";
+	}
+    
+    function retrieveContactsForAccountAsync(id, processContactsForAccount) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForContacts(result);
+   			processContactsForAccount(contactsForAccountHtml);
+   		};
+   		
+   		var query = "select firstname, lastname, title, mailingstreet, phone, mailingcity, mailingstate, mailingpostalcode, mailingcountry, id from Contact where accountid = '" + id + "'";
+   		sforceClient.query(query, processResult);
+    	
+    }
+    
+    function executeQueryForContacts(result) {
+    	//release the contents of the cache
+    	contactNameCache = new Array();
+        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     			//load the caseNumberCache
+     			for (var i = 0; i < result.records.length; i++) {
+	     			var singleContact = result.records[i];
+	     			
+	     			contactsForAccountHtml += "<option value=\"" + singleContact.get("id") + "\">" + singleContact.get("firstname") + " " + singleContact.get("lastname") + "</option>";
+	     			
+	     			//add value to the cache
+	     			if (singleContact.get("id")) {
+	     				contactNameCache[singleContact.get("id")] = singleContact.get("firstname") + " " + singleContact.get("lastname");
+	     				contactTitleCache[singleContact.get("id")] = singleContact.get("title");
+	     				contactStreetCache[singleContact.get("id")] = singleContact.get("mailingstreet"); 
+						contactCityCache[singleContact.get("id")] = singleContact.get("mailingcity");
+						contactStateCache[singleContact.get("id")] = singleContact.get("mailingstate");
+						contactPostalCodeCache[singleContact.get("id")] = singleContact.get("mailingpostalcode");
+						contactCountryCache[singleContact.get("id")] = singleContact.get("mailingcountry");
+						contactPhoneCache[singleContact.get("id")] = singleContact.get("phone");
+	     			}
+     			}  		
+     		}     		
+     	} 
+    }
+    
+    
+
+    //start block to display products for an opportunity   
+    function displayProductsForOppyAsync(id) {
+    		retrieveProductsForOppyAsync(id, displayProductsForOppyHtml);
+	}   
+	
+	function displayProductsForOppyHtml(htmlContent) {
+		//print out here
+		document.getElementById("productListHtml").innerHTML = htmlContent;
+		//after we've used this content once, expire it
+		displayProductsForOppyHtml = "";
+		
+	}
+    
+    function retrieveProductsForOppyAsync(id, processProductsForOppy) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForOppyLineItems(result);
+   			processProductsForOppy(productsForOppyHtml);
+   		};
+   		
+   		var query = "Select o.ProductId, o.PriceBookEntryId, o.Quantity, o.TotalPrice, o.id From OpportunityLineItem o where OpportunityId = '" + id + "'";
+   		sforceClient.query(query, processResult);
+    	
+    }
+    
+    function executeQueryForOppyLineItems(result) {
+        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     			//load the caseNumberCache
+     			for (var i = 0; i < result.records.length; i++) {
+	     			var singleOppyLineItem = result.records[i];
+	     			
+	     			//set cached values
+	     			oppyLineItemIdPricebookEntryIdCache[singleOppyLineItem.get("id")] = singleOppyLineItem.get("PriceBookEntryId");
+	     			oppyLineItemQuantityCache[singleOppyLineItem.get("id")] = parseInt(singleOppyLineItem.get("quantity"));
+	     			oppyLineItemPriceCache[singleOppyLineItem.get("id")] = parseInt(singleOppyLineItem.get("totalprice"));
+	     			
+	     			var lineTotal = parseFloat(singleOppyLineItem.get("totalprice"));
+	     			var quantity = parseInt(singleOppyLineItem.get("quantity"));
+	     			
+	     			//document.getElementById("totalOpportunityPrice").value = oppyTotal.toFixed(2); 
+	     			
+	     			productsForOppyHtml += "<tr><td><div id=\"product2IdForPricebookEntryId" + singleOppyLineItem.get("pricebookentryid") + "\">Loading...</div></td><td>" + 
+	     							quantity + " </td><td>$"  + 
+	     							lineTotal.toFixed(2) + "</td>" + 
+									"<td><input type=\"checkbox\" checked=\"true\" id=\"addOppyLine" + singleOppyLineItem.get("id") + "\" name=\"addOppyLine" + singleOppyLineItem.get("id") + "\" value=\"" + quantity + "\" onclick=\"if (this.checked) {addToTotal(this.id)} else {subtractFromTotal(this.id)}\"></td>" +
+	     							"</tr>";
+	     			//display productName
+	     			//by default, add this to total and checkbox should be checked
+	     			addToTotal("addOppyLine" + singleOppyLineItem.get("id"));
+	     			retrieveProduct2IdFromPricebookEntryIdAsync(singleOppyLineItem.get("pricebookentryid"));
+     			}  	
+     			
+     			productsForOppyHtml = "<TABLE  class=\"detailList\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">" +
+     									"<tr class=\"headerRow\">" + 
+     									"<th scope=\"col\" class=\"\" nowrap>Name</th>" + 
+		                                "<th scope=\"col\" class=\"\">Quantity</th>" +
+		                                "<th scope=\"col\" class=\"\">Total Price</th>" +
+		                                "<th scope=\"col\" class=\"\">Add to Contract</th>" +
+	                                	"</tr>" + 
+     									productsForOppyHtml + 
+     									"</table>";
+     				
+     		}     		
+     	} else {
+     		alert (result);
+     	}
+    }
+
+    
+    //get the product2 Id for a pricebook id 
+    function retrieveProduct2IdFromPricebookEntryIdAsync(id) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForProduct2Id(result);
+   		};
+   		
+   		var query = "Select id, product2id From pricebookentry where Id = '" + id + "'";
+   		sforceClient.query(query, processResult);    	
+    }
+    
+    function executeQueryForProduct2Id(result) {        
+    	if (result.className != "Fault") {
+     		if (result.records.length == 1) {
+     			//load the productNameCache
+	     		var singlePricebookEntry = result.records[0];	   
+	     		pricebookEntryIdProduct2IdCache[singlePricebookEntry.get("id")] = singlePricebookEntry.get("product2id");
+	     		//asynchronously load the product name from product2
+	     		retrieveProductNameAsync(singlePricebookEntry.get("product2id"));
+				//load product components
+				loadComponentsByProductAsync(singlePricebookEntry.get("product2id"));
+	     		document.getElementById("product2IdForPricebookEntryId" + singlePricebookEntry.get("id")).id = "productNameForProduct2Id" + singlePricebookEntry.get("product2id");	
+    		}     		
+     	} else {
+     		alert (result);
+     	}
+    }
+    
+    
+    //start block to display products for an opportunity   
+    function displayProductNameInProductsAsync(id) {
+		retrieveProductNameAsync(id);
+	}   
+	    
+	    
+	//this now will operate off the Product2 table    
+    function retrieveProductNameAsync(id) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForProductName(result);
+   		};
+   		
+   		var query = "Select name, id From product2 where Id = '" + id + "'";
+   		sforceClient.query(query, processResult);    	
+    }
+    
+    function executeQueryForProductName(result) {        
+    	if (result.className != "Fault") {
+     		if (result.records.length == 1) {
+     			//load the productNameCache
+	     		var singleProduct = result.records[0];	   
+	     		productNameCache[singleProduct.get("id")] = singleProduct.get("name");	
+	     		//update the name field on the page
+	     		document.getElementById("productNameForProduct2Id" + singleProduct.get("id")).innerHTML = singleProduct.get("name");	
+    		}     		
+     	} else {
+     		alert (result);
+     	}
+    }	 
+
+	//load product components for each product (by product2id)
+	
+	
+	    
+    function loadComponentsByProductAsync(productId) {
+
+   		var processResult = function (result) {   			
+   			executeQueryForComponentsByProduct(result);
+   		};
+   		
+   		var query = "Select p.Product_Component__c, p.Quantity__c, p.Product__c From Product_Component_Link__c p where p.Product__c = '" + productId + "'";
+   		console.log(query);
+   		sforceClient.query(query, processResult);    	
+    }
+        
+    function executeQueryForComponentsByProduct(result) {        
+    	if (result.className != "Fault") {
+     		if (result.records.length > 0) {
+     			//load the cache
+     			
+     			var componentsForSingleProduct = new Array();
+     			var productId = "";
+     			
+     			for (var i=0;i<result.records.length;i++) {
+		     		var singleProductComponent = result.records[i];	   		
+					productId = singleProductComponent.get("Product__c");
+
+	     			var componentEntry = 
+	     				{
+	     					quantity: parseFloat(singleProductComponent.get("quantity__c")),
+	     					productComponentId: singleProductComponent.get("Product_Component__c"),
+	     					name: productComponentCache[singleProductComponent.get("Product_Component__c")].name
+	     				};
+	     				
+	     			//we need checking for duplicates
+	     			componentsForSingleProduct.push(componentEntry);
+	     			console.log("Component loaded: " + componentEntry.name + ": " + componentEntry.productComponentId + ", " + componentEntry.quantity);	     					
+	     		}
+	     		
+	     		componentsByProductIdCache[productId] = componentsForSingleProduct;
+    		}     		
+     	} else {
+     		alert (result);
+     	}
+    }  
+	     
+	     
+	     
+	//load all product components   
+    function loadProductComponentsAsync() {
+
+   		var processResult = function (result) {   			
+   			executeQueryForProductComponents(result);
+   		};
+   		
+   		var query = "Select p.Id, p.Name from product_Component__c p";
+   		sforceClient.query(query, processResult);    	
+    }
+    
+    function executeQueryForProductComponents(result) {        
+    	if (result.className != "Fault") {
+    	
+     		if (result.records.length > 0) {
+     		
+     			for (var i=0; i<result.records.length; i++) {
+	     			//load the productNameCache
+		     		var singleProduct = result.records[i];	
+		     		var productEntry = {
+		     								name: singleProduct.get("name"),
+		     								id: singleProduct.get("id")
+		     							};   
+		     		productComponentCache[singleProduct.get("id")] = productEntry;
+	     		}
+	     		
+	     		console.log("Product Component Cache loaded: " + result.records.length);
+	
+    		}     		
+     	} else {
+     		alert (result);
+     	}
+    }	     
+
+    
+
+ 
+-->
+</script>
+
+</head>
+<body onload="initPage()" class="contract  detailPage">
+    <!-- Main Body Starts Here -->
+    <div class="bPageHeader">
+
+        
+    </div>
+    <form id="contractCreation" name="contractCreation">
+    <table class="outer" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <!-- Start page content table -->
+        
+        <tr>
+            <td class="oRight">
+                <!-- Start page content --> 
+                <a name="skiplink">
+                <img src="/s.gif" height="1" width="1" alt="Content Starts Here" class="skiplink">
+                </a>
+                <div class="bPageTitle">
+                    <div class="ptBody secondaryPalette">
+                        <div class="content">
+                            <img src="/s.gif" alt="Contract"  class="pageTitleIcon"><h1 class="pageType">IntApp Contract Wizard
+                            <span  class="titleSeparatingColon">
+                            :
+                            </span>
+                            </h1><h2 class="pageDescription"><div id="opportunityNameHeader"></div></h2>
+                            <div class="blank">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="links">
+                            
+                        </div>
+                    </div>
+                    <div class="ptBreadcrumb">
+                        
+                    </div>
+                </div>
+                
+                
+                <div class="bPageBlock secondaryPalette" id="ep">
+                    <div class="pbHeader">
+                        <TABLE  cellpadding="0" cellspacing="0" border="0">
+                            <TR>
+                                <TD class="pbTitle"><img src="/s.gif" alt="" title="" width="1" height="1" class="minWidth">
+                                    <h2 class="mainTitle">Contract Information</h2>
+                                </TD>
+                            </TR>
+                        </TABLE>
+                    </div>                    
+                   <div class="pbBody">
+	                    <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+	                            <h3>Description</h3>
+	                    </div>
+                        <div class="pbSubsection">
+                            <TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+                                <TR>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol col02 last">&nbsp;</TD>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol last">&nbsp;</TD>
+                                </TR>
+                                <TR>
+                                    <TD class="labelCol">For Account</TD>
+                                    <TD class="dataCol col02"><div id="contractAccountName"></div></TD>                                    
+                                </TR>
+                                <TR>
+                                    <TD class="labelCol">Contract Name</TD>
+                                    <TD class="dataCol col02"><input size=30 type=text name="contractName" id="contractName"></TD>                                    
+                                </TR>
+
+
+                                <TR>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol col02 last">&nbsp;</TD>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol last">&nbsp;</TD>
+                                </TR>
+                            </TABLE>
+                        </div>
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <h3>Contract Details</h3>
+                        </div>
+                        <div class="pbSubsection">
+                       
+						<TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+                                <TR>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol col02 last">&nbsp;</TD>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol last">&nbsp;</TD>
+                                </TR>
+                                <TR>
+                                    <TD class="labelCol">Start Date</TD>
+                                    <TD class="dataCol col02"><input  class="format-m-d-y divider-dash" size=15 type=text name="startDate" id="startDate" readonly>
+                                    </TD>                                    
+                                </TR>
+                                <TR>
+                                    <TD class="labelCol">Valid Through Date</TD>
+                                    <TD class="dataCol col02"><input class="format-m-d-y divider-dash" size=15 type=text name="validThroughDate" id="validThroughDate" readonly>
+                                   </TD>                                    
+                                </TR>
+								<TR>
+                                    <TD class="labelCol">Recipient Name</TD>
+                                    <TD class="dataCol col02"><div id="contractRecipSelectHtml">Loading...</div></TD>                                    
+                                </TR>
+                                <TR>
+                                    <TD class="labelCol">Recipient Title</TD>
+                                    <TD class="dataCol col02"><input size=20 type=text name="contractRecipientTitle" id="contractRecipientTitle"></TD>                                    
+                                </TR>
+								<TR>
+                                    <TD class="labelCol">Recipient Phone Number</TD>
+                                    <TD class="dataCol col02"><input size=20 type=text name="contractRecipientPhone" id="contractRecipientPhone"></TD>                                    
+                                </TR>
+                                <TR>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol col02 last">&nbsp;</TD>
+                                    <TD class="labelCol last">&nbsp;</TD>
+                                    <TD class="dataCol last">&nbsp;</TD>
+                                </TR>
+                            </TABLE>
+									
+                                
+                        </div>
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <h3>Products</h3>&nbsp;&nbsp;&nbsp;&nbsp;<input value=" Incorrect products? Return to Opportunity "  class="btn" type="button" title="Delete" onclick="returnToOppy()" name="del">
+                        </div>
+                        <br>
+                        <div class="pbSubsection">
+						<div id="productListHtml">Loading... Test</div>
+                        </div>
+                        
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <h3>Financial Terms</h3>
+                        </div>
+                        
+                        <div class="pbSubsection">
+                            <TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+                                <TR>
+                                    <TD class="labelCol">Total Amount</TD>
+                                    <TD class="dataCol col02"><input size=10 type=text name="totalOpportunityPrice" id="totalOpportunityPrice" value="0.00" disabled></TD>
+                                    <TD class="labelCol"></TD>
+                                    <TD class="dataCol"></TD>
+                                </TR>
+								<TR>
+                                    <TD class="labelCol">Special Terms</TD>
+                                    <TD class="dataCol col02"><textarea rows=3 cols=50 name="specialTerms" id="specialTerms"></textarea></TD>
+                                    <TD class="labelCol"></TD>
+                                    <TD class="dataCol"></TD>
+                                </TR>
+                            </TABLE>
+                        </div>
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <h3>Other</h3>
+                        </div>
+                        
+                        <div class="pbSubsection">
+                            <TABLE  class="detailList" cellpadding="0" cellspacing="0" border="0">
+                                <TR>
+                                    <TD class="labelCol">Notes</TD>
+                                    <TD class="dataCol col02"><textarea rows=3 cols=50 name="notes" id="notes"></textarea></TD>
+                                    <TD class="labelCol"></TD>
+                                    <TD class="dataCol"></TD>
+                                </TR>
+
+                            </TABLE>
+                        </div>
+                        <div id="messages">
+                        
+                        </div>
+                        <div class="pbSubheader tertiaryPalette" id="head_01B30000001VaWc_ep">
+                            <input value=" Create Contract "  class="btn" type="button" title="Edit" onclick="if (window.confirm('Are you sure?')) processForm()" name="Create Order">
+                            <input value=" Cancel and Return To Opportunity "  class="btn" type="button" title="Delete" onclick="returnToOppy()" name="del">
+                            </h3>
+                   </div>
+                    </div>
+
+                    <div class="pbFooter secondaryPalette">
+                        <div class="bg">
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <!-- End page content --></td>
+        </tr>
+        
+    </table>
+    </form>
+    
+</body>
+</html>

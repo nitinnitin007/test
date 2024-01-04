@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Related Project for Output History</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Related Project for Output History</inlineHelpText>
+    <label>Project</label>
+    <referenceTo>pse__Proj__c</referenceTo>
+    <relationshipLabel>Output Histories</relationshipLabel>
+    <relationshipName>Output_Histories</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Unit_Price__c</fullName>
+    <description>BIZ-46254</description>
+    <externalId>false</externalId>
+    <formula>IF( 
+ISPICKVAL(Guided_Selling_Type__c, &apos;Services&apos;),
+SBQQ__NetTotal__c ,
+(SBQQ__NetTotal__c / IF(SBQQ__SegmentIndex__c=  1, Segment_Months__c,12)) / SBQQ__EffectiveQuantity__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Monthly Net Unit Price</inlineHelpText>
+    <label>Net Unit Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

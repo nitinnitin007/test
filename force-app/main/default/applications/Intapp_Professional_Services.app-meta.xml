@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#4E8ABE</headerColor>
+        <logo>Intapp_logo_and_mark_RGB_large</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>This app is optimized for members of the Intapp Services team.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Intapp Professional Services</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Professional_Services</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Standard User - Professional Services</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>System_Administrator_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>pse__Proj__c</tabs>
+    <tabs>pse__Timecard_Header__c</tabs>
+    <tabs>Time_Billing__c</tabs>
+    <tabs>pse__Resource_Request__c</tabs>
+    <tabs>pse__Assignment__c</tabs>
+    <tabs>pse__Milestone__c</tabs>
+    <tabs>pse__Expense_Report__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>Services_SOW__c</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Contract</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>Report_Builder</tabs>
+    <tabs>Intapp_Pricing__c</tabs>
+    <tabs>Engagio</tabs>
+    <tabs>Approvers_Matrix__c</tabs>
+    <tabs>Product_Rollup__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

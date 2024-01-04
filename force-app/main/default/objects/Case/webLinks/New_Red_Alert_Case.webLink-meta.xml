@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Red_Alert_Case</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Project Escalation Case</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/500/e?retURL=/{!pse__Proj__c.Id} 
+&amp;aid={!pse__Proj__c.Id} 
+&amp;CF00N50000009OyhJ_lkid={!pse__Proj__c.Id} 
+&amp;CF00N50000009OyhJ={!pse__Proj__c.Name} 
+&amp;cas4_lkid={!pse__Proj__c.pse__AccountId__c}
+&amp;cas4={!pse__Proj__c.pse__Account__c}
+&amp;CF00N50000009Oyq1_lkid={!pse__Proj__c.pse__Project_ManagerId__c}
+&amp;CF00N50000009Oyq1={!pse__Proj__c.pse__Project_Manager__c}
+&amp;00N50000002BDE1={!pse__Proj__c.Intapp_Project_Type__c}
+&amp;RecordType=0123000000008KH
+&amp;ent=Case</url>
+</WebLink>

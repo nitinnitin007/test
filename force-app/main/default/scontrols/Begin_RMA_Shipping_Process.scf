@@ -1,0 +1,101 @@
+<html>
+<head>
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/8.0/connection.js"></script>
+    <script language="javascript" src="https://www.salesforce.com/services/lib/ajax/beta3.3/sforceclient.js?browser=true" type="text/javascript"></script>
+ 
+    <script>
+    <!--
+    
+    /*  perform the following
+     (x) Create collection order
+     () Create order header
+     () close and refresh original page     
+    */
+    
+    var caseId = "{!Case.Id}";
+	var accountId = "{!Case.AccountId}";
+	var serialNumber = "{!Case.Defective_Appliance_Serial__c}";
+    var applianceCollectionRecordTypeId = "012500000009ABLAA2";
+    var comments = "Automatically created with RMA automation";
+   
+   	function initPage() {
+       sforceClient.registerInitCallback(setup);
+       sforceClient.init("{!API.Session_ID}", "https://na3.salesforce.com/services/Soap/u/8.0", true);
+       
+    }
+    
+    //Use this function as the entry point for your DHTML and JAVASCRIPT processing
+    function setup() {      
+      main();       
+    }
+   
+    
+    //begin 
+     
+    function main() {
+
+  	   	var newCollectionOrder = new Sforce.Dynabean("Collection_Order__c");
+  	   	
+  	   	//set attributes
+  	   	newCollectionOrder.set("recordtypeid", applianceCollectionRecordTypeId);
+		newCollectionOrder.set("serial_number__c", serialNumber);
+		newCollectionOrder.set("case__c", caseId);
+		newCollectionOrder.set("account__c", accountId);
+		newCollectionOrder.set("comments__c", comments);
+
+  	   	var result = newCollectionOrder.save();
+    	
+    	if (result.success == true) {
+  	   		newCollectionOrderId = result.id;
+  	   		
+  	   		//then add comment to original case and new case
+			addCommentToCase(caseId, "Collection order automatically added, https://na3.salesforce.com/" + newCollectionOrderId);
+
+ 	   		
+    		//close after processing completes and refresh owner page
+    		//redirectToId(newCaseId);   
+    		window.close(); 	
+    	}
+
+	    
+    }
+    
+    function addCommentToCase(caseId, commentBody) {
+    	var newComment = new Sforce.Dynabean("CaseComment");
+   		newComment.set("parentId", caseId);
+   		newComment.set("commentbody", commentBody);
+   		newComment.set("ispublished", false);
+   		var commentResult = newComment.save();
+    }
+    
+    function redirectToId(id) {
+    	location.href = "/" + id;
+    }
+    
+    //returns variable of records from salesforce
+    function query(queryString) {
+    
+    		//queryString = queryString.trim();
+    	
+     	if (queryString.length == 0) {
+     		return;
+     	}
+     	
+     	var result = sforceClient.query(queryString); 
+     	
+     	if (result.className != "Fault") {
+     		return result.records;
+     	} else {
+     		alert("There was an error: " + result.toString());
+     	}
+    	
+    }
+    
+    -->
+    </script>
+</head>
+
+<body onload="initPage()">
+</body>
+</html>
