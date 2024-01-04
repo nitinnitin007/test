@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>pse__ZZZ_test</fullName>
-    <active>false</active>
-    <errorConditionFormula>pse__Percent_Allocated__c  &gt; 0.70</errorConditionFormula>
-    <errorMessage>Percentage is greater than 70.</errorMessage>
-</ValidationRule>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>AVA_SFCPQ__Lock_Avalara_Certificate_Id_field</fullName>
-    <active>true</active>
-    <errorConditionFormula>PRIORVALUE(AVA_SFCPQ__Avalara_Certificate_Id__c) &gt; 0 &amp;&amp; ISCHANGED(AVA_SFCPQ__Avalara_Certificate_Id__c)</errorConditionFormula>
-    <errorDisplayField>AVA_SFCPQ__Avalara_Certificate_Id__c</errorDisplayField>
-    <errorMessage>Please do not edit this value</errorMessage>
-</ValidationRule>

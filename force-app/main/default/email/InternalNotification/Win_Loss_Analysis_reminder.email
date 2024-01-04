@@ -1,3 +1,0 @@
-This is a reminder to conduct the Win/Loss analysis for the Opportunity '{!Opportunity.Name}' that changed to {!Opportunity.StageName} on {!Opportunity.CloseDate}
-
-Details: {!Opportunity.Link}

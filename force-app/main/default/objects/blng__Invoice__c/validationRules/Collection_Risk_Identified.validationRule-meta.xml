@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Collection_Risk_Identified</fullName>
-    <active>true</active>
-    <errorConditionFormula>( ISPICKVAL(Collection_Risk__c, &quot;Customer Cannot Pay&quot;) || ISPICKVAL(Collection_Risk__c, &quot;Customer Will Not Pay&quot;) ) &amp;&amp; ISBLANK(Collection_Risk_Justification__c)</errorConditionFormula>
-    <errorMessage>Need Collection Risk Justification if Customer Cannot or Will not Pay</errorMessage>
-</ValidationRule>

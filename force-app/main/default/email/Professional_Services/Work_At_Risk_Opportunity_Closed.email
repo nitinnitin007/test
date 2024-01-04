@@ -1,8 +1,0 @@
-Hi, 
-
-An opportunity for an open Work At Risk project has been closed (not closed won). 
-
-Project: {!pse__Proj__c.pse__Project_ID__c}
-Opportunity: {!pse__Proj__c.pse__Opportunity__c}
-
-Detail Link: {!pse__Proj__c.Link}

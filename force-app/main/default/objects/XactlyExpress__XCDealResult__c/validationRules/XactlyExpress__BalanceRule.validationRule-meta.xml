@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>XactlyExpress__BalanceRule</fullName>
-    <active>true</active>
-    <errorConditionFormula>(XactlyExpress__HoldAmount__c &lt; 0 &amp;&amp;  XactlyExpress__HoldBalance__c &gt; 0.00001) ||
-(XactlyExpress__HoldAmount__c &gt; 0 &amp;&amp;  XactlyExpress__HoldBalance__c &lt; -0.00001)</errorConditionFormula>
-    <errorMessage>Hold balance cannot be less than 0.</errorMessage>
-</ValidationRule>

@@ -1,5 +1,0 @@
-This is a note to let you know that {!Contract.Account} has paid on contract {!Contract.Name}. 
-
-Line of Business: {!Contract.Applicable_Subsidiary__c}
-
-Detail: {!Contract.Link}

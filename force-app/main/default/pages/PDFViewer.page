@@ -1,5 +1,0 @@
-<apex:page controller="PDFViewerCtrl" showHeader="false" sidebar="false">
-
-  <apex:iframe src="data:application/pdf;base64,{!PDFData}" frameborder="false" height="600px;" scrolling="true" id="theIframe"/>
-
-</apex:page>

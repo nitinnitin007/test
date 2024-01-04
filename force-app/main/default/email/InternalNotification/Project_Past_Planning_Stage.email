@@ -1,9 +1,0 @@
-The following project has moved beyond the planning stage:
-
-Project Name: {!pse__Proj__c.Name}
-Project Stage: {!pse__Proj__c.pse__Project_Phase__c}
-Link: {!pse__Proj__c.Link}
-
-
-
-Rule Code: PR-025Exxx

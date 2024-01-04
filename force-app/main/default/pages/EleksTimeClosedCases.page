@@ -1,3 +1,0 @@
-<apex:page >
-  <c:CaseListViewComponent listViewName="Eleks Time_Closed"/>
-</apex:page>

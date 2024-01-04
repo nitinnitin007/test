@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>pse__Assignment_required</fullName>
-    <active>true</active>
-    <errorConditionFormula>LEN(pse__Assignment__c) = 0</errorConditionFormula>
-    <errorDisplayField>pse__Assignment__c</errorDisplayField>
-    <errorMessage>Assignment is required</errorMessage>
-</ValidationRule>

@@ -1,3 +1,0 @@
-<apex:page >
-  <apex:iframe id="syncIssue" src="https://www.intapp.com/jira/secure/SynchronizationIssueFromCase!default.jspa?caseId={!$CurrentPage.parameters.caseId}" />
-</apex:page>

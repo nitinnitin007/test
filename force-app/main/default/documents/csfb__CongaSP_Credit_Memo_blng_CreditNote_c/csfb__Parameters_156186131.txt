@@ -1,7 +1,0 @@
-&OFN=Credit Memo for {!blng__CreditNote__c.blng__Account__c} - {!blng__CreditNote__c.Name}
-&BML=Creating Credit Memo for {!blng__CreditNote__c.blng__Account__c}
-&ContactId={!blng__CreditNote__c.blng__BillToContactId__c}
-&DS7=11
-&XDO=CIA
-&XDO2=CreditMemo
-&GEO={!$User.Country}
