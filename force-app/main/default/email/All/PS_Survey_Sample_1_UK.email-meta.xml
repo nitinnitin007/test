@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Testing stuff.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>PS_Letterhead</letterhead>
+    <name>PS Survey Sample 1 - UK</name>
+    <style>freeForm</style>
+    <subject>Intapp Professional Services Survey</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+Following the completion of the Intapp [Product] project, please would you provide us with feedback on the delivery of the project - myself as the project manager, [Name] as the consultant, and [Name] as the engineer.
+
+Our approach to delivery is continuously reviewed and improved and customer feedback is vital to this. We strive for a 10 out of 10 (of course) and where you feel we have fallen short, we would like to know. And also what you feel went well. Where you feel we scored 7 or less, one of our directors will reach out to discuss your feedback further.
+
+Click here to take the survey
+
+Many thanks in advance,
+{!pse__Milestone__c.MilestoneProjectPMFullName__c}
+{!pse__Milestone__c.MilestoneProjectPMTitle__c}
+Intapp,Inc.
+http://www.intapp.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

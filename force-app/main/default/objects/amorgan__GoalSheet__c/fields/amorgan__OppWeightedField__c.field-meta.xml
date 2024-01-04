@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>amorgan__OppWeightedField__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Open Amount Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amount</fullName>
+                <default>false</default>
+                <label>Amount</label>
+            </value>
+            <value>
+                <fullName>ExpectedRevenue</fullName>
+                <default>false</default>
+                <label>ExpectedRevenue</label>
+            </value>
+            <value>
+                <fullName>Maintenance_Amount__c</fullName>
+                <default>false</default>
+                <label>Maintenance_Amount__c</label>
+            </value>
+            <value>
+                <fullName>FS_MGR_Forecast_Amount__c</fullName>
+                <default>false</default>
+                <label>FS_MGR_Forecast_Amount__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

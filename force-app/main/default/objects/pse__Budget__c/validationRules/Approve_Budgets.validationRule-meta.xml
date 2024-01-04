@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approve_Budgets</fullName>
+    <active>true</active>
+    <description>Only certain users/profiles can approve budgets</description>
+    <errorConditionFormula>AND( 
+  ISCHANGED(pse__Status__c), 
+  ISPICKVAL(pse__Status__c, &quot;Approved&quot;), 
+  NOT($Profile.Id=&quot;00e50000000hvYe&quot;), 
+  NOT($Profile.Id=&quot;00e30000000bvR3&quot;), 
+  NOT($Profile.Id=&quot;00e50000001BmUZ&quot;),
+  NOT($User.Id=&quot;00550000005YQdR&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>pse__Status__c</errorDisplayField>
+    <errorMessage>Only administrators can approve budgets.</errorMessage>
+</ValidationRule>

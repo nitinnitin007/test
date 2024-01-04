@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PSA_Expense_Report_Rejected_Final</fullName>
+        <description>PSA Expense Report Rejected Final</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Resource__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Expense_Report_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Expense_Report_Rejected_Step_2</fullName>
+        <description>PSA Expense Report Rejected (Step 2)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Expense_Report_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Expense_Report_Rejected_Step_3</fullName>
+        <description>PSA Expense Report Rejected (Step 3)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Expense_Report_Users_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Expense_Report_Rejected</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Check_Include_in_Financials_Flag</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Include in Financials Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_Approved_Date</fullName>
+        <description>Set Approved Date when final approval is achieved.</description>
+        <field>Approved_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>PSA Expense Report Set Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_Finance_Approved</fullName>
+        <description>Set the Finance Approved Flag</description>
+        <field>Finance_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Expense Report Set Finance Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_PM_Approved</fullName>
+        <description>Set the Project Manager Approved Flag</description>
+        <field>Project_Manager_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Expense Report Set PM Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_Status_Approved</fullName>
+        <description>Set Expense Report Status to Approved</description>
+        <field>pse__Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>PSA Expense Report Set Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_Status_Draft</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Draft</literalValue>
+        <name>PSA Expense Report Set Status Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_Status_Rejected</fullName>
+        <description>Set Expense Report Status to Rejected</description>
+        <field>pse__Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>PSA Expense Report Set Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_Status_Submitted</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>PSA Expense Report Set Status Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_User_Mgr_Approved</fullName>
+        <description>Set the User Manager Approved Flag</description>
+        <field>User_Manager_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Expense Report Set User Mgr Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_User_Mngr_Email</fullName>
+        <description>Set the PSA Expense Report Users Manager Email field on the Expense Report object to the Resource&apos;s Manager Email.</description>
+        <field>Expense_Report_Users_Manager_Email__c</field>
+        <formula>pse__Resource__r.pse__Salesforce_User__r.Manager.Email</formula>
+        <name>PSA Expense Report Set User Mngr Email 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Set_User_Mngr_Email_2</fullName>
+        <description>Set User Manager Email to the Project Manager&apos;s Manager&apos;s email address.</description>
+        <field>Expense_Report_Users_Manager_Email__c</field>
+        <formula>pse__Project__r.pse__Project_Manager__r.pse__Salesforce_User__r.Manager.Email</formula>
+        <name>PSA Expense Report Set User Mngr Email 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Unset_Approved_Date</fullName>
+        <description>PSA Expense Report Unset Approved Date</description>
+        <field>Approved_Date__c</field>
+        <name>PSA Expense Report Unset Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Unset_Finance_Approve</fullName>
+        <description>Unset the Finance Approved Flag</description>
+        <field>Finance_Approved__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Expense Report Unset Finance Approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Unset_PM_Approved</fullName>
+        <description>Unset the Project Manager Approved Flag</description>
+        <field>Project_Manager_Approved__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Expense Report Unset PM Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Unset_Submitted_Flag</fullName>
+        <description>Unset Submitted Flag</description>
+        <field>pse__Submitted__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Expense Report Unset Submitted Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Expense_Report_Unset_User_Mgr_Apprvd</fullName>
+        <description>Unset the User Manager Approved Flag</description>
+        <field>User_Manager_Approved__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Expense Report Unset User Mgr Apprvd</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Exp_Report_Set_Action_Include_Flag</fullName>
+        <field>pse__Action_Check_Include_In_Financials__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Exp Report Set Action: Include Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Exp_Report_Set_Approved_Flag</fullName>
+        <field>pse__Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Exp Report Set Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Exp_Report_Set_Submitted_Flag</fullName>
+        <field>pse__Submitted__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Exp Report Set Submitted Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Exp_Report_Unset_Action_Include_Flag</fullName>
+        <field>pse__Action_Check_Include_In_Financials__c</field>
+        <literalValue>0</literalValue>
+        <name>PSE Exp Report Unset Action:Include Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Exp_Report_Unset_Approved_Flag</fullName>
+        <field>pse__Approved__c</field>
+        <literalValue>0</literalValue>
+        <name>PSE Exp Report Unset Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Expense_Report_Set_Submitted_Flag</fullName>
+        <field>pse__Submitted__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Expense Report Set Submitted Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Record_to_Submitted</fullName>
+        <field>pse__Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Set Record to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>SendExpenseReportToDTE</fullName>
+        <apiVersion>36.0</apiVersion>
+        <endpointUrl>https://www.intapp.com/SalesForceSync/DTE/ExpenseReport/ExpenseReportNotificationService.asmx</endpointUrl>
+        <fields>Id</fields>
+        <fields>Name</fields>
+        <fields>pse__Project__c</fields>
+        <fields>pse__Resource__c</fields>
+        <fields>pse__Status__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>alan.westley@intapp.com</integrationUser>
+        <name>SendExpenseReportToDTE</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Rule Code%3A ER-001xFxx</fullName>
+        <actions>
+            <name>PSA_Expense_Report_Set_Finance_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Set_PM_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Set_User_Mgr_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Set_Action_Include_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Set_Approved_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Set_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Expense_Report__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Rule Code: ER-001xFxx
+PSA Exp Report Status Set to Approved
+When the Exp Report status is set to Approved it will Check the submitted &amp; approved flags &amp; check the Action: Include Flag.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ER-002xFxx</fullName>
+        <actions>
+            <name>PSA_Expense_Report_Unset_Finance_Approve</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Unset_PM_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Unset_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Unset_User_Mgr_Apprvd</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Unset_Action_Include_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Unset_Approved_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Expense_Report__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </criteriaItems>
+        <description>Rule Code: ER-002xFxx
+PSA Exp Report Status Set to Rejected
+When the Expense Report status is set to Rejected it will uncheck the approved flag &amp; the Action: Include Flag.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ER-003xFxx</fullName>
+        <actions>
+            <name>PSE_Expense_Report_Set_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Expense_Report__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+        <description>Rule Code: ER-003xFxx
+PSA Expense Report Set Submitted Flag
+This will set the submitted check box on the expense report when the status is set to a value corresponding to submitted. Customers may choose to change the values in the status drop down</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ER-004xFxx</fullName>
+        <actions>
+            <name>PSA_Expense_Report_Set_User_Mngr_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ER-004xFxx
+PSA Expense Report Set User Manager Email (Billable)
+Set the PSA Expense Report Users Manager Email field on the Expense Report object to the Resource Manager.</description>
+        <formula>AND( ISNEW()||ISCHANGED( pse__Status__c ),  pse__Billable__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ER-005xFxx</fullName>
+        <actions>
+            <name>PSA_Expense_Report_Set_User_Mngr_Email_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ER-005xFxx
+PSA Expense Report Set User Manager Email (Not Billable)
+Set the PSA Expense Report Users Manager Email field on the Expense Report object to the Project Manager&apos;s Manager.</description>
+        <formula>AND( ISNEW()||ISCHANGED( pse__Status__c ),  NOT( pse__Billable__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ER-006xFxx</fullName>
+        <actions>
+            <name>PSA_Expense_Report_Unset_Finance_Approve</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Unset_PM_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Unset_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Expense_Report_Unset_User_Mgr_Apprvd</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Unset_Action_Include_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Exp_Report_Unset_Approved_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Expense_Report__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected,Draft</value>
+        </criteriaItems>
+        <description>Rule Code: ER-006xFxx
+PSA Expense Report Unset Submitted Flag
+Unchecks the submitted check box on the expense report when the status is set to a value corresponding to not submitted.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ER-011xxOx</fullName>
+        <actions>
+            <name>SendExpenseReportToDTE</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ER-011xxOx
+UpdateExpenseReportInDTE
+Sends an outbound message in DTE that updates the Contact</description>
+        <formula>ISNEW() ||
+ISCHANGED(pse__Status__c) ||
+ISCHANGED(pse__Approved__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

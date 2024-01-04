@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>refedge__Minimum_Sales_Stage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Sales requests can only be made for Opportunities that are AT or PAST this sales stage.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Sales requests can only be made for Opportunities that are AT or PAST this sales stage.</inlineHelpText>
+    <label>Minimum Sales Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Informed of Potential Cancellation</fullName>
+                <default>false</default>
+                <label>Informed of Potential Cancellation</label>
+            </value>
+            <value>
+                <fullName>Discussing with Customer</fullName>
+                <default>false</default>
+                <label>Discussing with Customer</label>
+            </value>
+            <value>
+                <fullName>Engaged in Remediation</fullName>
+                <default>false</default>
+                <label>Engaged in Remediation</label>
+            </value>
+            <value>
+                <fullName>Final Negotiations</fullName>
+                <default>false</default>
+                <label>Final Negotiations</label>
+            </value>
+            <value>
+                <fullName>ACV Outcome Certain</fullName>
+                <default>false</default>
+                <label>ACV Outcome Certain</label>
+            </value>
+            <value>
+                <fullName>Management Approval</fullName>
+                <default>false</default>
+                <label>Management Approval</label>
+            </value>
+            <value>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+                <label>Closed Won</label>
+            </value>
+            <value>
+                <fullName>Closed Lost</fullName>
+                <default>false</default>
+                <label>Closed Lost</label>
+            </value>
+            <value>
+                <fullName>Closed - No Decision</fullName>
+                <default>false</default>
+                <label>Closed - No Decision</label>
+            </value>
+            <value>
+                <fullName>Recurring Cancelled</fullName>
+                <default>false</default>
+                <label>Recurring Cancelled</label>
+            </value>
+            <value>
+                <fullName>Closed - Avoided Cancellation</fullName>
+                <default>false</default>
+                <label>Closed - Avoided Cancellation</label>
+            </value>
+            <value>
+                <fullName>Closed Won Adjustment</fullName>
+                <default>false</default>
+                <label>Closed Won Adjustment</label>
+            </value>
+            <value>
+                <fullName>Waiting for Finance to send bill</fullName>
+                <default>false</default>
+                <label>Waiting for Finance to send bill</label>
+            </value>
+            <value>
+                <fullName>Waiting for payment</fullName>
+                <default>false</default>
+                <label>Waiting for payment</label>
+            </value>
+            <value>
+                <fullName>Closed - Renewed without change</fullName>
+                <default>false</default>
+                <label>Closed - Renewed without change</label>
+            </value>
+            <value>
+                <fullName>Closed - Renewed with User Increase</fullName>
+                <default>false</default>
+                <label>Closed - Renewed with User Increase</label>
+            </value>
+            <value>
+                <fullName>Closed - Cancelled</fullName>
+                <default>false</default>
+                <label>Closed - Cancelled</label>
+            </value>
+            <value>
+                <fullName>Closed - Superseded New Contract</fullName>
+                <default>false</default>
+                <label>Closed - Superseded New Contract</label>
+            </value>
+            <value>
+                <fullName>Recurring Adjustment</fullName>
+                <default>false</default>
+                <label>Recurring Adjustment</label>
+            </value>
+            <value>
+                <fullName>Closed - Billing Restarted</fullName>
+                <default>false</default>
+                <label>Closed - Billing Restarted</label>
+            </value>
+            <value>
+                <fullName>Closed - Should Never have been opened</fullName>
+                <default>false</default>
+                <label>Closed - Should Never have been opened</label>
+            </value>
+            <value>
+                <fullName>Processing Pause</fullName>
+                <default>false</default>
+                <label>Processing Pause</label>
+            </value>
+            <value>
+                <fullName>Closed - Merged</fullName>
+                <default>false</default>
+                <label>Closed - Merged</label>
+            </value>
+            <value>
+                <fullName>CS Review</fullName>
+                <default>false</default>
+                <label>CS Review</label>
+            </value>
+            <value>
+                <fullName>Validation</fullName>
+                <default>false</default>
+                <label>Validation</label>
+            </value>
+            <value>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+                <label>Proposal</label>
+            </value>
+            <value>
+                <fullName>Pending Approval - Billing Pause</fullName>
+                <default>false</default>
+                <label>Pending Approval - Billing Pause</label>
+            </value>
+            <value>
+                <fullName>Billing Pause Approved</fullName>
+                <default>false</default>
+                <label>Billing Pause Approved</label>
+            </value>
+            <value>
+                <fullName>Selected</fullName>
+                <default>false</default>
+                <label>Selected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Lifecycle_Stage_Required</fullName>
+    <active>true</active>
+    <description>Makes the Customer Lifecycle Stage field required upon exiting the pending closure project states.</description>
+    <errorConditionFormula>AND(
+  ISBLANK(TEXT(Customer_Lifecycle_Stage__c)),
+  CONTAINS(TEXT(pse__Stage__c), &quot;Pending&quot;),
+  NOT($Profile.Id=&quot;00e30000000bvR3&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Customer_Lifecycle_Stage__c</errorDisplayField>
+    <errorMessage>Customer Lifecycle Stage is required when closing a project.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,81 @@
+<apex:page controller="ArticlesController">
+    <style>
+        body {
+         background-color: transparent;
+        }
+        td {
+         verticle-align:top;
+        }
+        
+        .bPageBlock .pbHeader {
+          background-color: #999999;
+        }
+    </style>
+    <apex:form id="frm">
+        
+     <table width="100%">
+         <colgroup>
+           <col width="50%"/>
+           <col width="50%"/>
+         </colgroup>
+     
+           <tr>
+               <td colspan="2" valign="top"> 
+                 <c:ProductNews label="Product News" limit="5" recordTypeName="Product_News"/>
+               </td>
+           </tr>
+           <tr>
+             <td valign="top">
+               <c:ProductDocs label="Product Documentation & Release Notes" articleType="Release_Note"/>
+             </td> 
+             <td valign="top">
+               <c:ProductDocs label="Supported Environments" articleType="Supported_Environment"/>
+             </td>
+           </tr>
+            
+           <tr>
+           <td valign="top">
+             <apex:pageBlock title="Most Recent Articles">
+                 <div id="mostRecent"> 
+                     <br/>
+                     <label><b>Most Recent</b></label>
+                     <ul>
+                       <knowledge:articleList articleVar="article"  sortBy="mostRecent"  pageSize="10">
+                          <li><a href="{!URLFOR($Action.KnowledgeArticle.View, article.id, [popup="true"])}" >{!article.title}</a></li>
+                       </knowledge:articleList>
+                     </ul>
+                      </div>
+
+                        <br/>             
+             </apex:pageBlock>
+             <br/><br/><br/><br/><br/><br/><br/>
+             </td>
+             
+             <td valign="top">
+                <apex:pageBlock title="Most Viewed Articles">
+                <div>
+                      <div id = "mostViewed" > 
+                          <br/>
+                          <label><b>Most Viewed</b></label>
+                            <ul>
+                                <!--  <knowledge:articleList articleVar="article" sortBy="mostViewed"  pageSize="2">
+                                    <li><a href="{!URLFOR($Action.KnowledgeArticle.View, article.id, [popup="true"])}" >{!article.title}</a></li>
+                                </knowledge:articleList>
+                                -->
+                                <apex:repeat value="{!Articles}" var="item">
+                                <li>
+                                    <a href="/portal/articles/{!SUBSTITUTE(item.articleType,'__kav','')}/{!item.UrlName}?popup=true">{!item.Title}</a>
+                                </li>
+                                </apex:repeat>
+                            </ul>
+                            
+                        </div>
+                <br/>
+                              </div>                  
+                </apex:pageBlock>
+                <!--<c:ProductDocs limit="5" label="TOP TEN ARTICLES"/>--><br/><br/><br/>
+         </td>
+       </tr>
+     </table>
+    </apex:form>
+</apex:page>

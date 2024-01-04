@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hours_Delta_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for exceeding budget hours</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not relevant (Project was under budget)</fullName>
+                <default>false</default>
+                <label>Not relevant (Project was under budget)</label>
+            </value>
+            <value>
+                <fullName>Within 10% of budgeted hours</fullName>
+                <default>false</default>
+                <label>Within 10% of budgeted hours</label>
+            </value>
+            <value>
+                <fullName>Under-scoped</fullName>
+                <default>false</default>
+                <label>Under-scoped</label>
+            </value>
+            <value>
+                <fullName>Ramp-up of Intapp Resource</fullName>
+                <default>false</default>
+                <label>Ramp-up of Intapp Resource</label>
+            </value>
+            <value>
+                <fullName>Ramp-up of Intapp Partner</fullName>
+                <default>false</default>
+                <label>Ramp-up of Intapp Partner</label>
+            </value>
+            <value>
+                <fullName>Product Issues</fullName>
+                <default>false</default>
+                <label>Product Issues</label>
+            </value>
+            <value>
+                <fullName>Client End User Adoption Issues</fullName>
+                <default>false</default>
+                <label>Client End User Adoption Issues</label>
+            </value>
+            <value>
+                <fullName>Change Request should have been issued, was not</fullName>
+                <default>false</default>
+                <label>Change Request should have been issued, was not</label>
+            </value>
+            <value>
+                <fullName>New Product Introduction</fullName>
+                <default>false</default>
+                <label>New Product Introduction</label>
+            </value>
+            <value>
+                <fullName>Problems with Third Party Product</fullName>
+                <default>false</default>
+                <label>Problems with Third Party Product</label>
+            </value>
+            <value>
+                <fullName>Rework due to Intapp Mistake</fullName>
+                <default>false</default>
+                <label>Rework due to Intapp Mistake</label>
+            </value>
+            <value>
+                <fullName>Intapp Resource Turnover</fullName>
+                <default>false</default>
+                <label>Intapp Resource Turnover</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

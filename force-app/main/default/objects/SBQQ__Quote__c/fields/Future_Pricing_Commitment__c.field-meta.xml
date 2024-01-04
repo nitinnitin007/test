@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_Pricing_Commitment__c</fullName>
+    <description>Updated data type from checkbox to picklist as per story BIZ-48165</description>
+    <externalId>false</externalId>
+    <label>Future Pricing Commitment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional Named Users at Current Price</fullName>
+                <default>false</default>
+                <label>Additional Named Users at Current Price</label>
+            </value>
+            <value>
+                <fullName>Standard Seats - Discounted Price</fullName>
+                <default>false</default>
+                <label>Standard Seats - Discounted Price</label>
+            </value>
+            <value>
+                <fullName>Standard Seats - Tiered Pricing</fullName>
+                <default>false</default>
+                <label>Standard Seats - Tiered Pricing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

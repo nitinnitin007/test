@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>com_smartsheet__status__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>new</fullName>
+                <default>true</default>
+                <label>new</label>
+            </value>
+            <value>
+                <fullName>queued</fullName>
+                <default>false</default>
+                <label>queued</label>
+            </value>
+            <value>
+                <fullName>initializing</fullName>
+                <default>false</default>
+                <label>initializing</label>
+            </value>
+            <value>
+                <fullName>waiting for salesforce to process</fullName>
+                <default>false</default>
+                <label>waiting for salesforce to process</label>
+            </value>
+            <value>
+                <fullName>processing</fullName>
+                <default>false</default>
+                <label>processing</label>
+            </value>
+            <value>
+                <fullName>complete</fullName>
+                <default>false</default>
+                <label>complete</label>
+            </value>
+            <value>
+                <fullName>error</fullName>
+                <default>false</default>
+                <label>error</label>
+            </value>
+            <value>
+                <fullName>canceled</fullName>
+                <default>false</default>
+                <label>canceled</label>
+            </value>
+            <value>
+                <fullName>completed with warnings</fullName>
+                <default>false</default>
+                <label>completed with warnings</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

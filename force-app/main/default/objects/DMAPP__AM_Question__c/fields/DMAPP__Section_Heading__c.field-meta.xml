@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DMAPP__Section_Heading__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Section Heading</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Executive Summary</fullName>
+                <default>false</default>
+                <label>Executive Summary</label>
+            </value>
+            <value>
+                <fullName>Customer Profile</fullName>
+                <default>false</default>
+                <label>Customer Profile</label>
+            </value>
+            <value>
+                <fullName>Customer Relationship</fullName>
+                <default>false</default>
+                <label>Customer Relationship</label>
+            </value>
+            <value>
+                <fullName>Strategic Alignment</fullName>
+                <default>false</default>
+                <label>Strategic Alignment</label>
+            </value>
+            <value>
+                <fullName>Portfolio Summary</fullName>
+                <default>false</default>
+                <label>Portfolio Summary</label>
+            </value>
+            <value>
+                <fullName>Account Overview</fullName>
+                <default>false</default>
+                <label>Account Overview</label>
+            </value>
+            <value>
+                <fullName>Firm Profile</fullName>
+                <default>false</default>
+                <label>Firm Profile</label>
+            </value>
+            <value>
+                <fullName>Marketing and References</fullName>
+                <default>false</default>
+                <label>Marketing and References</label>
+            </value>
+            <value>
+                <fullName>Customer Success</fullName>
+                <default>false</default>
+                <label>Customer Success</label>
+            </value>
+            <value>
+                <fullName>Practice Groups Perspective</fullName>
+                <default>false</default>
+                <label>Practice Groups Perspective</label>
+            </value>
+            <value>
+                <fullName>Consulting Group Perspective</fullName>
+                <default>false</default>
+                <label>Consulting Group Perspective</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

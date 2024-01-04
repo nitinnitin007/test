@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__AttributionLookForwardBuffer__c</fullName>
+    <defaultValue>0</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Campaign Attrribution will consider records that fall between the Campaign Influence Time Period and the Customer Path transition date + Attribution Look Forward Buffer (this field).  This allows you to Attribute Campaign Member records that do not exist by the time the Customer Path record is created.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Campaign Attrribution will consider records that fall between the Campaign Influence Time Period and the Customer Path transition date +Attribution Look Forward Buffer (this field).</inlineHelpText>
+    <label>Attribution Look Forward Buffer</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

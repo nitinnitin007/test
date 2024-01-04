@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <name>If_Payment_created_for_Proforma</name>
+        <label>If Payment created for Proforma</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Payment_done</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Proforma_Invoice__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__Amount__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Proforma_Invoice__r.Renewal_Quote__r.Tax_Total__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>IfNewRecord</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Renewal_Quote_Status</targetReference>
+            </connector>
+            <label>If Payment done</label>
+        </rules>
+    </decisions>
+    <description>BIZ-46933: When subsidiary is selected on the Payment record, update the Legal Entity field with the correct record.
+Optimized Flow</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AmountxRate</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.blng__Amount__c}*{!$Record.Exchange_Rate__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>IfNewRecord</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>SubsidiaryFormula</name>
+        <dataType>String</dataType>
+        <expression>IF((LEFT(TEXT({!$Record.Subsidiary__c}), 1) = &quot;0&quot;), 
+MID(TEXT({!$Record.Subsidiary__c}), 2, 1), 
+LEFT(TEXT({!$Record.Subsidiary__c}), 2))</expression>
+    </formulas>
+    <formulas>
+        <name>USDAmount_Amount</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.USD_Amount__c}/{!$Record.blng__Amount__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Payment-After Insert {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Payment After Insert Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Renewal_Quote_Status</name>
+        <label>Set Renewal Quote Status</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Update_Status_as_Payment_recieved</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Proforma_Invoice__r.Renewal_Quote__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Quote_Stage__c</field>
+            <value>
+                <stringValue>Contract Executed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Ordered__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status_as_Payment_recieved</name>
+        <label>Update Status as Payment recieved</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Proforma_Invoice__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Activity_Status__c</field>
+            <value>
+                <stringValue>Payment Created</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Payment received</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Proforma_Invoice__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>If_Payment_created_for_Proforma</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Proforma_Invoice__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>blng__Payment__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

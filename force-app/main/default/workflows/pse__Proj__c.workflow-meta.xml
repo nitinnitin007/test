@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CRM_Notification_Project_Placed_On_Hold</fullName>
+        <description>CRM Notification Project Placed On Hold</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>tanya.tomkiewicz@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/Project_Placed_On_Hold</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Operations_Team_of_Closure_Nomination</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Notify Operations Team of Closure Nomination</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>PS_Finance_Audit_Reports</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.bespaly@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Project_Closure_Nomination</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Opportunity_Owner_of_Project_Manager_Assignment</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Notify Opportunity Owner of Project Manager Assignment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Opportunity_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Project_Manager_Assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Project_Email_Alert_Notification_II</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <ccEmails>heather.curry@intapp.com</ccEmails>
+        <description>PSA Project Email Alert Notification II</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_New_Project_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Project_Email_Alert_Notify_PS_Manager_when_Stage_Open_In_Progress</fullName>
+        <description>PSA Project Email Alert Notify PS Manager when Stage = Open In Progress</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PS_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Project_Open_In_Progress_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Project_Email_Alert_Notify_Region_Owner_and_PS_Manager</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>PSA Project Email Alert Notify Region Owner and PS Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PS_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>rob.weber@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_New_Project_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Project_Approval_Request_Notification</fullName>
+        <description>Project Approval Request Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Project_Manager__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PS_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kshama.swamy@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Request_Project_Approval_from_CR</template>
+    </alerts>
+    <alerts>
+        <fullName>Project_Closing_Notification</fullName>
+        <ccEmails>cteam@integrationappliance.com</ccEmails>
+        <description>Project Closing Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Project_Manager__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>ES_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PS_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProductMarketing</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_Customer_Support</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>EMEA_Region</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Eastern_Region</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Western_Region</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>axay.nirmal@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jason.wood@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sri.zia@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>pse__Opportunity_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Project_Completion_Notification_v2</template>
+    </alerts>
+    <alerts>
+        <fullName>Project_Closing_Notification_2_hr_delay</fullName>
+        <ccEmails>csmops@intapp.com</ccEmails>
+        <description>Project Closing Notification (2 hr delay)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Finance_Rev_Rec</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>PS_Finance_Audit_Reports</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_Customer_Support</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ann-marie.scesnewicz@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>chet.gandhi@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jason.wood@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kshama.swamy@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.hirsch@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sanjeev.gandhi@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>susan.shevelenko@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Project_Completion_Notification_v2</template>
+    </alerts>
+    <alerts>
+        <fullName>Project_Creation_Rejected</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Project Creation Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Project_Creation_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Sold_Hours_Updated_Notification</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Sold Hours Updated Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>pse__Project_Manager__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Sold_Hours_Updated</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Action_Update_Current_Time_Period</fullName>
+        <field>pse__Action_Update_Current_Time_Period__c</field>
+        <literalValue>1</literalValue>
+        <name>Action: Update Current Time Period</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Create_Clarizen_Box</fullName>
+        <field>Create_Clarizen_Project__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Create Clarizen Box</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Check_Write_Off_Flag</fullName>
+        <field>Write_Off__c</field>
+        <literalValue>1</literalValue>
+        <name>Check Write Off Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_as_Closed_for_Time_Entry</fullName>
+        <field>pse__Closed_for_Time_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark as Closed for Time Entry</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_PS_Manager_Email</fullName>
+        <description>Sets PS Manager (SE Manager) email based on region and product line.</description>
+        <field>PS_Manager_Email__c</field>
+        <formula>IF(
+  pse__Region__r.Name = &quot;APAC&quot;,
+  pse__Region__r.pse__Region_Head__r.Email,
+  IF(
+    pse__Region__r.Name = &quot;EMEA&quot;,
+    &quot;alejandro.arteaga@intapp.com&quot;,
+    pse__Practice__r.SE_Manager__r.Email
+  )
+)</formula>
+        <name>PSA Project PS Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_Set_CFEE</fullName>
+        <description>Set CFEE when Project is not Active.</description>
+        <field>pse__Closed_for_Expense_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Project Set CFEE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_Set_CFTE</fullName>
+        <description>Set CFTE when Project is not Active.</description>
+        <field>pse__Closed_for_Time_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Project Set CFTE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_Unset_Active</fullName>
+        <description>Unset Active flag.</description>
+        <field>pse__Is_Active__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Project Unset Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_Unset_CFEE</fullName>
+        <description>Unset CFEE when Project is Active</description>
+        <field>pse__Closed_for_Expense_Entry__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Project Unset CFEE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_Unset_CFTE</fullName>
+        <description>Unset CFTE when Project is Active.</description>
+        <field>pse__Closed_for_Time_Entry__c</field>
+        <literalValue>0</literalValue>
+        <name>PSA Project Unset CFTE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSA_Project_Update_Region_Owner_Email</fullName>
+        <description>Update Region Owner Email</description>
+        <field>Region_Owner_Email__c</field>
+        <formula>pse__Region__r.pse__Region_Head__r.Email</formula>
+        <name>PSA Project Update Region Owner Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Project_Set_Close_for_Expense_Entry</fullName>
+        <field>pse__Closed_for_Expense_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Project Set Close for Expense Entry</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Project_Set_Close_for_Time_Entry</fullName>
+        <field>pse__Closed_for_Time_Entry__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Project Set Close for Time Entry</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_CRD_Email</fullName>
+        <field>CRD_Email__c</field>
+        <formula>pse__Account__r.CRD__r.Email</formula>
+        <name>Populate CRD Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_End_Date_to_9_9_2099</fullName>
+        <field>pse__End_Date__c</field>
+        <formula>TODAY()+180</formula>
+        <name>Populate End Date to 6 months away</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Expense_Policy</fullName>
+        <field>Expense_Policy__c</field>
+        <literalValue>Standard Expense Reporting</literalValue>
+        <name>Populate Expense Policy</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Per_Diem_Domestic</fullName>
+        <field>Per_Diem_Domestic__c</field>
+        <formula>IF(TEXT(CurrencyIsoCode)=&quot;USD&quot;, 250, 
+IF(TEXT(CurrencyIsoCode)=&quot;GBP&quot;, 175, 
+IF(TEXT(CurrencyIsoCode)=&quot;AUD&quot;, 250, 
+IF(TEXT(CurrencyIsoCode)=&quot;EUR&quot;, 200, 
+0))))</formula>
+        <name>Populate Per Diem (Domestic)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Per_Diem_International</fullName>
+        <field>Per_Diem_International__c</field>
+        <formula>IF(TEXT(CurrencyIsoCode)=&quot;USD&quot;, 450, 
+IF(TEXT(CurrencyIsoCode)=&quot;GBP&quot;, 325, 
+IF(TEXT(CurrencyIsoCode)=&quot;AUD&quot;, 450, 
+IF(TEXT(CurrencyIsoCode)=&quot;EUR&quot;, 350, 
+0))))</formula>
+        <name>Populate Per Diem (International)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Project_Creation_Notification_S</fullName>
+        <description>Project Creation Notification Sent</description>
+        <field>Project_Creation_Notification_Sent__c</field>
+        <literalValue>1</literalValue>
+        <name>Populate Project Creation Notification S</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Project_Phase</fullName>
+        <field>pse__Project_Phase__c</field>
+        <literalValue>0: Business Analysis</literalValue>
+        <name>Populate Project Phase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Manager_Email</fullName>
+        <field>Project_Manager_Email__c</field>
+        <formula>pse__Project_Manager__r.Email</formula>
+        <name>Project Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Billable_to_False</fullName>
+        <field>pse__Is_Billable__c</field>
+        <literalValue>0</literalValue>
+        <name>Set Billable to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_CSM_Email</fullName>
+        <field>CSM_Email__c</field>
+        <formula>pse__Practice__r.pse__Practice_Head__r.Email</formula>
+        <name>Set CSM Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ES_Manager_Email</fullName>
+        <field>ES_Manager_Email__c</field>
+        <formula>&quot;mark.burgard@intapp.com&quot;</formula>
+        <name>Set ES Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Time_Credited_to_True</fullName>
+        <field>pse__Time_Credited__c</field>
+        <literalValue>1</literalValue>
+        <name>Set Time Credited to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Date</fullName>
+        <description>Updates the Date Project Creation Approved field</description>
+        <field>Date_Project_Creation_Approved__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Clarizen_Project_Type_Executive</fullName>
+        <field>Clarizen_Project_Type__c</field>
+        <literalValue>Executive Project</literalValue>
+        <name>Update Clarizen Project Type (Executive)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Clarizen_Project_Type_Internal</fullName>
+        <field>Clarizen_Project_Type__c</field>
+        <literalValue>Internal Project</literalValue>
+        <name>Update Clarizen Project Type (Internal)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Most_Recent_Approval_Date</fullName>
+        <field>Most_Recent_Project_Approved_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Most Recent Approval Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Project_Creation_Approved_By</fullName>
+        <description>Updates the Project Creation Approved By field</description>
+        <field>Project_Creation_Approved_By__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update Project Creation Approved By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Project_Stage</fullName>
+        <field>pse__Project_Phase__c</field>
+        <literalValue>Completed</literalValue>
+        <name>Update Project Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Project_Status</fullName>
+        <description>Update Status to be Open - In Process</description>
+        <field>pse__Stage__c</field>
+        <literalValue>Open - In Process</literalValue>
+        <name>Update Project Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Recurring_Amount</fullName>
+        <field>Recurring_Amount__c</field>
+        <formula>pse__Opportunity__r.Maintenance_Amount__c</formula>
+        <name>Update Recurring Amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>SendProjectToDTE</fullName>
+        <apiVersion>33.0</apiVersion>
+        <endpointUrl>https://www.intapp.com/SalesForceSync/DTE/ProjectASMX/ProjectASMXNotificationService.asmx</endpointUrl>
+        <fields>Id</fields>
+        <fields>Name</fields>
+        <fields>pse__Account__c</fields>
+        <fields>pse__Allow_Timecards_Without_Assignment__c</fields>
+        <fields>pse__Closed_for_Time_Entry__c</fields>
+        <fields>pse__End_Date__c</fields>
+        <fields>pse__Is_Active__c</fields>
+        <fields>pse__Project_ID__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>alan.westley@intapp.com</integrationUser>
+        <name>SendProjectToDTE</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>clz_0a4a7ad5d4724379848ab0f10ca75a74</fullName>
+        <apiVersion>35.0</apiVersion>
+        <description>Creates a Clarizen Project when the FF Projects meet the correct criteria.</description>
+        <endpointUrl>https://integration.clarizen.com/Sync/SalesforceOutboundMessage?eventId=6ba9e166-8690-4b27-82b9-d885daea805c&amp;clzOrgId=6vt4hvjt8d0i98t1cx38cinl40</endpointUrl>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>maya.peterson@intapp.com</integrationUser>
+        <name>clz_0a4a7ad5d4724379848ab0f10ca75a74</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Rule Code%3A PR-003xFxx</fullName>
+        <actions>
+            <name>PSA_Project_PS_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-003xFxx
+PSA PS Project Set PS Manager Email
+Set the PS Manager (SE Manager) email on projects when created.</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-005xFxx</fullName>
+        <active>true</active>
+        <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Stage__c</field>
+            <operation>contains</operation>
+            <value>Pending Closure</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed - Never Should Have Been Created</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Billing_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Partner Prime</value>
+        </criteriaItems>
+        <description>Rule Code: PR-005xFxx
+PSA Project Inactivate Project 7 Days After Close Date
+Unset Active flag 7 days after the status is set to Closed.  This will also trigger the project to be CFTE and CFEE.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>PSA_Project_Unset_Active</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-006xFxx</fullName>
+        <actions>
+            <name>PSE_Project_Set_Close_for_Expense_Entry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Project_Set_Close_for_Time_Entry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Is_Active__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Rule Code: PR-006xFxx
+PSA Project Is Not Active
+Closes the project for time and expense when the active check box is uncheck (false)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-007EFxx</fullName>
+        <actions>
+            <name>PSA_Project_Email_Alert_Notify_Region_Owner_and_PS_Manager</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Project_Creation_Approved_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-007EFxx
+PSA Project Notify Region Owner &amp; PS Manager on Creation
+Sends an email notification to Region Owner and PS Manager when a project is created.</description>
+        <formula>AND(  
+  ISCHANGED(Creation_Approval_Status__c),   
+  ISPICKVAL(Creation_Approval_Status__c, &quot;Ops Approved&quot;),
+  Project_Creation_Notification_Sent__c=FALSE 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-008xFxx</fullName>
+        <actions>
+            <name>PSA_Project_Update_Region_Owner_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-008xFxx
+PSA Project Set Region Owner Email
+Set Region Owner Email whenever Region is changed</description>
+        <formula>ISNEW()||ISCHANGED(pse__Region__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-009xFxx</fullName>
+        <actions>
+            <name>Populate_End_Date_to_9_9_2099</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__End_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: PR-009xFxx
+Populate Project End Date
+This rule populates the project end date to 9/9/2099 if the date is blank.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-010Exxx</fullName>
+        <actions>
+            <name>Notify_Opportunity_Owner_of_Project_Manager_Assignment</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-010Exxx
+Notify Opp Owner of PM Assignment
+Sends an email notification to sales rep when a Project Manager is assigned, to notify the sales rep of that assignment.</description>
+        <formula>AND(
+  NOT(ISPICKVAL(pse__Billing_Type__c,&quot;Partner Prime&quot;)),
+  ISCHANGED(pse__Project_Manager__c),
+  ISBLANK(pse__Opportunity__r.Contract.Change_Requestor__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-011xFxx</fullName>
+        <actions>
+            <name>Set_ES_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-011xFxx
+PSA PS Project Set ES Manager Email
+For Intapp Open Projects, set Mark Burgard as the ES Manager</description>
+        <formula>OR(
+  pse__Practice__r.Id=&apos;a2250000000TWUw&apos;,
+  pse__Practice__r.Id=&apos;a2250000000TVNU&apos;,
+  pse__Practice__r.Id=&apos;a2250000000TVNV&apos;
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-012xFxx</fullName>
+        <actions>
+            <name>Set_Billable_to_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Time_Credited_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-012xFxx
+Set Partner Prime Projects Non-Billable
+Set Billable to False and Time Credited to True when Billing Type is &quot;Partner Prime&quot;</description>
+        <formula>ISPICKVAL(pse__Billing_Type__c,&quot;Partner Prime&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-013xFxx</fullName>
+        <actions>
+            <name>Populate_CRD_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-013xFxx
+Populate CRD Email
+Populates the CRD Email field with the email of the related CRD when a project is created</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Populate_CRD_Email</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>10</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-014xFxx</fullName>
+        <actions>
+            <name>Set_CSM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-014xFxx
+Populate CSM Email
+Populates the CSM Email field when it is blank</description>
+        <formula>ISBLANK(CSM_Email__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-015EFxx</fullName>
+        <actions>
+            <name>Project_Closing_Notification_2_hr_delay</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-015EFxx
+Project Closing Notification
+Sends an email alert whenever a project is closed. Also updates the Project Stage field to &quot;Completed&quot;</description>
+        <formula>AND(
+  CONTAINS(TEXT(pse__Stage__c),&quot;Closed&quot;),
+  NOT(pse__Group__r.Id = &apos;a1q500000074TRL&apos;),
+  ISPICKVAL(pse__Project_Type__c, &quot;Customer Project&quot;)
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-016xFxx</fullName>
+        <actions>
+            <name>Update_Project_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-016xFxx
+Update Project Status based on Stage
+Update the Status based on the Project Stage value &apos;Open - Not Started&apos; and Project Phase &apos;1: Solution Design&apos;</description>
+        <formula>ISPICKVAL(pse__Stage__c, &apos;Open - Not Started&apos;)  &amp;&amp; 
+ISPICKVAL(pse__Project_Phase__c,  &apos;1: Solution Design&apos;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-017xFxx</fullName>
+        <actions>
+            <name>Action_Update_Current_Time_Period</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-017xFxx
+Update Current Time Period
+Updates the Update Current Time Period field when it is blank</description>
+        <formula>pse__Current_Time_Period__c  = &apos;&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-018xxOx</fullName>
+        <actions>
+            <name>SendProjectToDTE</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-018xxOx
+UpdateProjectInDTE
+Sends an outbound message in DTE that updates Project</description>
+        <formula>ISNEW() ||
+ISCHANGED(Name) || 
+ISCHANGED(pse__Allow_Timecards_Without_Assignment__c) ||
+ISCHANGED(pse__Closed_for_Time_Entry__c) ||
+ISCHANGED(pse__End_Date__c)||
+ISCHANGED(pse__Is_Active__c) ||
+ISCHANGED(pse__Account__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-020Exxx</fullName>
+        <actions>
+            <name>Notify_Operations_Team_of_Closure_Nomination</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Stage__c</field>
+            <operation>contains</operation>
+            <value>Pending Closure</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Billing_Type__c</field>
+            <operation>notEqual</operation>
+            <value>Partner Prime</value>
+        </criteriaItems>
+        <description>Rule Code: PR-020Exxx
+Project Nominated for Closure
+Sends an email alert to Operations Team when a project is nominated for closure.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-021Exxx</fullName>
+        <actions>
+            <name>Sold_Hours_Updated_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-021Exxx
+Sold Hours Updated
+Sends an email to the Project Manager whenever the Sold Hours are updated</description>
+        <formula>AND(
+  NOT(ISNEW()),
+  ISCHANGED(pse__Planned_Hours__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-023xFxx</fullName>
+        <actions>
+            <name>Project_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-023xFxx
+Populate Project Manger Email Address
+Populates the project manager email address field whenever a project is created</description>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-026Exxx</fullName>
+        <actions>
+            <name>CRM_Notification_Project_Placed_On_Hold</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-026Exxx
+Project Placed on Hold
+Sends an email alert to the CSM team that a project has been placed on hold.</description>
+        <formula>AND(
+  ISCHANGED(pse__Stage__c),
+  ISPICKVAL(pse__Stage__c, &quot;Open - On Hold&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-030xFxx</fullName>
+        <actions>
+            <name>Check_Create_Clarizen_Box</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-030xFxx
+Create Clarizen Project
+Checks Create Clarizen Project checkbox when Project manager and Clarizen Template fields are populated</description>
+        <formula>AND(
+  NOT(ISBLANK(pse__Project_Manager__c)),
+  Advanced_Tracking_Project__c,
+  NOT(ISBLANK(TEXT(Clarizen_Template__c)))
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-031xFxx</fullName>
+        <actions>
+            <name>Populate_Expense_Policy</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-031xFxx
+Populate Expense Policy Information
+Populates the Expense policy field if Expense Policy is not blank</description>
+        <formula>ISBLANK(TEXT(Expense_Policy__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-032xFxx</fullName>
+        <actions>
+            <name>Populate_Per_Diem_Domestic</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Populate_Per_Diem_International</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-032xFxx
+Populate Per Diem Fields
+Populate Per Diem Fields when Expense Policy is &quot;Flat Rate Billed Expense&quot; and Per Diem fields are blank</description>
+        <formula>AND(
+  OR(
+    ISCHANGED(Expense_Policy__c),
+    ISNEW()
+  ),
+  ISPICKVAL(Expense_Policy__c, &quot;Flat Rate Billed Expense&quot;),
+  ISBLANK(Per_Diem_Domestic__c),
+  ISBLANK(Per_Diem_International__c)
+  
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-033xFxx</fullName>
+        <actions>
+            <name>Populate_Project_Phase</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-033xFxx
+Populate Project Phase
+Populates Project Phase as 0 when the project manager is assigned.</description>
+        <formula>ISNEW()</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-034Exxx</fullName>
+        <actions>
+            <name>Project_Creation_Rejected</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-034Exxx
+Project Creation Rejection Notification
+Sends an email whenever a project creation has been rejected by PS Finance</description>
+        <formula>AND(   ISCHANGED(Creation_Approval_Status__c),   ISPICKVAL(Creation_Approval_Status__c, &quot;Ops Rejected&quot;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-037xFxx</fullName>
+        <actions>
+            <name>Mark_as_Closed_for_Time_Entry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Proj__c.Intapp_Project_Type__c</field>
+            <operation>equals</operation>
+            <value>Executive Project</value>
+        </criteriaItems>
+        <description>Rule Code: PR-037xFxx
+Close Project for Time Entry
+Check Closed for Time Entry checkbox whenever Project Type is set to &quot;Executive Project&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-038xFxx</fullName>
+        <actions>
+            <name>Update_Clarizen_Project_Type_Internal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Proj__c.Intapp_Project_Type__c</field>
+            <operation>equals</operation>
+            <value>Internal Project</value>
+        </criteriaItems>
+        <description>Rule Code: PR-038xFxx
+Update Clarizen Project Type (Internal)
+Update Clarizen Project Type (Internal) with &quot;Internal Project&quot; when Project Type is &quot;Internal Project&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-039xFxx</fullName>
+        <actions>
+            <name>Update_Clarizen_Project_Type_Executive</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Proj__c.Intapp_Project_Type__c</field>
+            <operation>equals</operation>
+            <value>Executive Project</value>
+        </criteriaItems>
+        <description>Rule Code: PR-039xFxx
+Update Clarizen Project Type (Executive)
+Update Clarizen Project Type (Executive) field with &quot;Executive Project&quot; whenever Project Type value is &quot;Executive Project&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-040xxOx</fullName>
+        <actions>
+            <name>clz_0a4a7ad5d4724379848ab0f10ca75a74</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-040xxOx
+clz_9f15ef8a-6d5e-4c1d-91d1-25736b91776d
+Sends an outbound message to clarizen to create a project whenever Create Clarizen Project checkbox is checked</description>
+        <formula>(Create_Clarizen_Project__c=True)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-041xFxx</fullName>
+        <actions>
+            <name>Populate_Project_Creation_Notification_S</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Proj__c.Creation_Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Ops Approved</value>
+        </criteriaItems>
+        <description>Rule Code: PR-041xFxx
+Populate Project Creation Notification Sent Checkbox
+Populates Project Creation Notification Sent checkbox after Creation Approval Status has been set to Ops Approved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-042xFxx</fullName>
+        <actions>
+            <name>Update_Most_Recent_Approval_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-042xFxx
+Update Most Recent Approval Date
+Updates the Most Recent Approval date on the project whenever Creation Approval Status is changed and set to &quot;Ops Approved&quot;</description>
+        <formula>AND(
+  ISCHANGED(Creation_Approval_Status__c),
+  ISPICKVAL(Creation_Approval_Status__c,&quot;Ops Approved&quot;),
+  NOT(ISBLANK(Date_Project_Creation_Approved__c))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-043Exxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>pse__Proj__c.Create_Clarizen_Project__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: PR-043Exxx
+Notify Carolina of Project Creation
+Sends an email notification to Carolina whenever Create Clarizen Project checkbox is checked.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-044xFxx</fullName>
+        <actions>
+            <name>Update_Approval_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-044xFxx
+Update Date Project Approved Field
+Populates Date Project Creation Approved field whenever Creation Approval Status is set to &quot;Ops Approved&quot; and Date Project Creation Approved field is blank</description>
+        <formula>AND(
+  ISCHANGED(Creation_Approval_Status__c),
+  ISPICKVAL(Creation_Approval_Status__c,&quot;Ops Approved&quot;),
+  ISBLANK(Date_Project_Creation_Approved__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-045xFxx</fullName>
+        <actions>
+            <name>PSA_Project_Set_CFEE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Project_Set_CFTE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-045xFxx
+PSA Project Active is False
+Workflow Rule triggers when Active changes from False to True.</description>
+        <formula>OR( pse__Is_Active__c = false, ISBLANK( pse__Project_Manager__c ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-046xFxx</fullName>
+        <actions>
+            <name>PSA_Project_Unset_CFEE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSA_Project_Unset_CFTE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-046xFxx
+PSA Project Active is True
+Workflow Rule triggers when Active changes from False to True.</description>
+        <formula>AND( pse__Is_Active__c = true,  NOT ISBLANK( pse__Project_Manager__c ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-047Exxx</fullName>
+        <actions>
+            <name>PSA_Project_Email_Alert_Notify_PS_Manager_when_Stage_Open_In_Progress</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-047Exxx
+PSA Project Notify PS Manager when Stage = Open - In Progress
+PSA Project Notify PS Manager when Stage = Open - In Progress</description>
+        <formula>( ISPICKVAL( pse__Stage__c , &quot;Open - In Progress&quot;))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-048xFxx</fullName>
+        <actions>
+            <name>Check_Write_Off_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>pse__Proj__c.pse__Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed - Canceled</value>
+        </criteriaItems>
+        <description>Rule Code: PR-048xFxx
+Check Write Off Flag
+If a project is marked as Closed - Canceled, the write off flag will be checked.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-049xFxx</fullName>
+        <actions>
+            <name>Update_Recurring_Amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-049xFxx
+Update Project Recurring Amount</description>
+        <formula>NOT(ISBLANK(pse__Opportunity__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-050Exxx</fullName>
+        <actions>
+            <name>Project_Approval_Request_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-050Exxx
+Notify CR Team of Project needing approval</description>
+        <formula>AND(
+  CONTAINS(TEXT(pse__Stage__c),&quot;Open&quot;),
+  Submit_for_CR_Approval__c
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-051Exxx</fullName>
+        <actions>
+            <name>Project_Closing_Notification_2_hr_delay</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: PR-051Exxx
+Project Closing Notification I.
+Sends an email notification whenever a project is closed. Also updates the Project Stage field to &quot;Completed&quot;</description>
+        <formula>AND( 
+  CONTAINS(TEXT(pse__Stage__c),&quot;Closed&quot;), 
+  NOT(ISPICKVAL(pse__Stage__c, &quot;Closed - Never Should Have Been Created&quot;)),
+  NOT(pse__Group__r.Id = &apos;a1q500000074TRL&apos;), 
+  ISPICKVAL(pse__Project_Type__c, &quot;Customer Project&quot;),
+  NOT(ISPICKVAL(pse__Opportunity__r.Type, &quot;After Market Partner Opportunity&quot;))
+  
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A PR-052Exxx</fullName>
+        <actions>
+            <name>PSA_Project_Email_Alert_Notification_II</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: PR-052Exxx
+PSA Project Notification
+Notify the Region Owner and PS Manager when a project is created.</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>clz_bc53c618-f40b-4c0e-9ca8-a1d4c445e928</fullName>
+        <active>false</active>
+        <formula>(Create_Clarizen_Project__c=True)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

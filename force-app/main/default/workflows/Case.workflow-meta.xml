@@ -1,0 +1,2418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ANewCaseClosingSurveyhasbeenReceived</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>A New Case Closing Survey has been Received</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>PS_Operations_Audit_Reports</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>Professional_Services_CSMs</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>Support</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProfessionalServices</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>OperationsDirectorAPAC</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ProjectManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>SolutionEngineeringManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>fabio.mendes@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>justin.mitchell@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.burgard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/New_PS_Project_Survey_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Account_Added_to_Hot_List</fullName>
+        <ccEmails>Support_team@intapp.com</ccEmails>
+        <description>Account Added to Hot List</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>CFO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ClientRelationshipManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProfessionalServices</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_Customer_Support</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>IntegrationPractice</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>OperationsDirectorAPAC</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>President</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RevenuePractice</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Risk_Practice_Intapp_Open</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Technical_Support_Engineer</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>__patrick.coleman@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>aj.ratnaparkhi@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>alejandro.arteaga@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grace.camoglu@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>james.miller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>laura.marino@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.burgard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>matt.mcinerny@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>milan.bobde@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rafael.zenteno@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shane.combest@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>steve.surrette@inflectionit.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>warren.knowles@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/Acct_Added_to_Hot_List</template>
+    </alerts>
+    <alerts>
+        <fullName>Account_Removed_from_Hot_List</fullName>
+        <ccEmails>Support_team@intapp.com</ccEmails>
+        <description>Account Removed from Hot List</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>CFO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ClientRelationshipManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProfessionalServices</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_Customer_Support</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>IntegrationPractice</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>OperationsDirectorAPAC</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>President</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>RevenuePractice</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Risk_Practice_Intapp_Open</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Technical_Support_Engineer</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>__patrick.coleman@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>aj.ratnaparkhi@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>alejandro.arteaga@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grace.camoglu@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>james.miller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>laura.marino@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.burgard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>matt.mcinerny@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>milan.bobde@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>shane.combest@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>steve.surrette@inflectionit.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>warren.knowles@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/Acct_Removed_from_Hot_List</template>
+    </alerts>
+    <alerts>
+        <fullName>AlertJeffKyleandAccountOwnerthatanRMAcasehasbeencreated</fullName>
+        <description>Alert Jeff, Kyle, and Account Owner that an RMA case has been created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>jeff.armbrecht@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kyle.alisharan@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/RMACaseiscreated</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_Case_Revenue_Recognition</fullName>
+        <description>Alert: Case Revenue Recognition</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Finance_Rev_Rec</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>arik.paran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>james.miller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Revenue_Recognition_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Assignment_Notification</fullName>
+        <description>Case Assignment Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>DirectorProfessionalServices</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>SolutionEngineeringManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Solution_Engineer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Case_Assignment_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Confidence_in_Completion_Date_changed</fullName>
+        <description>Case Confidence in Completion Date changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProfessionalServices</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>leah.cruz@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lisa.hern@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Solution_Engineer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/PS_Case_Confidence_in_Completion_Date_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Created_For_Implementation_Expert_Queue</fullName>
+        <description>Case Created For Implementation Expert Queue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chirag.patel@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sam.lunt@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tara.seabrooks@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>ieteam-communications@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/NewImplementationExpertCaseSubmitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Estimated_Completion_Date_Changed</fullName>
+        <description>Case Estimated Completion Date Changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProfessionalServices</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>leah.cruz@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lisa.hern@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Solution_Engineer__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/PS_Case_Estimated_Completion_Date_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Verified_Critical</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Case Verified Critical</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Support_Managers</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/Case_Verified_Critical</template>
+    </alerts>
+    <alerts>
+        <fullName>Customer_Email_when_Support_Case_Owner_Initially_Assigned</fullName>
+        <description>Customer Email when Support Case Owner Initially Assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/SupportCaseOwnerAssigned</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notification_for_Assignment_of_Case_to_CSE</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Email Notification for Assignment of Case to CSE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/CaseAssignedToSupportEngineer</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notification_for_Assignment_of_Critical_Case</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com;</ccEmails>
+        <ccEmails>css-client_advocacy@intapp.com</ccEmails>
+        <description>Email Notification for Assignment of Critical Case</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/CriticalSupportCaseSubmitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notification_for_Assignment_of_Critical_Case_to_CSE</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Email Notification for Assignment of Critical Case to CSE</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/CriticalSupportCaseAssigned</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Notification_for_Critical_Case_VM_received</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Email Notification for Critical Case VM received</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amit.sharma@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>aram.simonyan@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>brian.mcmorrow@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>colin.weston-small@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dmitriy.galkovsky@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eugene.braverman@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>frank.martinez@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gary.rose@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>grigory.glazman@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>halyna.nosenko@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>howard.won@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ibrahim.aqqad@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>iryna.melnyk@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jeremy.thomas@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kate.sheridan@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ketaki.joshi@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kyle.thomas@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>larry.lumbreras@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pavel.goga@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sergey.lavrov@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sergey.pazychev@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>subash.singh@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>yevhen.shupik@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/CriticalSupportCaseVoicemailReceived</template>
+    </alerts>
+    <alerts>
+        <fullName>Escalated_to_CRM</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Escalated to CRM</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/Case_Escalated_to_CRM</template>
+    </alerts>
+    <alerts>
+        <fullName>Feature_Request_Email_Alert_Integration_Practice</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Feature Request Email Alert - Integration Practice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CTO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ClientRelationshipManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProductManagement</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Management/Feature_Request_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Feature_Request_Email_Alert_Risk_Practice</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Feature Request Email Alert - Risk Practice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CTO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ClientRelationshipManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProductManagement</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>jesse.meredith@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pat.archbold@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>warren.knowles@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Management/Feature_Request_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Feature_Request_Email_Alert_Time_Practice</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Feature Request Email Alert - Time Practice</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CTO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ClientRelationshipManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProductManagement</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>david.robinson@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Management/Feature_Request_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Feature_Request_Email_Alert_Unknown_Product</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Feature Request Email Alert - Unknown Product</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CTO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ClientRelationshipManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>DirectorProductManagement</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ProductManager</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Solutions_Consultant</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pat.archbold@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Product_Management/Feature_Request_Received</template>
+    </alerts>
+    <alerts>
+        <fullName>Implementation_Case_Creation_Notification_Simple</fullName>
+        <description>Implementation Case Creation Notification Simple</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>arik.paran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rafael.zenteno@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Implementation_Case_Creation_Notification_Simple</template>
+    </alerts>
+    <alerts>
+        <fullName>NewSupportCaseSubmittedEmail</fullName>
+        <ccEmails>pss@intapp.com</ccEmails>
+        <description>Notify Support that a Case has been submitted</description>
+        <protected>false</protected>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/CaseSubmittedNotification</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_on_Acute_Situation_Alert_Case_Closed</fullName>
+        <ccEmails>csmops@intapp.com;</ccEmails>
+        <ccEmails>cteam@integrationappliance.com;</ccEmails>
+        <ccEmails>ps_leadership@intapp.com;</ccEmails>
+        <ccEmails>ar@intapp.com;</ccEmails>
+        <ccEmails>pmm@intapp.com</ccEmails>
+        <description>Notification on Acute Situation Alert Case Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Business Lead</recipient>
+            <type>caseTeam</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Account_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>SDR_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Segment_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Relationship_Management</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ameya.thatte@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>orest.skoropad@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All/Acute_Situation_Alert_Case_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_on_Acute_Situation_Alert_Case_Creation</fullName>
+        <ccEmails>csmops@intapp.com;</ccEmails>
+        <ccEmails>cteam@integrationappliance.com;</ccEmails>
+        <ccEmails>ps_leadership@intapp.com;</ccEmails>
+        <ccEmails>ar@intapp.com;</ccEmails>
+        <ccEmails>pmm@intapp.com</ccEmails>
+        <description>Notification on Acute Situation Alert Case Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>CSM_Account_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>SDR_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>VP_Customer_Relationship_Management</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>ameya.thatte@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>orest.skoropad@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>All/Acute_Situation_Alert_Case_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Red_Alert_Case_Closed</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Red Alert Case Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Engagement_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.bespaly@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kshama.swamy@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.hirsch@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/Red_Alert_Case_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Red_Alert_Case_Comment_Generated</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Project Escalation Case Comment Generated</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Engagement_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.bespaly@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kshama.swamy@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.hirsch@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/Red_Alert_Case_Comment</template>
+    </alerts>
+    <alerts>
+        <fullName>Red_Alert_Case_Created</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Red Alert Case Created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>CRD_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Engagement_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>eldean.ward@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.bespaly@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kshama.swamy@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.hirsch@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Support/Red_Alert_Case_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>SFDC_Change_Request_Case_Created</fullName>
+        <description>SFDC Change Request: Case Created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>Business_Operations</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Salesforce_Administration/Salesforce_Change_Request_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>SFDC_Change_Request_Closed</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>SFDC Change Request Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Salesforce_Administration/SFDC_Change_Request_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>SFDC_Change_Request_End_Date_Changed</fullName>
+        <description>SFDC Change Request: End Date Changed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactId</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Salesforce_Administration/SFDC_CHange_Request_Date_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Case_Closed_Email</fullName>
+        <description>Send Case Closed Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/SupportCaseClose</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Support_Survey</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Send Support Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ContactEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/Support_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_to_IntappPrime_intapp_com</fullName>
+        <ccEmails>IntappPrime@intapp.com</ccEmails>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Send email to IntappPrime@intapp.com</description>
+        <protected>false</protected>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/Intapp_Prime_Service_Request_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>X7_Day_Alert_Case_Revenue_Recognition</fullName>
+        <description>7 Day Alert: Case Revenue Recognition</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ameya.thatte@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Revenue_Recognition_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>X7_Day_Alert_Case_Revenue_Recognition2</fullName>
+        <description>7 Day Alert: Case Revenue Recognition</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Revenue_Recognition_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>X7_Day_Alert_Case_Revenue_Recognition3</fullName>
+        <description>7 Day Alert: Case Revenue Recognition</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VP_Customer_Success</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>arik.paran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>james.miller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Professional_Services/Revenue_Recognition_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>AssignTier1</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Tier1</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>AssignTier1</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AssignTier1LegalKey</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Tier1</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>AssignTier1LegalKey</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRD_Email</fullName>
+        <field>CRD_Email__c</field>
+        <formula>Account.CRD__r.Email</formula>
+        <name>CRD Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Account_Owner_Email</fullName>
+        <field>Account_Owner_Email__c</field>
+        <formula>Account.Owner.Email</formula>
+        <name>Populate Account Owner Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_CRD_Email</fullName>
+        <field>CRD_Email__c</field>
+        <formula>Account.CRD__r.Email</formula>
+        <name>Populate CRD Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Date_Defect_Files</fullName>
+        <field>Date_Defect_Filed__c</field>
+        <formula>TODAY()</formula>
+        <name>Populate Date Defect Files</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Engagement_Manager_Email</fullName>
+        <field>Engagement_Manager_Email__c</field>
+        <formula>Engagement_Manager__r.Email</formula>
+        <name>Populate Engagement Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Services_Expiration_on_Case</fullName>
+        <field>Services_Expiration_Date__c</field>
+        <formula>IF( OR( ISBLANK( Services_Expiration_2__c ), ISNULL(Services_Expiration_2__c)) ,  Services_Expiration_1__c ,  IF(Services_Expiration_2__c &gt; Services_Expiration_1__c, Services_Expiration_2__c, Services_Expiration_1__c) )</formula>
+        <name>Populate Services Expiration on Case</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Support_Engineer_Revenue</fullName>
+        <field>Support_Engineer_Revenue_Email__c</field>
+        <formula>Account.Dedicated_Support_Engineer_Revenue__r.Email</formula>
+        <name>Populate Support Engineer - Revenue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Rev_Rec_Date_to_Exp_Completion_Date</fullName>
+        <field>Project_Exp_Rev_Rec_Date__c</field>
+        <formula>PSCase_Project_Exp_Compl_Date__c</formula>
+        <name>Set Rev Rec Date to Exp Completion Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Rev_Rec_Date_to_Today</fullName>
+        <description>Set Rev Rec Date to Today</description>
+        <field>Project_Exp_Rev_Rec_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Set Rev Rec Date to Today</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_SupportSurveySent</fullName>
+        <field>SupportSurveySent__c</field>
+        <literalValue>1</literalValue>
+        <name>Set SupportSurveySent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Owner_for_Intapp_Prime</fullName>
+        <description>Update Case Owner for Intapp Prime Service Request to Sarah Bakeer</description>
+        <field>OwnerId</field>
+        <lookupValue>Intapp_Prime_Queue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Update Case Owner for Intapp Prime</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Owner_to_Unidentified</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Unidentified</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Update Case Owner to Unidentified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Estimated_Completion_Date_Prior</fullName>
+        <description>Update the &apos;Project - Est. Compl Date - Prior&apos; field with the previous value when the main field changes.</description>
+        <field>Project_Exp_Compl_Date_Prior__c</field>
+        <formula>PRIORVALUE( PSCase_Project_Exp_Compl_Date__c)</formula>
+        <name>Update Estimated Completion Date - Prior</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Escalated_to_PS</fullName>
+        <field>Status</field>
+        <literalValue>Escalated to PS</literalValue>
+        <name>Update Status to Escalated to PS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Survey_Engineer_Score_if_Blank</fullName>
+        <field>Survey_EngineerScore__c</field>
+        <literalValue>10</literalValue>
+        <name>Update Survey Engineer Score if Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Survey_Overall_Score_if_Blank</fullName>
+        <field>Survey_OverallScore__c</field>
+        <literalValue>10</literalValue>
+        <name>Update Survey Overall Score if Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Survey_Product_Score_if_Blank</fullName>
+        <field>Survey_ProductScore__c</field>
+        <literalValue>10</literalValue>
+        <name>Update Survey Product Score if Blank</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Survey_Project_Manager_Score_if_B</fullName>
+        <field>Survey_ProjectManagerScore__c</field>
+        <literalValue>10</literalValue>
+        <name>Update Survey Project Manager Score if B</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>SendCaseToDTE</fullName>
+        <apiVersion>34.0</apiVersion>
+        <endpointUrl>https://www.intapp.com/SalesForceSync/DTE/Case/CaseNotificationService.asmx</endpointUrl>
+        <fields>AccountId</fields>
+        <fields>CaseNumber</fields>
+        <fields>Date_Closed__c</fields>
+        <fields>Id</fields>
+        <fields>IsClosed</fields>
+        <fields>RecordTypeId</fields>
+        <fields>Status</fields>
+        <fields>Subject</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>alan.westley@intapp.com</integrationUser>
+        <name>SendCaseToDTE</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Rule Code%3A CASE-001xFxx</fullName>
+        <actions>
+            <name>Populate_CRD_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-001xFxx
+Populate CRD Email
+Populates CRD Email on Case object</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-002Exxx</fullName>
+        <actions>
+            <name>Escalated_to_CRM</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-002Exxx
+Support Case Escalated to CRM
+Sends an email alert whenever a support case is escalated to CRM</description>
+        <formula>AND(   RecordTypeId=&quot;0123000000008KC&quot;,   ISPICKVAL(Status, &quot;Escalated to CRM&quot;) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-003Exxx</fullName>
+        <actions>
+            <name>AlertJeffKyleandAccountOwnerthatanRMAcasehasbeencreated</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>RMA</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-003Exxx
+RMA Case is created
+Alert the account owner that an RMA case has been created</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-004Exxx</fullName>
+        <actions>
+            <name>ANewCaseClosingSurveyhasbeenReceived</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Survey_ContactID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Survey</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+            <value>[Email Loop Protection]</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-004Exxx
+Survey Received
+Sends an email notification on case Closing Survey via Web to Case</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-005Exxx</fullName>
+        <actions>
+            <name>Feature_Request_Email_Alert_Time_Practice</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Feature Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+            <value>Time Builder</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+            <value>[Email Loop Protection]</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-005Exxx
+Feature Request Received - Time
+Sends an email notificaton when Feature Request for the Time Practice Received</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-006Exxx</fullName>
+        <actions>
+            <name>Feature_Request_Email_Alert_Risk_Practice</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 4 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Feature Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+            <value>Wall Builder</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+            <value>Activity Tracker</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+            <value>[Email Loop Protection]</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-006Exxx
+Feature Request Received - Risk
+Sends an email notification when Feature Request for the Risk Practice Received</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-007Exxx</fullName>
+        <actions>
+            <name>Feature_Request_Email_Alert_Integration_Practice</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Feature Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+            <value>Integration Builder</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+            <value>[Email Loop Protection]</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-007Exxx
+Feature Request Received - Integration
+Sends an email notification when Feature Request for the Integration Practice Received</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-008Exxx</fullName>
+        <actions>
+            <name>Feature_Request_Email_Alert_Unknown_Product</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Feature Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-008Exxx
+Feature Request Received - Unknown Product
+Sends an email notification when Feature Request for Unknown Product Received - Send to all practices</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-009Exxx</fullName>
+        <actions>
+            <name>Account_Removed_from_Hot_List</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed - Resolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Executive Support</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-009Exxx
+Notice When Account is Removed from Hot List
+Notice to Customer Success, Professional Services, Practice Group Leaders, COO, CEO when account is removed from Hot List.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-010Exxx</fullName>
+        <actions>
+            <name>Account_Added_to_Hot_List</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Executive Support</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-010Exxx
+Notice When Account is Added to Hot List
+Notice to Customer Success, Professional Services, Practice Group Leaders, COO, CEO when account is added to Hot List.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-011ExxT</fullName>
+        <actions>
+            <name>Customer_Email_when_Support_Case_Owner_Initially_Assigned</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Client_Notified_of_Case_Ownership_Change</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-011ExxT
+Support: Case Owner Changed
+This rule looks for when the owner of a Support case is changed.</description>
+        <formula>Record_Type_Name__c = &quot;Support&quot;
+&amp;&amp; NOT(ISNEW())
+&amp;&amp; ISCHANGED(OwnerId) = True
+&amp;&amp; IsClosed=FALSE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-012Exxx</fullName>
+        <actions>
+            <name>SFDC_Change_Request_Case_Created</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Internal - Operations Change Request</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-012Exxx
+SFDC Change Request: Case Created
+Sends an email to Carolina, Role: Operations, the contact, and the last modified by user whenever a case has a record type of Internal - Operations Change Request</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-013Exxx</fullName>
+        <actions>
+            <name>SFDC_Change_Request_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Internal - Operations Change Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>Closed - Resolved,Closed - Unresolved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>notContain</operation>
+            <value>[Email Loop Protection]</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-013Exxx
+SFDC Change Request Closed
+Sends an email notification to Carolina and the Contact whenever a case status changes to Closed - Resolved or Closed - Unresolved</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-014xFxx</fullName>
+        <actions>
+            <name>NewSupportCaseSubmittedEmail</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>AssignTier1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-014xFxx
+NewPortalCase
+Updates the Case: Case Owner field when a new portal case is generated.</description>
+        <formula>and(
+  OR(
+    ispickval(Origin,&quot;Customer Portal&quot;),
+    ispickval(Origin,&quot;Customer Community&quot;),
+    ispickval(Origin,&quot;Email2Case&quot;)
+  ),
+  ispickval(Status,&quot;New&quot;),
+  RecordType.Name = &quot;Support&quot;
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-015Exxx</fullName>
+        <actions>
+            <name>Send_Case_Closed_Email</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-015Exxx
+Support: Case Closed
+This rule looks for when a Support case is closed.</description>
+        <formula>Record_Type_Name__c = &quot;Support&quot;
+&amp;&amp; NOT(ISNEW())
+&amp;&amp; NOT(RecordTypeId=&quot;0123000000008KH&quot;)
+&amp;&amp; ISCHANGED(IsClosed) = True
+&amp;&amp; IsClosed = True
+&amp;&amp; $User.ProfileId != &apos;00e50000001Bf1Z&apos;
+&amp;&amp; Internal_Cloud_Case__c=FALSE
+&amp;&amp;NOT(CONTAINS(Subject, &quot;[Email Loop Protection]&quot;))
+&amp;&amp;$User.Id&lt;&gt;&quot;00550000004PGDf&quot; /*Maiya Hilliard*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-016EFxx</fullName>
+        <actions>
+            <name>Send_Support_Survey</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Set_SupportSurveySent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-016EFxx
+Send Support Survey
+Sends support survey with email notificaiton to designated contact. Also checks the SupportSurveySent checkbox.</description>
+        <formula>AND(IsClosed=True,
+(Send_Support_Survey__c=True),
+ (SupportSurveySent__c=False),
+ISPICKVAL(Status, &quot;Closed - Resolved&quot;),
+$User.ProfileId != &apos;00e50000001Bf1Z&apos;,
+NOT(CONTAINS(Subject, &quot;[Email Loop Protection]&quot;))
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-017xFxx</fullName>
+        <actions>
+            <name>AssignTier1LegalKey</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Customer Portal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+            <value>LegalKey</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-017xFxx
+NewPortalCaseLegalKey
+Updates the Case: Case Owner field whenever a new LegalKey customer portal case is created. The field is updated to Dmitriy Galkovsky</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-018xxOx</fullName>
+        <actions>
+            <name>SendCaseToDTE</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-018xxOx
+UpdateCaseInDTE
+Sends out an outbound message to update Case in DTE</description>
+        <formula>ISNEW() || (
+(ISCHANGED(AccountId) ||
+ISCHANGED(Date_Closed__c) ||
+ISCHANGED(IsClosed) ||
+ISCHANGED(RecordTypeId) ||
+ISCHANGED(Status) ||
+ISCHANGED(Subject)) &amp;&amp;
+(Record_Type_Name__c &lt;&gt; &apos;Support Survey&apos; &amp;&amp;
+Record_Type_Name__c &lt;&gt; &apos;Survey&apos; &amp;&amp;
+Record_Type_Name__c &lt;&gt; &apos;FRU&apos; &amp;&amp;
+Record_Type_Name__c &lt;&gt; &apos;Procurement&apos; &amp;&amp;
+LEFT(Record_Type_Name__c, 14) &lt;&gt; &apos;Implementation&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-019xFxx</fullName>
+        <actions>
+            <name>Update_Case_Owner_to_Unidentified</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8</booleanFilter>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Object reference not set to an instance of an object</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Exception of type &apos;System.OutOfMemoryException&apos; was thrown</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Attempted to read or write protected memory</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: A generic error occurred in GDI+</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Cannot access a disposed object</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Invoke or BeginInvoke cannot be called on a control until the window handle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Collection was modified</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>contains</operation>
+            <value>Error: Index was out of range</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-019xFxx
+Assign Cases to Unidentified
+SC-000048
+Assigns cases to the unidentified queue; this is due to the fact that these cases are being generated by automatic error messages from the appliance and are cluttering the SFDC queue.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-020Exxx</fullName>
+        <actions>
+            <name>Case_Verified_Critical</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-020Exxx
+Case Verified Crtitical
+Sends and email notification whenever a case has been marked as &quot;Verified Critical&quot;</description>
+        <formula>AND(
+  Verified_Severity__c=TRUE,
+  NOT(CONTAINS(Subject, &quot;[Email Loop Protection]&quot;))
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-021Exxx</fullName>
+        <actions>
+            <name>Email_Notification_for_Assignment_of_Critical_Case_to_CSE</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-021Exxx
+Critical Support Case Assigned
+Sends an email notification when a Critical case is assigned to a CSE.</description>
+        <formula>AND(   
+  ISCHANGED( OwnerId ),    
+  ISPICKVAL( Priority, &quot;Critical&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-022Exxx</fullName>
+        <actions>
+            <name>Email_Notification_for_Assignment_of_Critical_Case</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Priority</field>
+            <operation>equals</operation>
+            <value>Critical</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-022Exxx
+Critical Support Case Submitted
+Sends an email notification when a Critical case is submitted to the Customer Portal.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-023Exxx</fullName>
+        <actions>
+            <name>Email_Notification_for_Critical_Case_VM_received</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Description</field>
+            <operation>contains</operation>
+            <value>mailbox 2214</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-023Exxx
+Critical Support VM Received
+Sends an email notification when a Critical case (Voicemail) is received from the Customer.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-024EFxx</fullName>
+        <actions>
+            <name>Send_email_to_IntappPrime_intapp_com</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Case_Owner_for_Intapp_Prime</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_to_Escalated_to_PS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Intapp_Prime__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-024EFxx
+Intapp Prime Service Request
+Sends an email notification and update Status, Owner when Intapp Prime check box is checked</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-025xFxx</fullName>
+        <actions>
+            <name>Populate_Account_Owner_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-025xFxx
+Populate Account Owner Email
+Populates Account Owner Email on new case creation</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-026xFxx</fullName>
+        <actions>
+            <name>Populate_Date_Defect_Files</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-026xFxx
+Populate Date Defect Filed
+Populates Date Defect Field when Status is set to &quot;Defect Filed&quot;</description>
+        <formula>AND(
+  ISCHANGED(Status),
+  ISPICKVAL(Status, &quot;Defect Filed&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-027xFxx</fullName>
+        <actions>
+            <name>Populate_Engagement_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-027xFxx
+Populate Engagement Manager Email
+Populates the contact email address(Engagement manager Email field) when Engagement Manager is filled</description>
+        <formula>NOT(ISBLANK(Engagement_Manager__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-028Exxx</fullName>
+        <actions>
+            <name>Red_Alert_Case_Closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-028Exxx
+Project Escalation Case Closed
+Sends an email notification when a Project Escalation Case type has been closed</description>
+        <formula>AND(
+  RecordTypeId=&quot;0123000000008KH&quot;,
+  ISCHANGED(IsClosed),
+  IsClosed = TRUE
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-029Exxx</fullName>
+        <actions>
+            <name>Red_Alert_Case_Comment_Generated</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-029Exxx
+Project Escalation Case Comment Generated
+Sends an email notification whenever there is a new case comment on Project Escalation Cases</description>
+        <formula>AND(
+  ISCHANGED(Latest_Case_Comment__c),
+   RecordTypeId = &apos;0123000000008KH&apos;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-030Exxx</fullName>
+        <actions>
+            <name>Red_Alert_Case_Created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: CASE-030Exxx
+Project Escalation Case Created
+Sends an email notification when a Project Escalation Case has been created</description>
+        <formula>RecordTypeId=&quot;0123000000008KH&quot;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-031Exxx</fullName>
+        <actions>
+            <name>Email_Notification_for_Assignment_of_Case_to_CSE</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-031Exxx
+Support Case Assigned
+Sends an email notification when a case is assigned to a CSE.</description>
+        <formula>AND(   
+  ISCHANGED( OwnerId ),    
+  NOT(ISPICKVAL( Priority, &quot;Critical&quot;)),
+  NOT(CONTAINS(Subject, &quot;[Email Loop Protection]&quot;))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-032xFxx</fullName>
+        <actions>
+            <name>Update_Survey_Engineer_Score_if_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Survey_EngineerScore__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-032xFxx
+Update Survey Engineer Score if Blank
+Updates the Survey Engineer Score to a 10 if it is left blank</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-033xFxx</fullName>
+        <actions>
+            <name>Update_Survey_Overall_Score_if_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Survey_OverallScore__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-033xFxx
+Update Survey Overall Score if Blank
+Updates the Survey Overall Score to a 10 if it is left blank</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-034xFxx</fullName>
+        <actions>
+            <name>Update_Survey_Product_Score_if_Blank</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Survey_ProductScore__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-034xFxx
+Update Survey Product Score if Blank
+Updates the Survey Product Score to a 10 if it is left blank</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-035xxxx</fullName>
+        <active>false</active>
+        <description>Rule Code: CASE-035xxxx
+Case Escalated to CRM
+Sends an email alert to the CRD whenever a support case is escalated to CRM</description>
+        <formula>AND(
+  ISPICKVAL(Status, &quot;Escalated to CRM &quot;),
+  ISPICKVAL(Type, &quot;Support&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-036xxxx</fullName>
+        <active>false</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-036xxxx
+Implementation Case Closing Notification
+People are notified when a case is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-037xxxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Subject</field>
+            <operation>equals</operation>
+            <value>Time Builder User Feedback</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-037xxxx
+Handle incoming Time Builder feedback emails</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-038Exxx</fullName>
+        <actions>
+            <name>Case_Estimated_Completion_Date_Changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-038Exxx
+Case Est. Completion Date Changed
+Monitors when the Estimated Completion Date field changes on a Professional Services case.  Sends the email alert.</description>
+        <formula>AND (
+ IsClosed = FALSE,
+ ISCHANGED(PSCase_Project_Exp_Compl_Date__c),
+ NOT(ISNEW()),
+ BEGINS(Record_Type_Name__c, &quot;Implementation&quot;),
+ NOT( Services_Revenue_Total__c  = 0 ),
+ NOT( AND( YEAR( PSCase_Project_Exp_Compl_Date__c ) = YEAR( Project_Exp_Compl_Date_Prior__c ), MONTH( PSCase_Project_Exp_Compl_Date__c ) = MONTH( Project_Exp_Compl_Date_Prior__c ) ) )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-039Exxx</fullName>
+        <actions>
+            <name>Case_Confidence_in_Completion_Date_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-039Exxx
+Case Confidence in Competion Date Changed
+Monitors when the Confidence in Completion Date field changes on a Professional Services case.</description>
+        <formula>AND (
+ ISCHANGED(PSCase_Confidence_in_Completion__c),
+ NOT(ISNEW()),
+ BEGINS(Record_Type_Name__c, &quot;Implementation&quot;),
+ NOT( Services_Revenue_Total__c = 0) 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-040xFxx</fullName>
+        <actions>
+            <name>Populate_Services_Expiration_on_Case</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Services_Expiration_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-040xFxx
+Populate Services Expiration</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-041xFxx</fullName>
+        <actions>
+            <name>Set_Rev_Rec_Date_to_Today</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-041xFxx
+PS Case Rev Rec Date Today
+When a case is closed and the delay flag isn&apos;t checked, set revenue recognition date to today.</description>
+        <formula>AND(
+ IsClosed = TRUE,
+ Revenue_Recognition_Delay__c = FALSE
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-042xFxx</fullName>
+        <actions>
+            <name>Set_Rev_Rec_Date_to_Exp_Completion_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-042xFxx
+Update Rev Rec Date
+When Rev Rec flag is unchecked and expected completion date is changed, update the rev rec date.</description>
+        <formula>Revenue_Recognition_Delay__c = FALSE
+&amp;&amp; IsClosed = FALSE
+&amp;&amp; PSCase_Project_Exp_Compl_Date__c  &lt;&gt;  Project_Exp_Compl_Date_Prior__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-043Exxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Revenue_Recognition_Delay__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-043Exxx
+Revenue Recognition Notification
+Alert that gets emailed out to verify that revenue can actually be recognized.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Alert_Case_Revenue_Recognition</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Case.Project_Exp_Rev_Rec_Date__c</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-044Exxx</fullName>
+        <actions>
+            <name>Implementation_Case_Creation_Notification_Simple</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-044Exxx
+Implementation Case Creation Notification</description>
+        <formula>BEGINS(Record_Type_Name__c, &quot;Implementation&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-045Exxx</fullName>
+        <actions>
+            <name>Case_Assignment_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Lead_Solution_Engineer__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Implementation - Activity Tracker,Implementation - Time Builder,Implementation - Wall Builder,Implementation - CID,Implementation - Time Builder Pilot &amp; Rollout,Implementation - Generic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-045Exxx
+SE Case Assignment Notification</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-046Exxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Revenue_Recognition_Delay__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-046Exxx
+7 Day Revenue Recognition Notification
+Alert that gets emailed out a week in advance to verify that revenue can actually be recognized.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X7_Day_Alert_Case_Revenue_Recognition3</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Case.Project_Exp_Rev_Rec_Date__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-047Exxx</fullName>
+        <actions>
+            <name>SFDC_Change_Request_End_Date_Changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: CASE-047Exxx
+SFDC Change Request: Date Changed</description>
+        <formula>AND(
+   Record_Type_Name__c = &quot;Internal - Operations Change Request&quot;,
+   IsClosed = FALSE,
+   NOT(ISNEW()),
+   ISCHANGED(Date_Closed__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-048xxxx</fullName>
+        <actions>
+            <name>Case_Created_For_Implementation_Expert_Queue</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 2 OR 4) AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Implementation Expert Queue</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>EmailMessage.ToAddress</field>
+            <operation>equals</operation>
+            <value>ieteam_support@intapp.com</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.OwnerId</field>
+            <operation>equals</operation>
+            <value>Implementation Expert Queue</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-048xxxx
+Send Case Created Email to Implementation Expert Team</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-049xFxx</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Customer Portal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Support</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product__c</field>
+            <operation>equals</operation>
+            <value>Intake,Conflicts</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-049xFxx
+NewPortalCaseFromPartner
+Updates the Case: Case Owner field whenever a new portal case from a partner is generated. Field is updated to Mikhail Mudryy.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-050xxxx</fullName>
+        <active>false</active>
+        <description>Rule Code: CASE-050xxxx
+Populate Contact Email
+Populates the contact email address</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-051xxxx</fullName>
+        <active>false</active>
+        <description>Rule Code: CASE-051xxxx
+Populate Dedicated Support Engineer
+Populate Dedicated Support Engineer</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-052xFxx</fullName>
+        <actions>
+            <name>Update_Survey_Project_Manager_Score_if_B</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Survey_ProjectManagerScore__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Rule Code: CASE-052xFxx
+Update Survey Project Manager Score if Blank
+Updates the Survey Project Manager to a 10 if it is left blank</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A CASE-053EFxx</fullName>
+        <actions>
+            <name>Send_email_to_IntappPrime_intapp_com</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Update_Case_Owner_for_Intapp_Prime</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_to_Escalated_to_PS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Intapp_Prime__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: CASE-053EFxx
+Intapp Prime Service Request
+Intapp Prime Service Request Workflow to Update Status, Owner and Send Notification</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Client_Notified_of_Case_Ownership_Change</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: Client Notified of Case Ownership Change</subject>
+    </tasks>
+</Workflow>

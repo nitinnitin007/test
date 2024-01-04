@@ -1,0 +1,35 @@
+<apex:component controller="ProductDocsController">
+  <apex:attribute name="label" description="Table Header"  type="String" required="true"/>
+  <apex:attribute assignTo="{!recordLimit}" name="limit" description="Number of records to return"  type="String" />
+  <apex:attribute name="articleType" description="stores name of article type" type="String"/>
+  	<style>
+  		bPageBlock .pbHeader {
+		  background-color: #999999;
+		}
+	</style>
+
+  <apex:pageBlock title="{!label}" >
+    <apex:pageBlockTable var="relNote" value="{!ReleaseNotes}" rendered="{!(articleType == 'Release_Note')}">
+      <apex:column >
+        <apex:outputLink value="/articles/Release_Note/{!relNote.URLName}?popup=true">{!relNote.Title}<apex:outputText value="({!relNote.Product__c})" rendered="{!NOT(ISBLANK(relNote.Product__c))}"/></apex:outputLink>
+      </apex:column>
+    </apex:pageBlockTable>
+     <apex:pageBlockTable var="relNote" value="{!SupportedEnvironments}" rendered="{!(articleType == 'Supported_Environment')}">
+      <apex:column >
+        <apex:outputLink value="/articles/Supported_Environment/{!relNote.URLName}?popup=true">{!relNote.Title}<apex:outputText value="({!relNote.Product__c})" rendered="{!NOT(ISBLANK(relNote.Product__c))}"/></apex:outputLink>
+      </apex:column>
+    </apex:pageBlockTable>
+    
+		<table class="list">
+			<tbody>
+				<tr>
+					<td>
+						<a href="#" onclick="window.parent.location.href='/portal/knowledge/knowledgeHome.apexp?filter=articleType_{!articleType}__kav'">More</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    
+  </apex:pageBlock>
+  
+</apex:component>

@@ -1,0 +1,39 @@
+<img alt="" src="https://c.na59.content.force.com/servlet/servlet.ImageServer?id=015f4000000LZgg&amp;oid=00Df40000002Xr9&amp;lastMod=1498832005000" style="width: 250px; height: 60px;" /><br />
+<br />
+Hi {{CONTACT_FIRSTNAME}},<br />
+<br />
+Please review the attached receipt.&nbsp; We&#39;ve included a summary of your requested products and services below:<br />
+&nbsp;
+<table border="0" cellpadding="0" cellspacing="1" style="width:500px;">
+	<tbody>
+		<tr>
+			<td colspan="1" rowspan="1" style="width: 170px; background-color: rgb(75, 172, 198);"><span style="color:#FFFFFF;"><span style="font-size: 14px;"><strong>Product</strong></span></span></td>
+			<td colspan="1" rowspan="1" style="width: 165px; text-align: right; background-color: rgb(75, 172, 198);"><span style="color:#FFFFFF;"><span style="font-size: 14px;"><strong>Quantity</strong></span></span></td>
+			<td colspan="1" rowspan="1" style="width: 165px; text-align: right; background-color: rgb(75, 172, 198);"><span style="color:#FFFFFF;"><span style="font-size: 14px;"><strong>Total Price</strong></span></span></td>
+		</tr>
+		<tr>
+			<td colspan="1" rowspan="1">{{TableStart:LineItems}}{{BLNG__INVOICELINE}}</td>
+			<td colspan="1" rowspan="1" style="text-align: right;">{{BLNG__INVOICELINE_QUANTITY \# Number0}}</td>
+			<td colspan="1" rowspan="1" style="text-align: right; ">{{BLNG__INVOICELINE_TOTALAMOUNT \# Currency}}{{TableEnd:LineItems}}</td>
+		</tr>
+		<tr>
+			<td colspan="1" rowspan="1" style="text-align: right; ">&nbsp;</td>
+			<td colspan="1" rowspan="1" style="text-align: right; "><strong><span style="font-size: 14px; ">Total Amount Due:</span></strong></td>
+			<td colspan="1" rowspan="1" style="text-align: right; "><strong>{{ =SUM(Above) \# Currency}}</strong></td>
+		</tr>
+	</tbody>
+</table>
+<br />
+Please see the attachment for the full details.&nbsp; If you have any questions, please don&#39;t hesitate to call.<br />
+<br />
+<br />
+Kind regards,<br />
+<br />
+{{USER_FIRSTNAME}}<br />
+<br />
+<br />
+<em>{{USER_NAME}}<br />
+{{USER_TITLE}}<br />
+{{USER_COMPANYNAME}}<br />
+P: {{USER_PHONE}}<br />
+E: {{USER_EMAIL}}</em>

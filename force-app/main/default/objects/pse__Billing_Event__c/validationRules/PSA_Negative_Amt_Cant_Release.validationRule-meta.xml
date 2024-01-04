@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSA_Negative_Amt_Cant_Release</fullName>
+    <active>false</active>
+    <description>Prevents Billing Events that have a negative dollar amount from being released</description>
+    <errorConditionFormula>pse__Summary_Amount__c &lt; 0 &amp;&amp; pse__Is_Released__c = true
+&amp;&amp; NOT($Profile.Id=&quot;00e30000000bvR3&quot;)</errorConditionFormula>
+    <errorMessage>Billing Events with a negative dollar amount may not be released</errorMessage>
+</ValidationRule>

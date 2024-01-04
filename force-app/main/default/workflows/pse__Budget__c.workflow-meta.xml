@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Budget_Approved_North_America</fullName>
+        <description>Budget Approved North America</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chitra.chandran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Budget_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Budget_Approved_APAC</fullName>
+        <description>New Budget Approved - APAC</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chitra.chandran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>paul.pastura@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Budget_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Budget_Approved_EMEA</fullName>
+        <description>Send Budget Approved - EMEA</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>chitra.chandran@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>neil.vickers@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Budget_Approved_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>PSA_Budget_Set_Approved_Flag</fullName>
+        <field>pse__Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>PSA Budget Set Approved Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Budget_Set_Include_in_FI_Checkbox</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>1</literalValue>
+        <name>PSE Budget Set Include in FI Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSE_Budget_Uncheck_Include_FI_Checkbox</fullName>
+        <field>pse__Include_In_Financials__c</field>
+        <literalValue>0</literalValue>
+        <name>PSE Budget Uncheck Include FI Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A BUD-001xFxx</fullName>
+        <actions>
+            <name>PSA_Budget_Set_Approved_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Budget_Set_Include_in_FI_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Budget__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Rule Code: BUD-001xFxx
+PSA Budget Status Set to Approved
+When the Budget is set to Approved the worklfow will check the include in financials flag</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A BUD-002xFxx</fullName>
+        <actions>
+            <name>PSE_Budget_Uncheck_Include_FI_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Budget__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected,Draft</value>
+        </criteriaItems>
+        <description>Rule Code: BUD-002xFxx
+PSA Budget Status Set to Draft, Rejected
+When the Budget is set to Draft or Rejected the worklfow will un-check the include in financials flag</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A BUD-003Exxx</fullName>
+        <actions>
+            <name>Budget_Approved_North_America</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: BUD-003Exxx
+New Budget Approved - North America</description>
+        <formula>AND(
+  ISPICKVAL(pse__Status__c,&quot;Approved&quot;),
+  pse__Project__r.pse__Region__r.Id = &apos;a2F50000000oYg4&apos;,
+  NOT(DATEVALUE(pse__Project__r.CreatedDate) = TODAY())
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A BUD-004Exxx</fullName>
+        <actions>
+            <name>Send_Budget_Approved_EMEA</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: BUD-004Exxx
+New Budget Approved - EMEA</description>
+        <formula>AND(
+  ISPICKVAL(pse__Status__c,&quot;Approved&quot;),
+  pse__Project__r.pse__Region__r.Id = &apos;a2F50000000oYgE&apos;,
+  NOT(DATEVALUE(pse__Project__r.CreatedDate) = TODAY())
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A BUD-005Exxx</fullName>
+        <actions>
+            <name>New_Budget_Approved_APAC</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: BUD-005Exxx
+New Budget Approved - APAC</description>
+        <formula>AND(
+  ISPICKVAL(pse__Status__c,&quot;Approved&quot;),
+  pse__Project__r.pse__Region__r.Id = &apos;a2F50000000oYg9&apos;,
+  NOT(DATEVALUE(pse__Project__r.CreatedDate) = TODAY())
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

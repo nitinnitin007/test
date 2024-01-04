@@ -1,0 +1,12 @@
+&TemplateGroup=Example
+&Qvar1Format=10010
+&CETGroup=ExampleCETGroup
+&FP0=1
+&SC=1
+&AC0=1
+&AC1=Created Invoice
+&AC2=0
+&EC=
+&AC3=7
+&OFN=Example OFN for {!Contact.Name}
+&QVAR0Format=10010

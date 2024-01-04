@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_issues_in_closing_docs__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Are all support issues detailed in the project closing document?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Are all support issues detailed in the project closing document?</inlineHelpText>
+    <label>Support issues in closing docs</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

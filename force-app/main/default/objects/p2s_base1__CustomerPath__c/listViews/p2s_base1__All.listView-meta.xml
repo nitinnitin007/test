@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__All</fullName>
+    <columns>NAME</columns>
+    <columns>p2s_base1__Lead__c</columns>
+    <columns>p2s_base1__Account__c</columns>
+    <columns>p2s_base1__Contact__c</columns>
+    <columns>p2s_base1__Opportunity__c</columns>
+    <columns>p2s_base1__Detail__c</columns>
+    <columns>p2s_base1__Journey__c</columns>
+    <columns>p2s_base1__Attributed__c</columns>
+    <columns>p2s_base1__Activities__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

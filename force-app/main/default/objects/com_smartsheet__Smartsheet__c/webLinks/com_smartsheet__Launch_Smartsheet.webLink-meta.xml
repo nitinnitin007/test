@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>com_smartsheet__Launch_Smartsheet</fullName>
+    <availability>online</availability>
+    <description>Loads the Smartsheet application in a new window</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Launch Smartsheet</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>window.open(&apos;/apex/com_smartsheet__SmartsheetApp&apos;);</url>
+</WebLink>

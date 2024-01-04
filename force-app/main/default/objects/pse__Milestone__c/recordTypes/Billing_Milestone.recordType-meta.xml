@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Milestone</fullName>
+    <active>true</active>
+    <description>Use this Milestone only for Billing Milestones. Should only be used for reflecting complicated contracts.</description>
+    <label>Billing Milestone</label>
+</RecordType>

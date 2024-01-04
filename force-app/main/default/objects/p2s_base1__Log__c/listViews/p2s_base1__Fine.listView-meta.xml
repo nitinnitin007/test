@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__Fine</fullName>
+    <columns>NAME</columns>
+    <columns>p2s_base1__DebugLevel__c</columns>
+    <columns>p2s_base1__RelatedTo__c</columns>
+    <columns>p2s_base1__Log__c</columns>
+    <columns>p2s_base1__DateTimeLogged__c</columns>
+    <columns>p2s_base1__SecondsLogged__c</columns>
+    <columns>p2s_base1__MillisecondsLogged__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>p2s_base1__DebugLevel__c</field>
+        <operation>equals</operation>
+        <value>Debug,Critical,Fine</value>
+    </filters>
+    <label>Fine</label>
+</ListView>

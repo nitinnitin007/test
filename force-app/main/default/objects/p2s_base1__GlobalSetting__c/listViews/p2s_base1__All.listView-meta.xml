@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__All</fullName>
+    <columns>NAME</columns>
+    <columns>p2s_base1__Active__c</columns>
+    <columns>p2s_base1__ActivateAccountTrigger__c</columns>
+    <columns>p2s_base1__ActivateContactTrigger__c</columns>
+    <columns>p2s_base1__ActivateLeadTrigger__c</columns>
+    <columns>p2s_base1__ActivateOpportunityTrigger__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

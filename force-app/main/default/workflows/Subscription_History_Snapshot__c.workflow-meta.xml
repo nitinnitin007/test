@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Change_Improved</fullName>
+        <field>CSM_Health_Change__c</field>
+        <literalValue>Improved</literalValue>
+        <name>Update CSM Health Change - Improved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Change_Other</fullName>
+        <field>CSM_Health_Change__c</field>
+        <literalValue>Other</literalValue>
+        <name>Update CSM Health Change - Other</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Change_Regressed</fullName>
+        <field>CSM_Health_Change__c</field>
+        <literalValue>Regressed</literalValue>
+        <name>Update CSM Health Change - Regressed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A SHS-001xFxx</fullName>
+        <actions>
+            <name>Update_CSM_Health_Change_Improved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: SHS-001xFxx
+Update CSM Health Change - Improved
+Updates CSM Health Change field with value &quot;Improved&quot;</description>
+        <formula>Change_Improved__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A SHS-002xFxx</fullName>
+        <actions>
+            <name>Update_CSM_Health_Change_Other</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: SHS-002xFxx
+Update CSM Health Change - Other
+Updates CSM Health Change field with value &quot;Other&quot;</description>
+        <formula>OR(
+  Change_Other_1__c,
+  Change_Other_2__c,
+  Change_Other_3__c,
+  Change_Other_4__c
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A SHS-003xFxx</fullName>
+        <actions>
+            <name>Update_CSM_Health_Change_Regressed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: SHS-003xFxx
+Update CSM Health Change - Regressed
+Updates CSM Health Change field with value &quot;Regressed&quot;</description>
+        <formula>OR(
+  Change_Regressed_1__c,
+  Change_Regressed_2__c
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

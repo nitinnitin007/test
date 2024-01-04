@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Entity_needs_to_be_same</fullName>
+    <active>true</active>
+    <errorConditionFormula>blng__Payment__r.blng__LegalEntity__c   &lt;&gt;  blng__InvoiceLine__r.blng__LegalEntity__c</errorConditionFormula>
+    <errorMessage>Invoice Line&apos;s Subsidiary should match the Payment record&apos;s Subsidiary</errorMessage>
+</ValidationRule>

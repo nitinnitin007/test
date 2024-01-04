@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert</fullName>
+        <description>PSA Resource Request Creation Alert PS Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PS_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert_ES_Manager</fullName>
+        <description>PSA Resource Request Creation Alert ES Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ES_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>ashley.goodchild@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert_Kathy_Englar</fullName>
+        <ccEmails>heather.curry@intapp.com</ccEmails>
+        <description>PSA Resource Request Creation Alert Kathy Englar</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>PSA_Resource_Request_Creation_Alert_Region_Owner</fullName>
+        <description>PSA Resource Request Creation Alert Region Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Region_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>PSA_Templates/PSA_Resource_Request_Creation</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>PS_Resource_Request_Update_PS_Mgr_Email</fullName>
+        <field>PS_Manager_Email__c</field>
+        <formula>pse__Project__r.PS_Manager_Email__c</formula>
+        <name>PS Resource Request Update PS Mgr Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PS_Resource_Request_Update_Reg_Own_Email</fullName>
+        <field>Region_Owner_Email__c</field>
+        <formula>pse__Project__r.Region_Owner_Email__c</formula>
+        <name>PS Resource Request Update Reg Own Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_ES_Manager_Email</fullName>
+        <field>ES_Manager_Email__c</field>
+        <formula>pse__Project__r.ES_Manager_Email__c</formula>
+        <name>Set ES Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Requested_Bill_Rate</fullName>
+        <field>pse__Requested_Bill_Rate__c</field>
+        <formula>IF(
+  OR(
+    ISPICKVAL(pse__Project__r.pse__Stage__c,&quot;Fixed Price&quot;),
+    ISPICKVAL(pse__Project__r.pse__Stage__c,&quot;Partner Prime&quot;),
+    AND(
+      ISPICKVAL(pse__Project__r.pse__Stage__c,&quot;Blended&quot;),
+      NOT(ISPICKVAL(pse__Resource_Role__c,&quot;Project Manager&quot;))
+    )
+  ),
+  0,
+  NULL
+)</formula>
+        <name>Set Requested Bill Rate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A RR-001Exxx</fullName>
+        <actions>
+            <name>PSA_Resource_Request_Creation_Alert_Kathy_Englar</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-001Exxx
+PSA Resource Request CSM North America Creation
+New Resource Request Creation for any Resource Role other than Solution Engineer.</description>
+        <formula>AND (ISPICKVAL( pse__Resource_Role__c, &quot;CSM&quot;),  pse__Project__r.pse__Region__r.Name = &quot;North America&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-002xFxx</fullName>
+        <actions>
+            <name>PS_Resource_Request_Update_Reg_Own_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-002xFxx
+PSA Resource Request Set Region Owner Email
+Sets PS Manager Email to the Project&apos;s Region Owner Email</description>
+        <formula>NOT ISBLANK( pse__Project__r.Region_Owner_Email__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-003xFxx</fullName>
+        <actions>
+            <name>PS_Resource_Request_Update_PS_Mgr_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-003xFxx
+PSA Resource Request Set PS Manager Email
+Sets PS Manager Email to the Project&apos;s PS Manager Email</description>
+        <formula>NOT ISBLANK( pse__Project__r.PS_Manager_Email__c )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-004Exxx</fullName>
+        <actions>
+            <name>PSA_Resource_Request_Creation_Alert_Region_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-004Exxx
+PSA Resource Request Not SE or CSM in North America Creation
+New Resource Request Creation for any Resource Role other than Solution Engineer OR CSM in the North America Region.</description>
+        <formula>AND(
+  NOT(ISPICKVAL( pse__Resource_Role__c, &quot;Solution Engineer&quot;)),
+  NOT(
+    AND(
+      OR(
+        ISPICKVAL(pse__Resource_Role__c,&quot;Principal Consultant&quot;),
+        ISPICKVAL(pse__Resource_Role__c,&quot;Solution Architect&quot;)
+      ),
+      OR(
+        pse__Project__r.pse__Practice__c=&quot;Intapp Open&quot;, 
+        pse__Project__r.pse__Practice__c=&quot;Intapp Open - Conflicts&quot;, 
+        pse__Project__r.pse__Practice__c=&quot;Intapp Open - Intake&quot;
+      )
+    )
+  ),
+  AND(
+    NOT(ISPICKVAL( pse__Resource_Role__c, &quot;CSM&quot;)),
+    pse__Project__r.pse__Region__r.Name = &quot;North America&quot;
+  )
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-005Exxx</fullName>
+        <actions>
+            <name>PSA_Resource_Request_Creation_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-005Exxx
+PSA Resource Request SE Creation
+New Resource Request Creation for a Solution Engineer</description>
+        <formula>ISPICKVAL( pse__Resource_Role__c, &quot;Solution Engineer&quot; )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-006xFxx</fullName>
+        <actions>
+            <name>Set_ES_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-006xFxx
+PSA Resource Request Set ES Manager Email</description>
+        <formula>NOT(ISBLANK( pse__Project__r.ES_Manager_Email__c ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-007Exxx</fullName>
+        <actions>
+            <name>PSA_Resource_Request_Creation_Alert_ES_Manager</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-007Exxx
+PSA Resource Request Principal Consultant &amp; Solution Architect</description>
+        <formula>AND(
+  OR(
+    ISPICKVAL(pse__Resource_Role__c,&quot;Principal Consultant&quot;),
+    ISPICKVAL(pse__Resource_Role__c,&quot;Solution Architect&quot;)
+  ),
+  OR(
+    pse__Project__r.pse__Practice__c=&quot;Intapp Open&quot;, 
+    pse__Project__r.pse__Practice__c=&quot;Intapp Open - Conflicts&quot;, 
+    pse__Project__r.pse__Practice__c=&quot;Intapp Open - Intake&quot;,
+    pse__Project__r.pse__Practice__c=&quot;Intapp Open - Workflow&quot;
+  )
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A RR-008xFxx</fullName>
+        <actions>
+            <name>Set_Requested_Bill_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: RR-008xFxx
+Set Requested Bill Rate</description>
+        <formula>AND(
+  ISCHANGED(pse__Project__c),
+  NOT(ISBLANK(pse__Project__c))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

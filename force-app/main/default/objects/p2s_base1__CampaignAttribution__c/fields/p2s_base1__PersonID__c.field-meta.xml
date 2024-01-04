@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__PersonID__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This field represents the unique ID of the person from the Engagio Activities data.  If there is no PersonID, the value of &quot;First Name-Last Name-Title&quot; will be used instead.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field represents the unique ID of the person from the Engagio Activities data.  If there is no PersonID, the value of &quot;First Name-Last Name-Title&quot; will be used instead.</inlineHelpText>
+    <label>Person ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

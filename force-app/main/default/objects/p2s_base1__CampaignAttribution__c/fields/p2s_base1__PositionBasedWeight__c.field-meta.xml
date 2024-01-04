@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__PositionBasedWeight__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The percentage allocated to this campaign based upon the position attribution model</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The percentage allocated to this campaign based upon the position attribution model</inlineHelpText>
+    <label>Position Based Weight</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

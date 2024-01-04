@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>PS_Letterhead</letterhead>
+    <name>Pre-Bill Hold</name>
+    <style>freeForm</style>
+    <subject>Pre-Bill Hold for: {!Time_Billing__c}</subject>
+    <textOnly>A Pre-Bill for {!Time_Billing__c} has been set to on hold.
+
+Details:
+
+Project Manager: {!Time_Billing__c.Project_Manager__c}
+Contract: {!Time_Billing__c.Contract__c}
+Total Amount: {!Time_Billing__c.Total_Billable_Amount__c}
+Link: {!Time_Billing__c.Link}
+
+Please ensure the Pre-Bill receives a timely approval when appropriate.
+
+
+
+
+
+
+
+
+Rule Code: TB-001Exxx
+
+Rule Code: TB-002Exxx
+
+Rule Code: TB-003Exxx</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

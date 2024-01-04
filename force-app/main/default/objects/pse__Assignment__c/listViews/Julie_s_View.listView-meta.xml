@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Julie_s_View</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <label>Julie&apos;s View</label>
+    <language>en_US</language>
+</ListView>

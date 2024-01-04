@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Status_Indicator__c</fullName>
+    <description>Displays green, yellow or red image corresponding to Project&apos;s Overall Status</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(CASE(pse__Project_Status__c, 
+&quot;Green&quot;, &quot;/servlet/servlet.FileDownload?file=00P50000005vPYv&quot;,
+&quot;Amber&quot;, &quot;/servlet/servlet.FileDownload?file=00P50000005vPZ5&quot;,
+&quot;Red&quot;, &quot;/servlet/servlet.FileDownload?file=00P50000005vPZ0&quot;,
+&quot;/s.gif&quot;), 
+&quot;status color&quot;)</formula>
+    <inlineHelpText>Displays green, yellow or red image corresponding to Project&apos;s Overall Status</inlineHelpText>
+    <label>Project Status Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

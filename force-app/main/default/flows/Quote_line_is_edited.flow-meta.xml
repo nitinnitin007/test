@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>GlobalConstant</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Product_type_for_roll_up__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Populate product type for roll-up</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision3</name>
+        <label>myDecision3</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision5</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_4</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_4</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_4_A1</targetReference>
+            </connector>
+            <label>include in select</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision5</name>
+        <label>myDecision5</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_6</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_6</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_6_A1</targetReference>
+            </connector>
+            <label>include Legal</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name   ,&apos;Sandbox&apos;),
+&apos;Sandbox&apos;,
+IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name   ,&apos;Professional&apos;),
+&apos;Professional&apos;,
+IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name  ,&apos;NPI&apos;),
+&apos;NPI&apos;,
+IF(
+AND(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name   ,&apos;Risk&apos;),
+NOT(CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name   ,&apos;Support&apos;))
+),
+&apos;Risk&apos;,
+IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name  ,&apos;Transformation&apos;),
+&apos;Transformation&apos;,
+IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name   ,&apos;Management&apos;),
+&apos;Management&apos;,
+IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name  ,&apos;Collaborative&apos;),
+&apos;Collaborative&apos;,
+IF(
+CONTAINS([SBQQ__QuoteLine__c].SBQQ__Product__r.Name  ,&apos;Intapp Prime&apos;),
+&apos;Intapp Prime&apos;,
+&apos;Services&apos;
+)
+)
+)
+)
+)
+)
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_7797656475</name>
+        <dataType>String</dataType>
+        <expression>IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}   ,&apos;Sandbox&apos;),
+&apos;Sandbox&apos;,
+IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}   ,&apos;Professional&apos;),
+&apos;Professional&apos;,
+IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}  ,&apos;NPI&apos;),
+&apos;NPI&apos;,
+IF(
+AND(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}   ,&apos;Risk&apos;),
+NOT(CONTAINS({!myVariable_current.SBQQ__Product__r.Name}   ,&apos;Support&apos;))
+),
+&apos;Risk&apos;,
+IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}  ,&apos;Transformation&apos;),
+&apos;Transformation&apos;,
+IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}   ,&apos;Management&apos;),
+&apos;Management&apos;,
+IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}  ,&apos;Collaborative&apos;),
+&apos;Collaborative&apos;,
+IF(
+CONTAINS({!myVariable_current.SBQQ__Product__r.Name}  ,&apos;Intapp Prime&apos;),
+&apos;Intapp Prime&apos;,
+&apos;Services&apos;
+)
+)
+)
+)
+)
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+AND(
+ISNEW(),
+[SBQQ__QuoteLine__c].Include_in_Select_Bundle__c  =true),
+
+AND(
+ISCHANGED([SBQQ__QuoteLine__c].Include_in_Select_Bundle__c  ),
+[SBQQ__QuoteLine__c].Include_in_Select_Bundle__c  =true))
+
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_4</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(
+ISNEW(),
+{!myVariable_current.Include_in_Select_Bundle__c}  =true),
+
+AND(
+ISCHANGED({!myVariable_current.Include_in_Select_Bundle__c}  ),
+{!myVariable_current.Include_in_Select_Bundle__c}  =true))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+AND(
+ISNEW(),
+[SBQQ__QuoteLine__c].Include_Intapp_Legal__c =true),
+
+AND(
+ISCHANGED([SBQQ__QuoteLine__c].Include_Intapp_Legal__c ),
+[SBQQ__QuoteLine__c].Include_Intapp_Legal__c =true))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_6</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(
+ISNEW(),
+{!myVariable_current.Include_Intapp_Legal__c} =true),
+
+AND(
+ISCHANGED({!myVariable_current.Include_Intapp_Legal__c} ),
+{!myVariable_current.Include_Intapp_Legal__c} =true))</expression>
+    </formulas>
+    <interviewLabel>Quote_line_is_edited-6_InterviewLabel</interviewLabel>
+    <label>Quote line is edited</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>SBQQ__QuoteLine__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[SBQQ__QuoteLine__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>populate field</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Product type for roll-up</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Product_type_for_roll_up__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_7797656475</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__QuoteLine__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[SBQQ__QuoteLine__c].Quote</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_4_A1</name>
+        <label>include in select</label>
+        <locationX>400</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision5</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.SBQQ__Quote__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Include in Select Bundle?</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Include_in_Select_Bundle__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[SBQQ__QuoteLine__c].Quote</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_6_A1</name>
+        <label>include legal</label>
+        <locationX>600</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.SBQQ__Quote__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Include Intapp Legal?</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Boolean</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Include_Intapp_Legal__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>SBQQ__QuoteLine__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>SBQQ__QuoteLine__c</objectType>
+    </variables>
+</Flow>

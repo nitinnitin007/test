@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValorX__Duplicate_App_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+
+OR(
+ISNEW(), 
+ISCHANGED(Name)),
+
+VLOOKUP(
+$ObjectType.ValorX__App__c.Fields.Name,
+$ObjectType.ValorX__App__c.Fields.Name, 
+Name) = Name)</errorConditionFormula>
+    <errorMessage>This App Name has already been taken. Please choose another App Name.</errorMessage>
+</ValidationRule>

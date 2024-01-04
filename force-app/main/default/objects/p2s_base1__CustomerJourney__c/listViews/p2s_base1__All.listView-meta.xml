@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__All</fullName>
+    <columns>NAME</columns>
+    <columns>p2s_base1__Lead__c</columns>
+    <columns>p2s_base1__Account__c</columns>
+    <columns>p2s_base1__Contact__c</columns>
+    <columns>p2s_base1__Opportunity__c</columns>
+    <columns>p2s_base1__NoEngagement__c</columns>
+    <columns>p2s_base1__Aware__c</columns>
+    <columns>p2s_base1__MQA__c</columns>
+    <columns>p2s_base1__OpenOpportunity__c</columns>
+    <columns>p2s_base1__Customer__c</columns>
+    <columns>p2s_base1__ConvertedLead__c</columns>
+    <columns>p2s_base1__PreviousJourney__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

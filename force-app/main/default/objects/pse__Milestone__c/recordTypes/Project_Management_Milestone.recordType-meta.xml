@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Management_Milestone</fullName>
+    <active>true</active>
+    <description>Please use this Milestone if you are creating Milestones for Project Management only (i.e. not for revenue generating milestones)</description>
+    <label>Project Management Milestone</label>
+</RecordType>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Rule Code%3A SOL-001xxxT</fullName>
+        <actions>
+            <name>ReviewSolution</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Solution.Status</field>
+            <operation>equals</operation>
+            <value>Draft</value>
+        </criteriaItems>
+        <description>Rule Code: SOL-001xxxT
+Support:New Solution Draft
+This should process any new solutions created and let us know that we need to review it.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>ReviewSolution</fullName>
+        <assignedTo>bizappsdev@intapp.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Please review the above solution within two weeks.  It needs to be reviewed for accuracy and content relevance.  When you are finished reviewing, please mark the solution as reviewed.</description>
+        <dueDateOffset>14</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Review Solution</subject>
+    </tasks>
+</Workflow>

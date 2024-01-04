@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Board_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>CEM Engagement Approach</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not participating</fullName>
+                <default>false</default>
+                <label>Not participating</label>
+            </value>
+            <value>
+                <fullName>Assessing interest</fullName>
+                <default>false</default>
+                <label>Assessing interest</label>
+            </value>
+            <value>
+                <fullName>Program Completed</fullName>
+                <default>false</default>
+                <label>Program Completed</label>
+            </value>
+            <value>
+                <fullName>Formal Project Board</fullName>
+                <default>false</default>
+                <label>Formal Project Board</label>
+            </value>
+            <value>
+                <fullName>Informal Project Board</fullName>
+                <default>false</default>
+                <label>Informal Project Board</label>
+            </value>
+            <value>
+                <fullName>1:1: Call with Stakeholder</fullName>
+                <default>false</default>
+                <label>1:1: Call with Stakeholder</label>
+            </value>
+            <value>
+                <fullName>Engaged Due to Issues</fullName>
+                <default>false</default>
+                <label>Engaged Due to Issues</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

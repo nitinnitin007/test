@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>After_Market_Partner_Project__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This box should be checked for projects where partners obtain work directly through a client (not though an Intapp opportunity), and we need to track the project.</description>
+    <externalId>false</externalId>
+    <label>After Market Partner Project</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

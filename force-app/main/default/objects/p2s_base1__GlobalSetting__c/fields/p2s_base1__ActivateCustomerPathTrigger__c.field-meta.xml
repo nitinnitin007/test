@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__ActivateCustomerPathTrigger__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Check this box to turn on the CustomerPath__c trigger</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check this box to turn on the CustomerPath__c trigger</inlineHelpText>
+    <label>Activate CustomerPath__c Trigger</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

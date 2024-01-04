@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>p2s_base1__UseAccountAttributionOnOpportunity__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this field is checked, the account attribution settings will be used to calculate attribution for the opportunity paths.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this field is checked, the account attribution settings will be used to calculate attribution for the opportunity paths.</inlineHelpText>
+    <label>Use Account Attribution on Opportunity</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

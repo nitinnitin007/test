@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_PS_Survey</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Send PS Survey</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>location.replace(&apos;/email/author/emailauthor.jsp?retURL=/{!pse__Milestone__c.Id}&amp;p3_lkid={!pse__Milestone__c.Id}&amp;rtype=003&amp;p2_lkid={!pse__Milestone__c.MilestoneProjectContact__c}&amp;template_id=00X50000001GKS4&amp;p24=&apos;);</url>
+</WebLink>

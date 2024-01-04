@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>XactlyExpress__Profile_Not_Null</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNULL(XactlyExpress__ProfileID__c)</errorConditionFormula>
+    <errorDisplayField>XactlyExpress__ProfileID__c</errorDisplayField>
+    <errorMessage>Specify a profile</errorMessage>
+</ValidationRule>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Resource_List</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>pse__Is_Resource_Active__c</columns>
+    <columns>pse__Group__c</columns>
+    <columns>CONTACT.DEPARTMENT</columns>
+    <columns>pse__Region__c</columns>
+    <columns>pse__Practice__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Resource_Manager__c</columns>
+    <columns>pse__Resource_Role__c</columns>
+    <columns>CONTACT.TITLE</columns>
+    <columns>pse__Utilization_Target__c</columns>
+    <columns>Calendar_Week_Hours__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>pse__Start_Date__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>pse__Is_Resource_Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.PSA_Resource</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>equals</operation>
+        <value>Intapp</value>
+    </filters>
+    <filters>
+        <field>CONTACT.DEPARTMENT</field>
+        <operation>contains</operation>
+        <value>PS</value>
+    </filters>
+    <label>PS Resource List</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>Professional_Services</group>
+    </sharedTo>
+</ListView>

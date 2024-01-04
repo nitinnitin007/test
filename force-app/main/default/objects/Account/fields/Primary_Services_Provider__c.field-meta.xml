@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Services_Provider__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Primary Services Provider</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Implementation Partner, Implementation Partner - Potential, Consulting/Market Development partner, Potential Consulting/Market Development partner, Integration/Technology partner, Potential Integration/Technology partner, Alliance Partner, Potential Allia</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Id</field>
+            <operation>equals</operation>
+            <value>00130000000XELb</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Accounts (Primary Services Provider)</relationshipLabel>
+    <relationshipName>Accounts1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

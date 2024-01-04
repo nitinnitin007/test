@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_Bill_Rate_unless_Admin</fullName>
+    <active>true</active>
+    <description>This validation rule prevents anybody from changing the Bill Rates once the Assignment is set up - unless they are an admin in Salesforce or in the Standard User - Administrative profile.</description>
+    <errorConditionFormula>AND(
+  NOT(ISNEW()),
+  ISCHANGED(pse__Bill_Rate__c),
+  NOT($Profile.Id = &apos;00e30000000bvR3&apos;), /*Profile: System Administrator*/
+  NOT($Profile.Id = &apos;00e50000000hvYe&apos;), /*Profile: Standard User - Administrative*/
+  NOT($User.Id =&apos;00550000005YQdR&apos;) /*User: Kim Bespaly*/
+)</errorConditionFormula>
+    <errorDisplayField>pse__Bill_Rate__c</errorDisplayField>
+    <errorMessage>Please do not change the Bill Rate once it is set. Contact PS Ops (ps_ops@intapp.com) if you believe the bill rate needs to be changed.</errorMessage>
+</ValidationRule>
