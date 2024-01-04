@@ -61,5 +61,5 @@
         <value>Состояние DocuSign</value>
     </caseValues>
     <gender>Neuter</gender>
-    <nameFieldLabel>Номер конверта</nameFieldLabel>
+    <nameFieldLabel>Конверт#</nameFieldLabel>
 </CustomObjectTranslation>

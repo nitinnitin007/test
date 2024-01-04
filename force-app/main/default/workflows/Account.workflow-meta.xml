@@ -1,5 +1,647 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>NPI_Account_Notification</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>NPI Account Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>brian.mcmorrow@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dave.wong@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>gary.rose@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jennifer.richard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jose.lazares@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sara.cabral@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tim.nolan@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CRD__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Dedicated_Support_Engineer_Revenue__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Dedicated_Support_Engineer_Risk__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Dedicated_Support_Engineer_Walls_IB__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Development_Representative__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/NPI_Account_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>NewAcctCreated</fullName>
+        <description>New Acct Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ameya.thatte@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/SalesOpsNewAcctCreated</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Accounting_that_the_Account_Owner_has_Changed</fullName>
+        <description>Notify Accounting that the Account Owner has Changed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Accounting</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>CFO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>President</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>john.hall@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/Account_Owner_has_Changed</template>
+    </alerts>
+    <alerts>
+        <fullName>ProductUseCasesUpdated</fullName>
+        <ccEmails>sameera@intapp.com</ccEmails>
+        <ccEmails>blake@intapp.com</ccEmails>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Product Use Cases Updated</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/ProductUseUpdate</template>
+    </alerts>
+    <alerts>
+        <fullName>Support_Coupon_Used</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Support Coupon Used</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>Director_Customer_Support</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>holly.stirk@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>support@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Customer_Support/NewSuportCaseForClient1</template>
+    </alerts>
+    <alerts>
+        <fullName>You_appear_to_have_updated_the_Lawyers_field</fullName>
+        <description>You appear to have updated the &lt;Lawyers&gt; field</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>greg.gardner@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vera.friss@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Operations/Open_Opportunity_Past_Close_Date</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_CSM_Health_Rate_Change_Action</fullName>
+        <field>AccountCSM_Health_Rating_Last_Modified__c</field>
+        <formula>NOW()</formula>
+        <name>Account CSM Health Rate Change Action</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_CSM_Health_Rate_Prev_Val_Action</fullName>
+        <field>Account_CSM_Health_Rating_Previous__c</field>
+        <formula>TEXT(PRIORVALUE(CSM_Health_Rating__c))</formula>
+        <name>Account CSM Health Rate Prev Val Action</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSM_Health_Rating_Last_Modified_Update</fullName>
+        <field>CSM_Health_Rating_Last_Modified__c</field>
+        <formula>NOW()</formula>
+        <name>CSM Health Rating - Last Modified Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Compliance_Module_Own_It</fullName>
+        <field>Intapp_Time_Compliance_Module__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Compliance Module Own It</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_App_Portfolio_Last_Modified</fullName>
+        <field>App_Portfolio_Notes_Last_Modified__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Populate App Portfolio Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Open_Version_Modified_By_On</fullName>
+        <field>Open_Version_Modified_By_On__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName&amp;&quot; &quot;&amp; 
+TEXT(MONTH(TODAY()))&amp;&quot;/&quot;&amp;TEXT(DAY(TODAY()))&amp;&quot;/&quot;&amp;TEXT(YEAR(TODAY()))</formula>
+        <name>Populate Open Version Modified By/On</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_TB_Version_Modified_By_On</fullName>
+        <field>TB_Version_Modified_By_On__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName&amp;&quot; &quot;&amp; 
+TEXT(MONTH(TODAY()))&amp;&quot;/&quot;&amp;TEXT(DAY(TODAY()))&amp;&quot;/&quot;&amp;TEXT(YEAR(TODAY()))</formula>
+        <name>Populate TB Version Modified By/On</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_WB_Version_Modified_By_On</fullName>
+        <field>WB_Version_Modified_By_On__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName&amp;&quot; &quot;&amp;
+TEXT(MONTH(TODAY()))&amp;&quot;/&quot;&amp;TEXT(DAY(TODAY()))&amp;&quot;/&quot;&amp;TEXT(YEAR(TODAY()))</formula>
+        <name>Populate WB Version Modified By/On</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SRT_Flow_Installed_Recipient</fullName>
+        <field>SRT_Flow_Recipients__c</field>
+        <formula>IF(
+  ISBLANK(SRT_Flow_Recipients__c),&quot;saurabh.mehra@intapp.com&quot;,
+  IF(
+  CONTAINS(SRT_Flow_Recipients__c,&quot;saurabh.mehra@intapp.com&quot;),
+       SRT_Flow_Recipients__c,SRT_Flow_Recipients__c &amp;&quot;;&quot;&amp;&quot;saurabh.mehra@intapp.com&quot;
+    )
+  )</formula>
+        <name>SRT Flow -Installed Recipient</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SRT_Open_Installed_Recipient_Update</fullName>
+        <field>SRT_Open_Recipients__c</field>
+        <formula>IF(
+  ISBLANK(SRT_Open_Recipients__c),&quot;james.edwards@intapp.com&quot;,
+  IF(
+  CONTAINS(SRT_Open_Recipients__c,&quot;james.edwards@intapp.com&quot;),
+        SRT_Open_Recipients__c,SRT_Open_Recipients__c &amp;&quot;;&quot;&amp;&quot;james.edwards@intapp.com&quot;
+    )
+  )</formula>
+        <name>SRT Open -Installed Recipient Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SRT_Time_Installed_Recipient_Update</fullName>
+        <field>SRT_Time_Recipients__c</field>
+        <formula>IF(
+  ISBLANK(SRT_Time_Recipients__c),&quot;matt.mcinerny@intapp.com&quot;,
+  IF(
+  CONTAINS(SRT_Time_Recipients__c,&quot;matt.mcinerny@intapp.com&quot;),
+       SRT_Time_Recipients__c,SRT_Time_Recipients__c &amp;&quot;;&quot;&amp;&quot;matt.mcinerny@intapp.com&quot;
+    )
+  )</formula>
+        <name>SRT Time -Installed Recipient Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Intapp_Time_to_Own_it</fullName>
+        <field>Intapp_Time__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Set Intapp Time to Own it</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Support_Level_Standard_WB</fullName>
+        <field>Support_Level_Wall_Builder__c</field>
+        <literalValue>Standard</literalValue>
+        <name>Set Support Level Standard WB</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_health_Still_accurate</fullName>
+        <field>Health_Still_Accurate__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck health Still accurate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Type_to_Prospect</fullName>
+        <description>SC-000045</description>
+        <field>Type</field>
+        <literalValue>Prospect</literalValue>
+        <name>Update Account Type to Prospect</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Type_to_Suspect</fullName>
+        <description>SC-000045</description>
+        <field>Type</field>
+        <literalValue>Suspect</literalValue>
+        <name>Update Account Type to Suspect</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Criteria_Based_Access</fullName>
+        <field>Criteria_Based_Access__c</field>
+        <literalValue>Entitled</literalValue>
+        <name>Update Criteria Based Access</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_DE_Version_Last_Modified</fullName>
+        <field>DE_Version_Last_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Update DE Version Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_DE_Version_Last_Modified_By</fullName>
+        <field>DE_Version_Last_Modified_By__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update DE Version Last Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Date_Account_Name_Changed</fullName>
+        <field>Date_Account_Name_Changed__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Date Account Name Changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Intapp_Time_to_Own_it_Cloud</fullName>
+        <field>Intapp_Time__c</field>
+        <literalValue>Own it - Cloud</literalValue>
+        <name>Update Intapp Time to Own it - Cloud</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Open_Version_Last_Modified</fullName>
+        <field>Open_Version_Last_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Open Version Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Open_Version_Last_Modified_By</fullName>
+        <field>Open_Version_Last_Modified_By__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update Open Version Last Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Self_Maintaining_PMS</fullName>
+        <field>Self_Maintaining_via_PMS__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Update Self-Maintaining (PMS)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Self_Maintaning_PMS</fullName>
+        <field>Self_Maintaining_via_PMS__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Update Self Maintaning PMS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Support_Level_Intake</fullName>
+        <field>Support_Level_Intapp_Open_Intake__c</field>
+        <literalValue>Standard</literalValue>
+        <name>Update Support Level Intake</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TB_Version_Last_Modified</fullName>
+        <field>TB_Version_Last_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Update TB Version Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TB_Version_Modified_By</fullName>
+        <field>TB_Version_Modified_By_On__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update TB Version Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TE_Desktop_Version_Last_Modified</fullName>
+        <field>Desktop_TE_Version_Last_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Update TE Desktop Version Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TE_Desktop_Version_Modified_By</fullName>
+        <field>TE_Desktop_Version_Modified_By__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update TE Desktop Version Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TE_Version_Last_Modified</fullName>
+        <field>TE_Version_Last_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Update TE Version Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TE_Version_Modified_By</fullName>
+        <field>TE_Version_Modified_By_On__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update TE Version Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_TTM_Upsell_Status</fullName>
+        <field>TTM_Upsell_Status__c</field>
+        <literalValue>Upsell Completed</literalValue>
+        <name>Update TTM Upsell Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Time_Builder_Own_it</fullName>
+        <field>Time_Builder__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Update Time Builder Own it</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_WB_Version_Last_Modified</fullName>
+        <field>Walls_Version_Last_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Update WB Version Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_WB_Version_Last_Modified_By</fullName>
+        <field>WB_Version_Last_Modified_By__c</field>
+        <formula>$User.FirstName&amp;&quot; &quot;&amp;$User.LastName</formula>
+        <name>Update WB Version Last Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wall_Builder_Lapsed</fullName>
+        <field>Wall_Builder__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Update Wall Builder Lapsed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wall_Builder_Own_It</fullName>
+        <field>Wall_Builder__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Update Wall Builder Own It</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wall_Builder_for_IT_Own_it</fullName>
+        <field>Wall_Builder_for_IT__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Update Wall Builder for IT Own it</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wall_Builder_for_Risk_IT_Own_it</fullName>
+        <field>Wall_Builder_for_Risk_IT__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Update Wall Builder for Risk/IT Own it</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wall_Builder_for_Risk_Lapsed</fullName>
+        <field>Wall_Builder_for_Risk_Memo__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Update Wall Builder for Risk Lapsed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wall_Builder_for_Risk_Own_it</fullName>
+        <field>Wall_Builder_for_Risk_Memo__c</field>
+        <literalValue>Own it</literalValue>
+        <name>Update Wall Builder for Risk Own it</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WB_Installed_Recipient_Update</fullName>
+        <field>SRT_WB_Recipients__c</field>
+        <formula>IF(
+  ISBLANK(SRT_WB_Recipients__c),&quot;colleen.gifford@intapp.com&quot;,
+  IF(
+  CONTAINS(SRT_WB_Recipients__c ,&quot;colleen.gifford@intapp.com&quot;),
+        SRT_WB_Recipients__c,SRT_WB_Recipients__c &amp;&quot;;&quot;&amp; &quot;colleen.gifford@intapp.com&quot;
+    )
+  )</formula>
+        <name>WB-Installed Recipient Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Wall_Builder_for_IT_Lapsed</fullName>
+        <field>Wall_Builder_for_IT__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Wall Builder for IT Lapsed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Wall_Builder_for_Risk_IT_Lapsed</fullName>
+        <field>Wall_Builder_for_Risk_IT__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Wall Builder for Risk/IT Lapsed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>SendAccountToDTE</fullName>
+        <apiVersion>33.0</apiVersion>
+        <endpointUrl>https://www.intapp.com/SalesForceSync/DTE/Account/AccountNotificationService.asmx</endpointUrl>
+        <fields>Id</fields>
+        <fields>IntApp_Account_Number__c</fields>
+        <fields>Name</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>support.automation@intapp.com</integrationUser>
+        <name>SendAccountToDTE</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
     <rules>
         <fullName>Rule Code%3A ACT-001Exxx</fullName>
         <actions>

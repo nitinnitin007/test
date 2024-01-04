@@ -661,7 +661,7 @@ Added Scheduled Path for payment allocation</description>
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Obsolete</status>
     <variables>
         <name>AssignInvoicesCount</name>
         <dataType>Number</dataType>

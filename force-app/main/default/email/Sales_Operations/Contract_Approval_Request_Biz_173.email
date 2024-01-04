@@ -64,10 +64,10 @@
 <b>Yearly Software Uplift% </b> : {!relatedTo.SBQQ__Quote__r.Uplift__c}<br/>
 
 <b>Services TCV</b> : <apex:outputPanel rendered="{!relatedTo.SBQQ__Quote__r.Services_Net_Total__c == null}">
-<apex:outputText value="{0, number, ###,###,###,###0.00}"><apex:param value="{!relatedTo.SBQQ__Quote__r.Services_Net_Total__c}"/></apex:outputText><br/>
+<apex:outputText value="{0, number, ###,###,###,###.00}"><apex:param value="{!relatedTo.SBQQ__Quote__r.Services_Net_Total__c}"/></apex:outputText><br/>
 </apex:outputPanel> 
 <apex:outputPanel rendered="{!relatedTo.SBQQ__Quote__r.Services_Net_Total__c!= null}">
-{!relatedTo.SBQQ__Quote__r.Currency_Symbol__c}<apex:outputText value="{0, number, ###,###,###,###0.00}"><apex:param value="{!relatedTo.SBQQ__Quote__r.Services_Net_Total__c}"/></apex:outputText><br/>
+{!relatedTo.SBQQ__Quote__r.Currency_Symbol__c}<apex:outputText value="{0, number, ###,###,###,###.00}"><apex:param value="{!relatedTo.SBQQ__Quote__r.Services_Net_Total__c}"/></apex:outputText><br/>
 </apex:outputPanel> 
 
 <b>Services Discount</b> : {!relatedTo.SBQQ__Quote__r.Services_Discount_Percentage__c}% <br/>

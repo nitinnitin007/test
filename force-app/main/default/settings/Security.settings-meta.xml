@@ -81,10 +81,6 @@ Hightower Trail</description>
             <start>52.11.152.229</start>
         </ipRanges>
         <ipRanges>
-            <end>42.111.165.140</end>
-            <start>42.111.165.140</start>
-        </ipRanges>
-        <ipRanges>
             <description>SVDC</description>
             <end>38.127.224.242</end>
             <start>38.127.224.242</start>
@@ -102,7 +98,7 @@ Hightower Trail</description>
     </networkAccess>
     <passwordPolicies>
         <complexity>SpecialCharacters</complexity>
-        <expiration>Never</expiration>
+        <expiration>ThirtyDays</expiration>
         <historyRestriction>3</historyRestriction>
         <lockoutInterval>Forever</lockoutInterval>
         <maxLoginAttempts>ThreeAttempts</maxLoginAttempts>
@@ -146,7 +142,7 @@ Hightower Trail</description>
         <hasUserSwitching>true</hasUserSwitching>
         <identityConfirmationOnEmailChange>false</identityConfirmationOnEmailChange>
         <identityConfirmationOnTwoFactorRegistrationEnabled>true</identityConfirmationOnTwoFactorRegistrationEnabled>
-        <lockSessionsToDomain>false</lockSessionsToDomain>
+        <lockSessionsToDomain>true</lockSessionsToDomain>
         <lockSessionsToIp>false</lockSessionsToIp>
         <lockerServiceCSP>false</lockerServiceCSP>
         <lockerServiceNext>false</lockerServiceNext>
@@ -163,9 +159,10 @@ Hightower Trail</description>
     </sessionSettings>
     <singleSignOnSettings>
         <enableCaseInsensitiveFederationID>false</enableCaseInsensitiveFederationID>
+        <enableForceDelegatedCallout>false</enableForceDelegatedCallout>
         <enableMultipleSamlConfigs>true</enableMultipleSamlConfigs>
         <enableSamlJitProvisioning>false</enableSamlJitProvisioning>
         <enableSamlLogin>true</enableSamlLogin>
-        <isLoginWithSalesforceCredentialsDisabled>false</isLoginWithSalesforceCredentialsDisabled>
+        <isLoginWithSalesforceCredentialsDisabled>true</isLoginWithSalesforceCredentialsDisabled>
     </singleSignOnSettings>
 </SecuritySettings>

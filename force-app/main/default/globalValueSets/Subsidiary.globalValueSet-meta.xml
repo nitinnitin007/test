@@ -51,16 +51,16 @@
         <label>42:Paragon Data Labs, Inc.</label>
     </customValue>
     <customValue>
-        <fullName>Polar Placeholder</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Polar Placeholder</label>
-    </customValue>
-    <customValue>
         <fullName>22:Paragon Data Labs, Inc.</fullName>
         <default>false</default>
         <isActive>false</isActive>
         <label>22:Paragon Data Labs, Inc.</label>
+    </customValue>
+    <customValue>
+        <fullName>Polar Placeholder</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Polar Placeholder</label>
     </customValue>
     <description>Will be used in Account,Contract, Quote &amp; Order created as part of BIZ-47396 story</description>
     <masterLabel>Subsidiary</masterLabel>

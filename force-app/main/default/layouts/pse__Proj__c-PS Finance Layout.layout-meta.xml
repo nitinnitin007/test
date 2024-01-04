@@ -833,21 +833,6 @@
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>CREATED_DATE</fields>
-        <fields>Client_Contact__c</fields>
-        <fields>Status__c</fields>
-        <fields>Total_Billable_Amount__c</fields>
-        <fields>Start_Date__c</fields>
-        <fields>End_Date__c</fields>
-        <fields>Approved_By__c</fields>
-        <fields>Approval_Date__c</fields>
-        <fields>Invoice__c</fields>
-        <relatedList>Time_Billing__c.Project__c</relatedList>
-        <sortField>CREATED_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
         <customButtons>pse__Log_a_Timecard_New_UI</customButtons>
         <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
@@ -880,13 +865,6 @@
         <fields>Status__c</fields>
         <fields>Partner__c</fields>
         <relatedList>Survey_Request__c.Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Contact__c</fields>
-        <fields>NPS_Score__c</fields>
-        <fields>Reason_for_NPS_Score__c</fields>
-        <relatedList>SFDC_Survey__c.Project__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

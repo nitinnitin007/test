@@ -993,14 +993,14 @@
     </relatedContent>
     <relatedLists>
         <fields>Product2</fields>
-        <fields>Meter_Type__c</fields>
-        <fields>Support_Level__c</fields>
-        <fields>Quantity</fields>
-        <fields>Net_Price_Month__c</fields>
-        <fields>Total_Price_Annual__c</fields>
-        <fields>ACV_Change__c</fields>
+        <fields>ListPrice</fields>
+        <fields>UnitPrice</fields>
         <fields>Recurring_Amount_Change__c</fields>
-        <fields>Item_Master_Number__c</fields>
+        <fields>Invoice_Total__c</fields>
+        <fields>Term_Start_Date__c</fields>
+        <fields>Term_End_Date__c</fields>
+        <fields>Active__c</fields>
+        <fields>At_Risk__c</fields>
         <fields>Additional_Information__c</fields>
         <relatedList>RelatedLineItemList</relatedList>
     </relatedLists>

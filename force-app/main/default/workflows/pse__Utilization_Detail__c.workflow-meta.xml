@@ -26,4 +26,34 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A UD-001Exxx</fullName>
+        <actions>
+            <name>Capacity_Overload_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: UD-001Exxx
+Utilization Overload Alert
+Sends an email notification to Carolina and Resource managers</description>
+        <formula>AND(
+  Capacity__c&gt;=1.5,
+  (TODAY()-pse__Historical_End_Date__c)&lt;5,
+  NOT(ISBLANK(Resource_Manager_Email__c))
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A UD-002xFxx</fullName>
+        <actions>
+            <name>Set_Resource_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: UD-002xFxx
+Set Resource Manager Email
+Populates the Resource Manager Email on the Utilization Detail object</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
 </Workflow>

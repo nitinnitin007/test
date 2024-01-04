@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Activity_Tracker_Kiosk_Entry</fullName>
+        <ccEmails>marketing@intapp.com</ccEmails>
+        <description>Activity Tracker Kiosk Entry</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/WebEntryATKiosk</template>
+    </alerts>
+    <alerts>
+        <fullName>Business_Acceptance_Maturity_Model_Lead_Notification</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Business Acceptance Maturity Model Lead Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>john.vonhof@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lea.schweitzer@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/Business_Acceptance_Maturity_Model</template>
+    </alerts>
+    <alerts>
+        <fullName>KioskLeadIntakeAlert</fullName>
+        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
+        <description>Kiosk Lead Intake Alert</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/WebEntryKiosk</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CASL_compliance</fullName>
+        <field>CASL_Compliance__c</field>
+        <literalValue>1</literalValue>
+        <name>CASL compliance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CCPA_Compliance</fullName>
+        <field>CCPA_Compliance__c</field>
+        <literalValue>1</literalValue>
+        <name>CCPA Compliance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>GDPR_Compliance</fullName>
+        <field>GDPR_Compliance__c</field>
+        <literalValue>1</literalValue>
+        <name>GDPR Compliance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Rule Code%3A LEAD-001Exxx</fullName>
         <actions>

@@ -9,7 +9,6 @@
     </labels>
     <labels>
         <fullName>Account_Details</fullName>
-        <categories>Fields</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Account Details</shortDescription>
@@ -50,6 +49,13 @@
         <protected>false</protected>
         <shortDescription>US CPI Data</shortDescription>
         <value>3.2%</value>
+    </labels>
+    <labels>
+        <fullName>CaseIdLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseIdLabel (Used to store user id to avoid hardcoding)</shortDescription>
+        <value>00550000001MzaS</value>
     </labels>
     <labels>
         <fullName>Client_Entitlement</fullName>
@@ -97,6 +103,13 @@
         <value>https://intapp.file.force.com/servlet/servlet.ImageServer?id=01550000003PYYl&amp;oid=00DD7000000o3Hr</value>
     </labels>
     <labels>
+        <fullName>Contracts_Ops_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contracts Ops Queue</shortDescription>
+        <value>00G2J000003moPj</value>
+    </labels>
+    <labels>
         <fullName>Draft</fullName>
         <categories>Quote</categories>
         <language>en_US</language>
@@ -119,13 +132,6 @@
         <value>Please associate the contract with a quote to use this button</value>
     </labels>
     <labels>
-        <fullName>Integration_Username</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Integration Username</shortDescription>
-        <value>integration@00dd7000000o3hrmai.com</value>
-    </labels>
-    <labels>
         <fullName>Manage_Quote_Error</fullName>
         <categories>Error Message</categories>
         <language>en_US</language>
@@ -145,7 +151,14 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>OSA Document Key</shortDescription>
-        <value>0T_088MAQ630558</value>
+        <value>0T_001MAC320195</value>
+    </labels>
+    <labels>
+        <fullName>OpportunityRecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpportunityRecordTypeId</shortDescription>
+        <value>01250000000Hq3WAAS</value>
     </labels>
     <labels>
         <fullName>PricebookId</fullName>
@@ -159,7 +172,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Pricing Proposal Document Key</shortDescription>
-        <value>0T_000MAQ969716</value>
+        <value>0T_000MAC872330</value>
     </labels>
     <labels>
         <fullName>Primary_Services_Provider_Id</fullName>

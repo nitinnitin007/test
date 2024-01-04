@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Bank Of The West Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>NA_Large_Law</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

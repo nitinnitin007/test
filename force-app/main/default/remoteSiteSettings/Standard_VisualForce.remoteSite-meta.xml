@@ -3,5 +3,5 @@
     <description>Metadata API Remote Site Setting for Conga QuickStart Solution Packs</description>
     <disableProtocolSecurity>false</disableProtocolSecurity>
     <isActive>true</isActive>
-    <url>https://c.intapp--qtc--sandbox.vf.force.com</url>
+    <url>https://c.intapp--qtcstage--sandbox.vf.force.com</url>
 </RemoteSiteSetting>

@@ -14,4 +14,16 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A EXP-010xFxx</fullName>
+        <actions>
+            <name>Calculate_Amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: EXP-010xFxx
+Calculate Amount</description>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
 </Workflow>

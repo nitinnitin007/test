@@ -28,6 +28,10 @@
             <outputField>Legacy_Integration__c</outputField>
         </mappingFields>
         <mappingFields>
+            <inputField>Records_System__c</inputField>
+            <outputField>Records_ManagementPortfolio__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Portals_and_Intranets__c</inputField>
             <outputField>Portals_Intranets__c</outputField>
         </mappingFields>
@@ -38,10 +42,6 @@
         <mappingFields>
             <inputField>Automating_provisioning_workflow__c</inputField>
             <outputField>Provisioning__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Records_System__c</inputField>
-            <outputField>Records_ManagementPortfolio__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Synchronizing_applications__c</inputField>
@@ -56,24 +56,24 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
-            <inputField>Disqualified_by_Rep__c</inputField>
-            <outputField>Disqualified_by_Rep__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>SalesLoft1__Most_Recent_Cadence_Name__c</inputField>
-            <outputField>SalesLoft1__Most_Recent_Cadence_Name__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>SalesLoft1__Most_Recent_Last_Completed_Step__c</inputField>
-            <outputField>SalesLoft1__Most_Recent_Last_Completed_Step__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>SalesLoft1__Most_Recent_Cadence_Next_Step_Due_Date__c</inputField>
             <outputField>SalesLoft1__Most_Recent_Cadence_Next_Step_Due_Date__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Web_Entry__c</inputField>
             <outputField>Web_Entry__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>SalesLoft1__Most_Recent_Last_Completed_Step__c</inputField>
+            <outputField>SalesLoft1__Most_Recent_Last_Completed_Step__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Disqualified_by_Rep__c</inputField>
+            <outputField>Disqualified_by_Rep__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>SalesLoft1__Most_Recent_Cadence_Name__c</inputField>
+            <outputField>SalesLoft1__Most_Recent_Cadence_Name__c</outputField>
         </mappingFields>
         <outputObject>Contact</outputObject>
     </objectMapping>

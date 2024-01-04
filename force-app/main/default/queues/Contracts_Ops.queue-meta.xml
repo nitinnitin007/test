@@ -17,7 +17,4 @@
     <queueSobject>
         <sobjectType>SBQQ__Quote__c</sobjectType>
     </queueSobject>
-    <queueSobject>
-        <sobjectType>Task</sobjectType>
-    </queueSobject>
 </Queue>

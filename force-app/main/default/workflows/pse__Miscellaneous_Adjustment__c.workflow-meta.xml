@@ -40,4 +40,46 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A MA-001xFxx</fullName>
+        <actions>
+            <name>PSE_Misc_Adj_Set_Approved_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Misc_Adj_Set_Include_in_Fi_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Miscellaneous_Adjustment__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Rule Code: MA-001xFxx
+PSA Misc Adj Status Set to Approved
+When the Miscellaneous Adjustment status is set to approved the approved flag will get set along with the include in financials checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A MA-002xFxx</fullName>
+        <actions>
+            <name>PSE_Misc_Adj_Unset_Approved_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Misc_Adj_Usnet_Include_in_Fi_Chkbx</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Miscellaneous_Adjustment__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted,Rejected,Draft</value>
+        </criteriaItems>
+        <description>Rule Code: MA-002xFxx
+PSA Misc Adj Status Set to Not Approved
+When the Miscellaneous Adjustment status is set to Draft, Submitted, Rejected the approved flag will get unset along with the include in financials checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
 </Workflow>

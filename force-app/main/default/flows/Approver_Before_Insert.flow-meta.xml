@@ -94,7 +94,7 @@ Previous Approver comments are updated on new created approver records</descript
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Obsolete</status>
     <variables>
         <name>approvacommentvariable</name>
         <dataType>String</dataType>

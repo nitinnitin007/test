@@ -4,8 +4,8 @@
     <assignments>
         <name>AssignOrdersCount</name>
         <label>AssignOrdersCount</label>
-        <locationX>358</locationX>
-        <locationY>576</locationY>
+        <locationX>870</locationX>
+        <locationY>549</locationY>
         <assignmentItems>
             <assignToReference>OrderCount</assignToReference>
             <operator>AssignCount</operator>
@@ -20,8 +20,8 @@
     <decisions>
         <name>IfOrderCreated</name>
         <label>IfOrderCreated</label>
-        <locationX>358</locationX>
-        <locationY>684</locationY>
+        <locationX>1072</locationX>
+        <locationY>426</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OrderCount0</name>
@@ -61,8 +61,8 @@
     <loops>
         <name>LoopOrders</name>
         <label>LoopOrders</label>
-        <locationX>402</locationX>
-        <locationY>792</locationY>
+        <locationX>678</locationX>
+        <locationY>561</locationY>
         <collectionReference>Get_orders</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -78,7 +78,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -91,8 +91,8 @@
     <recordLookups>
         <name>Get_orders</name>
         <label>Get orders</label>
-        <locationX>358</locationX>
-        <locationY>468</locationY>
+        <locationX>866</locationX>
+        <locationY>417</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>AssignOrdersCount</targetReference>
@@ -112,8 +112,8 @@
     <recordUpdates>
         <name>Update_Opp_as_Closed_won</name>
         <label>Update Opp as Closed won</label>
-        <locationX>358</locationX>
-        <locationY>360</locationY>
+        <locationX>669</locationX>
+        <locationY>408</locationY>
         <connector>
             <targetReference>Get_orders</targetReference>
         </connector>
@@ -136,8 +136,8 @@
     <recordUpdates>
         <name>Update_Order_as_Activated</name>
         <label>Update Order as Activated</label>
-        <locationX>490</locationX>
-        <locationY>900</locationY>
+        <locationX>678</locationX>
+        <locationY>684</locationY>
         <connector>
             <targetReference>Update_renewal_as_order_activated</targetReference>
         </connector>
@@ -173,8 +173,8 @@
     <recordUpdates>
         <name>Update_quote_status_as_Contracted</name>
         <label>Update quote status as Contracted</label>
-        <locationX>358</locationX>
-        <locationY>252</locationY>
+        <locationX>669</locationX>
+        <locationY>300</locationY>
         <connector>
             <targetReference>Update_Opp_as_Closed_won</targetReference>
         </connector>
@@ -197,8 +197,8 @@
     <recordUpdates>
         <name>Update_renewal_as_order_activated</name>
         <label>Update renewal as order activated</label>
-        <locationX>490</locationX>
-        <locationY>1008</locationY>
+        <locationX>862</locationX>
+        <locationY>680</locationY>
         <inputAssignments>
             <field>Order_Activated__c</field>
             <value>
@@ -210,10 +210,9 @@
     <recordUpdates>
         <name>UpdateQuoteasOrdered_0</name>
         <label>UpdateQuoteAsOrdered</label>
-        <locationX>50</locationX>
-        <locationY>900</locationY>
+        <locationX>1185</locationX>
+        <locationY>319</locationY>
         <connector>
-            <isGoTo>true</isGoTo>
             <targetReference>Get_orders</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
@@ -235,8 +234,8 @@
     <recordUpdates>
         <name>UpdateQuoteasunordered</name>
         <label>UpdateQuoteAsUnordered</label>
-        <locationX>50</locationX>
-        <locationY>792</locationY>
+        <locationX>1080</locationX>
+        <locationY>596</locationY>
         <connector>
             <targetReference>UpdateQuoteasOrdered_0</targetReference>
         </connector>
@@ -257,8 +256,8 @@
         <object>SBQQ__Quote__c</object>
     </recordUpdates>
     <start>
-        <locationX>232</locationX>
-        <locationY>0</locationY>
+        <locationX>543</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Update_quote_status_as_Contracted</targetReference>
         </connector>
@@ -277,13 +276,6 @@
                 <numberValue>30.0</numberValue>
             </value>
         </filters>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>RL-0000348</stringValue>
-            </value>
-        </filters>
         <object>Proforma_Invoice__c</object>
         <schedule>
             <frequency>Daily</frequency>
@@ -292,7 +284,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>OrderCount</name>
         <dataType>Number</dataType>

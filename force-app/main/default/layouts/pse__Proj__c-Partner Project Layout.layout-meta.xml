@@ -464,13 +464,6 @@
         <relatedList>Success_Criteria__c.Project_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
-        <fields>NAME</fields>
-        <fields>Contact__c</fields>
-        <fields>NPS_Score__c</fields>
-        <fields>Reason_for_NPS_Score__c</fields>
-        <relatedList>SFDC_Survey__c.Project__c</relatedList>
-    </relatedLists>
-    <relatedLists>
         <fields>TASK.SUBJECT</fields>
         <fields>TASK.WHO_NAME</fields>
         <fields>ACTIVITY.TASK</fields>

@@ -1,7 +1,5 @@
 A new case comment has been created for case {!Case.CaseNumber}
 
-Project Name: {!Case.Project_Name__c}
-
 Engagement Manager: {!Case.Engagement_Manager__c}
 CSM Account Mgr: {!Account.CSM_Account_Mgr_Name__c}
 Case Owner: {!Case.OwnerFullName}

@@ -489,6 +489,9 @@
                 <stringValue>Finance Catch All Notification</stringValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>IschangeStage</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Test_PB_Rule633</name>
@@ -601,6 +604,45 @@
         </assignmentItems>
         <connector>
             <targetReference>Advance_Accepted1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Pre_Shopping_date</name>
+        <label>Update_Pre_Shopping_date</label>
+        <locationX>4101</locationX>
+        <locationY>7445</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Entered_Pre_Shopping_DateOld__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Set_First_Entered_Pre_Shopping_DateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Last_Entered_Pre_Shopping_Date_New__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Set_Last_Entered_Pre_Shopping_DateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ClosedateCheck</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Push_Counter_by1</name>
+        <label>Update_Push_Counter_by1</label>
+        <locationX>4390</locationX>
+        <locationY>7570</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Push_Counter__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PushCounterFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ProbabilityChangedCheck</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -729,6 +771,49 @@
         </assignmentItems>
         <connector>
             <targetReference>services_partner_is_Blank</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Stage_and_Direction_change_date</name>
+        <label>Update Stage and Direction change date</label>
+        <locationX>4662</locationX>
+        <locationY>7687</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Lage_Stage_Change_Direction__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Last_Stage_Change_DirectionFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Last_Stage_Change_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Update_Last_Stage_Change_DateFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>UpdateDate</name>
+        <label>UpdateDate</label>
+        <locationX>3876</locationX>
+        <locationY>7336</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Entered_Shopping_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FirstenterShoppingdate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Last_Entered_Shopping_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Lastenterdate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ProbablityCheck</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -867,6 +952,31 @@
                 <targetReference>Clear_Advance_AcceptedAssig</targetReference>
             </connector>
             <label>Clear Advance</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ClosedateCheck</name>
+        <label>ClosedateCheck</label>
+        <locationX>4391</locationX>
+        <locationY>7367</locationY>
+        <defaultConnector>
+            <targetReference>ProbabilityChangedCheck</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ClosedatePRIORVALUE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.CloseDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Push_Counter_by1</targetReference>
+            </connector>
+            <label>ClosedatePRIORVALUE</label>
         </rules>
     </decisions>
     <decisions>
@@ -1160,6 +1270,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>IschangeStage</name>
+        <label>IschangeStage</label>
+        <locationX>3964</locationX>
+        <locationY>7157</locationY>
+        <defaultConnector>
+            <targetReference>ProbablityCheck</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>StageChangeCheck</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>StageProbablityChangeFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateDate</targetReference>
+            </connector>
+            <label>StageChangeCheck</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Opportunity_Accepted1</name>
         <label>Opportunity Accepted1</label>
         <locationX>1766</locationX>
@@ -1261,6 +1396,53 @@
                 <targetReference>Populate_weekly_deal_review</targetReference>
             </connector>
             <label>Populate default value</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ProbabilityChangedCheck</name>
+        <label>ProbabilityChangedCheck</label>
+        <locationX>4689</locationX>
+        <locationY>7518</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ProbabilityIschanged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsChangedProbability</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Stage_and_Direction_change_date</targetReference>
+            </connector>
+            <label>ProbabilityIschanged</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ProbablityCheck</name>
+        <label>ProbablityCheck</label>
+        <locationX>4182</locationX>
+        <locationY>7252</locationY>
+        <defaultConnector>
+            <targetReference>ClosedateCheck</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ProbablityGreaterThan9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ProbabilityCheck</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Pre_Shopping_date</targetReference>
+            </connector>
+            <label>ProbablityGreaterThan9</label>
         </rules>
     </decisions>
     <decisions>
@@ -2342,6 +2524,15 @@ ISPICKVAL({!$Record.StageName}, &apos;Verify&apos;)
         <expression>NOW()</expression>
     </formulas>
     <formulas>
+        <name>FirstenterShoppingdate</name>
+        <dataType>Date</dataType>
+        <expression>If(
+  ISBLANK($Record.First_Entered_Shopping_Date__c),
+  Today(),
+  $Record.First_Entered_Shopping_Date__c
+)</expression>
+    </formulas>
+    <formulas>
         <name>formula_1_myRule_10_A1_6661340939</name>
         <dataType>Date</dataType>
         <expression>Priorvalue({!$Record.CloseDate })</expression>
@@ -2852,6 +3043,32 @@ ISPICKVAL({!$Record.Type}, &apos;Intapp Prime&apos;)
 )</expression>
     </formulas>
     <formulas>
+        <name>IsChangedProbability</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+  ISCHANGED({!$Record.Probability}),
+  ISNEW()
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Last_Stage_Change_DirectionFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(
+  ISNEW(),
+  NULL,
+  IF(
+    $Record.Probability&gt;PRIORVALUE($Record.Probability),
+    &quot;Positive&quot;,
+    &quot;Negative&quot;
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Lastenterdate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
         <name>PopulateweeklydealreviewFormula</name>
         <dataType>String</dataType>
         <expression>&apos;[ ]&apos;&amp;BR() &amp;
@@ -2870,6 +3087,21 @@ ISPICKVAL({!$Record.Type}, &apos;Intapp Prime&apos;)
 &apos;AT1&apos;&amp;BR() &amp;
 &apos;-OPPORTUNITY&apos;&amp;BR() &amp;
 &apos;CDate&apos;&amp;BR()</expression>
+    </formulas>
+    <formulas>
+        <name>ProbabilityCheck</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.Probability} &gt; 9</expression>
+    </formulas>
+    <formulas>
+        <name>PushCounterFormula</name>
+        <dataType>Number</dataType>
+        <expression>IF( 
+ISNULL( $Record.Push_Counter__c ), 
+1, 
+$Record.Push_Counter__c + 1 
+)</expression>
+        <scale>0</scale>
     </formulas>
     <formulas>
         <name>SaleCategory</name>
@@ -2920,6 +3152,34 @@ ISPICKVAL({!$Record.Type}, &apos;Intapp Prime&apos;)
 &quot;Platform Conversion - Decrease&quot;, &quot;Module&quot;,
 &quot;Platform Conversion - Internal Decrease&quot;, &quot;Other&quot;,
 &quot;Other&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Set_First_Entered_Pre_Shopping_DateFormula</name>
+        <dataType>Date</dataType>
+        <expression>If( 
+ISBLANK($Record.First_Entered_Pre_Shopping_Date__c), 
+Today(), 
+$Record.First_Entered_Pre_Shopping_Date__c 
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Set_Last_Entered_Pre_Shopping_DateFormula</name>
+        <dataType>Date</dataType>
+        <expression>Today()</expression>
+    </formulas>
+    <formulas>
+        <name>StageProbablityChangeFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND( ISCHANGED({!$Record.StageName}), {!$Record.Probability} &gt;59 )</expression>
+    </formulas>
+    <formulas>
+        <name>Update_Last_Stage_Change_DateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+  ISNEW(),
+  NULL,
+  today()
 )</expression>
     </formulas>
     <interviewLabel>Opportunity Before Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
@@ -2974,5 +3234,5 @@ ISPICKVAL({!$Record.Type}, &apos;Intapp Prime&apos;)
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>

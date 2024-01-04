@@ -4,7 +4,7 @@
     <enableChatterFileLink>true</enableChatterFileLink>
     <enableContent>true</enableContent>
     <enableContentAutoAssign>true</enableContentAutoAssign>
-    <enableContentDistForPortalUsers>true</enableContentDistForPortalUsers>
+    <enableContentDistForPortalUsers>false</enableContentDistForPortalUsers>
     <enableContentDistPwOptionsBit1>false</enableContentDistPwOptionsBit1>
     <enableContentDistPwOptionsBit2>false</enableContentDistPwOptionsBit2>
     <enableContentDistribution>true</enableContentDistribution>

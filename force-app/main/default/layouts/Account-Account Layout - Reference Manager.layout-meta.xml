@@ -607,35 +607,7 @@
         <layoutColumns>
             <layoutItems>
                 <height>200</height>
-                <page>engagio__EngagioAccountHighlights2_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
                 <page>engagio__EngagioAccountHighlights_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioEngagementActivities_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioEngagementHeatmap_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioEngagementTrend_Account</page>
                 <showLabel>false</showLabel>
                 <showScrollbars>false</showScrollbars>
                 <width>100%</width>
@@ -750,6 +722,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Liability_Annex_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DC_MSA_Addendum__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DC_MSA_Addendum_Notes__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -1748,16 +1728,6 @@
         <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
-        <customButtons>refedge__View_All</customButtons>
-        <fields>refedge__Note_Date__c</fields>
-        <fields>refedge__Note__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>refedge__Details__c</fields>
-        <relatedList>refedge__Reference_Note__c.refedge__Account__c</relatedList>
-        <sortField>refedge__Note_Date__c</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
         <fields>NAME</fields>
         <fields>Product_LineNew__c</fields>
         <fields>CSM_Health_Rating__c</fields>
@@ -1809,72 +1779,6 @@
         <fields>LEAD.COMPANY</fields>
         <fields>LEAD.PHONE</fields>
         <relatedList>Lead.engagio__Matched_Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>refedge__Referenceability_Type__c</fields>
-        <fields>refedge__Contact__c</fields>
-        <fields>refedge__Status__c</fields>
-        <fields>refedge__Verified__c</fields>
-        <fields>refedge__Comment__c</fields>
-        <relatedList>refedge__Referenceability__c.refedge__Account__c</relatedList>
-        <sortField>refedge__Contact__c</sortField>
-        <sortOrder>Asc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>refedge__Contact__c</fields>
-        <fields>refedge__Reference_Program_Candidate__c</fields>
-        <fields>refedge__Is_Referenceable__c</fields>
-        <fields>refedge__Referenceability_Status__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>UPDATEDBY_USER</fields>
-        <fields>NAME</fields>
-        <relatedList>refedge__Reference_Basic_Information__c.refedge__Account__c</relatedList>
-        <sortField>UPDATEDBY_USER</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <customButtons>refedge__Record_Reference_Use</customButtons>
-        <excludeButtons>New</excludeButtons>
-        <fields>refedge__Account_Request__c</fields>
-        <fields>refedge__Reference_Type_Needed__c</fields>
-        <fields>refedge__Reference_Request__c.refedge__Opportunity__c</fields>
-        <fields>refedge__Requester__c</fields>
-        <fields>refedge__Deadline__c</fields>
-        <fields>refedge__Reference_Request__c.CREATED_DATE</fields>
-        <fields>refedge__Approval_Status__c</fields>
-        <fields>refedge__Reference_Request__c.refedge__Reference_Use__c</fields>
-        <fields>refedge__Activity_Date__c</fields>
-        <relatedList>refedge__Reference_Request_Account__c.refedge__Account__c</relatedList>
-        <sortField>refedge__Reference_Request__c.CREATED_DATE</sortField>
-        <sortOrder>Desc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <relatedList>Reference_Event__c.Reference_for_Account__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <customButtons>refedge__New_Account_Attribute</customButtons>
-        <excludeButtons>New</excludeButtons>
-        <fields>refedge__Attribute__c.NAME</fields>
-        <fields>refedge__Attribute__c.refedge__Parent__c</fields>
-        <fields>refedge__Contact__c</fields>
-        <fields>refedge__Reference_Content__c</fields>
-        <fields>refedge__Inheritable__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <relatedList>refedge__Account_Attribute__c.refedge__Account__c</relatedList>
-        <sortField>refedge__Attribute__c.refedge__Parent__c</sortField>
-        <sortOrder>Asc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>refedge__Contact__c</fields>
-        <fields>CREATEDBY_USER</fields>
-        <fields>refedge__Status__c</fields>
-        <relatedList>refedge__Nomination__c.refedge__Account__c</relatedList>
-        <sortField>CREATEDBY_USER</sortField>
-        <sortOrder>Desc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>

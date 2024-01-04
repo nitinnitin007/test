@@ -950,11 +950,6 @@
             <field>PO_Number__c</field>
             <table>Contract</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Renewed_Contract__c</field>
-            <table>Contract</table>
-        </columns>
         <masterLabel>Contracts</masterLabel>
     </sections>
     <sections>

@@ -355,12 +355,12 @@
                 <customLink>NPI_Projects</customLink>
             </layoutItems>
         </layoutColumns>
+        <layoutColumns/>
         <layoutColumns>
             <layoutItems>
                 <customLink>ReOpenasnewCase</customLink>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
     <layoutSections>

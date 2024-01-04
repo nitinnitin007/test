@@ -1,7 +1,6 @@
-A Project Escalation Case has been created for {!Case.Project_Name__c}.
+A Project Escalation Case has been created.
 
 Subject: {!Case.Subject}
-Project Name: {!Case.Project_Name__c}
 Engagement Manager: {!Case.00N50000009OyhO}
 CSM Account Mgr: {!Account.CSM_Account_Mgr_Name__c}
 Case Owner:  {!Case.OwnerFullName}

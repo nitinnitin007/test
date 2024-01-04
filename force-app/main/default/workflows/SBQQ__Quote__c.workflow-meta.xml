@@ -36,6 +36,26 @@
         <template>unfiled$public/New_MSSA_Required_Notification</template>
     </alerts>
     <alerts>
+        <fullName>Prime_Only_Deals1</fullName>
+        <description>Prime Only Deals1</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hemant.patil@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>sfdc_donotreply@intapp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>refedge__POR_Email_Templates/Prime_OSA_request</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Contract_Ops_Engaged</fullName>
+        <ccEmails>contractsops@intapp.com</ccEmails>
+        <description>Quote - Contract Ops Engaged</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Operations/Quote_Contract_Ops_Engaged</template>
+    </alerts>
+    <alerts>
         <fullName>Quote_quote_is_being_processed_for</fullName>
         <ccEmails>Contractsops@intapp.com</ccEmails>
         <ccEmails>FS_ContractsOps@intapp.com</ccEmails>
@@ -197,10 +217,55 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Populate_Quote_Date</fullName>
+        <field>Quote_Date__c</field>
+        <formula>TEXT(DAY(TODAY()))&amp;&quot;-&quot;&amp;
+CASE(TEXT(MONTH(TODAY())),
+  &quot;1&quot;,&quot;Jan&quot;,
+  &quot;2&quot;,&quot;Feb&quot;,
+  &quot;3&quot;,&quot;Mar&quot;,
+  &quot;4&quot;,&quot;Apr&quot;,
+  &quot;5&quot;,&quot;May&quot;,
+  &quot;6&quot;,&quot;Jun&quot;,
+  &quot;7&quot;,&quot;Jul&quot;,
+  &quot;8&quot;,&quot;Aug&quot;,
+  &quot;9&quot;,&quot;Sep&quot;,
+  &quot;10&quot;,&quot;Oct&quot;,
+  &quot;11&quot;,&quot;Nov&quot;,
+  &quot;12&quot;,&quot;Dec&quot;,
+  &quot;Error&quot;
+)&amp;&quot;-&quot;&amp;RIGHT(TEXT(YEAR(TODAY())),2)</formula>
+        <name>Populate Quote Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Price_book_exception</fullName>
+        <field>pricebook_exception__c</field>
+        <literalValue>1</literalValue>
+        <name>Price book exception</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Proposalstatus</fullName>
         <field>Pricing_Proposal_Approval__c</field>
         <literalValue>In Progress</literalValue>
         <name>Proposalstatus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Satatus_OSA_Requested</fullName>
+        <field>SBQQ__Status__c</field>
+        <literalValue>OSA Requested</literalValue>
+        <name>Satatus OSA Requested</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
@@ -238,10 +303,40 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Update_total_contract_months</fullName>
+        <field>SBQQ__SubscriptionTerm__c</field>
+        <formula>12</formula>
+        <name>Update total contract months</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>previous_owner</fullName>
+        <field>previous_owner__c</field>
+        <formula>$User.FirstName &amp;&quot; &quot;&amp; $User.LastName</formula>
+        <name>previous owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>recall_status_update</fullName>
         <field>Pricing_Proposal_Approval__c</field>
         <literalValue>Recalled</literalValue>
         <name>recall status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>status</fullName>
+        <field>SBQQ__Status__c</field>
+        <literalValue>ContractsOps Processing</literalValue>
+        <name>status</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
@@ -257,4 +352,248 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_Annex_email_sent</fullName>
+        <field>Annex_email_sent__c</field>
+        <literalValue>1</literalValue>
+        <name>update Annex email sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_osa_requested</fullName>
+        <field>Request_OSA__c</field>
+        <literalValue>1</literalValue>
+        <name>update osa requested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_owner_to_ContractOps_queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Contracts_Ops</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>update owner to ContractOps queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A QUO-002xFxx</fullName>
+        <actions>
+            <name>Populate_Quote_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: QUO-002xFxx
+Update Quote Date
+Update Quote Date whenever Quote Version is changed</description>
+        <formula>OR(   ISNEW(),   ISCHANGED(Version__c) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-009xFxx</fullName>
+        <actions>
+            <name>Update_total_contract_months</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.SBQQ__SubscriptionTerm__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Services_Only_Type__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populates &quot;12&quot; Total Contract Months for quotes with empty &quot;Total Contracts Months&quot; field</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-090Exxx</fullName>
+        <actions>
+            <name>Send_email_to_Contracts_Operations_and_LegalOps_ONLY_Rita_Rodriguez_Vera_Friss_L</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>update_Annex_email_sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Liability Annex
+
+Send email to Contracts Operations, Legal, and CC Seller</description>
+        <formula>AND( SBQQ__Account__r.Pre_9_4_1_Liability_Annex_Executed__c=False, Annex_email_sent__c = FALSE, ISBLANK(SBQQ__Account__r.Liability_Annex_Contract_Number__c), NOT( OR( ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;Received&quot;), ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;Drafted&quot;),  ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;N/A&quot;), ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;Requested&quot;) )), Request_OSA__c=True,  OR( ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.5&quot;),  ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.8&quot;),  ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.9&quot;),  ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.0&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.1&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.2&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.3&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.4&quot;)  ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-091Exxx</fullName>
+        <actions>
+            <name>Cloud_Addendum_Required_for</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>update_Annex_email_sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Cloud Addendum
+
+Master Terms: Term Version &lt; 10.4 (needs to be determined)
+Master Terms: Cloud Addendum = NULL
+Request OSA ISCHANGED to TRUE
+ISPICKVAL(SBQQ__Opportunity2__r.Product_LineNew__r.Deployment__c ,&quot;Cloud&quot;</description>
+        <formula>AND(     ISBLANK(SBQQ__Account__r.Cloud_Addendum__c),  NOT(ISPICKVAL(SBQQ__Opportunity2__r.Type ,&quot;Legal - User Count Uplift&quot;)), NOT(ISPICKVAL(SBQQ__Opportunity2__r.Type ,&quot;Legal - License Band Uplift&quot;)),  ISPICKVAL(SBQQ__Opportunity2__r.Product_LineNew__r.Deployment__c ,&quot;Cloud&quot;),    OR(       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.5&quot;),      ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.8&quot;),      ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.9&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.0&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.1&quot;),      ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.2&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.3&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.4&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.4.1&quot;),      ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.4v3&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.1.1&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.2&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.2.1&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.2.2&quot;),       ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.3&quot;),     ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.4&quot;),     ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.5&quot;),     ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.6 excluding Cloud Terms&quot;),     ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.7 excluding Cloud Terms&quot;),     ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.8 Excluding Cloud Terms&quot;),     ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;10.9 Excluding Cloud Terms&quot;)      )  )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-092Exxx</fullName>
+        <actions>
+            <name>Send_email_to_Contracts_Operations_and_ONLY_Rita_Rodriguez_Vera_Friss</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>update_Annex_email_sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Liability Annex
+
+Send email to Contracts Operations and CC Seller</description>
+        <formula>AND( SBQQ__Account__r.Pre_9_4_1_Liability_Annex_Executed__c=False, Annex_email_sent__c = FALSE, ISBLANK(SBQQ__Account__r.Liability_Annex_Contract_Number__c),  NOT( OR(  ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;Received&quot;),  ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;N/A&quot;),    ISPICKVAL(SBQQ__Account__r.Liability_Annex_Status__c,&quot;Requested&quot;) )), Request_OSA__c=True,  OR( ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.5&quot;),  ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.8&quot;),  ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;8.9&quot;),  ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.0&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.1&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.2&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.3&quot;), ISPICKVAL(SBQQ__Account__r.Contract_Term_Version__c,&quot;9.4&quot;)  ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-092Fxxx</fullName>
+        <actions>
+            <name>Satatus_OSA_Requested</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>update_owner_to_ContractOps_queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.Request_OSA__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When Osa requested it goes to ContracsOps owner</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-093%2E1Fxxx</fullName>
+        <actions>
+            <name>Quote_quote_is_being_processed_for_services1</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>previous_owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When quote is reassigned to contractsops team member</description>
+        <formula>And( OR(AND(ischanged( OwnerId ),NOT(BEGINS(OwnerId, &quot;00G&quot;))),AND(ischanged(OwnerId),BEGINS(OwnerId, &quot;00G&quot;),NOT(CONTAINS($Label.QueueOwner_QUO_093_1Fxxx ,Owner:Queue.QueueName)))), CONTAINS($Label.Profile_Workflow_QUO_093_1Fxxx ,$Profile.Name), NOT(CONTAINS($Label.User_Workflow_QUO_093_1Fxxx ,$User.Email)), ISPICKVAL(SBQQ__Status__c,&apos;OSA Requested&apos;) , Has_Software_Products__c=False, Has_Services_Products__c =True)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-093Fxxx</fullName>
+        <actions>
+            <name>Quote_quote_is_being_processed_for</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>previous_owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When quote is reassigned to contractsops team member</description>
+        <formula>AND(OR(AND(ischanged( OwnerId ),NOT(BEGINS(OwnerId, &quot;00G&quot;))),AND(ischanged(OwnerId),BEGINS(OwnerId, &quot;00G&quot;),NOT(CONTAINS($Label.QueueOwner_QUO_093_1Fxxx ,Owner:Queue.QueueName)))), CONTAINS($Label.Profile_Workflow_QUO_093_1Fxxx ,$Profile.Name), NOT(CONTAINS($Label.User_Workflow_QUO_093_1Fxxx ,$User.Email)), ISPICKVAL(SBQQ__Status__c,&apos;OSA Requested&apos;), OR( Has_Software_Products__c=True, AND(Has_Software_Products__c=False, Has_Services_Products__c =False)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-093xExx</fullName>
+        <actions>
+            <name>notify_requester_that_quote_needs_review</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.SBQQ__Status__c</field>
+            <operation>equals</operation>
+            <value>Quote needs Review</value>
+        </criteriaItems>
+        <description>Send notification to requester that quote needs review</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-094Fxxx</fullName>
+        <actions>
+            <name>Price_book_exception</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>(1 AND 2) OR (3 AND 4) OR (3 AND 5) OR (1 AND 6)</booleanFilter>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.License_Basis__c</field>
+            <operation>equals</operation>
+            <value>Fee Earners</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <value>USD</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.License_Basis__c</field>
+            <operation>equals</operation>
+            <value>Lawyers</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <value>EUR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <value>GBP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <value>AUD</value>
+        </criteriaItems>
+        <description>Checks Price book exception checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A QUO-095Fxxx</fullName>
+        <actions>
+            <name>update_osa_requested</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>SBQQ__Quote__c.SBQQ__Status__c</field>
+            <operation>equals</operation>
+            <value>OSA Requested</value>
+        </criteriaItems>
+        <description>Rule Code: QUO-095Fxxx updates OSA</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
 </Workflow>

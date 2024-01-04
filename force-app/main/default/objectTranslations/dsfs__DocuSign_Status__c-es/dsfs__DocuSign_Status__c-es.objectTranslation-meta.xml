@@ -6,8 +6,8 @@
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value>Estado de DocuSign</value>
+        <value>Estados de DocuSign</value>
     </caseValues>
     <gender>Feminine</gender>
-    <nameFieldLabel>N.º de sobre</nameFieldLabel>
+    <nameFieldLabel>Sobre#</nameFieldLabel>
 </CustomObjectTranslation>

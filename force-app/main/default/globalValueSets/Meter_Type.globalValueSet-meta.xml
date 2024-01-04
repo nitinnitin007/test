@@ -45,12 +45,6 @@
         <default>false</default>
         <label>No Meter Type</label>
     </customValue>
-    <customValue>
-        <fullName>Employee</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Employee</label>
-    </customValue>
     <description>Global picklist,49623</description>
     <masterLabel>Meter Type</masterLabel>
     <sorted>true</sorted>

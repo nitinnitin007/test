@@ -83,4 +83,95 @@
         <protected>false</protected>
         <useDeadLetterQueue>false</useDeadLetterQueue>
     </outboundMessages>
+    <rules>
+        <fullName>Rule Code%3A MIL-001xFxx</fullName>
+        <actions>
+            <name>PSE_Milestone_Check_Approved_Chkbx</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Milestone_Check_Include_In_FI_Chkbx</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Closed_for_Time_Entry_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Milestone__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Rule Code: MIL-001xFxx
+PSA Milestone Status Set to Approved
+When the milestones status is set to Approved the approved flag will get set along with the include in financials checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A MIL-002xFxx</fullName>
+        <actions>
+            <name>PSE_Milestone_Uncheck_Approved_Chkbx</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Milestone_Unchk_Include_In_FI_Chkbx</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Milestone__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Canceled,Open,Planned</value>
+        </criteriaItems>
+        <description>Rule Code: MIL-002xFxx
+PSA Milestone Status Set to Planned, Open, Canceled
+When the milestones status is set to Planned, Open, Canceled the approved flag will get unset along with the include in financials checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A MIL-003xFxx</fullName>
+        <actions>
+            <name>Delete_Actual_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: MIL-003xFxx
+Empty Actual Date when Created
+If the Status on the Milestone object is anything but Approved or Canceled, the Actual Date field is populated with a blank value.</description>
+        <formula>AND(
+  NOT(ISPICKVAL(pse__Status__c,&quot;Approved&quot;)),
+  NOT(ISPICKVAL(pse__Status__c,&quot;Canceled&quot;))
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A MIL-004xFxx</fullName>
+        <actions>
+            <name>Mark_Closed_for_Time_Entry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: MIL-004xFxx
+Mark Billing Milestones Closed for Time Entry
+Updates the field Milestone: Closed for Time Entry to true when the Record Type Id is a certain value.</description>
+        <formula>RecordTypeId = &apos;01250000000HrQS&apos;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A MIL-005xxOx</fullName>
+        <actions>
+            <name>SendMilestoneToDTE</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: MIL-005xxOx
+UpdateMilestoneInDTE
+Sends an outbound message in DTE to update Milestone</description>
+        <formula>ISNEW() ||
+ISCHANGED(Name) || 
+ISCHANGED(pse__Closed_for_Time_Entry__c) || 
+ISCHANGED(pse__Project__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
 </Workflow>

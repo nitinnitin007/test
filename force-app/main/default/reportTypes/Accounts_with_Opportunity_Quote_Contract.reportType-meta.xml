@@ -525,26 +525,6 @@
             <field>Deal_Issue_Notes__c</field>
             <table>Account.Opportunities.SBQQ__Quotes2__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Subsidiary__c</field>
-            <table>Account.Opportunities.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OP4i_Deal_Id_Formula__c</field>
-            <table>Account.Opportunities.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Fourth_Year_Software_Net_Total__c</field>
-            <table>Account.Opportunities.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sixth_Year_Software_Net_Total__c</field>
-            <table>Account.Opportunities.SBQQ__Quotes2__r</table>
-        </columns>
         <masterLabel>Quotes</masterLabel>
     </sections>
     <sections>
@@ -616,11 +596,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>PO_Number__c</field>
-            <table>Account.Opportunities.SBQQ__Quotes2__r.SBQQ__Contracts__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Renewed_Contract__c</field>
             <table>Account.Opportunities.SBQQ__Quotes2__r.SBQQ__Contracts__r</table>
         </columns>
         <masterLabel>Contracts</masterLabel>

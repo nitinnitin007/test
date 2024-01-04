@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Great Western Life Assurance Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>NA_Large_Law</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

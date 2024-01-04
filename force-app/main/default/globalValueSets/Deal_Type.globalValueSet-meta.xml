@@ -70,12 +70,6 @@
         <default>false</default>
         <label>Uplift</label>
     </customValue>
-    <customValue>
-        <fullName>AddOn</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>AddOn</label>
-    </customValue>
     <description>Modified as part of BIZ-46501</description>
     <masterLabel>Deal Type</masterLabel>
     <sorted>true</sorted>

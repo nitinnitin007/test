@@ -2640,7 +2640,4 @@
         </columns>
         <masterLabel>Product Customers</masterLabel>
     </sections>
-    <sections>
-        <masterLabel>Opportunity Product</masterLabel>
-    </sections>
 </ReportType>

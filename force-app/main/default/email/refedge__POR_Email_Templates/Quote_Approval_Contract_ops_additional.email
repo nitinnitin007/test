@@ -1,4 +1,4 @@
-<messaging:emailTemplate subject="OSA Requested for {!relatedto.SBQQ__Account__r.Name} - Line of Business: {!relatedTo.Line_of_Business__c}"  recipientType="User" relatedToType="SBQQ__Quote__c">
+<messaging:emailTemplate subject="OSA Requested for {!relatedto.SBQQ__Account__r.Name} - Line of Business: {!relatedTo.Line_of_Business__c}, OP4I Sales Segment: {!relatedto.OP4I_Sales_Segment__c}"  recipientType="User" relatedToType="SBQQ__Quote__c">
 <messaging:plainTextEmailBody >
 
 

@@ -41,5 +41,5 @@
         <value>DocuSign-Status</value>
     </caseValues>
     <gender>Feminine</gender>
-    <nameFieldLabel>Umschlagnummer</nameFieldLabel>
+    <nameFieldLabel>Umschlag#</nameFieldLabel>
 </CustomObjectTranslation>

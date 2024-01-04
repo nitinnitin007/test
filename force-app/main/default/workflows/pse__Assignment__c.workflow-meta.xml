@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
-        <fullName>Assignment_closed_for_time_entry</fullName>
-        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
-        <description>Assignment closed for time entry</description>
-        <protected>false</protected>
-        <recipients>
-            <field>pse__Resource__c</field>
-            <type>contactLookup</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>PSA_Templates/Assignment_Closed_for_Time_Entry</template>
-    </alerts>
-    <alerts>
         <fullName>PSA_Assignment_Alert_Resource_of_New_Assignment</fullName>
         <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
         <description>PSA Assignment Alert Resource of New Assignment</description>
@@ -115,4 +103,153 @@
         <protected>false</protected>
         <useDeadLetterQueue>false</useDeadLetterQueue>
     </outboundMessages>
+    <rules>
+        <fullName>Rule Code%3A ASN-001Exxx</fullName>
+        <actions>
+            <name>PSA_Assignment_Alert_Resource_of_New_Assignment</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-001Exxx
+PSA Assignment Notify Resource of New Assignment
+Sends an email alert to notify Resource of new Assignment.</description>
+        <formula>OR(
+  AND(
+    ISNEW(),
+    NOT(External_Resource__c)
+  ),
+  AND(
+    NOT(External_Resource__c),
+    ISCHANGED(pse__Resource__c)
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-002xFxx</fullName>
+        <actions>
+            <name>Set_Assignment_Billable_to_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-002xFxx
+Set Assignment to Non-Billable if Project is non-billable
+Sets assignment to non-billable (unchecks Billable field) if project is non-billable.</description>
+        <formula>NOT(pse__Project__r.pse__Is_Billable__c)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-003xFxx</fullName>
+        <actions>
+            <name>Set_Assignment_to_Time_Credited</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-003xFxx
+For Productive Projects Set Assignment to Time Credited
+If the Time Credited field is checked, this rule checks the Assignment: Time Credited field.</description>
+        <formula>pse__Time_Credited__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-004xFxx</fullName>
+        <actions>
+            <name>Set_T_M_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-004xFxx
+Populate T&amp;M Assignment
+Sets T&amp;M Assignment field to true based on whether an assignment is T&amp;M based on project attributes</description>
+        <formula>OR(
+  ISPICKVAL(pse__Project__r.pse__Billing_Type__c,&quot;Time and Materials&quot;),
+  AND(
+    ISPICKVAL(pse__Project__r.pse__Billing_Type__c,&quot;Blended&quot;),
+    ISPICKVAL(pse__Role__c,&quot;Engagement Manager&quot;)
+  )
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-005xxOx</fullName>
+        <actions>
+            <name>SendAssignmentToDTE</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-005xxOx
+UpdateAssignmentInDTE
+Sends an outbound message to update assignment in DTE</description>
+        <formula>ISNEW() ||
+ISCHANGED(pse__Assignment_Number__c) ||
+ISCHANGED(pse__Resource__c) ||
+ISCHANGED(pse__Project__c) ||
+ISCHANGED(pse__Role__c) ||
+ISCHANGED(pse__Closed_for_Time_Entry__c)||
+ISCHANGED(Technical_Lead__c)||
+ISCHANGED(pse__End_Date__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-006xFxx</fullName>
+        <actions>
+            <name>Populate_Project_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-006xFxx
+Populate Project Manager Email
+Populates the Project Manager Email field when Assignment is created</description>
+        <formula>TRUE</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-007xFxx</fullName>
+        <actions>
+            <name>Update_Bill_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-007xFxx
+Populate Bill Rate
+Updates the Bill Rate field when it is blank</description>
+        <formula>NOT(ISBLANK(pse__Resource_Request__r.pse__Requested_Bill_Rate__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-008xFxx</fullName>
+        <actions>
+            <name>Populate_Assigned_Hours</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: ASN-008xFxx
+Populate Assigned Hours
+Populates Assigned Hours using the Requested Hours field</description>
+        <formula>NOT(ISBLANK(pse__Resource_Request__r.pse__SOW_Hours__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A ASN-009xFxx</fullName>
+        <actions>
+            <name>PSA_Set_Bill_Rate_to_Suggested_Bill_Rate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: ASN-009xFxx
+PSA Assignment Set Bill Rate to Rate Card
+PSA - Sets Bill Rate on Assignment = Suggested Bill Rate (from Rate Card)</description>
+        <formula>pse__Is_Billable__c = True &amp;&amp; 
+(
+  OR( 
+    ISPICKVAL(pse__Project__r.pse__Billing_Type__c,&quot;Time and Materials&quot;), 
+    AND( 
+      ISPICKVAL(pse__Project__r.pse__Billing_Type__c,&quot;Blended&quot;), 
+      ISPICKVAL(pse__Role__c,&quot;Project Manager&quot;) 
+    ) 
+  )
+) &amp;&amp; 
+NOT(ISBLANK(pse__Suggested_Bill_Rate__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
 </Workflow>

@@ -5,7 +5,7 @@
     <deployed>true</deployed>
     <description>Quote Terms with Term Condition</description>
     <join>
-        <outerJoin>true</outerJoin>
+        <outerJoin>false</outerJoin>
         <relationship>SBQQ__UseConditions__r</relationship>
     </join>
     <label>Quote Terms with Term Condition</label>

@@ -2,19 +2,19 @@
 <SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
     <identityLocation>SubjectNameId</identityLocation>
     <identityMapping>Username</identityMapping>
-    <issuer>exkor118euxIDE2iY2p7</issuer>
-    <loginUrl>https://intapp.okta.com/app/salesforce/exkor118euxIDE2iY2p7/sso/saml</loginUrl>
+    <issuer>exkqapmq5kJACbPfq2p7</issuer>
+    <loginUrl>https://intapp.okta.com/app/salesforce/exkqapmq5kJACbPfq2p7/sso/saml</loginUrl>
     <logoutUrl>https://intapp.okta.com</logoutUrl>
     <name>Okta SSO</name>
-    <oauthTokenEndpoint>https://intapp--qtc.sandbox.my.salesforce.com/services/oauth2/token?so=00DD7000000o3wD</oauthTokenEndpoint>
+    <oauthTokenEndpoint>https://intapp--qtcstage.sandbox.my.salesforce.com/services/oauth2/token?so=00DD6000000Qhd7</oauthTokenEndpoint>
     <redirectBinding>false</redirectBinding>
     <requestSignatureMethod>1</requestSignatureMethod>
     <requestSigningCertId>0P12J000000dpox</requestSigningCertId>
-    <salesforceLoginUrl>https://intapp--qtc.sandbox.my.salesforce.com?so=00DD7000000o3wD</salesforceLoginUrl>
-    <samlEntityId>https://intapp--qtc.my.salesforce.com</samlEntityId>
+    <salesforceLoginUrl>https://intapp--qtcstage.sandbox.my.salesforce.com?so=00DD6000000Qhd7</salesforceLoginUrl>
+    <samlEntityId>https://intapp--qtcstage.my.salesforce.com</samlEntityId>
     <samlVersion>SAML2_0</samlVersion>
     <useConfigRequestMethod>true</useConfigRequestMethod>
     <useSameDigestAlgoForSigning>false</useSameDigestAlgoForSigning>
     <userProvisioning>false</userProvisioning>
-    <validationCert>MIIDnDCCAoSgAwIBAgIGAYqUgF7+MA0GCSqGSIb3DQEBCwUAMIGOMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxDzANBgNVBAMMBmludGFwcDEcMBoGCSqGSIb3DQEJARYNaW5mb0Bva3RhLmNvbTAeFw0yMzA5MTQxNjIxMzVaFw0zMzA5MTQxNjIyMzVaMIGOMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxDzANBgNVBAMMBmludGFwcDEcMBoGCSqGSIb3DQEJARYNaW5mb0Bva3RhLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALHzKah8wZkMany58k+/NkyGFa9kUC0B3PIHAWt/QhzGOBw0cwaVCfzXt58jx1XtdTY2HlA9UYTEQPDYd9AIY9woz3CBJ5y0uUVwB4K674tfsZ42cEXpU7ARn3RMy6FAwxK7ukKSVL0WmUJQOEmuhmAWDEpQwVy8MuWauej6SVKIjMM3lccbujyLs0ksWmDLeJqsqsG3VY6Pa5thZ9yuppqxxPQMO4KVrk6EZeSDMaOk3OzwK2Z3ODp778b8KpUbHabbbsCyASiTB3uwCdUp6pFeq8ea/T1fUfoR9S622Rd1LQJrR8ERlqhfkD84fTC9Uc2GzdBr1CjI6Uuc2OnosvsCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAaRLeZ1G6UTmTbVP4M3u0+be6xd80PjLV4dItDJ/UtZPAmq0moIX6Hw01FT+fJ1625mFagodAjOKj8bYIMgUENPa2bYc/w8lq6dPUntov15c4hQRgnz4vfaU2QZmuQfS3+h00HekFqBty/qMGxaSnvZU1PRHUygC6lgK/6ANI3RdOS7Iu+5A9GQN6qmcwr99mGOfmmsYvww+CWTOrlDrvcIEpbeZOWWjk9aaET+MMB0SrCs4MDb5OAHOPzRLAvKq3Mrxc5cI/CFy2eevqkxEs73gGFQE7J1UmNnOUyd8p2weTCquaASAWJ8m3vIG61rRWA4hbR91jdslCy3E1FrKPyw==</validationCert>
+    <validationCert>MIIDnDCCAoSgAwIBAgIGAYveBZReMA0GCSqGSIb3DQEBCwUAMIGOMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxDzANBgNVBAMMBmludGFwcDEcMBoGCSqGSIb3DQEJARYNaW5mb0Bva3RhLmNvbTAeFw0yMzExMTcxNjAyMDlaFw0zMzExMTcxNjAzMDlaMIGOMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxDzANBgNVBAMMBmludGFwcDEcMBoGCSqGSIb3DQEJARYNaW5mb0Bva3RhLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALhByTicVhGdfhaDzSrd8el93+4xrpxgcPwDUKH4a/u3LXpNc97rjtdU+UMvRRKKARPBzfRFdoflBMyh1sELi+iznlebaBsufFMzEap9RoiAKlDoNzZO3fXvR8ukrmjYMyJjOV7st6k9zVRThCIJKdqYpR0ZxOtlk2rvktL8oLmGMMJb7acCaLX9ienaG7S/8/yKjLb5jyz1N196wP4wl8HONRrp+/1PB/6vvt6ujf7uQgRHxTpkBoN+jpheRtvdyqdA9e3GV3EtkhsOXkarqqt27GbrkExhoXMGpdKmUsTAFnNbBbg+vuwKZgTVtwKE6xli3iPR0avP5xq/91UcFP8CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAL7yng08pslSRJxYnTuP+hmlxzql+9LitkRy9s2RpIVC1vvzBLDE6HYri6Stam2C0LpIfx1rFDEy/BofxSSa45qnbk2DyHW+rgsCebZqNYMNN6IuF+RQIv14uR1CT738eTj1Qb/LMmsjxvtCpCiFZO8UvHzldqENRhAroYPfq68PctRomN6QSK0bL4AF3LXOkyqYsoGppCnDHMByZjicilYyRvSRIIlDNJ4pb/L4xk1Z6JSiVBVYD3cVM2vZSrjDSEPJALOl1Qd4+7WYqamakPpyL81s1pRM8qK9cksoy9my5WX6NBJAOSEJsujX3hAezDlHyDxwhV99GrD0lYa91ig==</validationCert>
 </SamlSsoConfig>

@@ -1,5 +1,0 @@
-<aura:component controller="AptySalesforceController" implements="force:appHostable,flexipage:availableForAllPageTypes">
-    <aura:attribute name="userInfo" type="String"/>
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <ui:outputText value="{!v.userInfo}"/>
-</aura:component>

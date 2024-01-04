@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
-        <fullName>PSA_Timecard_Created_on_Project_without_PM_in_APAC</fullName>
-        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
-        <ccEmails>paul.pastura@intapp.com</ccEmails>
-        <description>PSA Timecard Created on Project without PM in APAC</description>
-        <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>PSA_Templates/PSA_Timecard_Created_on_Project_without_PM</template>
-    </alerts>
-    <alerts>
-        <fullName>PSA_Timecard_Created_on_Project_without_PM_in_EMEA</fullName>
-        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
-        <ccEmails>paul.pastura@intapp.com</ccEmails>
-        <description>PSA Timecard Created on Project without PM in EMEA</description>
-        <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>PSA_Templates/PSA_Timecard_Created_on_Project_without_PM</template>
-    </alerts>
-    <alerts>
-        <fullName>PSA_Timecard_Created_on_Project_without_PM_in_Worldwide_or_Americas_Region</fullName>
-        <ccEmails>sfdc_donotreply@intapp.com</ccEmails>
-        <ccEmails>sadie.kenna@intapp.com</ccEmails>
-        <description>PSA Timecard Created on Project without PM in Worldwide or Americas Region</description>
-        <protected>false</protected>
-        <senderType>CurrentUser</senderType>
-        <template>PSA_Templates/PSA_Timecard_Created_on_Project_without_PM</template>
-    </alerts>
-    <alerts>
         <fullName>PSA_Timecard_Has_Been_Rejected_Alert</fullName>
         <description>PSA Timecard Has Been Rejected Alert</description>
         <protected>false</protected>
@@ -211,4 +184,161 @@
         <protected>false</protected>
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
+    <rules>
+        <fullName>Rule Code%3A TI-001xFxx</fullName>
+        <actions>
+            <name>PSE_Timecard_Unset_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Timecard_Header__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Saved,Rejected</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>pse__Timecard_Header__c.pse__Submitted__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Rule Code: TI-001xFxx
+PSA Timecard Status Set Saved,Rejected
+This will unset the submitted check box on the timecard when the status is set to a value corresponding to not submitted. Customers may choose to change the values in the status drop down</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-002xFxx</fullName>
+        <actions>
+            <name>PSE_Timecard_Set_Approved_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Timecard_Set_Approved_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Timecard_Set_Include_in_FI_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSE_Timecard_Set_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Timecard_Header__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <description>Rule Code: TI-002xFxx
+PSA Timecard Status Set to Approved
+This workflow will mimic the approval process. When the timecard status is set to Approved the approved flag will get set along with the include in financials checkbox</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-003xFxx</fullName>
+        <actions>
+            <name>PSE_Timecard_Set_Submitted_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>pse__Timecard_Header__c.pse__Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+        <description>Rule Code: TI-003xFxx
+PSA Timecard Status Set to Submitted
+This will set the submitted check box on the timecard when the status is set to a value corresponding to submitted. Customers may choose to change the values in the status drop down</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-007xFxx</fullName>
+        <actions>
+            <name>Set_TC_Billable_to_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: TI-007xFxx
+If Project is non-billable, set timecard to non-billable
+If the project is non-billable, this rule sets the Timecard: Billable field to false.</description>
+        <formula>AND(   pse__Billable__c=TRUE,   pse__Project__r.pse__Is_Billable__c=FALSE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-008xFxx</fullName>
+        <actions>
+            <name>Set_Exclude_From_Billing_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: TI-008xFxx
+Set Exclude From Billing False
+Unchecks the &quot;Exclude from Billing&quot; field when pse_Billable__c is true</description>
+        <formula>pse__Billable__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-009xFxx</fullName>
+        <actions>
+            <name>Set_Exclude_From_Billing_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: TI-009xFxx
+Set Exclude From Billing True
+Checks the &quot;Exclude from Billing&quot; field when pse__Billable__c is unchecked</description>
+        <formula>NOT(pse__Billable__c)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-010xFxx</fullName>
+        <actions>
+            <name>Populate_Resource_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: TI-010xFxx
+Populate Resource Email
+Populates the Resource Email field on time card creation</description>
+        <formula>TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-011xFxx</fullName>
+        <actions>
+            <name>PSE_Timecard_Set_Include_in_FI_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Rule Code: TI-011xFxx
+PSA Timecard Include in Financials
+Sets the timecard include in financials flag</description>
+        <formula>AND(
+  ISPICKVAL(pse__Status__c,&quot;Approved&quot;),
+  OR(
+    NOT(pse__Billable__c),
+    pse__Bill_Rate__c = 0,
+    ISPICKVAL(pse__Project__r.pse__Billing_Type__c,&quot;Fixed Price&quot;)
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rule Code%3A TI-012xFxx</fullName>
+        <actions>
+            <name>Uncheck_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Uncheck_Include_in_Financials</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: TI-012xFxx
+Timecard Rejected
+Unchecks the Approved and Include in Financial checkboxes when a timecard has been rejected.</description>
+        <formula>AND(   ISPICKVAL(pse__Status__c, &quot;Rejected&quot;),   pse__Approved__c=TRUE )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
 </Workflow>

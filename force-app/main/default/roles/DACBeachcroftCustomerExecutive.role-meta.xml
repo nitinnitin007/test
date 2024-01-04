@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>DAC Beachcroft Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>EMEA_Sales_Reps</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

@@ -9,6 +9,6 @@
         <value>Stato DocuSign</value>
     </caseValues>
     <gender>Masculine</gender>
-    <nameFieldLabel>Busta#</nameFieldLabel>
+    <nameFieldLabel>Num. busta</nameFieldLabel>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Anticipated_Cancellation_Notification</name>
+        <label>Anticipated Cancellation Notification</label>
+        <locationX>1379</locationX>
+        <locationY>4215</locationY>
+        <actionName>Opportunity.Email_Notification_Anticipated_Cancellation</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_PCs_for_Closed_Won_Opportunities</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Email_Notification_Anticipated_Cancellation</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>Intapp_Prime</name>
         <label>Intapp Prime</label>
         <locationX>542</locationX>
@@ -261,6 +281,26 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
+        <name>Pending_Closer_Email_Alert</name>
+        <label>Pending Closer Email Alert</label>
+        <locationX>744</locationX>
+        <locationY>3957</locationY>
+        <actionName>Opportunity.Status_Pending_Closure_Services</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Anticipated_Cancellation_Noti_Check</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.Status_Pending_Closure_Services</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
         <name>Renewal_at_Risk</name>
         <label>Renewal at Risk</label>
         <locationX>1731</locationX>
@@ -452,8 +492,8 @@
     <assignments>
         <name>Reset_RAC_Total_on_PC</name>
         <label>Reset RAC Total on PC</label>
-        <locationX>1070</locationX>
-        <locationY>4585</locationY>
+        <locationX>1168</locationX>
+        <locationY>5050</locationY>
         <assignmentItems>
             <assignToReference>RAC_Total</assignToReference>
             <operator>Assign</operator>
@@ -468,8 +508,8 @@
     <assignments>
         <name>Totaling_RAC_on_Existing_PC</name>
         <label>Totaling RAC on Existing PC</label>
-        <locationX>848</locationX>
-        <locationY>4574</locationY>
+        <locationX>939</locationX>
+        <locationY>5051</locationY>
         <assignmentItems>
             <assignToReference>RAC_Total</assignToReference>
             <operator>Assign</operator>
@@ -491,8 +531,8 @@
     <assignments>
         <name>Update_OPC_based_on_PC</name>
         <label>Update OPC based on PC</label>
-        <locationX>1293</locationX>
-        <locationY>4586</locationY>
+        <locationX>1383</locationX>
+        <locationY>5050</locationY>
         <assignmentItems>
             <assignToReference>Loop_for_multiple_OPCs.Product_Customer__c</assignToReference>
             <operator>Assign</operator>
@@ -507,8 +547,8 @@
     <assignments>
         <name>Update_OPCs_with_PCs</name>
         <label>Update OPCs with PCs</label>
-        <locationX>840</locationX>
-        <locationY>4437</locationY>
+        <locationX>924</locationX>
+        <locationY>4822</locationY>
         <assignmentItems>
             <assignToReference>Loop_for_multiple_OPCs.Product_Customer__c</assignToReference>
             <operator>Assign</operator>
@@ -523,8 +563,8 @@
     <assignments>
         <name>Update_PC_RAC</name>
         <label>Update_PC_RAC</label>
-        <locationX>631</locationX>
-        <locationY>4568</locationY>
+        <locationX>708</locationX>
+        <locationY>5051</locationY>
         <assignmentItems>
             <assignToReference>Existing_Product_Customer.Amount__c</assignToReference>
             <operator>Assign</operator>
@@ -544,12 +584,37 @@
         </connector>
     </assignments>
     <decisions>
-        <name>Champion_got_populated_Decision</name>
-        <label>Champion got populated Decision</label>
-        <locationX>814</locationX>
-        <locationY>3768</locationY>
+        <name>Anticipated_Cancellation_Noti_Check</name>
+        <label>Anticipated Cancellation Noti Check</label>
+        <locationX>891</locationX>
+        <locationY>4112</locationY>
         <defaultConnector>
             <targetReference>Create_PCs_for_Closed_Won_Opportunities</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Anticipated_Cancellation_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OPP017EFxx_Formula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Ant_Can</targetReference>
+            </connector>
+            <label>Anticipated Cancellation Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Champion_got_populated_Decision</name>
+        <label>Champion got populated Decision</label>
+        <locationX>963</locationX>
+        <locationY>3748</locationY>
+        <defaultConnector>
+            <targetReference>StageisPendingCloser</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -571,8 +636,8 @@
     <decisions>
         <name>Create_PCs_for_Closed_Won_Opportunities</name>
         <label>Create PCs for Closed Won Opportunities</label>
-        <locationX>486</locationX>
-        <locationY>3860</locationY>
+        <locationX>887</locationX>
+        <locationY>4298</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Create_Product_Customer</name>
@@ -621,8 +686,8 @@
     <decisions>
         <name>Does_PC_exist_for_this_product_line</name>
         <label>Does PC exist for this product line</label>
-        <locationX>1260</locationX>
-        <locationY>4320</locationY>
+        <locationX>1379</locationX>
+        <locationY>4727</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -683,8 +748,8 @@
     <decisions>
         <name>LisOPCNOtNull</name>
         <label>LisOPCNOtNull</label>
-        <locationX>370</locationX>
-        <locationY>4165</locationY>
+        <locationX>900</locationX>
+        <locationY>4554</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OPCNotNull</name>
@@ -750,6 +815,31 @@
                 <targetReference>Loop_over_Quote</targetReference>
             </connector>
             <label>QuoteRecNotNull</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>StageisPendingCloser</name>
+        <label>StageisPendingCloser</label>
+        <locationX>962</locationX>
+        <locationY>3931</locationY>
+        <defaultConnector>
+            <targetReference>Anticipated_Cancellation_Noti_Check</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>StageCheck</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending Closure</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pending_Closer_Email_Alert</targetReference>
+            </connector>
+            <label>StageCheck</label>
         </rules>
     </decisions>
     <decisions>
@@ -1900,13 +1990,26 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
         <dataType>String</dataType>
         <expression>LEFT({!Loop_for_multiple_OPCs.Product_LineNew__c},15)</expression>
     </formulas>
+    <formulas>
+        <name>OPP017EFxx_Formula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+   $Record.Exclude_from_Notifications__c=FALSE,
+   $Record.IsClosed=FALSE,
+   $Record.Maintenance_Amount__c &lt; 0,
+   $Record.Ant_Can_Sent__c=FALSE,
+   $Record.Record_Type_Text__c =&quot;Legal - Cancellation / Recurring Downgrade&quot;, 
+   NOT(ISPICKVAL($Record.Type, &quot;Legal - Recurring Adjustment&quot;)),
+   NOT(ISPICKVAL($Record.Type, &quot;Legal - CPI / Recurring Increase&quot;)) 
+)</expression>
+    </formulas>
     <interviewLabel>Opportunity After Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity After Insert Update</label>
     <loops>
         <name>Loop_for_multiple_OPCs</name>
         <label>Loop for multiple OPCs</label>
-        <locationX>633</locationX>
-        <locationY>4297</locationY>
+        <locationX>708</locationX>
+        <locationY>4751</locationY>
         <collectionReference>ListofOPCRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1952,8 +2055,8 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
     <recordCreates>
         <name>Create_New_PCs</name>
         <label>Create New PCs</label>
-        <locationX>1052</locationX>
-        <locationY>4314</locationY>
+        <locationX>1203</locationX>
+        <locationY>4775</locationY>
         <assignRecordIdToReference>NewProductCustomer.Id</assignRecordIdToReference>
         <connector>
             <targetReference>Update_OPCs_with_PCs</targetReference>
@@ -2017,8 +2120,8 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
     <recordLookups>
         <name>Does_PC_Exist</name>
         <label>Does PC Exist</label>
-        <locationX>842</locationX>
-        <locationY>4301</locationY>
+        <locationX>947</locationX>
+        <locationY>4721</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Does_PC_exist_for_this_product_line</targetReference>
@@ -2048,8 +2151,8 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
     <recordLookups>
         <name>Product_Customer_Create</name>
         <label>Product Customer - Create</label>
-        <locationX>491</locationX>
-        <locationY>4013</locationY>
+        <locationX>725</locationX>
+        <locationY>4441</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>LisOPCNOtNull</targetReference>
@@ -2094,17 +2197,33 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_Ant_Can</name>
+        <label>Update Ant Can</label>
+        <locationX>1135</locationX>
+        <locationY>4101</locationY>
+        <connector>
+            <targetReference>Anticipated_Cancellation_Notification</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Ant_Can_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Existing_Product_Customer</name>
         <label>Update Existing Product Customer</label>
-        <locationX>367</locationX>
-        <locationY>4550</locationY>
+        <locationX>489</locationX>
+        <locationY>5196</locationY>
         <inputReference>Existing_Product_Customer</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Opportunity_Product_Component</name>
         <label>Update Opportunity Product Component</label>
-        <locationX>362</locationX>
-        <locationY>4376</locationY>
+        <locationX>492</locationX>
+        <locationY>4868</locationY>
         <connector>
             <targetReference>Update_Existing_Product_Customer</targetReference>
         </connector>
@@ -2150,10 +2269,10 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
     <subflows>
         <name>Create_Champion_Contact_Role</name>
         <label>Create Champion Contact Role</label>
-        <locationX>493</locationX>
-        <locationY>3657</locationY>
+        <locationX>735</locationX>
+        <locationY>3770</locationY>
         <connector>
-            <targetReference>Create_PCs_for_Closed_Won_Opportunities</targetReference>
+            <targetReference>StageisPendingCloser</targetReference>
         </connector>
         <flowName>Create_Champion_Contact_Role</flowName>
         <inputAssignments>
@@ -2178,8 +2297,8 @@ NOT(ISBLANK({!$Record.Requested_Contract_Expiration__c})), ISCHANGED({!$Record.R
     <subflows>
         <name>Create_Ecomonic_Buyer_Role</name>
         <label>Create Ecomonic Buyer Role</label>
-        <locationX>741</locationX>
-        <locationY>3614</locationY>
+        <locationX>734</locationX>
+        <locationY>3642</locationY>
         <connector>
             <targetReference>Champion_got_populated_Decision</targetReference>
         </connector>

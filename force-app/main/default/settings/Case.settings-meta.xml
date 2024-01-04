@@ -15,7 +15,7 @@
     <defaultCaseFeedLayoutOn>false</defaultCaseFeedLayoutOn>
     <defaultCaseOwner>Tier1</defaultCaseOwner>
     <defaultCaseOwnerType>Queue</defaultCaseOwnerType>
-    <defaultCaseUser>support.automation@intapp.com</defaultCaseUser>
+    <defaultCaseUser>bizappsdev@intapp.com</defaultCaseUser>
     <emailToCase>
         <enableE2CAttachmentAsFile>false</enableE2CAttachmentAsFile>
         <enableE2CSourceTracking>true</enableE2CSourceTracking>
@@ -35,8 +35,8 @@
             <casePriority>Normal</casePriority>
             <createTask>false</createTask>
             <emailAddress>support_qtc@intappinc.onmicrosoft.com</emailAddress>
-            <emailServicesAddress>support-qtc@1jopkkbmaws6z2hy3ag8zi07eb7v0wbibfaaef92uch86p2apo.d7-o3wdmaq.cs283.case.sandbox.salesforce.com</emailServicesAddress>
-            <isVerified>true</isVerified>
+            <emailServicesAddress>support_qtc@20klkx1t7607j6g0ps5h763d85iaa4wzc357drqnuuypyanbmd.d6-qhd7mac.cs282.case.sandbox.salesforce.com</emailServicesAddress>
+            <isVerified>false</isVerified>
             <routingName>Amendment, Renewals and Contract Consolidation Case.</routingName>
             <saveEmailHeaders>false</saveEmailHeaders>
         </routingAddresses>
@@ -61,8 +61,7 @@
             <casePriority>Normal</casePriority>
             <createTask>true</createTask>
             <emailAddress>support@intapp.com</emailAddress>
-            <emailServicesAddress>support_qtc@x-26gx1nhh6krndww9z8ebrws0cgsqp3k4we9ftyd6100lgcf6wa.d7-o3wdmaq.cs283.case.sandbox.salesforce.com</emailServicesAddress>
-            <isVerified>false</isVerified>
+            <isVerified>true</isVerified>
             <routingName>Intapp Support</routingName>
             <saveEmailHeaders>true</saveEmailHeaders>
             <taskStatus>Completed</taskStatus>

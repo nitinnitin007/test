@@ -61,10 +61,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Polar_Master_Agreement__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>CRD__c</field>
             </layoutItems>
             <layoutItems>
@@ -489,34 +485,6 @@
         <label>Quip</label>
         <layoutColumns>
             <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioAccountHighlights_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioEngagementTrend_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioEngagementHeatmap_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
-                <height>200</height>
-                <page>engagio__EngagioEngagementActivities_Account</page>
-                <showLabel>false</showLabel>
-                <showScrollbars>false</showScrollbars>
-                <width>100%</width>
-            </layoutItems>
-            <layoutItems>
                 <height>500</height>
                 <page>JBCXM__CustomerSuccess</page>
                 <showLabel>false</showLabel>
@@ -752,6 +720,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Liability_Annex_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DC_MSA_Addendum__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DC_MSA_Addendum_Notes__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

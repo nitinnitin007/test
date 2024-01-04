@@ -1068,11 +1068,6 @@
             <field>PO_Number__c</field>
             <table>Contract</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Renewed_Contract__c</field>
-            <table>Contract</table>
-        </columns>
         <masterLabel>Contracts</masterLabel>
     </sections>
     <sections>
@@ -4928,8 +4923,5 @@
             <table>Contract.Invoices__r.Opportunities__r.OpportunityLineItems</table>
         </columns>
         <masterLabel>Products</masterLabel>
-    </sections>
-    <sections>
-        <masterLabel>Opportunity Product</masterLabel>
     </sections>
 </ReportType>

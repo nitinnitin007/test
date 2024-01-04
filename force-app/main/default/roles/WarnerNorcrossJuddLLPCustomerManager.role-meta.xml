@@ -2,9 +2,9 @@
 <Role xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseAccessLevel>None</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
-    <description>Warner Norcross + Judd LLP Customer Manager</description>
+    <description>Warner Norcross &amp; Judd LLP Customer Manager</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Warner Norcross + Judd LLP Customer Manager</name>
+    <name>Warner Norcross &amp; Judd LLP Customer Manager</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
     <parentRole>WarnerNorcrossJuddLLPCustomerExecutive</parentRole>
 </Role>

@@ -51,12 +51,6 @@
         <label>Fees</label>
     </customValue>
     <customValue>
-        <fullName>Employee</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Employee</label>
-    </customValue>
-    <customValue>
         <fullName>Hours</fullName>
         <default>false</default>
         <isActive>false</isActive>

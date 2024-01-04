@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Change_Improved</fullName>
+        <field>CSM_Health_Change__c</field>
+        <literalValue>Improved</literalValue>
+        <name>Update CSM Health Change - Improved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Change_Other</fullName>
+        <field>CSM_Health_Change__c</field>
+        <literalValue>Other</literalValue>
+        <name>Update CSM Health Change - Other</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Change_Regressed</fullName>
+        <field>CSM_Health_Change__c</field>
+        <literalValue>Regressed</literalValue>
+        <name>Update CSM Health Change - Regressed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Rule Code%3A SHS-001xFxx</fullName>
         <actions>

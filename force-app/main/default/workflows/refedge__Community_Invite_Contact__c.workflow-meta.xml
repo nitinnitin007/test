@@ -10,4 +10,18 @@
         <senderType>CurrentUser</senderType>
         <template>refedge__POR_Email_Templates/refedge__Community_Invitation_Accepted</template>
     </alerts>
+    <rules>
+        <fullName>refedge__Community Invitation Accepted</fullName>
+        <actions>
+            <name>refedge__Community_Invitation_Accepted_Mail</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>refedge__Community_Invite_Contact__c.refedge__Response__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
 </Workflow>

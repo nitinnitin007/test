@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Dentons Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>Business_Operations</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

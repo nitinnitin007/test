@@ -3904,11 +3904,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SBQQ__PreviousChangeQuote__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__PriceBook__c</field>
             <table>Opportunity.SBQQ__Quotes2__r</table>
         </columns>
@@ -4310,26 +4305,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Deal_Issue_Notes__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Subsidiary__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OP4i_Deal_Id_Formula__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Fourth_Year_Software_Net_Total__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sixth_Year_Software_Net_Total__c</field>
             <table>Opportunity.SBQQ__Quotes2__r</table>
         </columns>
         <masterLabel>Quotes</masterLabel>
@@ -4848,31 +4823,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>QL_Implementation_Services_Sales_Price__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r.SBQQ__LineItems__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Per_Integrations__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r.SBQQ__LineItems__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>One_Time_Credit_Total__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r.SBQQ__LineItems__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Bypass_PriceRule__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r.SBQQ__LineItems__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SplitT_M__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r.SBQQ__LineItems__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Segment_Month_Decimal__c</field>
             <table>Opportunity.SBQQ__Quotes2__r.SBQQ__LineItems__r</table>
         </columns>
         <masterLabel>Quote Lines</masterLabel>

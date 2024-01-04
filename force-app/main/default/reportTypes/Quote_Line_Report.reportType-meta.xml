@@ -1366,31 +1366,6 @@
             <field>QL_Implementation_Services_Sales_Price__c</field>
             <table>SBQQ__QuoteLine__c</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Per_Integrations__c</field>
-            <table>SBQQ__QuoteLine__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>One_Time_Credit_Total__c</field>
-            <table>SBQQ__QuoteLine__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Bypass_PriceRule__c</field>
-            <table>SBQQ__QuoteLine__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>SplitT_M__c</field>
-            <table>SBQQ__QuoteLine__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Segment_Month_Decimal__c</field>
-            <table>SBQQ__QuoteLine__c</table>
-        </columns>
         <masterLabel>Quote Lines</masterLabel>
     </sections>
 </ReportType>

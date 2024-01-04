@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>WeirFoulds Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>ClientRelationshipManager</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

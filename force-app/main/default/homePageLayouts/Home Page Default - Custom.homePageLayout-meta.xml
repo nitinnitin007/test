@@ -4,7 +4,6 @@
     <narrowComponents>standard-RecentItems</narrowComponents>
     <narrowComponents>standard-MessagesAndAlerts</narrowComponents>
     <narrowComponents>standard-UsefulLinks</narrowComponents>
-    <narrowComponents>PSA Links</narrowComponents>
     <wideComponents>standard-ProcessWorkitems</wideComponents>
     <wideComponents>standard-Calendar</wideComponents>
     <wideComponents>standard-Tasks</wideComponents>

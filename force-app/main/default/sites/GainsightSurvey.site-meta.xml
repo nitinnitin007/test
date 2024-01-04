@@ -24,7 +24,7 @@
     <redirectToCustomDomain>false</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <siteAdmin>carolina.roller@intapp.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>support.automation@intapp.com</siteGuestRecordDefaultOwner>
+    <siteGuestRecordDefaultOwner>bizappsdev@intapp.com</siteGuestRecordDefaultOwner>
     <siteTemplate>SiteTemplate</siteTemplate>
     <siteType>Visualforce</siteType>
     <subdomain>intapp-portal</subdomain>

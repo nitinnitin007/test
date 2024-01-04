@@ -86,12 +86,6 @@
         <label>Other</label>
     </customValue>
     <customValue>
-        <fullName>Existing Terms Plus Prime</fullName>
-        <default>false</default>
-        <isActive>false</isActive>
-        <label>Existing Terms Plus Prime</label>
-    </customValue>
-    <customValue>
         <fullName>Prime</fullName>
         <default>false</default>
         <isActive>false</isActive>
@@ -102,6 +96,12 @@
         <default>false</default>
         <isActive>false</isActive>
         <label>Repstor Retro-Booking</label>
+    </customValue>
+    <customValue>
+        <fullName>Existing Terms Plus Prime</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Existing Terms Plus Prime</label>
     </customValue>
     <description>Built according to BIZ-47359</description>
     <masterLabel>Contract Master Terms</masterLabel>

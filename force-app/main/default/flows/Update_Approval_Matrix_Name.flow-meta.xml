@@ -59,6 +59,6 @@
     <textTemplates>
         <name>Matrixname</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>{!$Record.Sales_Segment__c}</text>
+        <text>KGS - {!$Record.Sales_Segment__c}</text>
     </textTemplates>
 </Flow>

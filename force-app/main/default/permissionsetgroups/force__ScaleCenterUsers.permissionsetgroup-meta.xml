@@ -3,5 +3,5 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>ScaleCenterUsers</label>
     <permissionSets>force__ScaleCenterStandardPS</permissionSets>
-    <status>Updated</status>
+    <status>Failed</status>
 </PermissionSetGroup>

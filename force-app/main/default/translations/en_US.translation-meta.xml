@@ -226,6 +226,10 @@
         <fullName>Contract_Before_Insert</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows/>
+        <fullName>Contract_Before_Insert_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows>
             <screens>
                 <fields>
@@ -535,6 +539,10 @@
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
+        <fullName>OpportunityLineItem_After_Insert_Update</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
         <fullName>OpportunityLineItem_Before_Insert_Update</fullName>
     </flowDefinitions>
     <flowDefinitions>
@@ -781,14 +789,6 @@
     <flowDefinitions>
         <flows/>
         <fullName>Quote_Before_Insert_Update</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
-        <flows>
-            <textTemplates>
-                <name>NotificationBody</name>
-            </textTemplates>
-        </flows>
-        <fullName>Quote_Before_Update</fullName>
     </flowDefinitions>
     <flowDefinitions>
         <flows/>
@@ -1553,23 +1553,6 @@
         <fullName>Term_Quote</fullName>
     </flowDefinitions>
     <flowDefinitions>
-        <flows>
-            <screens>
-                <fields>
-                    <name>first</name>
-                </fields>
-                <fields>
-                    <name>second</name>
-                </fields>
-                <fields>
-                    <name>third</name>
-                </fields>
-                <name>Test_flow_Salesforce</name>
-            </screens>
-        </flows>
-        <fullName>Test_flow_by_Salesforce_Team</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
         <flows/>
         <fullName>Update_Account_Name</fullName>
     </flowDefinitions>
@@ -1694,6 +1677,17 @@
         <fullName>Updates_Date_Time_for_Account_Name_Change</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows>
+            <textTemplates>
+                <name>ModuleAssign</name>
+            </textTemplates>
+            <textTemplates>
+                <name>ReminderEmail</name>
+            </textTemplates>
+        </flows>
+        <fullName>User_Badge_After_Insert</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows/>
         <fullName>Vacation</fullName>
     </flowDefinitions>
@@ -1733,6 +1727,10 @@
         <flows/>
         <fullName>update_contract_on_quotes</fullName>
     </flowDefinitions>
+    <quickActions>
+        <label><!-- Create a Task for Contract --></label>
+        <name>Create_a_Task_for_Contract</name>
+    </quickActions>
     <quickActions>
         <label><!-- LogACall --></label>
         <name>LogACall</name>
@@ -2901,15 +2899,6 @@
         </sections>
     </reportTypes>
     <reportTypes>
-        <description><!-- Block Pricings Report --></description>
-        <label><!-- Block Pricings Report --></label>
-        <name>Block_Pricings_Report</name>
-        <sections>
-            <label><!-- Block Pricings --></label>
-            <name>Block Pricings</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
         <description><!-- CR Engagements --></description>
         <label><!-- CR Engagements --></label>
         <name>CR_Engagements</name>
@@ -3697,10 +3686,6 @@
             <name>Opportunities</name>
         </sections>
         <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
-        </sections>
-        <sections>
             <label><!-- Products --></label>
             <name>Products</name>
         </sections>
@@ -3716,10 +3701,6 @@
         <sections>
             <label><!-- Opportunities --></label>
             <name>Opportunities</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
         </sections>
         <sections>
             <label><!-- Products --></label>
@@ -3770,36 +3751,6 @@
         </sections>
     </reportTypes>
     <reportTypes>
-        <description><!-- Credit Note With or Without  Invoice --></description>
-        <label><!-- Credit Note With or Without  Invoice --></label>
-        <name>Credit_Note_With_Without_Invoice</name>
-        <sections>
-            <label><!-- Credit Note Lines --></label>
-            <name>Credit Note Lines</name>
-        </sections>
-        <sections>
-            <label><!-- Credit Notes --></label>
-            <name>Credit Notes</name>
-        </sections>
-        <sections>
-            <label><!-- Invoice Lines --></label>
-            <name>Invoice Lines</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Credit Notes and Credit Note Lines --></description>
-        <label><!-- Credit Notes and Credit Note Lines --></label>
-        <name>Credit_Notes_and_Credit_Note_Lines</name>
-        <sections>
-            <label><!-- Credit Note Lines --></label>
-            <name>Credit Note Lines</name>
-        </sections>
-        <sections>
-            <label><!-- Credit Notes --></label>
-            <name>Credit Notes</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
         <description><!-- Custom:Invoices with Opportunities --></description>
         <label><!-- Custom:Invoices with Opportunities --></label>
         <name>Custom_Invoices_with_Opportunities</name>
@@ -3836,19 +3787,6 @@
         <sections>
             <label><!-- Opportunities --></label>
             <name>Opportunities</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Custom Relationship Limit Exceeded --></description>
-        <label><!-- Custom Relationship Limit Exceeded --></label>
-        <name>Custom_Relationship_Limit_Exceeded</name>
-        <sections>
-            <label><!-- Entity Definitions --></label>
-            <name>Entity Definitions</name>
-        </sections>
-        <sections>
-            <label><!-- Field Definitions --></label>
-            <name>Field Definitions</name>
         </sections>
     </reportTypes>
     <reportTypes>
@@ -4022,73 +3960,9 @@
         </sections>
     </reportTypes>
     <reportTypes>
-        <description><!-- Invoice , Invoice Lines and Orders --></description>
-        <label><!-- Invoice , Invoice Lines and Orders --></label>
-        <name>Invoice_Invoice_Lines_and_Orders</name>
-        <sections>
-            <label><!-- Invoice Lines --></label>
-            <name>Invoice Lines</name>
-        </sections>
-        <sections>
-            <label><!-- Invoices --></label>
-            <name>Invoices</name>
-        </sections>
-        <sections>
-            <label><!-- Orders --></label>
-            <name>Orders</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Invoice, Invoice Run and Invoice Scheduler --></description>
-        <label><!-- Invoice, Invoice Run and Invoice Scheduler --></label>
-        <name>Invoice_Invoice_Run_and_Invoice_Scheduler</name>
-        <sections>
-            <label><!-- Invoice Runs --></label>
-            <name>Invoice Runs</name>
-        </sections>
-        <sections>
-            <label><!-- Invoice Schedulers --></label>
-            <name>Invoice Schedulers</name>
-        </sections>
-        <sections>
-            <label><!-- Invoices --></label>
-            <name>Invoices</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
         <description><!-- Invoice With Invoice Lines --></description>
         <label><!-- Invoice With Invoice Lines --></label>
         <name>Invoice_With_Invoice_Lines</name>
-        <sections>
-            <label><!-- Invoice Lines --></label>
-            <name>Invoice Lines</name>
-        </sections>
-        <sections>
-            <label><!-- Invoices --></label>
-            <name>Invoices</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Invoice and Invoice Lines --></description>
-        <label><!-- Invoice and Invoice Lines --></label>
-        <name>Invoice_and_Invoice_Lines</name>
-        <sections>
-            <label><!-- Invoice Lines --></label>
-            <name>Invoice Lines</name>
-        </sections>
-        <sections>
-            <label><!-- Invoices --></label>
-            <name>Invoices</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Invoice with Credit Memo --></description>
-        <label><!-- Invoice with Credit Memo --></label>
-        <name>Invoice_with_Credit_Memo</name>
-        <sections>
-            <label><!-- Credit Note Lines --></label>
-            <name>Credit Note Lines</name>
-        </sections>
         <sections>
             <label><!-- Invoice Lines --></label>
             <name>Invoice Lines</name>
@@ -4375,10 +4249,6 @@
             <name>Opportunities</name>
         </sections>
         <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
-        </sections>
-        <sections>
             <label><!-- Products --></label>
             <name>Products</name>
         </sections>
@@ -4537,10 +4407,6 @@
         <sections>
             <label><!-- Opportunities --></label>
             <name>Opportunities</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
         </sections>
         <sections>
             <label><!-- Products --></label>
@@ -4707,23 +4573,6 @@
         </sections>
     </reportTypes>
     <reportTypes>
-        <description><!-- Order and Order Products --></description>
-        <label><!-- Order and Order Products --></label>
-        <name>Order_and_Order_Products</name>
-        <sections>
-            <label><!-- Invoice Lines --></label>
-            <name>Invoice Lines</name>
-        </sections>
-        <sections>
-            <label><!-- Order Products --></label>
-            <name>Order Products</name>
-        </sections>
-        <sections>
-            <label><!-- Orders --></label>
-            <name>Orders</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
         <description><!-- Package Install Failure Report --></description>
         <label><!-- Package Install Failure Report --></label>
         <name>Package_Install_Failure_Report</name>
@@ -4734,19 +4583,6 @@
         <sections>
             <label><!-- Field Definitions --></label>
             <name>Field Definitions</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Payments with our without payment allocations --></description>
-        <label><!-- Payments with our without payment allocations --></label>
-        <name>Payments_with_our_without_payment_allocations</name>
-        <sections>
-            <label><!-- Payment Allocations (Invoice Line) --></label>
-            <name>Payment Allocations (Invoice Line)</name>
-        </sections>
-        <sections>
-            <label><!-- Payments --></label>
-            <name>Payments</name>
         </sections>
     </reportTypes>
     <reportTypes>
@@ -5066,6 +4902,15 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- Product Rollup --></description>
+        <label><!-- Product Rollup --></label>
+        <name>Product_Rollup</name>
+        <sections>
+            <label><!-- Product Rollups --></label>
+            <name>Product Rollups</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Products --></description>
         <label><!-- Products --></label>
         <name>Products</name>
@@ -5081,10 +4926,6 @@
         <sections>
             <label><!-- Opportunities --></label>
             <name>Opportunities</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
         </sections>
         <sections>
             <label><!-- Products --></label>
@@ -5465,6 +5306,15 @@
         </sections>
     </reportTypes>
     <reportTypes>
+        <description><!-- Quote Documents --></description>
+        <label><!-- Quote Documents --></label>
+        <name>Quote_Documents</name>
+        <sections>
+            <label><!-- Quote Documents --></label>
+            <name>Quote Documents</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
         <description><!-- Quote Line Report --></description>
         <label><!-- Quote Line Report --></label>
         <name>Quote_Line_Report</name>
@@ -5534,29 +5384,12 @@
         </sections>
     </reportTypes>
     <reportTypes>
-        <description><!-- Quotes --></description>
-        <label><!-- Quotes --></label>
+        <description><!-- Quotes (SBQQ) --></description>
+        <label><!-- Quotes (SBQQ) --></label>
         <name>Quotes</name>
         <sections>
             <label><!-- Opportunity --></label>
             <name>Opportunity</name>
-        </sections>
-        <sections>
-            <label><!-- Quotes --></label>
-            <name>Quotes</name>
-        </sections>
-    </reportTypes>
-    <reportTypes>
-        <description><!-- Quotes + Orders + Invoices --></description>
-        <label><!-- Quotes + Orders + Invoices --></label>
-        <name>Quotes_Orders_Invoices</name>
-        <sections>
-            <label><!-- Invoices --></label>
-            <name>Invoices</name>
-        </sections>
-        <sections>
-            <label><!-- Orders --></label>
-            <name>Orders</name>
         </sections>
         <sections>
             <label><!-- Quotes --></label>
@@ -5806,10 +5639,6 @@
             <name>Opportunities</name>
         </sections>
         <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
-        </sections>
-        <sections>
             <label><!-- Products --></label>
             <name>Products</name>
         </sections>
@@ -5838,10 +5667,6 @@
         <sections>
             <label><!-- Opportunities --></label>
             <name>Opportunities</name>
-        </sections>
-        <sections>
-            <label><!-- Opportunity Product --></label>
-            <name>Opportunity Product</name>
         </sections>
         <sections>
             <label><!-- Product Customers --></label>
@@ -7208,67 +7033,7 @@
         </sections>
     </reportTypes>
     <scontrols>
-        <label><!-- About Recruiting --></label>
-        <name>AboutRecruiting</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- About Service Entitlements --></label>
-        <name>AboutServiceEntitlements</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Add Purchased Products --></label>
-        <name>AddPurchasedProducts</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Begin RMA Shipping Process --></label>
-        <name>Begin_RMA_Shipping_Process</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Begin RMA from Case --></label>
-        <name>Begin_RMA_from_Case</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- BugSearch --></label>
-        <name>BugSearch</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Contract Shipping Wizard --></label>
-        <name>ContractShippingWizard</name>
-    </scontrols>
-    <scontrols>
         <label><!-- Contract To Order Generation --></label>
         <name>ContractToOrderGeneration2</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- ListAppliancesEmbedded --></label>
-        <name>ListAppliancesEmbedded</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Mass Convertor --></label>
-        <name>MassConvertor</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Mass Convertor About --></label>
-        <name>MassConvertorAbout</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Migrate Email from Case --></label>
-        <name>MigrateEmailfromCase</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Opportunity to Contract Generation --></label>
-        <name>OpportunitytoContractGeneration</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Reset Partner Password --></label>
-        <name>ResetPartnerPassword</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- Validate Order --></label>
-        <name>ValidateOrder</name>
-    </scontrols>
-    <scontrols>
-        <label><!-- case_cron.html --></label>
-        <name>case_cronhtml</name>
     </scontrols>
 </Translations>

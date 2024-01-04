@@ -313,7 +313,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -817,7 +817,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -925,7 +925,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1121,7 +1121,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1189,7 +1189,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1241,7 +1241,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1573,7 +1573,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1637,7 +1637,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1725,7 +1725,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1757,11 +1757,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1769,19 +1769,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1877,7 +1877,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -1969,7 +1969,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2313,11 +2313,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2549,7 +2549,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2661,7 +2661,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2701,7 +2701,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2785,7 +2785,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -2965,7 +2965,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -3252,7 +3252,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -3378,7 +3378,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -3405,7 +3405,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -3454,7 +3454,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -3471,7 +3471,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -3484,7 +3484,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -3567,7 +3567,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -3583,7 +3583,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -3605,7 +3605,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -3613,13 +3613,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -3643,7 +3643,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -3666,7 +3666,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -3752,8 +3752,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -3811,7 +3811,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -3839,7 +3839,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -3849,7 +3849,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -3870,7 +3870,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -3915,7 +3915,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -4206,7 +4206,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4710,7 +4710,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -4818,7 +4818,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5014,7 +5014,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5082,7 +5082,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5134,7 +5134,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5466,7 +5466,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5530,7 +5530,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5618,7 +5618,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5650,11 +5650,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5662,19 +5662,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5770,7 +5770,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -5862,7 +5862,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -6206,11 +6206,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -6446,7 +6446,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -6558,7 +6558,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -6598,7 +6598,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -6682,7 +6682,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -6862,7 +6862,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -7148,7 +7148,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -7274,7 +7274,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -7301,7 +7301,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -7350,7 +7350,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -7367,7 +7367,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -7380,7 +7380,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -7463,7 +7463,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -7479,7 +7479,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -7501,7 +7501,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -7509,13 +7509,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -7539,7 +7539,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -7562,7 +7562,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -7648,8 +7648,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -7708,7 +7708,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -7736,7 +7736,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -7746,7 +7746,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -7767,7 +7767,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -7812,7 +7812,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -8107,7 +8107,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -8611,7 +8611,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -8719,7 +8719,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -8915,7 +8915,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -8983,7 +8983,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9035,7 +9035,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9367,7 +9367,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9431,7 +9431,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9519,7 +9519,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9551,11 +9551,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9563,19 +9563,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9671,7 +9671,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -9763,7 +9763,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -10107,11 +10107,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -10347,7 +10347,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -10459,7 +10459,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -10499,7 +10499,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -10583,7 +10583,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -10763,7 +10763,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -11050,7 +11050,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -11176,7 +11176,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -11203,7 +11203,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -11252,7 +11252,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -11269,7 +11269,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -11282,7 +11282,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -11365,7 +11365,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -11381,7 +11381,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -11403,7 +11403,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -11411,13 +11411,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -11441,7 +11441,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -11464,7 +11464,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -11550,8 +11550,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -11610,7 +11610,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -11638,7 +11638,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -11648,7 +11648,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -11669,7 +11669,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -11714,7 +11714,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -12005,7 +12005,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -12509,7 +12509,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -12617,7 +12617,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -12813,7 +12813,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -12881,7 +12881,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -12933,7 +12933,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13265,7 +13265,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13329,7 +13329,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13417,7 +13417,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13449,11 +13449,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13461,19 +13461,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13569,7 +13569,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -13661,7 +13661,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14005,11 +14005,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14245,7 +14245,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14357,7 +14357,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14397,7 +14397,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14481,7 +14481,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14661,7 +14661,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -14947,7 +14947,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -15073,7 +15073,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -15100,7 +15100,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -15149,7 +15149,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -15166,7 +15166,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -15179,7 +15179,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -15262,7 +15262,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -15278,7 +15278,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -15300,7 +15300,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -15308,13 +15308,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -15338,7 +15338,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -15361,7 +15361,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -15447,8 +15447,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -15507,7 +15507,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -15535,7 +15535,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -15545,7 +15545,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -15566,7 +15566,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -15611,7 +15611,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -15906,7 +15906,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -16410,7 +16410,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -16518,7 +16518,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -16714,7 +16714,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -16782,7 +16782,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -16834,7 +16834,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17166,7 +17166,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17230,7 +17230,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17318,7 +17318,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17350,11 +17350,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17362,19 +17362,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17470,7 +17470,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17562,7 +17562,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -17906,11 +17906,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -18146,7 +18146,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -18258,7 +18258,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -18298,7 +18298,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -18382,7 +18382,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -18562,7 +18562,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -18849,7 +18849,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -18975,7 +18975,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -19002,7 +19002,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -19051,7 +19051,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -19068,7 +19068,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -19081,7 +19081,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -19164,7 +19164,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -19180,7 +19180,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -19202,7 +19202,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -19210,13 +19210,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -19240,7 +19240,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -19263,7 +19263,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -19349,8 +19349,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -19409,7 +19409,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -19437,7 +19437,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -19447,7 +19447,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -19468,7 +19468,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -19513,7 +19513,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -19804,7 +19804,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -20308,7 +20308,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -20416,7 +20416,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -20612,7 +20612,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -20680,7 +20680,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -20732,7 +20732,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21064,7 +21064,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21128,7 +21128,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21216,7 +21216,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21248,11 +21248,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21260,19 +21260,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21368,7 +21368,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21460,7 +21460,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -21804,11 +21804,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -22044,7 +22044,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -22156,7 +22156,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -22196,7 +22196,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -22280,7 +22280,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -22460,7 +22460,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -22746,7 +22746,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -22872,7 +22872,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -22899,7 +22899,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -22948,7 +22948,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -22965,7 +22965,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -22978,7 +22978,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -23061,7 +23061,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -23077,7 +23077,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -23099,7 +23099,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -23107,13 +23107,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -23137,7 +23137,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -23160,7 +23160,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -23246,8 +23246,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -23306,7 +23306,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -23334,7 +23334,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -23344,7 +23344,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -23365,7 +23365,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -23410,7 +23410,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -23705,7 +23705,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -24209,7 +24209,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -24317,7 +24317,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -24513,7 +24513,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -24581,7 +24581,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -24633,7 +24633,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -24965,7 +24965,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25029,7 +25029,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25117,7 +25117,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25149,11 +25149,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25161,19 +25161,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25269,7 +25269,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25361,7 +25361,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25705,11 +25705,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -25945,7 +25945,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -26057,7 +26057,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -26097,7 +26097,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -26181,7 +26181,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -26361,7 +26361,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -26648,7 +26648,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -26774,7 +26774,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -26801,7 +26801,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -26850,7 +26850,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -26867,7 +26867,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -26880,7 +26880,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -26963,7 +26963,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -26979,7 +26979,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -27001,7 +27001,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -27009,13 +27009,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -27039,7 +27039,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -27062,7 +27062,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -27148,8 +27148,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -27208,7 +27208,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -27236,7 +27236,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -27246,7 +27246,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -27267,7 +27267,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -27312,7 +27312,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -27603,7 +27603,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28107,7 +28107,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28215,7 +28215,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28411,7 +28411,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28479,7 +28479,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28531,7 +28531,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28863,7 +28863,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -28927,7 +28927,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29015,7 +29015,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29047,11 +29047,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29059,19 +29059,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29167,7 +29167,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29259,7 +29259,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29603,11 +29603,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29843,7 +29843,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29955,7 +29955,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -29995,7 +29995,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -30079,7 +30079,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -30259,7 +30259,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -30545,7 +30545,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -30671,7 +30671,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -30698,7 +30698,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -30747,7 +30747,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -30764,7 +30764,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -30777,7 +30777,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -30860,7 +30860,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -30876,7 +30876,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -30898,7 +30898,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -30906,13 +30906,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -30936,7 +30936,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -30959,7 +30959,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -31045,8 +31045,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -31105,7 +31105,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -31133,7 +31133,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -31143,7 +31143,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -31164,7 +31164,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -31209,7 +31209,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -31504,7 +31504,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32008,7 +32008,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32116,7 +32116,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32312,7 +32312,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32380,7 +32380,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32432,7 +32432,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32764,7 +32764,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32828,7 +32828,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32916,7 +32916,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32948,11 +32948,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -32960,19 +32960,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33068,7 +33068,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33160,7 +33160,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33504,11 +33504,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33744,7 +33744,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33856,7 +33856,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33896,7 +33896,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -33980,7 +33980,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -34160,7 +34160,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -34447,7 +34447,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -34573,7 +34573,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -34600,7 +34600,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -34649,7 +34649,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -34666,7 +34666,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -34679,7 +34679,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -34762,7 +34762,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -34778,7 +34778,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -34800,7 +34800,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -34808,13 +34808,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -34838,7 +34838,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -34861,7 +34861,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -34947,8 +34947,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -35007,7 +35007,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -35035,7 +35035,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -35045,7 +35045,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -35066,7 +35066,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -35111,7 +35111,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -35402,7 +35402,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -35906,7 +35906,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36014,7 +36014,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36210,7 +36210,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36278,7 +36278,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36330,7 +36330,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36662,7 +36662,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36726,7 +36726,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36814,7 +36814,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36846,11 +36846,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36858,19 +36858,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -36966,7 +36966,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -37058,7 +37058,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -37402,11 +37402,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -37642,7 +37642,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -37754,7 +37754,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -37794,7 +37794,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -37878,7 +37878,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -38058,7 +38058,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -38344,7 +38344,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -38470,7 +38470,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -38497,7 +38497,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -38546,7 +38546,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -38563,7 +38563,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -38576,7 +38576,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -38659,7 +38659,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -38675,7 +38675,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -38697,7 +38697,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -38705,13 +38705,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -38735,7 +38735,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -38758,7 +38758,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -38844,8 +38844,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -38904,7 +38904,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -38932,7 +38932,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -38942,7 +38942,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -38963,7 +38963,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -39008,7 +39008,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -39303,7 +39303,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -39807,7 +39807,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -39915,7 +39915,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40111,7 +40111,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40179,7 +40179,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40231,7 +40231,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40563,7 +40563,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40627,7 +40627,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40715,7 +40715,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40747,11 +40747,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40759,19 +40759,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40867,7 +40867,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -40959,7 +40959,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -41303,11 +41303,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -41543,7 +41543,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -41655,7 +41655,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -41695,7 +41695,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -41779,7 +41779,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -41959,7 +41959,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -42246,7 +42246,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -42372,7 +42372,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -42399,7 +42399,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -42448,7 +42448,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -42465,7 +42465,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -42478,7 +42478,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -42561,7 +42561,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -42577,7 +42577,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -42599,7 +42599,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -42607,13 +42607,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -42637,7 +42637,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -42660,7 +42660,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -42746,8 +42746,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -42806,7 +42806,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -42834,7 +42834,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -42844,7 +42844,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -42865,7 +42865,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -42910,7 +42910,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>
@@ -43201,7 +43201,7 @@
             <label>Actual Ship Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <label>ACV Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -43705,7 +43705,7 @@
             <label>CSM Health Rating (Account)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <label>Currency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -43813,7 +43813,7 @@
             <label>Deal Strength: Vision Delta</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <label>Deal Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44009,7 +44009,7 @@
             <label>First Entered Shopping Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <label>First Segment Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44077,7 +44077,7 @@
             <label>Forecast tracking - June (Exp May 18)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <label>Free Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44129,7 +44129,7 @@
             <label>How was the outcome achieved?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <label>Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44461,7 +44461,7 @@
             <label>Management Approval Notes</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <label>Maximum Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44525,7 +44525,7 @@
             <label>Metrics Score</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <label>Migration Contract</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44613,7 +44613,7 @@
             <label>NS Customer ID</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <label>NS Order Type</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44645,11 +44645,11 @@
             <label>On Rekoop Paper?</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxE</field>
+            <field>00ND600000SeD6p</field>
             <label>OP4I Contract Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeCkU</field>
             <label>OP4I Deal Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44657,19 +44657,19 @@
             <label>OP4I Deal Owner</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYJ</field>
+            <field>00ND600000SeCkV</field>
             <label>OP4I Deal Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKNdd</field>
+            <field>00ND600000SeD6q</field>
             <label>OP4I Deal URL</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKamO</field>
+            <field>00ND600000SeCkW</field>
             <label>OP4I OSA</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkX</field>
             <label>OP4I Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44765,7 +44765,7 @@
             <label>Order Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <label>OSA Number</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -44857,7 +44857,7 @@
             <label>Payment due date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <label>Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -45201,11 +45201,11 @@
             <label>Quote Pricebook Id</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000fzDLP</field>
+            <field>00NHt00000AqdKy</field>
             <label>Quote Sales Segment</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5E</field>
+            <field>00ND600000SeCkZ</field>
             <label>Quote Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -45441,7 +45441,7 @@
             <label>Secondary Competitor</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <label>Segment Index</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -45553,7 +45553,7 @@
             <label>Services Partner First Letter</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <label>Services Payment Terms</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -45593,7 +45593,7 @@
             <label>Slipped Deal</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <label>Software Billing Frequency</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -45677,7 +45677,7 @@
             <label>Start Date</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <label>Status</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -45857,7 +45857,7 @@
             <label>Total Cash Forgone</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <label>Total Contract Months</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
@@ -46143,7 +46143,7 @@
             <field>00N50000002Dnsd</field>
             <field>00N50000009PD1S</field>
             <field>00N30000000eox8</field>
-            <field>00ND700000g26LI</field>
+            <field>00ND600000SeCkM</field>
             <field>00N50000002zNYH</field>
             <field>00N50000002DgmG</field>
             <field>00N50000002DFxm</field>
@@ -46269,7 +46269,7 @@
             <field>00N500000030NyO</field>
             <field>00N2J00000AJZaU</field>
             <field>00N2J00000AJdTT</field>
-            <field>00ND700000g2J58</field>
+            <field>00ND600000SeCkN</field>
             <field>00N2J00000AJdTU</field>
             <field>00N2J00000AJdTV</field>
             <field>00N2J00000Akwmt</field>
@@ -46296,7 +46296,7 @@
             <field>00N50000009OrHx</field>
             <field>00N50000009OrI7</field>
             <field>00N50000009OrI2</field>
-            <field>00ND700000g2J59</field>
+            <field>00ND600000SeCkO</field>
             <field>00N2J00000AJdTW</field>
             <field>00N2J000008RVp7</field>
             <field>00N50000002DFxn</field>
@@ -46345,7 +46345,7 @@
             <field>00N50000002Cc5Y</field>
             <field>00N5000000ACW5l</field>
             <field>00N50000002CRyN</field>
-            <field>00ND700000g2J5A</field>
+            <field>00ND600000SeCkP</field>
             <field>00N50000002CS17</field>
             <field>00N50000009OxgZ</field>
             <field>00N50000002DFxI</field>
@@ -46362,7 +46362,7 @@
             <field>00N50000009PDhs</field>
             <field>00N50000009PFma</field>
             <field>00N50000002Dp0Q</field>
-            <field>00ND700000g2J5B</field>
+            <field>00ND600000SeCkQ</field>
             <field>00N50000002DE39</field>
             <field>00N500000030ABG</field>
             <field>00N50000002yqOD</field>
@@ -46375,7 +46375,7 @@
             <field>00N50000002CCwl</field>
             <field>00N500000030Hwt</field>
             <field>00N5000000Acy6c</field>
-            <field>00ND700000g2J5C</field>
+            <field>00ND600000SeCkR</field>
             <field>00N2J00000AJeFq</field>
             <field>00N2J000008RVpA</field>
             <field>00N500000031sdD</field>
@@ -46458,7 +46458,7 @@
             <field>00N2J00000Akwmx</field>
             <field>00N3000000182RO</field>
             <field>00N500000030HwP</field>
-            <field>00ND700000g2cYL</field>
+            <field>00ND600000SeD6M</field>
             <field>00N50000008F009</field>
             <field>00N50000008F008</field>
             <field>00N50000008F00B</field>
@@ -46474,7 +46474,7 @@
             <field>00N5000000AJMVX</field>
             <field>00N2J00000AJdTb</field>
             <field>00N2J000008RVpD</field>
-            <field>00ND700000g27Lu</field>
+            <field>00ND600000SeCkS</field>
             <field>00N50000002DHX7</field>
             <field>00N2J000009RCll</field>
             <field>00N2J00000Al4km</field>
@@ -46496,7 +46496,7 @@
             <field>00N50000003jO9n</field>
             <field>00N5000000Acx2l</field>
             <field>00N5000000AcppR</field>
-            <field>00ND700000g26LJ</field>
+            <field>00ND600000SeCkT</field>
             <field>00N5000000AcppS</field>
             <field>00N50000009OrHi</field>
             <field>00N300000010LTN</field>
@@ -46504,13 +46504,13 @@
             <field>00N500000030Fyd</field>
             <field>00N5000000ACSau</field>
             <field>00N50000003bS61</field>
-            <field>00ND700000gKZxE</field>
-            <field>00ND700000g1zWJ</field>
+            <field>00ND600000SeD6p</field>
+            <field>00ND600000SeCkU</field>
             <field>00N2J00000AlIZ6</field>
-            <field>00ND700000g2cYJ</field>
-            <field>00ND700000gKNdd</field>
-            <field>00ND700000gKamO</field>
-            <field>00ND700000gKams</field>
+            <field>00ND600000SeCkV</field>
+            <field>00ND600000SeD6q</field>
+            <field>00ND600000SeCkW</field>
+            <field>00ND600000SeCkX</field>
             <field>00N2J000008RVpE</field>
             <field>00N2J00000AkvTp</field>
             <field>00N50000002DiEL</field>
@@ -46534,7 +46534,7 @@
             <field>00N5000000AJLts</field>
             <field>00N5000000AJLtr</field>
             <field>00N2J00000Akwn0</field>
-            <field>00ND700000gKZxB</field>
+            <field>00ND600000SeD6r</field>
             <field>00N50000001QhKk</field>
             <field>00N50000001ylYl</field>
             <field>00N50000002CnXK</field>
@@ -46557,7 +46557,7 @@
             <field>00N50000002BOjF</field>
             <field>00N2J00000AkvrN</field>
             <field>00N50000002CPDU</field>
-            <field>00ND700000g2J5D</field>
+            <field>00ND600000SeCkY</field>
             <field>00N500000030UYs</field>
             <field>00N50000002CzLE</field>
             <field>00N500000030sh1</field>
@@ -46643,8 +46643,8 @@
             <field>00N5000000AcpqK</field>
             <field>00N5000000AcpqN</field>
             <field>00N5000000AJLtu</field>
-            <field>00ND700000fzDLP</field>
-            <field>00ND700000g2J5E</field>
+            <field>00NHt00000AqdKy</field>
+            <field>00ND600000SeCkZ</field>
             <field>00N5000000AJ5cu</field>
             <field>00N5000000AJ5cv</field>
             <field>00N5000000AJ5cw</field>
@@ -46703,7 +46703,7 @@
             <field>00N2J00000AkvTq</field>
             <field>00N500000030vLc</field>
             <field>00N500000031skO</field>
-            <field>00ND700000g2cYK</field>
+            <field>00ND600000SeCka</field>
             <field>00N500000030Him</field>
             <field>00N50000001QKjN</field>
             <field>00N2J00000AksBz</field>
@@ -46731,7 +46731,7 @@
             <field>00N50000002zQwZ</field>
             <field>00N50000002ywjz</field>
             <field>00N50000003fJPs</field>
-            <field>00ND700000g31yH</field>
+            <field>00ND600000SeCkb</field>
             <field>00N500000032A3c</field>
             <field>00N50000003fOHR</field>
             <field>00N500000031w5C</field>
@@ -46741,7 +46741,7 @@
             <field>00N500000031tcb</field>
             <field>00N50000002BVeb</field>
             <field>00N50000002Dp0L</field>
-            <field>00ND700000g2J5F</field>
+            <field>00ND600000SeCkc</field>
             <field>00N50000003fGa9</field>
             <field>00N5000000AJMVc</field>
             <field>00N5000000AJMVh</field>
@@ -46762,7 +46762,7 @@
             <field>00N500000030HU1</field>
             <field>00N50000009OwC4</field>
             <field>00N50000003fGeX</field>
-            <field>00ND700000g2J5G</field>
+            <field>00ND600000SeCkd</field>
             <field>00N2J000007U4eG</field>
             <field>00N50000002BLpZ</field>
             <field>00N2J00000Al7hH</field>
@@ -46807,7 +46807,7 @@
             <field>00N50000002CPDy</field>
             <field>00N50000002D6ER</field>
             <field>00N50000003fGeY</field>
-            <field>00ND700000g2J5H</field>
+            <field>00ND600000SeCke</field>
             <field>00N50000002D05H</field>
             <field>00N50000002D05M</field>
             <field>00N50000002CPDZ</field>

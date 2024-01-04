@@ -2360,7 +2360,4 @@
         </columns>
         <masterLabel>Products</masterLabel>
     </sections>
-    <sections>
-        <masterLabel>Opportunity Product</masterLabel>
-    </sections>
 </ReportType>

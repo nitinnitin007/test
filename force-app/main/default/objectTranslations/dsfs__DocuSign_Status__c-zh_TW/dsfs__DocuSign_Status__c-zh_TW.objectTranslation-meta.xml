@@ -4,5 +4,5 @@
         <plural>false</plural>
         <value>DocuSign 狀態</value>
     </caseValues>
-    <nameFieldLabel>信封號碼</nameFieldLabel>
+    <nameFieldLabel>信封編號</nameFieldLabel>
 </CustomObjectTranslation>

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Deferral_Health_Change_Alert</fullName>
+        <description>Deferral Health Change Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ameya.thatte@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>InternalNotification/Deferral_Health_Change</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Deferral_Health</fullName>
+        <field>Health_Status__c</field>
+        <literalValue>Yellow</literalValue>
+        <name>Update Deferral Health</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Projected_End_Date</fullName>
+        <field>RD_Projected_End_Date__c</field>
+        <formula>Pending_Amendment_Date__c</formula>
+        <name>Update Projected End Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Rule Code%3A DEF-001xFxx</fullName>
         <actions>

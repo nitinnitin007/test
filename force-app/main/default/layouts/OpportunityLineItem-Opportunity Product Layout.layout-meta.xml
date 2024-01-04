@@ -31,6 +31,10 @@
                 <field>Total_Price_Annual__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ACV_Change__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Recurring_Amount_Change__c</field>
             </layoutItems>

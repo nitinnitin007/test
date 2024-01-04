@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Dun &amp; Bradstreet Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>Content_KM_Practice</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

@@ -4,13 +4,12 @@
     <attachmentOption>None</attachmentOption>
     <authenticationFailureAction>Bounce</authenticationFailureAction>
     <authorizationFailureAction>Bounce</authorizationFailureAction>
-    <authorizedSenders>intapp.com,kpmg.com,kpmg.com.sg</authorizedSenders>
-    <errorRoutingAddress>dhirajkumar4@kpmg.com</errorRoutingAddress>
+    <authorizedSenders>intapp.com</authorizedSenders>
     <functionInactiveAction>Bounce</functionInactiveAction>
     <functionName>Approval Services</functionName>
-    <isActive>true</isActive>
+    <isActive>false</isActive>
     <isAuthenticationRequired>false</isAuthenticationRequired>
-    <isErrorRoutingEnabled>true</isErrorRoutingEnabled>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
     <isTextAttachmentsAsBinary>false</isTextAttachmentsAsBinary>
     <isTlsRequired>false</isTlsRequired>
     <overLimitAction>Bounce</overLimitAction>

@@ -586,7 +586,6 @@
         <fields>SBQQ__Contract__c</fields>
         <fields>Contract_Status__c</fields>
         <fields>SBQQ__ProductName__c</fields>
-        <fields>Product_Family_Value__c</fields>
         <relatedList>SBQQ__Subscription__c.SBQQ__Account__c</relatedList>
     </relatedLists>
     <relatedLists>

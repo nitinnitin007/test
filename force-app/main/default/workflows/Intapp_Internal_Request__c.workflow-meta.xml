@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>IIR_Ticket_Closed_Notification_Business_Operations_Facing</fullName>
+        <description>IIR Ticket Closed Notification - Business Operations Facing</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>alan.westley@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>megan.buonaiuto@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Business_Operations/Ticket_Closed_Business_Operations</template>
+    </alerts>
+    <alerts>
+        <fullName>IIR_Ticket_Closed_Notification_Requester_Facing</fullName>
+        <description>IIR Ticket Closed Notification - Requester Facing</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Business_Operations/Ticket_Closed_Requester_Facing</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Owner_Change_Email</fullName>
+        <description>Request Owner Change Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Request_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Business_Operations/Request_Owner_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_Owner_Change_Email_Alert</fullName>
+        <description>Request Owner Change Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>alan.westley@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Business_Operations/Request_Owner_Change</template>
+    </alerts>
+    <alerts>
+        <fullName>Ticket_Created_Business_Operations</fullName>
+        <description>Ticket Created - Business Operations</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>alan.westley@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>maiya.hilliard@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>megan.buonaiuto@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Business_Operations/Ticket_Created_Business_Operations</template>
+    </alerts>
+    <alerts>
+        <fullName>Ticket_Created_Requester_Facing</fullName>
+        <description>Ticket Created - Requester Facing</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Requester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Business_Operations/Ticket_Created_Requester_Facing</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Populate_Original_Owner</fullName>
+        <field>Original_Request_Owner__c</field>
+        <formula>Request_Owner__r.FirstName&amp;&quot; &quot;&amp;Request_Owner__r.LastName</formula>
+        <name>Populate Original Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Rule Code%3A IIR-001Exxx</fullName>
         <actions>

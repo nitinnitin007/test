@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>AVA_SFCPQ__AvaTaxMessage</fullName>
+        <field>AVA_SFCPQ__AvaTaxMessage__c</field>
+        <formula>&quot;Tax Amount is Outdated&quot;</formula>
+        <name>AvaTaxMessage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AVA_SFCPQ__Update</fullName>
+        <field>AVA_SFCPQ__AvaTaxMessage__c</field>
+        <formula>&quot;Sales Tax Not Current&quot;</formula>
+        <name>Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>AVA_SFCPQ__AvaTax Order Status</fullName>
         <actions>

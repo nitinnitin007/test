@@ -2,9 +2,9 @@
 <Role xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseAccessLevel>None</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
-    <description>Duff &amp; Phelps LLC Customer Manager</description>
+    <description>Kroll, LLC Customer Manager</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Duff &amp; Phelps LLC Customer Manager</name>
+    <name>Kroll, LLC Customer Manager</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
     <parentRole>DuffPhelpsLLCCustomerExecutive</parentRole>
 </Role>

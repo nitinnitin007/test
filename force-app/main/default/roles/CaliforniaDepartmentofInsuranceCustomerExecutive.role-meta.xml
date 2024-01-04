@@ -6,5 +6,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>California Department of Insurance Customer Executive</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
-    <parentRole>NA_Large_Law</parentRole>
+    <parentRole>InformationTechnology</parentRole>
 </Role>

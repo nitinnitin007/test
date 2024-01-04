@@ -3974,11 +3974,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SBQQ__PreviousChangeQuote__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__PriceBook__c</field>
             <table>Opportunity.SBQQ__Quotes2__r</table>
         </columns>

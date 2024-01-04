@@ -4,19 +4,4 @@
     <active>true</active>
     <description>Collection order for non appliance</description>
     <label>Other</label>
-    <picklistValues>
-        <picklist>Status__c</picklist>
-        <values>
-            <fullName>Closed</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Open</fullName>
-            <default>true</default>
-        </values>
-        <values>
-            <fullName>Pending</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
 </RecordType>

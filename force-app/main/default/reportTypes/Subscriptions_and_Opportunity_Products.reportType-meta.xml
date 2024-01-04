@@ -2575,7 +2575,4 @@
         </columns>
         <masterLabel>Account</masterLabel>
     </sections>
-    <sections>
-        <masterLabel>Opportunity Product</masterLabel>
-    </sections>
 </ReportType>

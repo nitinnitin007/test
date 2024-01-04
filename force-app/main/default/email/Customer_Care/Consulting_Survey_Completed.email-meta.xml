@@ -5,7 +5,7 @@
     <letterhead>PS_Survey_Letterhead</letterhead>
     <name>Consulting Survey Completed</name>
     <style>freeForm</style>
-    <subject>Consulting Survey for Project {!SFDC_Survey__c.Project__c} Completed</subject>
+    <subject>Consulting Survey for Project {!SFDC_Survey__c} Completed</subject>
     <type>html</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

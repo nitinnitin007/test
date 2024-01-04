@@ -20,8 +20,8 @@
 &amp;serverUrl={!API.Partner_Server_URL_520}
 &amp;userName={!$User.Username}
 &amp;Id={!Proforma_Invoice__c.Id}
-&amp;QueryId= [QuoteLineRenewal]aHkD70000004DsDKAU,[RenewalLetter]aHkD70000004DsNKAU
-&amp;TemplateId=aHsD70000008PtMKAU
+&amp;QueryId= [QuoteLineRenewal]aI3D6000000Dnm3KAC,[RenewalLetter]aI3D6000000Dnm8KAC
+&amp;TemplateId=aIBD6000000Cc2POAS
 &amp;FP0=1
 &amp;AC1=Proforma Invoice Generated
 &amp;SC0=1

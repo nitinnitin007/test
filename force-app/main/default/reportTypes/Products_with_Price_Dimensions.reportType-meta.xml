@@ -660,21 +660,6 @@
             <field>Cloud_Addendum_Required__c</field>
             <table>Product2</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Guided_Selling_Type__c</field>
-            <table>Product2</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ProductRollup__c</field>
-            <table>Product2</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Intapp_ID__c</field>
-            <table>Product2</table>
-        </columns>
         <masterLabel>Products</masterLabel>
     </sections>
     <sections>

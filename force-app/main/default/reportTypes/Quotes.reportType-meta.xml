@@ -4,7 +4,7 @@
     <category>quotes</category>
     <deployed>true</deployed>
     <description>Just Quotes without Quote lines</description>
-    <label>Quotes</label>
+    <label>Quotes (SBQQ)</label>
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -953,11 +953,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SBQQ__PreviousChangeQuote__c</field>
-            <table>SBQQ__Quote__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__PriceBook__c</field>
             <table>SBQQ__Quote__c</table>
         </columns>
@@ -1398,22 +1393,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Subsidiary__c</field>
-            <table>SBQQ__Quote__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OP4i_Deal_Id_Formula__c</field>
-            <table>SBQQ__Quote__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Fourth_Year_Software_Net_Total__c</field>
-            <table>SBQQ__Quote__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sixth_Year_Software_Net_Total__c</field>
+            <field>OP4I_Sales_Segment__c</field>
             <table>SBQQ__Quote__c</table>
         </columns>
         <masterLabel>Quotes</masterLabel>
@@ -1456,7 +1436,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SBQQ__Opportunity2__c.Quote_Sales_Segment__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__Opportunity2__c.Name</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SBQQ__Opportunity2__c.Created_Date__c</field>
+            <table>SBQQ__Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SBQQ__Opportunity2__c.CreatedDate</field>
             <table>SBQQ__Quote__c</table>
         </columns>
         <masterLabel>Opportunity</masterLabel>

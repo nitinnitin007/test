@@ -4,7 +4,7 @@
     <protected>false</protected>
     <values>
         <field>Field_Api_Name__c</field>
-        <value xsi:type="xsd:string">ACV_Change_Manual__c</value>
+        <value xsi:type="xsd:string">ACV_Change__c</value>
     </values>
     <values>
         <field>Object_Name__c</field>

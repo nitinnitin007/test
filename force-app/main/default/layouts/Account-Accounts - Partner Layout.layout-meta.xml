@@ -156,6 +156,14 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>DC_MSA_Addendum__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DC_MSA_Addendum_Notes__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Consulting_Services_Agreement_CSA__c</field>
             </layoutItems>
             <layoutItems>

@@ -2,14 +2,10 @@
 <IframeWhiteListUrlSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <iframeWhiteListUrls>
         <context>VisualforcePages</context>
-        <url>https://app.apty.io</url>
+        <url>https://intapp--qtcstage.sandbox.lightning.force.com</url>
     </iframeWhiteListUrls>
     <iframeWhiteListUrls>
         <context>VisualforcePages</context>
-        <url>https://intapp--qtc--sbqq.sandbox.vf.force.com</url>
-    </iframeWhiteListUrls>
-    <iframeWhiteListUrls>
-        <context>VisualforcePages</context>
-        <url>https://intapp--qtc.sandbox.lightning.force.com</url>
+        <url>intapp--qtcstage--apxtconga4.sandbox.vf.force.com</url>
     </iframeWhiteListUrls>
 </IframeWhiteListUrlSettings>

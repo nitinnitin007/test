@@ -36,16 +36,6 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Order_change_status_as_Billing_approved1</fullName>
-        <field>Order_Change_Status__c</field>
-        <literalValue>Billing Approval</literalValue>
-        <name>Order change status as Billing approved</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Update_status_as_Pending</fullName>
         <field>Order_Change_Status__c</field>
         <literalValue>Pending</literalValue>

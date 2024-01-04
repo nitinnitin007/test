@@ -38,9 +38,6 @@
         <label>CSM Account Manager Changes</label>
         <locationX>557</locationX>
         <locationY>1820</locationY>
-        <defaultConnector>
-            <targetReference>Update_Reference_Owner_on_Ref</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Account_Manager_Change</name>
@@ -170,42 +167,6 @@
                 <targetReference>Register_Time_Capture_Versions</targetReference>
             </connector>
             <label>TRUE_Time Capture Version Changes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Update_Reference_Owner_on_Ref</name>
-        <label>Update Reference Owner on Ref</label>
-        <locationX>557</locationX>
-        <locationY>2001</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Update_Reference</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.CRD__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.CRD__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get_Ref_Edge_Records</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Update_Reference_Owner</targetReference>
-            </connector>
-            <label>Update Reference</label>
         </rules>
     </decisions>
     <decisions>
@@ -421,34 +382,13 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
-        <name>Get_Ref_Edge_Records</name>
-        <label>Get Ref Edge Records</label>
-        <locationX>305</locationX>
-        <locationY>530</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Name_change</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>refedge__Account__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>refedge__Reference_Basic_Information__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>GetOpportunities</name>
         <label>GetOpportunities</label>
         <locationX>300</locationX>
         <locationY>361</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Ref_Edge_Records</targetReference>
+            <targetReference>Name_change</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -483,9 +423,6 @@
         <label>Update Email field on Opportunities</label>
         <locationX>397</locationX>
         <locationY>1899</locationY>
-        <connector>
-            <targetReference>Update_Reference_Owner_on_Ref</targetReference>
-        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>IsClosed</field>
@@ -526,27 +463,6 @@
         </inputAssignments>
         <inputReference>$Record.Opportunities</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Reference_Owner</name>
-        <label>Update Reference Owner</label>
-        <locationX>410</locationX>
-        <locationY>2121</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>refedge__Account__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>refedge__Reference_Owner__c</field>
-            <value>
-                <elementReference>$Record.CRD__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record.refedge__Reference_Basic_Informations__r</inputReference>
-    </recordUpdates>
     <start>
         <locationX>176</locationX>
         <locationY>50</locationY>
@@ -557,5 +473,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>

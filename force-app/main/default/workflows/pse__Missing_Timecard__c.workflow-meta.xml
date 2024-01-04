@@ -12,4 +12,17 @@
         <senderType>CurrentUser</senderType>
         <template>PSA_Templates/PSA_Missing_Timecard_Notification</template>
     </alerts>
+    <rules>
+        <fullName>Rule Code%3A MT-001Exxx</fullName>
+        <actions>
+            <name>PSA_Missing_Timecard_Notification_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Rule Code: MT-001Exxx
+PSA Missing Timecard Notification
+Sends an email notification whenever a notification is created</description>
+        <formula>1=1</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
 </Workflow>

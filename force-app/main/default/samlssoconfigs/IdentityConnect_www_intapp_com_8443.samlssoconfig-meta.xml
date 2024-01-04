@@ -3,14 +3,14 @@
     <identityLocation>SubjectNameId</identityLocation>
     <identityMapping>FederationId</identityMapping>
     <issuer>https://www.intapp.com:8443/connect/</issuer>
-    <loginUrl>https://www.intapp.com:8443/connect/index.html#login/00DD7000000o3wD</loginUrl>
+    <loginUrl>https://www.intapp.com:8443/connect/index.html#login/00DD6000000Qhd7</loginUrl>
     <logoutUrl>https://www.intapp.com:8443/connect/index.html#logout/</logoutUrl>
     <name>Identity Connect</name>
-    <oauthTokenEndpoint>https://intapp--qtc.sandbox.my.salesforce.com/services/oauth2/token?so=00DD7000000o3wD</oauthTokenEndpoint>
+    <oauthTokenEndpoint>https://intapp--qtcstage.sandbox.my.salesforce.com/services/oauth2/token?so=00DD6000000Qhd7</oauthTokenEndpoint>
     <redirectBinding>true</redirectBinding>
     <requestSignatureMethod>1</requestSignatureMethod>
     <requestSigningCertId>0P12J000000dpp2</requestSigningCertId>
-    <salesforceLoginUrl>https://intapp--qtc.sandbox.my.salesforce.com?so=00DD7000000o3wD</salesforceLoginUrl>
+    <salesforceLoginUrl>https://intapp--qtcstage.sandbox.my.salesforce.com?so=00DD6000000Qhd7</salesforceLoginUrl>
     <samlEntityId>https://saml.salesforce.com</samlEntityId>
     <samlVersion>SAML2_0</samlVersion>
     <useConfigRequestMethod>true</useConfigRequestMethod>

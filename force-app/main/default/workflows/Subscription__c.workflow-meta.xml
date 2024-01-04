@@ -1,5 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notification_CSM_Health_Regressed</fullName>
+        <description>Notification - CSM Health Regressed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VP_Customer_Relationship_Management</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CRD__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Care/CSM_Health_Regressed</template>
+    </alerts>
+    <alerts>
+        <fullName>Notification_Health_Improved</fullName>
+        <description>Notification: Health Improved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>VP_Customer_Relationship_Management</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>carolina.roller@intapp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>CRD__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>CSM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Customer_Care/CSM_Health_Improved</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_Product_Customer_Name</fullName>
+        <field>Product_Customer_Name_Reference__c</field>
+        <formula>Account__r.Name &amp; &quot; - &quot; &amp; TEXT(Product_Line__c)</formula>
+        <name>Add Product Customer Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSM_Health_Rating</fullName>
+        <field>CSM_Health_Rating__c</field>
+        <literalValue>Green</literalValue>
+        <name>CSM Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSM_Health_Rating_Last_Modified_Update</fullName>
+        <description>Updates the CSM Health Rating - Last Modified field to the current date</description>
+        <field>CSM_Health_Rating_Last_Modified__c</field>
+        <formula>NOW()</formula>
+        <name>CSM Health Rating - Last Modified Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Customer_Lifecycle_Stage</fullName>
+        <field>Customer_Lifecycle_Stage_I__c</field>
+        <literalValue>New Customer</literalValue>
+        <name>Customer Lifecycle Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Health_Still_Accurate_Update</fullName>
+        <field>Health_Still_Accurate__c</field>
+        <literalValue>0</literalValue>
+        <name>Health Still Accurate Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lapse_Product_Customer</fullName>
+        <field>CSM_Health_Rating__c</field>
+        <literalValue>Black</literalValue>
+        <name>Lapse Product Customer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lapse_Product_Customer_Lifecycle</fullName>
+        <field>Customer_Lifecycle_Stage_I__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Lapse Product Customer - Lifecycle</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lapse_Product_Customer_Project</fullName>
+        <field>Customer_Lifecycle_Stage__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Lapse Product Customer - Project</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lapse_Product_Customer_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Inactive</literalValue>
+        <name>Lapse Product Customer Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Customer_Lifecycle_Stage</fullName>
+        <description>Updates the customer lifecycle stage whenever Product Customers are recovered from a lapsed stage.</description>
+        <field>Customer_Lifecycle_Stage_I__c</field>
+        <literalValue>Onboarding</literalValue>
+        <name>Populate Customer Lifecycle Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Implementation_Phase</fullName>
+        <field>Customer_Lifecycle_Stage__c</field>
+        <literalValue>Project not started yet</literalValue>
+        <name>Product Implementation Phase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_health_Still_accurate</fullName>
+        <field>Health_Still_Accurate__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck health Still accurate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_A_Health_Rating</fullName>
+        <field>Health_Rating__c</field>
+        <literalValue>A - Good</literalValue>
+        <name>Update A Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_B_C_Health_Rating</fullName>
+        <field>Health_Rating__c</field>
+        <literalValue>B - Minor Concerns / C - Needs Attention</literalValue>
+        <name>Update B/C Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CSM_Health_Rating_Last_Modified</fullName>
+        <field>CSM_Health_Rating_Last_Modified__c</field>
+        <formula>NOW()</formula>
+        <name>Update CSM Health Rating Last Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Customer_Lifecycle_Stage</fullName>
+        <field>Customer_Lifecycle_Stage_I__c</field>
+        <literalValue>Lapsed</literalValue>
+        <name>Update Customer Lifecycle Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Customer_Lifecycle_Stage_Previo</fullName>
+        <field>Customer_Lifecycle_Stage_Previous__c</field>
+        <formula>TEXT(Customer_Lifecycle_Stage__c)</formula>
+        <name>UpdateProduct Implementation Phase</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_D_Health_Rating</fullName>
+        <field>Health_Rating__c</field>
+        <literalValue>D - At Risk</literalValue>
+        <name>Update D Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_E_Health_Rating</fullName>
+        <field>Health_Rating__c</field>
+        <literalValue>E - No Knowledge</literalValue>
+        <name>Update E Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_F_Health_Rating</fullName>
+        <field>Health_Rating__c</field>
+        <literalValue>F - Lapsed</literalValue>
+        <name>Update F Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_New_Health_Rating</fullName>
+        <field>Health_Rating__c</field>
+        <literalValue>New Subscription</literalValue>
+        <name>Update New Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Previous_CSM_Health_Rating</fullName>
+        <field>CSM_Health_Rating_Previous__c</field>
+        <formula>TEXT(PRIORVALUE(CSM_Health_Rating__c))</formula>
+        <name>Update Previous CSM Health Rating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SRT_Status_Field</fullName>
+        <field>SRT_Status__c</field>
+        <literalValue>Installed - Not checking in yet</literalValue>
+        <name>Update SRT Status Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_FMS_Discussion_Completed_Date</fullName>
+        <field>FMS_Discussion_Completed_Date__c</field>
+        <formula>NOW()</formula>
+        <name>update FMS Discussion Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>SendSubscriptionToDTE</fullName>
+        <apiVersion>34.0</apiVersion>
+        <endpointUrl>https://www.intapp.com/SalesForceSync/DTE/Subscription/SubscriptionNotificationService.asmx</endpointUrl>
+        <fields>Account__c</fields>
+        <fields>Id</fields>
+        <fields>Name</fields>
+        <fields>Primary_Subscription__c</fields>
+        <fields>Product_Line__c</fields>
+        <fields>Status__c</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>alan.westley@intapp.com</integrationUser>
+        <name>SendSubscriptionToDTE</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
     <rules>
         <fullName>Lapsed Product Customer</fullName>
         <actions>

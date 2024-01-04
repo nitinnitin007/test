@@ -188,9 +188,9 @@ Create renewal opportunity scheduled flow - BIZ-49358</description>
         </filters>
         <object>Contract</object>
         <schedule>
-            <frequency>Once</frequency>
-            <startDate>2023-11-10</startDate>
-            <startTime>01:40:00.000Z</startTime>
+            <frequency>Daily</frequency>
+            <startDate>2023-06-19</startDate>
+            <startTime>22:30:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>

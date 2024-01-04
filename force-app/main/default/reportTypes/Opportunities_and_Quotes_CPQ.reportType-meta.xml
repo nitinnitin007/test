@@ -4025,11 +4025,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>SBQQ__PreviousChangeQuote__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>SBQQ__PriceBook__c</field>
             <table>Opportunity.SBQQ__Quotes2__r</table>
         </columns>
@@ -4456,26 +4451,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Deal_Issue_Notes__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Subsidiary__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>OP4i_Deal_Id_Formula__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Fourth_Year_Software_Net_Total__c</field>
-            <table>Opportunity.SBQQ__Quotes2__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Sixth_Year_Software_Net_Total__c</field>
             <table>Opportunity.SBQQ__Quotes2__r</table>
         </columns>
         <masterLabel>Quotes</masterLabel>

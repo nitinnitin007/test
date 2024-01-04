@@ -2,9 +2,9 @@
 <Role xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseAccessLevel>None</caseAccessLevel>
     <contactAccessLevel>Edit</contactAccessLevel>
-    <description>ROOX Customer Manager</description>
+    <description>Roox Customer Manager</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>ROOX Customer Manager</name>
+    <name>Roox Customer Manager</name>
     <opportunityAccessLevel>Read</opportunityAccessLevel>
     <parentRole>ROOXCustomerExecutive</parentRole>
 </Role>

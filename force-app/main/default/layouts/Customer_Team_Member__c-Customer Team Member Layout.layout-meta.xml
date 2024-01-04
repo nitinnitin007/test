@@ -18,10 +18,6 @@
                 <behavior>Edit</behavior>
                 <field>Member_Role__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Project__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

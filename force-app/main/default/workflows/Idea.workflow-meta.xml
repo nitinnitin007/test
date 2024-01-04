@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Idea_Created</fullName>
+        <field>Idea_Created__c</field>
+        <literalValue>1</literalValue>
+        <name>Idea Created</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_checkbox_test</fullName>
+        <field>SFDC_Test__c</field>
+        <literalValue>1</literalValue>
+        <name>Update checkbox test</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_the_Users_when_new_comment_added</fullName>
+        <description>Update the Users when new comment added by creator</description>
+        <field>SFDC_Test_checkbox_2__c</field>
+        <literalValue>1</literalValue>
+        <name>Update the Users when new comment - CB2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Rule Code%3A IDEA-001xFxx</fullName>
         <actions>
