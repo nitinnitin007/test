@@ -1,5 +1,0 @@
-Question Created By: {!Question.CreatedBy}
-
-Question Link: {!Question.Link}
-
-Question: {!Question.Body}

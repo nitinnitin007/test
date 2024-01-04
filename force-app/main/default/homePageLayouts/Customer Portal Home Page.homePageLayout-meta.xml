@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<HomePageLayout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <narrowComponents>standard-PortalWelcome</narrowComponents>
-    <narrowComponents>Customer Community Link</narrowComponents>
-    <narrowComponents>standard-RecentItems</narrowComponents>
-    <narrowComponents>pse__PSE Links</narrowComponents>
-    <wideComponents>Customer Portal Home Page HTML Section</wideComponents>
-</HomePageLayout>

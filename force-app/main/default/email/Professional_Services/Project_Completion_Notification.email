@@ -1,6 +1,0 @@
-<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
-<tr height="400" valign="top" >
-<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
-<![CDATA[A new project for {!pse__Proj__c.pse__Account__c} has been marked as&nbsp;{!pse__Proj__c.pse__Stage__c}. Please make sure to follow up according to your standard departmental procedures.<div><br></div><div>Project:&nbsp;{!pse__Proj__c.pse__Project_Name_Chain__c}</div><div>Project Manager:&nbsp;{!pse__Proj__c.pse__Project_Manager__c}</div><div>Sales Rep:&nbsp;{!pse__Proj__c.pse__Opportunity_Owner__c}</div><div>Product Line:&nbsp;{!pse__Proj__c.pse__Practice__c}</div><div>Project Type:&nbsp;{!pse__Proj__c.Intapp_Project_Type__c}</div><div><br></div><div>Planned Hours:&nbsp;{!pse__Proj__c.pse__Planned_Hours__c}</div><div>Actual Hours:&nbsp;{!pse__Proj__c.Total_Hours__c}</div><div><br></div><div>Detail Link:&nbsp;{!pse__Proj__c.Link}</div>]]></td>
-</tr>
-</table>

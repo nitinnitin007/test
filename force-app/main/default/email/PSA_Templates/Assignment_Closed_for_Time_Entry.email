@@ -1,7 +1,0 @@
-This Assignment has been closed for time entry; please contact the Engagement Manager if you have any questions.
-
-Project Name: {!pse__Assignment__c.pse__Project__c}
-
-Assignment Name:  {!pse__Assignment__c.Name}
-Role: {!pse__Assignment__c.pse__Role__c}
-Link to the Assignment: {!pse__Assignment__c.Link}

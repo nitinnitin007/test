@@ -1,3 +1,0 @@
-<apex:page standardController="Budget_Tracking__c">
-    <CLZV6:ClarizenSyncNow />
-</apex:page>

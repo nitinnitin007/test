@@ -1,4 +1,0 @@
-<design:component>
-    <design:attribute name="TopicName" label="Topic Name" datasource="{!topicName}" default="{!topicName}"/> 
-    <design:attribute name="TopicId" label="Topic Id" datasource="{!topicId}" default="{!topicId}"/> 
-</design:component>

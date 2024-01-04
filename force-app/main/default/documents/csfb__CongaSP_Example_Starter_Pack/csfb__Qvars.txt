@@ -1,4 +1,0 @@
-[QVAR0] SELECT Id FROM User WHERE Id = '{!$User.Id}' LIMIT 1;
-[QVAR1] SELECT Id From Account WHERE BillingState != null;
-[QVAR2] SELECT Id FROM Contact WHERE AccountId = '{!Account.Id}' AND OwnerId = '{!$User.Id}';
-[QVAR3] SELECT Id FROM Opportunity WHERE AccountId = '{!Account.Id}' AND OwnerId = '{!$User.Id}' AND OwnerName != '{QVar2}';

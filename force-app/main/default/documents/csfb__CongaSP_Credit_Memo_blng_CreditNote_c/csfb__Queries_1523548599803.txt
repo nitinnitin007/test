@@ -1,1 +1,0 @@
-Credit Note Lines [CreditLines] SELECT blng__Allocations__c, blng__Balance__c, blng__CreditNote__c, blng__Product__c, blng__ProductName__c, blng__Status__c, blng__TaxAmount__c, blng__TotalAmount__c, blng__Unallocations__c, CreatedDate, Name FROM blng__CreditNoteLine__c  WHERE blng__CreditNote__r.Id = '{pv0}';

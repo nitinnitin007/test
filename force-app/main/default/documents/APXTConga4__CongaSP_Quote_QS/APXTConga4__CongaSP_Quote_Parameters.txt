@@ -1,4 +1,0 @@
-&DefaultPDF=1
-&DS7=0
-&BLM=Generating+Quote+for+{!Opportunity.Account}
-&OFN=Quote for {!Opportunity.Account} - {!Today()}

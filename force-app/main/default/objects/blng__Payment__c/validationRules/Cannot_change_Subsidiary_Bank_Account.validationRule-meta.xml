@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Cannot_change_Subsidiary_Bank_Account</fullName>
-    <active>true</active>
-    <description>BIZ-46933: Validation to prevent user from changing Subsidiary or Bank Account once the Payment has been Posted.</description>
-    <errorConditionFormula>ISPICKVAL( blng__Status__c , &quot;Posted&quot;)  &amp;&amp; (ISCHANGED(Subsidiary__c) || ISCHANGED (Bank_Account__c)||ISCHANGED( USD_Amount__c ) || ISCHANGED ( Exchange_Rate__c ))</errorConditionFormula>
-    <errorMessage>Cannot update the record once the Payment is Posted</errorMessage>
-</ValidationRule>

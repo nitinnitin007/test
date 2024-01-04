@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>XactlyExpress__PlanID_Matches</fullName>
-    <active>false</active>
-    <errorConditionFormula>XactlyExpress__CreditRuleID__r.XactlyExpress__PlanID__c = XactlyExpress__ProfilePlanID__r.XactlyExpress__PlanID__c</errorConditionFormula>
-    <errorMessage>Internal error: plan IDs do not match.</errorMessage>
-</ValidationRule>

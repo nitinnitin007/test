@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Document xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Bad sort order template alias</description>
-    <internalUseOnly>false</internalUseOnly>
-    <name>Template With Bad Sort Order</name>
-    <public>false</public>
-</Document>

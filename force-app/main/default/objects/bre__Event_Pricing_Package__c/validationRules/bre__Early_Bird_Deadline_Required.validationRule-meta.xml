@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>bre__Early_Bird_Deadline_Required</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND( NOT(ISBLANK(bre__Early_Bird_Price__c)) ,
-ISBLANK( bre__Early_Bird_End_Datetime__c ) )</errorConditionFormula>
-    <errorDisplayField>bre__Early_Bird_End_Datetime__c</errorDisplayField>
-    <errorMessage>You must specify early bird price deadline.</errorMessage>
-</ValidationRule>

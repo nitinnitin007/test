@@ -1,6 +1,0 @@
-<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
-<tr height="400" valign="top" >
-<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
-<![CDATA[<div>The following expense report has been rejected. You can edit the expense report and re-submit it by clicking the following lnk: {!pse__Expense_Report__c.Link}</div><div><br></div><div><b>Project:</b> {!pse__Expense_Report__c.pse__Project__c}</div><div><b>Resource:</b> {!pse__Expense_Report__c.pse__Resource__c}</div><div><b>Expenses Date Range:</b>{!pse__Expense_Report__c.pse__First_Expense_Date__c} to {!pse__Expense_Report__c.pse__Last_Expense_Date__c}</div><div><b>Expense Amount:</b> {!pse__Expense__c.pse__Amount__c}</div><div><b>Reimbursement Amount:</b>{!pse__Expense_Report__c.pse__Total_Reimbursement_Amount__c}</div><div><b>Billable Amount:</b> {!pse__Expense__c.pse__Amount_To_Bill__c}</div><div><br></div><div>Have a great day!</div>]]></td>
-</tr>
-</table>

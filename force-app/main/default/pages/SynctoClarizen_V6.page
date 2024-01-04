@@ -1,3 +1,0 @@
-<apex:page standardController="User">
-    <CLZV6:ClarizenSyncNow />
-</apex:page>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Restrict_Stage_Update_On_NYMY</fullName>
-    <active>true</active>
-    <description>NYMY opportunity should not go beyond initial Stage</description>
-    <errorConditionFormula>AND(Related_Opportunity__c!=null,(ISPICKVAL(PRIORVALUE( StageName),&apos;Pre-Funnel&apos;)), ISCHANGED(StageName))</errorConditionFormula>
-    <errorMessage>NYMY opportunity should not go beyond ‘Pre-Funnel’ stage.</errorMessage>
-</ValidationRule>
