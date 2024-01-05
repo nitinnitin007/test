@@ -14,7 +14,7 @@
             $A.get("e.force:closeQuickAction").fire();
             var urlEvent = $A.get("e.force:navigateToURL");
     		urlEvent.setParams({
-                "url": '/apex/APXTConga4__Conga_Composer?SolMgr=1&serverUrl={!API.Partner_Server_URL_520}&Id='+recordId+'&QueryId=[MDQQuoteLines]0Q_006MAI332677%3Fpv0%3D'+recordId+',[NonMDQQuoteLines]0Q_007MAI278240%3Fpv0%3D'+recordId+',[MDQOneTimeDiscount]0Q_012MAI831841%3Fpv0%3D'+recordId+',[QuoteLineMDQYear1]0Q_013MAI932474%3Fpv0%3D'+recordId+'&TemplateId=0T_003MAI505642&DS7=1&FP0=1&OFN=Pricing+Proposal-'+accountName+'-'+quoteNumber,
+                "url": '/apex/APXTConga4__Conga_Composer?SolMgr=1&serverUrl={!API.Partner_Server_URL_520}&Id='+recordId+'&QueryId=[MDQOneTimeDiscount]0Q_001MAQ106508%3Fpv0%3D'+recordId+',[NonMDQQuoteLines]0Q_003MAQ133545%3Fpv0%3D'+recordId+',[MDQQuoteLines]0Q_002MAQ228749%3Fpv0%3D'+recordId+',[QuoteLineMDQYear1]0Q_000MAQ991196%3Fpv0%3D'+recordId+',[ServiceOneTimeCredit]0Q_060MAQ489742%3Fpv0%3D'+recordId+',[TermConditions]0Q_061MAQ603651%3Fpv0%3D'+recordId+'&TemplateId=0T_000MAQ969716&DS7=11&DefaultPDF=1&FP0=1&OFN=Pricing%20Proposal%20-'+accountName+'-'+quoteNumber,
                 "width" : "700",
                 "height" : "1000",
                 "scrollbars" : "yes"
