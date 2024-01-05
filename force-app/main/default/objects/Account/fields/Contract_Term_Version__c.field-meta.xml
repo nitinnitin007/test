@@ -171,11 +171,6 @@
                 <default>false</default>
                 <label>Legacy DealCloud MSA</label>
             </value>
-            <value>
-                <fullName>Legacy DealCloud MSA v2019</fullName>
-                <default>false</default>
-                <label>Legacy DealCloud MSA v2019</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -8,6 +8,7 @@ Created as part of BIZ-47120. Updates to Block Pricing Matrix.</description>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Product Family</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

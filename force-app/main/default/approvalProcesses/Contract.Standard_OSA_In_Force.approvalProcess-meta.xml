@@ -21,15 +21,15 @@
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>Approver_6__c</name>
-                <type>relatedUserField</type>
-            </approver>
-            <approver>
                 <name>Approver_2__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>
                 <name>Approver_3__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Approver_6__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>

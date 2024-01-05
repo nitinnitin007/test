@@ -8,6 +8,7 @@
     <columns>Price__c</columns>
     <columns>Engagement_Model__c</columns>
     <columns>Product__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Type__c</field>

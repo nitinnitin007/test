@@ -21,10 +21,6 @@
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>Exception_Approver_5__c</name>
-                <type>relatedUserField</type>
-            </approver>
-            <approver>
                 <name>Exception_Approver_3__c</name>
                 <type>relatedUserField</type>
             </approver>
@@ -34,6 +30,10 @@
             </approver>
             <approver>
                 <name>Exception_Approver_6__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <approver>
+                <name>Exception_Approver_5__c</name>
                 <type>relatedUserField</type>
             </approver>
             <whenMultipleApprovers>Unanimous</whenMultipleApprovers>

@@ -117,7 +117,7 @@
         </action>
     </initialSubmissionActions>
     <label>Order change request approval 1</label>
-    <processOrder>2</processOrder>
+    <processOrder>1</processOrder>
     <recordEditability>AdminOrCurrentApprover</recordEditability>
     <showApprovalHistory>false</showApprovalHistory>
 </ApprovalProcess>

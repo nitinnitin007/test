@@ -10,15 +10,9 @@
     <columns>Legal_Tier_Split__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Legal_Tier_Split__c</field>
+        <field>ACCOUNT.NAME</field>
         <operation>equals</operation>
-        <value>STRATEGIC,Tier A,Tier B,Tier C</value>
-    </filters>
-    <filters>
-        <field>Simple_Territory__c</field>
-        <operation>contains</operation>
-        <value>South</value>
+        <value>Dentons</value>
     </filters>
     <label>All Accounts (Strat, ABC) - Whitmore</label>
-    <language>en_US</language>
 </ListView>

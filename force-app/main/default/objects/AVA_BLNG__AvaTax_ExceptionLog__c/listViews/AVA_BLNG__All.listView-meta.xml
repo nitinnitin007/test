@@ -3,9 +3,12 @@
     <fullName>AVA_BLNG__All</fullName>
     <columns>NAME</columns>
     <columns>AVA_BLNG__Class_Name__c</columns>
-    <columns>CREATEDBY_USER</columns>
+    <columns>OBJECT_ID</columns>
     <columns>AVA_BLNG__Method_Name__c</columns>
+    <columns>CREATEDBY_USER</columns>
     <columns>CREATED_DATE</columns>
+    <columns>AVA_BLNG__Request_Log__c</columns>
+    <columns>AVA_BLNG__Response_Log__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

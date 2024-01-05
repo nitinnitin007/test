@@ -7,6 +7,8 @@
     <columns>CONTRACT.START_DATE</columns>
     <columns>CONTRACT.STATUS</columns>
     <columns>CORE.USERS.ALIAS</columns>
+    <columns>Old_Contract_Reference__c</columns>
+    <columns>OP4I_Contract_Id__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CONTRACT.NAME</field>
@@ -14,5 +16,4 @@
         <value>OnePlace</value>
     </filters>
     <label>OnePlace Contracts by OSA #</label>
-    <language>en_US</language>
 </ListView>

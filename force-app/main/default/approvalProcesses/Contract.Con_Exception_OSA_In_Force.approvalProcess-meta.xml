@@ -21,11 +21,11 @@
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>Exception_Approver_1__c</name>
+                <name>Exception_Approver_3__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>Exception_Approver_3__c</name>
+                <name>Exception_Approver_1__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>

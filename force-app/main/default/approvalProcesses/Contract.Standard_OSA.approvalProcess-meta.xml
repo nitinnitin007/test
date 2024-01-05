@@ -13,11 +13,11 @@
         <allowDelegate>true</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>Approver_5__c</name>
+                <name>Approver_4__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>
-                <name>Approver_4__c</name>
+                <name>Approver_5__c</name>
                 <type>relatedUserField</type>
             </approver>
             <approver>

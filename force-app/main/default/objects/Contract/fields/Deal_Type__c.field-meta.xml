@@ -2,8 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Deal_Type__c</fullName>
     <description>Custom field made to populate the Deal type on contract record from op4i.
-Built according to US # BIZ-46098
-Edited and added values on the basis of BIZ-47145, API values edited according to BIZ-46894</description>
+        Built according to US # BIZ-46098
+        Edited and added values on the basis of BIZ-47145, API values edited according to BIZ-46894</description>
     <externalId>false</externalId>
     <label>Deal Type</label>
     <required>false</required>
@@ -11,7 +11,6 @@ Edited and added values on the basis of BIZ-47145, API values edited according t
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

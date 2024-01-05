@@ -3,5 +3,6 @@
     <fullName>Restrict_Edit_access_on_verified_status</fullName>
     <active>true</active>
     <errorConditionFormula>( ISPICKVAL(Status__c,&quot;Verification Approved&quot;) &amp;&amp; (ISCHANGED(Industry__c) = true)) &amp;&amp;  NOT($Permission.Admin_Override)</errorConditionFormula>
+    <errorDisplayField>Industry__c</errorDisplayField>
     <errorMessage>Industry field cannot be updated when status is Verified</errorMessage>
 </ValidationRule>

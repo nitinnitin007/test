@@ -8,6 +8,7 @@
     <columns>Product__c</columns>
     <columns>CURRENCY_ISO_CODE</columns>
     <columns>Price__c</columns>
+    <columns>Block_Pricing_Meter_Type__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Type__c</field>

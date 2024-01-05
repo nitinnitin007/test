@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
-        <submitter>seena.nair@intapp.com</submitter>
-        <type>user</type>
+        <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
         <field>Name</field>
@@ -19,7 +18,11 @@
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>susan.nieman@intapp.com</name>
+                <name>andrew.reyes@intapp.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>michael.rowan@intapp.com</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
@@ -39,7 +42,7 @@
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>justin.kellogg@intapp.com</name>
+                <name>mona.houcheime@intapp.com</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
@@ -62,7 +65,7 @@
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <name>william.medlock@intapp.com</name>
+                <name>wasif.shabbir@intapp.com</name>
                 <type>user</type>
             </approver>
             <whenMultipleApprovers>Unanimous</whenMultipleApprovers>
@@ -103,6 +106,7 @@
             <type>RejectRequest</type>
         </rejectBehavior>
     </approvalStep>
+    <emailTemplate>All/Credit_Note_Approval</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
         <criteriaItems>

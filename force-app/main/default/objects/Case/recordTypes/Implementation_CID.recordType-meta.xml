@@ -1719,27 +1719,11 @@
     <picklistValues>
         <picklist>Request_Type__c</picklist>
         <values>
-            <fullName>Account Governance</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Custom Language</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Deal Configuration</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MSSA Support</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Non-Standard Packaging</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Non-Standard T%26C</fullName>
             <default>false</default>
         </values>
     </picklistValues>

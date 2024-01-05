@@ -150,14 +150,6 @@
             <default>true</default>
         </values>
         <values>
-            <fullName>Invoice Plan</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No Software</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Quarterly</fullName>
             <default>false</default>
         </values>
@@ -355,10 +347,6 @@
         <picklist>Contract_Master_Terms__c</picklist>
         <values>
             <fullName>Custom Master Term from Account</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Existing Intapp MSSA plus Cloud and Annex</fullName>
             <default>false</default>
         </values>
         <values>
@@ -830,31 +818,7 @@
     <picklistValues>
         <picklist>Processing_Status__c</picklist>
         <values>
-            <fullName>Child Quote Line Created</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Contract Activated</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Contract Created</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Opportunity Created</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Order and OLI created</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Parent Quote Line Created</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Quote Created</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1163,15 +1127,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>No Software</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Roox</fullName>
             <default>false</default>
         </values>
     </picklistValues>

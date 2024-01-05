@@ -43,6 +43,12 @@
                 <default>false</default>
                 <label>Non-Standard T&amp;C</label>
             </value>
+            <value>
+                <fullName>Non-Standard T&amp;C in addition to Deal Configuration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non-Standard T&amp;C in addition to Deal Configuration</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
     <visibleLines>4</visibleLines>

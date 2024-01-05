@@ -10,16 +10,17 @@
     <columns>SVP_Finance__c</columns>
     <columns>Services_Segment_Lead_Approver__c</columns>
     <columns>SVP_Services_Approver__c</columns>
+    <columns>CPO_Approver__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>NAME</field>
-        <operation>contains</operation>
-        <value>KGS</value>
-    </filters>
     <filters>
         <field>Sales_Segment__c</field>
         <operation>notContain</operation>
         <value>OLD</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Quote</value>
     </filters>
     <label>KGS Approval matrix</label>
 </ListView>

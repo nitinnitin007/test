@@ -8,9 +8,13 @@
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
+            <value>
+                <fullName>Contract Created</fullName>
+                <default>false</default>
+                <label>Contract Created</label>
+            </value>
             <value>
                 <fullName>Opportunity Created</fullName>
                 <default>false</default>
@@ -32,11 +36,6 @@
                 <label>Order and OLI created</label>
             </value>
             <value>
-                <fullName>Contract Created</fullName>
-                <default>false</default>
-                <label>Contract Created</label>
-            </value>
-            <value>
                 <fullName>Contract Activated</fullName>
                 <default>false</default>
                 <label>Contract Activated</label>
@@ -45,6 +44,11 @@
                 <fullName>Child Quote Line Created</fullName>
                 <default>false</default>
                 <label>Child Quote Line Created</label>
+            </value>
+            <value>
+                <fullName>ACV Calculated</fullName>
+                <default>false</default>
+                <label>ACV Calculated</label>
             </value>
         </valueSetDefinition>
     </valueSet>

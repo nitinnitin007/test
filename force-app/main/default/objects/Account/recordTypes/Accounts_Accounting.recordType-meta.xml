@@ -2,6 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Accounts_Accounting</fullName>
     <active>true</active>
+    <compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment>
     <description>Used for accounts in the accounting industry</description>
     <label>Accounts - Accounting</label>
     <picklistValues>
@@ -1931,10 +1932,6 @@
         </values>
         <values>
             <fullName>Legacy DealCloud MSA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Legacy DealCloud MSA v2019</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -5708,10 +5705,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>05-Legal Connected Firms</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>05-Legal Large Accounts</fullName>
             <default>false</default>
         </values>
@@ -5720,19 +5713,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>06-Legal Mid-market</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>07-Accounting</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>07-Corporate Legal</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>08-Consulting</fullName>
             <default>false</default>
         </values>
         <values>
@@ -5740,19 +5721,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>09-Corporates New Sales</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>09-FS NA West New Sales</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>10-Corporates AM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>10-Corporates Americas AM</fullName>
             <default>false</default>
         </values>
         <values>
@@ -5764,15 +5733,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>11-FS New Sales NA IB%2FRE</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>12-FS AM Core</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>12-FS New Sales NA PCM East</fullName>
             <default>false</default>
         </values>
         <values>
@@ -5780,15 +5741,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>13-FS New Sales NA PCM West</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>14-FS AM EMEA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>14-FS New Sales EMEA</fullName>
             <default>false</default>
         </values>
         <values>
@@ -5796,51 +5749,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>15-FS New Sales APAC</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>16-FS AM APAC</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>16-FS AM NA IB%2FRE</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>17-FS AM NA PCM East</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>17-Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>18-FS AM NA PCM Central</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>19-FS AM NA PCM West</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>20-FS AM EMEA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>21-FS AM APAC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>22-FS Strategics NA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>23-Corporates EMEA AM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>24-Corporates Partners AM</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -7373,7 +7286,19 @@
     <picklistValues>
         <picklist>Status__c</picklist>
         <values>
-            <fullName>Completed</fullName>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Governance</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Verification Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verification Declined</fullName>
             <default>false</default>
         </values>
     </picklistValues>
