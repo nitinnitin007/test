@@ -8767,6 +8767,11 @@ created as per BIZ-45477</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SBQQ__Quote__c.Renewal_Billing_Frequency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SBQQ__Quote__c.Renewal_Increase_SFA_Cap__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -10743,7 +10748,7 @@ created as per BIZ-45477</description>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>SBQQ__LookupData__c</object>
