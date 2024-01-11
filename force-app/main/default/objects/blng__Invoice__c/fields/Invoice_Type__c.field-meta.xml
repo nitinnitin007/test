@@ -17,14 +17,19 @@
                 <label>T&amp;M</label>
             </value>
             <value>
+                <fullName>Expense</fullName>
+                <default>false</default>
+                <label>Expense</label>
+            </value>
+            <value>
                 <fullName>Tax Only</fullName>
                 <default>false</default>
                 <label>Tax Only</label>
             </value>
             <value>
-                <fullName>Expense</fullName>
+                <fullName>Marketing</fullName>
                 <default>false</default>
-                <label>Expense</label>
+                <label>Marketing</label>
             </value>
         </valueSetDefinition>
     </valueSet>

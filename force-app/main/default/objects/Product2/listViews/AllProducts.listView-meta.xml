@@ -5,11 +5,7 @@
     <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
     <columns>PRODUCT2.DESCRIPTION</columns>
     <columns>PRODUCT2.FAMILY</columns>
+    <columns>blng__TaxRule__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>PRODUCT2.NAME</field>
-        <operation>contains</operation>
-        <value>Intapp Select</value>
-    </filters>
     <label>All Products</label>
 </ListView>

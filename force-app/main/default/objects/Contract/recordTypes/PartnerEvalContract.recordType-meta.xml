@@ -5,6 +5,1177 @@
     <description>Contract information for appliances associated with partnerships or evals</description>
     <label>Partner/Eval Contract</label>
     <picklistValues>
+        <picklist>AVA_SFCPQ__Transport__c</picklist>
+        <values>
+            <fullName>Buyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThirdPartyforBuyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThirdPartyforSeller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>none</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Additional_Data_Sources__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Amendment_Status__c</picklist>
+        <values>
+            <fullName>Amendment In Force</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processing Amendment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Appliance_Model_1__c</picklist>
+        <values>
+            <fullName>2 read %2F2 write</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F100 Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F110</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>3%2F230</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F440</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unlimited</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Appliance_Model_2__c</picklist>
+        <values>
+            <fullName>3%2F110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F110c</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F110d</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F110m</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F230</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F230c</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F440</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2F440c</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BillingFrequency__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Invoice Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-annual Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiannual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Billing_Pause_Status__c</picklist>
+        <values>
+            <fullName>Processing Pause</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received Signature</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CPI__c</picklist>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA %28Master Terms Apply%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancellation_fee__c</picklist>
+        <values>
+            <fullName>10%25 cancellation fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25%25 cancellation fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25 cancellation fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard - all fees due</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Confidentiality_Agreement2__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confidentiality_Svcs_Data_Sheet__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contingency_Type__c</picklist>
+        <values>
+            <fullName>POC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Delayed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software Feature Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terms %26 Conditions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contingency__c</picklist>
+        <values>
+            <fullName>- Acceptance criteria - Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Acceptance criteria - Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Acceptance criteria - Terms %26 Conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- All of the above</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- POC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Right of Return</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Master_Terms__c</picklist>
+        <values>
+            <fullName>Custom Master Term from Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Intapp MSSA plus Cloud and Annex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Intapp MSSA signed by Customer Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Terms Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Terms with Annex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy DealCloud Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSSA Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New MSSA Signed Separate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OnePlace Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repstor G-Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repstor Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>URL Terms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deal_Type__c</picklist>
+        <values>
+            <fullName>Acquired_Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AddOn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract_Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New_Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Year_Multi-Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Conversion_INTERNAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform_Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services_Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services_Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uplift</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Escrow_Agreement__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoice_Type__c</picklist>
+        <values>
+            <fullName>Annual Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Box Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Law_Firm_Confidentiality_Mgmt_Overview__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Liability__c</picklist>
+        <values>
+            <fullName>1%2E5x software %26 services amounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E5x software amounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1x software %26 services amounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1x software amounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2x software %26 services amounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2x software amounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA %28Master Terms Apply%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Line_of_Business__c</picklist>
+        <values>
+            <fullName>DealCloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intapp</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Manual_OSA_Indicator__c</picklist>
+        <values>
+            <fullName>Edit Existing PDF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Excel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual PDF</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Migration_Status__c</picklist>
+        <values>
+            <fullName>Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Network_Configuration_Datasheet__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Non_Standard_Cloud_Location__c</picklist>
+        <values>
+            <fullName>APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Non_cancelable_Multiyear_Agreements__c</picklist>
+        <values>
+            <fullName>2 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 year</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OSA_Type__c</picklist>
+        <values>
+            <fullName>Addendum or Revision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opportunity_Engagement_Summary2__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_and_Sale_Agreement2__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Partner_Consulting_Sale_Agreement2__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Status__c</picklist>
+        <values>
+            <fullName>In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced%2FNo Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Late Payment Expected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Terms_Services__c</picklist>
+        <values>
+            <fullName>30%25 retainer %26 standard T%26M thereafter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Less than 30%25 retainer %26 standard T%26M thereafter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milestones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard %E2%80%93 T%26M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard - 50%25 Retainer %26 standard T%26M thereafter</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Terms_Software__c</picklist>
+        <values>
+            <fullName>Milestone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roox</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Price_book_exception__c</picklist>
+        <values>
+            <fullName>Future product development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outside price book</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Processing_Status__c</picklist>
+        <values>
+            <fullName>Child Quote Line Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Activated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order and OLI created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent Quote Line Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Created</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ROR__c</picklist>
+        <values>
+            <fullName>ROR with Success Criteria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROR without Success Criteria</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Management_Program__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__AmendmentRenewalBehavior__c</picklist>
+        <values>
+            <fullName>Earliest End Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latest End Date</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__MDQRenewalBehavior__c</picklist>
+        <values>
+            <fullName>De-segmented</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SOW__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Expiration_Amendment_Status__c</picklist>
+        <values>
+            <fullName>Amendment In Force</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processing Amendment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Expiration_Duration__c</picklist>
+        <values>
+            <fullName>180 Days or less</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>270 Days or less</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>270 Days or more</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>365 Days or Less</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Payment_Terms__c</picklist>
+        <values>
+            <fullName>FF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milestone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Company_Appliance_2_opt__c</picklist>
+        <values>
+            <fullName>Airborne%2FDHL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FedEx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Company__c</picklist>
+        <values>
+            <fullName>Airborne%2FDHL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FedEx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Shipping_Status__c</picklist>
+        <values>
+            <fullName>Fulfilled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping Data Entered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Appliance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Billing_Frequency_1st_Year__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Quarterly in advance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-annually</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XXXXX</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Billing_Frequency_Renewal__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-annual Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiannual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Days_Payment_Due_Renewal__c</picklist>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roox</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Payment_Terms__c</picklist>
+        <values>
+            <fullName>Due on receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 120</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Roox</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Status</picklist>
         <values>
             <fullName>Cancelled %2F Lapsed</fullName>
@@ -36,6 +1207,123 @@
         </values>
         <values>
             <fullName>Waiting for Specialist approval to send</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subsidiary__c</picklist>
+        <values>
+            <fullName>01%3A200 Integration Appliance %28US%29</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>05%3A400 TFG - US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06%3A700 Rekoop Limited %28UK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09%3A750 Rekoop Pty Limited %28AUS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>42%3AParagon Data Labs%2C Inc%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Support_SLA__c</picklist>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Time_Builder_Terms__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tsunami_Appliance_Terms2__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Services Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Software Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wall_Builder_Terms__c</picklist>
+        <values>
+            <fullName>Optional</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Warranty__c</picklist>
+        <values>
+            <fullName>120 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>180 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>360 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>364 Days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA %28Master Terms Apply%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
             <default>false</default>
         </values>
     </picklistValues>

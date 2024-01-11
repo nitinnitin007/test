@@ -3,4 +3,19 @@
     <fullName>refedge__Contact</fullName>
     <active>true</active>
     <label>Contact</label>
+    <picklistValues>
+        <picklist>refedge__Referenceability_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

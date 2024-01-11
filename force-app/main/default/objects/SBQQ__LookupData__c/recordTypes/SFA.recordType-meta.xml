@@ -4,4 +4,281 @@
     <active>true</active>
     <description>For creating SFA values</description>
     <label>SFA</label>
+    <picklistValues>
+        <picklist>ACV_Type__c</picklist>
+        <values>
+            <fullName>Acquired New Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring Adjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uplift</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deal_Type__c</picklist>
+        <values>
+            <fullName>Acquired_Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract_Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New_Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NextYear_MultiYear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PlatformConversion_INTERNAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform_Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services_Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services_Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uplift</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inherited_ACV_Type__c</picklist>
+        <values>
+            <fullName>Acquired New Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation - Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring Adjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uplift</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meter_Type__c</picklist>
+        <values>
+            <fullName>Employees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fee Earners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Firmwide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Named Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Meter Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Records</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NS_Order_Type__c</picklist>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New license sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__Type__c</picklist>
+        <values>
+            <fullName>Add</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Default Filter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disable %26 Remove</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enable %26 Add</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hide %26 Remove</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optional Filter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Show %26 Add</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFA_Type__c</picklist>
+        <values>
+            <fullName>CPI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Default</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

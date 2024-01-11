@@ -8,7 +8,6 @@
     <trackHistory>true</trackHistory>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -65,24 +64,6 @@
                 <fullName>Silent</fullName>
                 <default>false</default>
                 <label>Silent</label>
-            </value>
-            <value>
-                <fullName>8%</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>8%</label>
-            </value>
-            <value>
-                <fullName>CPI</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>CPI</label>
-            </value>
-            <value>
-                <fullName>CPI + 2%</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>CPI + 2%</label>
             </value>
         </valueSetDefinition>
     </valueSet>

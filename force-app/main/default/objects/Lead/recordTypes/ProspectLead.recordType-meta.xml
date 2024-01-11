@@ -6,6 +6,191 @@
     <description>Use this Lead record type to identify the Leads to be invited to the Prospect webinar</description>
     <label>Prospect Lead</label>
     <picklistValues>
+        <picklist>BizDev_Owner__c</picklist>
+        <values>
+            <fullName>Bob Schick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>James Nielsen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jay Borenstein</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oliver Wai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scott McLinn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Conflicts_System__c</picklist>
+        <values>
+            <fullName>Accutrac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonomy Conflicts Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliguard Conflicts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elite Conflicts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LegalKEY Conflicts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MDY Conflicts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enagement_Trigger__c</picklist>
+        <values>
+            <fullName>2006 Regional Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apr04 Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apr05 Prospect Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apr06 Calling Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apr06 Ethical Walls Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aug05 ILTA Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aug06 ILTA Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dec06 TradeIn Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elite Joint Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Feb05 Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Introduction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jan05 Prospect Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jan07 LTNY Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jan07 Series 4 Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jul04 Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jul05 Prospect Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jul05 Small Firm Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jul06 ILTA Calling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jun06 Elite Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jun06 ILTA PM Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LawNet 2004</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LegalTech 06</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nov06 ILTA Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nov06 TradeIn Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oct04 Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oct06 ARMA Pre-Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oct06 ARMA Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oct06 ITM Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oct06 PLA Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sep05 ILTA Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Industry</picklist>
         <values>
             <fullName>Aerospace</fullName>
@@ -295,6 +480,29 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Product_Interest__c</picklist>
+        <values>
+            <fullName>ADAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walls</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Rating</picklist>
         <values>
             <fullName>Cold</fullName>
@@ -314,6 +522,123 @@
         </values>
         <values>
             <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Records_System__c</picklist>
+        <values>
+            <fullName>Accutrac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonomy IRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documentum RM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elite Records</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IRIS Laserform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LegalKEY Records</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MDY Filesurf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>StarLaw</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tsunami_Lead_Type__c</picklist>
+        <values>
+            <fullName>630 Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Identity Confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Convert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Partnership Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsure of Action</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>p2s_base1__LifecycleStage__c</picklist>
+        <values>
+            <fullName>In Open Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Known</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>MQL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not in Model</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recycle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SAL</fullName>
             <default>false</default>
         </values>
     </picklistValues>

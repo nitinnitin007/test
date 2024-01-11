@@ -4,4 +4,2086 @@
     <active>true</active>
     <compactLayoutAssignment>Quote_Compact_Layout</compactLayoutAssignment>
     <label>Draft Quote</label>
+    <picklistValues>
+        <picklist>ACV_Type__c</picklist>
+        <values>
+            <fullName>Acquired New Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recurring Adjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uplift</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AVA_SFCPQ__Transport__c</picklist>
+        <values>
+            <fullName>Buyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThirdPartyforBuyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThirdPartyforSeller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>none</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Agree_to_Press_Release__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ApprovalStatus__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Submission</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CRM_Program__c</picklist>
+        <values>
+            <fullName>Acquisition %E2%80%93 Polar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquisition - Billstream</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquisition - Repstor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billstream - Legacy Contract Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSS Services Upsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DC Retention Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DealCloud Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exec Deal Sponsorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Services Marketing Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship Intelligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Demand Generation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services SPIF Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Walls Special Program</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancellation_fee__c</picklist>
+        <values>
+            <fullName>10%25 cancellation fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25%25 cancellation fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25 cancellation fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard - all fees due</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancellation_terms__c</picklist>
+        <values>
+            <fullName>APS Cancellation with outstanding fees %28entity for DTE product%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>APS Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>APS_and_Intapp_entity_for_DTE_product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Break Bundle %2B Sign Contemporaneously</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Break Bundle %2B Sign Contemporaneously %2B Keep MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full OSA Supersession</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gwabbit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intapp Cancellation with Outstanding Fees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intapp OSA%2C Keeping MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intapp and APS Upgrades%2FConversions keeping Master t%26c%E2%80%99s in place %28entity for DTE product%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OP Legacy OF cancels other OP OF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Place</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial OSA Supersession_Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partial OSA Supersession_Software_keep MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rekoop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supersede DC Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supersede OSA_keep MSSA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Co_Marketing_Agreement__c</picklist>
+        <values>
+            <fullName>Case Study</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Use Name%2FLogo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press Release</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Master_Terms__c</picklist>
+        <values>
+            <fullName>Custom Master Term from Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Intapp MSSA plus Cloud and Annex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Intapp MSSA signed by Customer Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Terms Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Terms with Annex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy DealCloud Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSSA Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New MSSA Signed Separate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OnePlace Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repstor G-Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repstor Legacy Agreement Attached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>URL Terms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deal_Issues__c</picklist>
+        <values>
+            <fullName>Contract Length</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Effective Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expiration Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended Term DLI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meter Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROR Expiration Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFA Cap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Hours</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Deal_Type__c</picklist>
+        <values>
+            <fullName>Acquired_Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract_Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New_Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NextYear_MultiYear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PlatformConversion_INTERNAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform_Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services_Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services_Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uplift</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_section_Approval__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Future_Pricing_Commitment__c</picklist>
+        <values>
+            <fullName>Additional Named Users at Current Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Seats - Discounted Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Seats - Tiered Pricing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoice_Date__c</picklist>
+        <values>
+            <fullName>Agreement Signature</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Effective Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>License_Basis__c</picklist>
+        <values>
+            <fullName>Employees</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fee Earners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Named Users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Line_of_Business__c</picklist>
+        <values>
+            <fullName>DealCloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intapp</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NS_Order_Category__c</picklist>
+        <values>
+            <fullName>Standard</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>T%26M</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NS_Order_Type__c</picklist>
+        <values>
+            <fullName>Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New license sale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_vs_Old_Payment_Term__c</picklist>
+        <values>
+            <fullName>New Payment Terms</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Non_Standard_Cloud_Location_this_deal__c</picklist>
+        <values>
+            <fullName>APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Op4i_Sales_Segment_Picklist__c</picklist>
+        <values>
+            <fullName>01-Legal NA North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01-Legal NA West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01-PS NA North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02-Legal NA East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02-Legal NA South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02-PS NA South%2FAPAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03-Legal EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03-PS EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04-Legal APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05-Legal Connected Firms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05-Legal Large Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06-Accounting%2FConsulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06-Legal Mid-Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07-Accounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>07-Corporate Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08-Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08-FS NA East New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09-Corporates New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09-FS NA West New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-Corporates AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-FS APAC New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11-FS EMEA New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11-FS New Sales NA IB%2FRE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12-FS AM Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12-FS New Sales NA PCM East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13-FS AM Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13-FS New Sales NA PCM West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14-FS AM EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14-FS New Sales EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15-FS AM Portfolio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15-FS New Sales APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16-FS AM APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16-FS AM NA IB%2FRE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17-FS AM NA PCM East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17-Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18-FS AM NA PCM Central</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19-FS AM NA PCM West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20-FS AM EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21-FS AM APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22-FS Strategics NA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23-Corporates EMEA AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24-Corporates Partners AM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing_Proposal_Approval__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Submission</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_1__c</picklist>
+        <values>
+            <fullName>CPQ%C2%A0Integration%C2%A0Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect MSSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect SOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other-Contract%2F CRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quality_Issues_Level_2__c</picklist>
+        <values>
+            <fullName>API %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Address Fields %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agreement %28Repstor%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annex %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bill To %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculation %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calculations %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comments%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacts%C2%A0Didn%27t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Name %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0Updates%C2%A0Didn%E2%80%99t%C2%A0Integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLI%C2%A0segmenting%C2%A0issue%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPA  %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Effective%2C Expiry%2C End%29 %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Status %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal%C2%A0header%C2%A0updates%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delay%C2%A0in%C2%A0integration%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deleted%C2%A0line%C2%A0items%C2%A0were%C2%A0not%C2%A0removed%C2%A0from%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents%C2%A0didn%E2%80%99t%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entity%2FLegal Name %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instruction%2FNotes %28Other-Contract%2F CRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue%C2%A0with%C2%A0address%C2%A0fields%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liability Payment Terms %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Line%C2%A0item%C2%A0did%C2%A0not%C2%A0integrate%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Reference %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master Terms Version %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meter Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misalignment%C2%A0of%C2%A0software%C2%A0terms%C2%A0between%C2%A0OP4i%C2%A0%26%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing MSSA %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missing SOW  %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly%C2%A0Net%C2%A0Unit%C2%A0Price%C2%A0re-calculation%C2%A0in%C2%A0CPQ%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need Updated Version %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity%2Fquote%C2%A0were%C2%A0not%C2%A0created%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Other-Contract%2FCRM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28System Error%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Attachments %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment%2FCurrency %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Book %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proof of Receipt %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote%C2%A0Line%C2%A0Creation%C2%A0Incomplete%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKU Error %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scoping Detail %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Type %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signature Block %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Status %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Payment Terms %28Deal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support SLA %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Open Attachment %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User%C2%A0Error%C2%A0%28CPQ%C2%A0Integration%C2%A0Issue%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect MSSA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Watermark %28Incorrect SOW%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quote_Stage__c</picklist>
+        <values>
+            <fullName>Closed-Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configure Products</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Contract Executed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finalize OSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Proposal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ROR__c</picklist>
+        <values>
+            <fullName>ROR with Success Criteria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROR without Success Criteria</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationships_Platform__c</picklist>
+        <values>
+            <fullName>CMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OPM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFDC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Renewal_Billing_Frequency__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Invoice Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-annual Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiannual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Renewal_Increase_SFA_Cap__c</picklist>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of RPI or 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of RPI or 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPI %2B 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPI %2B 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silent</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Renewal_Payment_Terms__c</picklist>
+        <values>
+            <fullName>Due on receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 120</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Renewal_Quote_Type__c</picklist>
+        <values>
+            <fullName>Auto-Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consolidated-Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal-Changes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__BillingFrequency__c</picklist>
+        <values>
+            <fullName>Annual</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Invoice Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-annual Y1 Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiannual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__ContractingMethod__c</picklist>
+        <values>
+            <fullName>By Subscription End Date</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Single Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__DeliveryMethod__c</picklist>
+        <values>
+            <fullName>Download</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__DocumentStatus__c</picklist>
+        <values>
+            <fullName>Failed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__GenerateContractedPrice__c</picklist>
+        <values>
+            <fullName>Discount Schedule</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Generate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__OrderBy__c</picklist>
+        <values>
+            <fullName>ProductFamily%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QuantityBasedFormulaField%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SplitT_M%5F%5Fc</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PaperSize__c</picklist>
+        <values>
+            <fullName>A4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Default</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__PaymentTerms__c</picklist>
+        <values>
+            <fullName>Due on receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 120</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__ProrationDayOfMonth__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>31</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__QuoteLanguage__c</picklist>
+        <values>
+            <fullName>Chinese %28Simplified%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chinese %28Traditional%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Danish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dutch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finnish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japanese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norwegian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portuguese %28Brazilian%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish %28Mexican%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swedish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thai</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__Status__c</picklist>
+        <values>
+            <fullName>AM Ops Engaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Ops Engaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ContractsOps Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Engaging in Quote Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OSA Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending LegalOps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Payment Adj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Services Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote needs Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SBQQ__Type__c</picklist>
+        <values>
+            <fullName>Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migration Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Re-Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFA_Cap_Time_Horizon__c</picklist>
+        <values>
+            <fullName>1st renewal only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perpetual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thru 2nd renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thru 3rd Renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFA_Cap_after_Initial_Term__c</picklist>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPI %2B 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI or 5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA %28Master Terms Apply%29</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFA_Prefix__c</picklist>
+        <values>
+            <fullName>CPI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greater of CPI%2FRPI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RPI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFA_Suffix__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SFA_Term__c</picklist>
+        <values>
+            <fullName>1st Renewal Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perpetual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thru 2nd Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thru 3rd Renewal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Only_Type__c</picklist>
+        <values>
+            <fullName>FF Change Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FF Statement of Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milestone Statement of Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26M Change Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26M Statement of Work</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Terms__c</picklist>
+        <values>
+            <fullName>Blended FF_T%26M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blended Milestone_T%26M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milestone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Services</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Quarterly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Payment_Terms__c</picklist>
+        <values>
+            <fullName>Due on receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 120</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subsidiary__c</picklist>
+        <values>
+            <fullName>01%3A200 Integration Appliance %28US%29</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>05%3A400 TFG - US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06%3A700 Rekoop Limited %28UK%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>09%3A750 Rekoop Pty Limited %28AUS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18%3ADealCloud%2C Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>23%3AGwabbit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>28%3AOnePlace Pte Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35%3ARepstor Limited</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>37%3ARepstor%2C Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>42%3AParagon Data Labs%2C Inc%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Support_Value__c</picklist>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Version__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

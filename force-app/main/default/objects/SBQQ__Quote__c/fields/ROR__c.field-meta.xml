@@ -9,7 +9,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -21,18 +20,6 @@
                 <fullName>ROR with Success Criteria</fullName>
                 <default>false</default>
                 <label>ROR with Success Criteria</label>
-            </value>
-            <value>
-                <fullName>None</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>None</label>
-            </value>
-            <value>
-                <fullName>Terminate MultiYear for Convenience w Fee</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Terminate MultiYear for Convenience w Fee</label>
             </value>
         </valueSetDefinition>
     </valueSet>

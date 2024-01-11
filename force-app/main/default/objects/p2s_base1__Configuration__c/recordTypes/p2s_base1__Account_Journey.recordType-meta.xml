@@ -4,4 +4,15 @@
     <active>true</active>
     <description>Configuration settings for defining Account Journey and Attribution</description>
     <label>Account Journey</label>
+    <picklistValues>
+        <picklist>p2s_base1__Configuration_Type__c</picklist>
+        <values>
+            <fullName>Account Journey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead and Account Journey</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>
