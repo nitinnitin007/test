@@ -3,12 +3,12 @@
     <fullName>Master_Contract_Number__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-  OR(
-    ISPICKVAL(Version__c,&quot;1&quot;),
-    ISPICKVAL(Version__c,&quot;&quot;)
-  ),
-  SBQQ__MasterContract__r.ContractNumber,
-  SBQQ__MasterContract__r.ContractNumber&amp;&quot;v&quot;&amp;TEXT(Version__c)
+OR(
+ISPICKVAL(Version__c,&quot;1&quot;),
+ISPICKVAL(Version__c,&quot;&quot;)
+),
+SBQQ__MasterContract__r.ContractNumber,
+SBQQ__MasterContract__r.ContractNumber&amp;&quot;v&quot;&amp;TEXT(Version__c)
 )</formula>
     <label>Master Contract Number</label>
     <required>false</required>

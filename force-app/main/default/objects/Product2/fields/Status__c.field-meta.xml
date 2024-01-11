@@ -30,6 +30,12 @@ Built according to user story BIZ-45081.</description>
                 <label>EOL</label>
             </value>
             <value>
+                <fullName>Legacy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Legacy</label>
+            </value>
+            <value>
                 <fullName>Pilot</fullName>
                 <default>false</default>
                 <isActive>false</isActive>

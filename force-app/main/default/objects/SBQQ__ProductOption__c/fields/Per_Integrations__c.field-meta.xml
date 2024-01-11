@@ -50,6 +50,12 @@
                 <default>false</default>
                 <label>no meter type</label>
             </value>
+            <value>
+                <fullName>Named User</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Named User</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

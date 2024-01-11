@@ -15,18 +15,9 @@
     <columns>CREATEDBY_USER</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>ExternalId__c</field>
+        <field>Term_Category__c</field>
         <operation>equals</operation>
-        <value>2</value>
-    </filters>
-    <filters>
-        <field>SBQQ__Quote__c</field>
-        <operation>equals</operation>
-    </filters>
-    <filters>
-        <field>SBQQ__Active__c</field>
-        <operation>equals</operation>
-        <value>1</value>
+        <value>Old Payment Terms - Deactivate,Tax</value>
     </filters>
     <label>All Active Standard Terms</label>
     <sharedTo>

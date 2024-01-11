@@ -81,6 +81,60 @@
                 <default>false</default>
                 <label>Uplift</label>
             </value>
+            <value>
+                <fullName>Acquired Contract</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Acquired Contract</label>
+            </value>
+            <value>
+                <fullName>Add-On</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add-On</label>
+            </value>
+            <value>
+                <fullName>Contract Replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract Replacement</label>
+            </value>
+            <value>
+                <fullName>New Software</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Software</label>
+            </value>
+            <value>
+                <fullName>Next Year, Multi-Year</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Next Year, Multi-Year</label>
+            </value>
+            <value>
+                <fullName>Platform Conversion - Internal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Platform Conversion - Internal</label>
+            </value>
+            <value>
+                <fullName>Platform Fee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Platform Fee</label>
+            </value>
+            <value>
+                <fullName>Services Only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Services Only</label>
+            </value>
+            <value>
+                <fullName>Services Replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Services Replacement</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

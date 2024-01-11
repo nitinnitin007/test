@@ -17,6 +17,26 @@
                 <default>false</default>
                 <label>Product Code</label>
             </value>
+            <value>
+                <fullName>SBQQ__PricebookId__c</fullName>
+                <default>false</default>
+                <label>SBQQ__PricebookId__c</label>
+            </value>
+            <value>
+                <fullName>Sub_Vertical__c</fullName>
+                <default>false</default>
+                <label>Sub_Vertical__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__PriceBook__c</fullName>
+                <default>false</default>
+                <label>SBQQ__PriceBook__c</label>
+            </value>
+            <value>
+                <fullName>Created_By_Permissionset__c</fullName>
+                <default>false</default>
+                <label>Created_By_Permissionset__c</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

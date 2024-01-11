@@ -162,11 +162,19 @@ Added Bank Account for Bad Debts to be used for all subsidiaries</description>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
+            <valueName>1007 Cash &amp; Cash Equivalents : 1007 - JPM - 1309 [Intapp Ireland Ltd)]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
             <valueName>1010 Cash &amp; Cash Equivalents : WFB Checking - 1413</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
             <valueName>1012 Cash &amp; Cash Equivalents : WFB Checking - 3352</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
+            <valueName>1066 Cash &amp; Cash Equivalents : WFB Checking GBP - 5725 [Intapp Ltd] GBP</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
@@ -179,6 +187,10 @@ Added Bank Account for Bad Debts to be used for all subsidiaries</description>
         <valueSettings>
             <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
             <valueName>1094 Cash &amp; Cash Equivalents : 1094 - JPM - 1243 [IA] GBP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>
+            <valueName>1098 Cash &amp; Cash Equivalents : 1098 - JPM - 5309 [Intapp Pty Ltd] AUD</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>01:200 Integration Appliance (US)</controllingFieldValue>

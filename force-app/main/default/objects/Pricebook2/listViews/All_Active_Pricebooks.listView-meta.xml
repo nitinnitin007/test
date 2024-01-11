@@ -8,6 +8,10 @@
     <columns>PRICEBOOK2.LAST_UPDATE</columns>
     <columns>PRICEBOOK2.IS_ACTIVE</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRICEBOOK2.IS_ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
     <label>All</label>
-    <language>en_US</language>
 </ListView>

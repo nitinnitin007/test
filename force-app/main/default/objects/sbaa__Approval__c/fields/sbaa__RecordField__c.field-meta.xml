@@ -8,6 +8,7 @@
     <label>Record Field</label>
     <length>80</length>
     <required>true</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

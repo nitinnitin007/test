@@ -24,7 +24,6 @@ Deployed again for bug 47136</description>
 				)
 			)
 		)</errorConditionFormula>
-    <errorDisplayField>ACV_Change__c</errorDisplayField>
     <errorMessage>The following fields should not be populated for Services Products :
 Meter Type , Support Level , One Time Discount.</errorMessage>
 </ValidationRule>

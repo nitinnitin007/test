@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>TEXT(SBQQ__QuoteLine__r.SBQQ__BillingFrequency__c)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>QL billing frequency</label>
+    <label>Quote Line Billing Frequency</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <type>Text</type>

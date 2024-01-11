@@ -31,6 +31,54 @@
                 <default>false</default>
                 <label>Services Only</label>
             </value>
+            <value>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amendment</label>
+            </value>
+            <value>
+                <fullName>Intapp Journal Entry</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Intapp Journal Entry</label>
+            </value>
+            <value>
+                <fullName>Marketing Event</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Marketing Event</label>
+            </value>
+            <value>
+                <fullName>New Hardware</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Hardware</label>
+            </value>
+            <value>
+                <fullName>Renewal-Exception</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Renewal-Exception</label>
+            </value>
+            <value>
+                <fullName>Services Agreement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Services Agreement</label>
+            </value>
+            <value>
+                <fullName>Services Agreement–T&amp;M</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Services Agreement–T&amp;M</label>
+            </value>
+            <value>
+                <fullName>Usage</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Usage</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

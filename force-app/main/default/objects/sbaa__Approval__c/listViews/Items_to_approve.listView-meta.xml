@@ -11,5 +11,10 @@
         <operation>equals</operation>
         <value>Requested</value>
     </filters>
+    <filters>
+        <field>sbaa__Approver__c</field>
+        <operation>equals</operation>
+        <value>OSA Contract Ops</value>
+    </filters>
     <label>Items to approve</label>
 </ListView>

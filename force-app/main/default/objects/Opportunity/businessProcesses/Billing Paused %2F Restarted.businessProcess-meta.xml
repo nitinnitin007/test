@@ -38,4 +38,8 @@
         <fullName>Processing Pause</fullName>
         <default>false</default>
     </values>
+    <values>
+        <fullName>Sales Nurture</fullName>
+        <default>false</default>
+    </values>
 </BusinessProcess>

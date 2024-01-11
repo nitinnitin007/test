@@ -16,8 +16,8 @@ IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Reseller&apos;) , &apos;Intapp R
 IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Repstor G-Cloud&apos;) , &apos;Repstor G-Cloud&apos;, 
 IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Repstor Retro-Booking&apos;) , &apos;Repstor Retro-Booking&apos;, 
 IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Existing Intapp MSSA signed by Customer Affiliate&apos;) , &apos;Existing Intapp MSSA signed by Customer Affiliate&apos;, 
-IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Legacy DealCloud Agreement&apos;) , &apos;Legacy DealCloud Agreement&apos;, IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Existing Intapp MSSA plus Cloud and Annex&apos;) , &apos;Existing Intapp MSSA plus Cloud and Annex&apos;,
-IF( ISPICKVAL( Contract_Master_Terms__c , &apos;New MSSA Signed Separate&apos;) , &apos;New MSSA Signed Separate&apos;, &apos;&apos;)))))))))))))))))</formula>
+IF( ISPICKVAL( Contract_Master_Terms__c , &apos;Legacy DealCloud Agreement&apos;) , &apos;Legacy DealCloud Agreement&apos;, 
+IF( ISPICKVAL( Contract_Master_Terms__c , &apos;New MSSA Signed Separate&apos;) , &apos;New MSSA Signed Separate&apos;, &apos;&apos;))))))))))))))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Contract Master Terms Formula</label>
     <required>false</required>

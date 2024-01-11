@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Free_Month_Total_Discount__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(  Free_Month_Discount__c &gt; 0, Free_Month_Discount__c *  SBQQ__Quantity__c * -1 , 0)</formula>
+    <formula>IF(   Extended_Term_Discount__c &gt; 0, Extended_Term_Discount__c * -1 , 0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Free Month Total Discount</label>
     <precision>18</precision>

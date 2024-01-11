@@ -14,13 +14,12 @@
     <filters>
         <field>Product_Code__c</field>
         <operation>contains</operation>
-        <value>01937</value>
+        <value>RI-01417</value>
     </filters>
     <filters>
-        <field>Meter_Type__c</field>
+        <field>Price_Book__c</field>
         <operation>equals</operation>
-        <value>Lawyers,Fee Earners</value>
+        <value>2021_Intapp_Sales</value>
     </filters>
     <label>All Pricings</label>
-    <language>en_US</language>
 </ListView>

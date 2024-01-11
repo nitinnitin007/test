@@ -171,9 +171,9 @@
         <customTabListAdditionalFields>refedge__Feedback_Response__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>refedge__Reference_Use__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>refedge__Activity_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
-        <excludedStandardButtons>New</excludedStandardButtons>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

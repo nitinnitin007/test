@@ -3,6 +3,16 @@
     <fullName>blng__All</fullName>
     <columns>NAME</columns>
     <columns>blng__TotalAmount__c</columns>
+    <columns>CreatedFromServiceBillingBatch__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>blng__Invoice__c</columns>
+    <columns>blng__InvoiceRun__c</columns>
+    <columns>blng__InvoiceLineStatus__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>CreatedFromServiceBillingBatch__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
     <label>All</label>
 </ListView>

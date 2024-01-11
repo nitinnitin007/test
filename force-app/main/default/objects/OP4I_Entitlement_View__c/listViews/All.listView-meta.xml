@@ -9,12 +9,13 @@
     <columns>Opportunity__c</columns>
     <columns>Quote__c</columns>
     <columns>DLIP_Product__c</columns>
-    <columns>Billing_Frequency__c</columns>
     <columns>Order__c</columns>
     <columns>DLI_Product__c</columns>
     <columns>Start_Date__c</columns>
     <columns>End_Date__c</columns>
-    <columns>Total_Contract_Months__c</columns>
+    <columns>SFA_Override__c</columns>
+    <columns>DLI_Price__c</columns>
+    <columns>DLIP_Id__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Associated_OSA__c</field>

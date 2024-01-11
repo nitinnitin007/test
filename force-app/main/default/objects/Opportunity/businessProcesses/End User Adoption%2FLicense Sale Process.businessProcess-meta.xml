@@ -40,6 +40,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Sales Nurture</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Waiting for Finance to send bill</fullName>
         <default>false</default>
     </values>

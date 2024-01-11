@@ -3,7 +3,7 @@
     <fullName>dsfs__AccessCode__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>AccessCode</label>
+    <label>Access Code</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

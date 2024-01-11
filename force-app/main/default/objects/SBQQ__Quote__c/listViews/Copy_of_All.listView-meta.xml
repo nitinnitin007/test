@@ -18,9 +18,14 @@
     <columns>SBQQ__NetAmount__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Renewal_Quote_Type__c</field>
+        <field>SBQQ__Type__c</field>
         <operation>equals</operation>
-        <value>Auto-Renewal</value>
+        <value>Renewal</value>
+    </filters>
+    <filters>
+        <field>Quote_Stage__c</field>
+        <operation>equals</operation>
+        <value>Contract Executed</value>
     </filters>
     <label>Copy of All</label>
 </ListView>

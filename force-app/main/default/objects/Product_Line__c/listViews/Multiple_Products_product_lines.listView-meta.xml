@@ -11,6 +11,10 @@
         <operation>contains</operation>
         <value>Multiple Products</value>
     </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
     <label>Multiple Products product lines</label>
-    <language>en_US</language>
 </ListView>

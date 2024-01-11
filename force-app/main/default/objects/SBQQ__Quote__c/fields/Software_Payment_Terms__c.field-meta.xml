@@ -61,7 +61,6 @@
             <value>
                 <fullName>Roox</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
                 <label>Roox</label>
             </value>
         </valueSetDefinition>

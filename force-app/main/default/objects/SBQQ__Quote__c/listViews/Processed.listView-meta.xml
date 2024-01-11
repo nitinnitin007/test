@@ -22,7 +22,7 @@
     <filters>
         <field>LAST_UPDATE</field>
         <operation>greaterOrEqual</operation>
-        <value>6/29/2023 12:00 AM</value>
+        <value>3/14/2022 12:00 AM</value>
     </filters>
     <label>Total Processed OSA Requests</label>
     <language>en_US</language>

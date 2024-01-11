@@ -15,7 +15,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Silent</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Silent</label>
             </value>
             <value>

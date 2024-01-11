@@ -14,11 +14,6 @@
         <operation>notEqual</operation>
         <value>GE-01554</value>
     </summaryFilterItems>
-    <summaryFilterItems>
-        <field>OpportunityLineItem.Total_Price_Book_Amount__c</field>
-        <operation>notEqual</operation>
-        <value>0</value>
-    </summaryFilterItems>
     <summaryForeignKey>OpportunityLineItem.OpportunityId</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackHistory>false</trackHistory>

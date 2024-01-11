@@ -49,12 +49,6 @@
                 <isActive>false</isActive>
                 <label>Attorneys</label>
             </value>
-            <value>
-                <fullName>Firmwide</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Firmwide</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

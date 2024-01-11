@@ -5,8 +5,10 @@
     <description>SC-000049</description>
     <errorConditionFormula>AND( 
 ISCHANGED(Status__c), 
+ISBLANK(Project_Name__c), 
 AND( 
-ISBLANK(Product_Customer__c) 
+ISBLANK(Product_Customer__c), 
+NOT(TEXT(Project_Name__r.Intapp_Project_Type__c) = &quot;Internal Project&quot;) 
 ) 
 )</errorConditionFormula>
     <errorMessage>Please link the success criteria to a related Project or Product Customer before updating the Status.</errorMessage>

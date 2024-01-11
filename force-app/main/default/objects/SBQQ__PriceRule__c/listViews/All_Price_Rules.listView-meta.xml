@@ -8,6 +8,9 @@
     <columns>UPDATEDBY_USER</columns>
     <columns>LAST_UPDATE</columns>
     <columns>SBQQ__EvaluationOrder__c</columns>
+    <columns>SBQQ__LookupObject__c</columns>
+    <columns>SBQQ__ConditionsMet__c</columns>
+    <columns>SBQQ__AdvancedCondition__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>SBQQ__Active__c</field>

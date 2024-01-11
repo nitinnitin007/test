@@ -3,7 +3,7 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Project__c</columns>
-    <columns>Invoice__c</columns>
+    <columns>OA_Invoice_ID__c</columns>
     <columns>Product__c</columns>
     <columns>Resource__c</columns>
     <columns>Hours__c</columns>
@@ -11,6 +11,8 @@
     <columns>Rate__c</columns>
     <columns>Order_Product__c</columns>
     <columns>OBJECT_ID</columns>
+    <columns>Type__c</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

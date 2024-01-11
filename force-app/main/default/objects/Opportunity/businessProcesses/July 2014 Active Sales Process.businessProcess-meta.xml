@@ -16,6 +16,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Closed - Superseded By Newer Contract</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Closed Lost</fullName>
         <default>false</default>
     </values>
@@ -53,6 +57,10 @@
     </values>
     <values>
         <fullName>Recurring Adjustment</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Sales Nurture</fullName>
         <default>false</default>
     </values>
     <values>

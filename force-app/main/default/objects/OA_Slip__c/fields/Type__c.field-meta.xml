@@ -23,6 +23,18 @@ If new value added in blng__Invoice__c &apos;s OA_Invoice_Type_FrmSvcBlngProcess
                 <default>false</default>
                 <label>F</label>
             </value>
+            <value>
+                <fullName>Fixed Price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fixed Price</label>
+            </value>
+            <value>
+                <fullName>T&amp;M</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>T&amp;M</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

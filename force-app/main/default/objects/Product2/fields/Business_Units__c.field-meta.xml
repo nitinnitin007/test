@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Business_Units__c</fullName>
+    <description>deployed</description>
     <externalId>false</externalId>
     <label>Business Units</label>
     <required>false</required>
@@ -64,6 +65,16 @@
                 <fullName>Tech</fullName>
                 <default>false</default>
                 <label>Tech</label>
+            </value>
+            <value>
+                <fullName>Services</fullName>
+                <default>false</default>
+                <label>Services</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
             </value>
         </valueSetDefinition>
     </valueSet>

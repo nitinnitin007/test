@@ -6,6 +6,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Payment is in progress and the invoice is locked. Before unlocking it, check whether a payment has already been created against this invoice.</inlineHelpText>
     <label>Invoice Locked</label>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

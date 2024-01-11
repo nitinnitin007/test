@@ -58,9 +58,9 @@
                 <label>Custom Master Term from Account</label>
             </value>
             <value>
-                <fullName>Repstor Legacy Agreement Attached</fullName>
+                <fullName>Repstor Legacy</fullName>
                 <default>false</default>
-                <label>Repstor Legacy Agreement Attached</label>
+                <label>Repstor Legacy</label>
             </value>
             <value>
                 <fullName>Reseller</fullName>
@@ -103,18 +103,6 @@
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Partner and Prime</label>
-            </value>
-            <value>
-                <fullName>Repstor Legacy</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Repstor Legacy</label>
-            </value>
-            <value>
-                <fullName>Repstor Legacy Term</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Repstor Legacy Term</label>
             </value>
             <value>
                 <fullName>Repstor Retro-Booking</fullName>

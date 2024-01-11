@@ -2,7 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Governance</fullName>
     <active>true</active>
-    <description>Record type for Governance tasks. BIZ-45067</description>
+    <description>Record type for Governance tasks.</description>
     <label>Governance</label>
     <picklistValues>
         <picklist>Campaign_Follow_Up__c</picklist>

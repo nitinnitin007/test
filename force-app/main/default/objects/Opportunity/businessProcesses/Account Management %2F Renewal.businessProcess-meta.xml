@@ -56,6 +56,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Sales Nurture</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Waiting for Billing Pause%2FFinancial Concession Amendment</fullName>
         <default>false</default>
     </values>

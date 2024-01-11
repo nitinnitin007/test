@@ -17,6 +17,11 @@
                 <default>false</default>
                 <label>Opportunity</label>
             </value>
+            <value>
+                <fullName>SBQQ__Quote__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Quote__c</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

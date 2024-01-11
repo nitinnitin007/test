@@ -45,10 +45,28 @@ Updated for story BIZ-49730..</description>
                 <label>Closed-Lost</label>
             </value>
             <value>
+                <fullName>Contracted</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contracted</label>
+            </value>
+            <value>
                 <fullName>Draft</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Forecast</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Forecast</label>
+            </value>
+            <value>
+                <fullName>OSA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OSA</label>
             </value>
         </valueSetDefinition>
     </valueSet>

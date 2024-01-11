@@ -61,6 +61,18 @@
                 <default>false</default>
                 <label>Fees</label>
             </value>
+            <value>
+                <fullName>Employee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Employee</label>
+            </value>
+            <value>
+                <fullName>Hours</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hours</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

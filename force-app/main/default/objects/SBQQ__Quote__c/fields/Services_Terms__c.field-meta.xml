@@ -9,7 +9,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -91,18 +90,6 @@
                 <fullName>Blended Milestone_T&amp;M</fullName>
                 <default>false</default>
                 <label>Blended Milestone_T&amp;M</label>
-            </value>
-            <value>
-                <fullName>Pro Lite</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Pro Lite</label>
-            </value>
-            <value>
-                <fullName>Pro Sprint</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Pro Sprint</label>
             </value>
         </valueSetDefinition>
     </valueSet>

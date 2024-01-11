@@ -45,9 +45,14 @@
                 <label>Net 120</label>
             </value>
             <value>
-                <fullName>Other</fullName>
+                <fullName>XXXXX</fullName>
                 <default>false</default>
                 <label>Other</label>
+            </value>
+            <value>
+                <fullName>No Software</fullName>
+                <default>false</default>
+                <label>No Software</label>
             </value>
         </valueSetDefinition>
     </valueSet>

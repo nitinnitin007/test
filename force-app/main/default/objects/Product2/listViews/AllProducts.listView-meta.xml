@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>AllProducts</fullName>
+    <columns>Product_ID__c</columns>
     <columns>PRODUCT2.NAME</columns>
     <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>SBQQ__TaxCode__c</columns>
     <columns>PRODUCT2.DESCRIPTION</columns>
-    <columns>PRODUCT2.FAMILY</columns>
+    <columns>blng__TaxRule__c</columns>
+    <columns>Product_LineNew__c</columns>
+    <columns>PRODUCT2.LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>PRODUCT2.NAME</field>
-        <operation>contains</operation>
-        <value>Intapp Select</value>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>blng__TaxRule__c</field>
+        <operation>notEqual</operation>
+        <value>Avalara AvaTax Rule</value>
     </filters>
     <label>All Products</label>
 </ListView>

@@ -11,6 +11,7 @@
 							Deal_Checklist_Status__c = &quot;Not Started&quot;), 
 				   NOT(ISPICKVAL(Renewal_Quote_Type__c,&quot;Auto-Renewal&quot;)) 
 			)</errorConditionFormula>
+    <errorDisplayField>Number_of_DLIs__c</errorDisplayField>
     <errorMessage>Quote can only be ordered only on the following conditions:
 1. Opportunity Stage: Closed Won
 2. Quote Stage: Contract Executed

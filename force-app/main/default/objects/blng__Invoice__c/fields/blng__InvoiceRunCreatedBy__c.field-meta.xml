@@ -11,6 +11,7 @@ This field tells from which Invoice Run the Invoice is generated.</description>
     <relationshipLabel>Invoices</relationshipLabel>
     <relationshipName>InvoiceRunInvoices</relationshipName>
     <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>

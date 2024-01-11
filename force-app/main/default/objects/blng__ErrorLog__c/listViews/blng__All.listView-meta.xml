@@ -8,13 +8,19 @@
     <columns>blng__ErrorOrigin__c</columns>
     <columns>blng__FullErrorLog__c</columns>
     <columns>blng__OriginMethod__c</columns>
-    <columns>blng__ReferenceId__c</columns>
-    <columns>blng__Summary__c</columns>
-    <columns>blng__Transaction__c</columns>
     <columns>blng__InvoiceRun__c</columns>
     <columns>blng__InvoiceScheduler__c</columns>
-    <columns>blng__PaymentRun__c</columns>
-    <columns>blng__PaymentScheduler__c</columns>
+    <columns>blng__Invoice__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>blng__Payment__c</columns>
+    <columns>blng__Order__c</columns>
+    <columns>blng__OrderProduct__c</columns>
+    <columns>blng__InvoiceLine__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>blng__ErrorName__c</field>
+        <operation>equals</operation>
+        <value>Credit &amp; Rebill Error.</value>
+    </filters>
     <label>All</label>
 </ListView>

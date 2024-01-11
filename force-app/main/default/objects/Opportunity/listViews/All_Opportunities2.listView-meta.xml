@@ -10,11 +10,13 @@
     <columns>Forecast_Status__c</columns>
     <columns>Next_Step_Updated_On__c</columns>
     <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>pse__Parent_Opportunity__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>OPPORTUNITY.STAGE_NAME</field>
-        <operation>equals</operation>
-        <value>Qualify</value>
+        <field>OPPORTUNITY.NAME</field>
+        <operation>contains</operation>
+        <value>Renewal</value>
     </filters>
     <label>All Opportunities</label>
 </ListView>

@@ -5,6 +5,7 @@
     <columns>SBQQ__Product__c</columns>
     <columns>Child_Product__c</columns>
     <columns>Product_Allocation__c</columns>
+    <columns>CURRENCY_ISO_CODE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Product_Allocation__c</field>
@@ -13,6 +14,11 @@
     <filters>
         <field>Child_Product__c</field>
         <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>CURRENCY_ISO_CODE</field>
+        <operation>equals</operation>
+        <value>USD</value>
     </filters>
     <label>Static Bundle</label>
 </ListView>

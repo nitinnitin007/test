@@ -5,7 +5,7 @@
     <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Determines the percentage of query row limit usage Rollup Helper should use when retrieving child records. Lowering this setting may impact rollup accuracy, so it is recommended to keep this setting at or close to 100%. The default value is 100%.</inlineHelpText>
-    <label>Usage % of Row Limits</label>
+    <label>zDeprecated</label>
     <precision>3</precision>
     <required>false</required>
     <scale>0</scale>

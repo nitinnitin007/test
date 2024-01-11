@@ -10,9 +10,10 @@
     <columns>SBQQ__FilterValue__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>CREATED_DATE</field>
-        <operation>equals</operation>
-        <value>TODAY</value>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>Product Value</value>
     </filters>
     <label>All</label>
+    <language>en_US</language>
 </ListView>

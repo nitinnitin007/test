@@ -24,6 +24,16 @@
                 <default>false</default>
                 <label>Error</label>
             </value>
+            <value>
+                <fullName>In Processing</fullName>
+                <default>false</default>
+                <label>In Processing</label>
+            </value>
+            <value>
+                <fullName>Migrated</fullName>
+                <default>false</default>
+                <label>Migrated</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

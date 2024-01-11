@@ -4,7 +4,7 @@
     <description>Activate and modify this process if you want to change the way we track TE sales.</description>
     <isActive>false</isActive>
     <values>
-        <fullName>Pre-Funnel</fullName>
+        <fullName>Qualify</fullName>
         <default>false</default>
     </values>
 </BusinessProcess>

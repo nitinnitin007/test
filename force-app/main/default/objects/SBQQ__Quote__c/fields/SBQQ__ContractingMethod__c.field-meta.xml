@@ -17,12 +17,12 @@
             <sorted>false</sorted>
             <value>
                 <fullName>By Subscription End Date</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>By Subscription End Date</label>
             </value>
             <value>
                 <fullName>Single Contract</fullName>
-                <default>false</default>
+                <default>true</default>
                 <label>Single Contract</label>
             </value>
         </valueSetDefinition>

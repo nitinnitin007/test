@@ -606,6 +606,16 @@
                 <default>false</default>
                 <label>Platform_Conversion_Count__c</label>
             </value>
+            <value>
+                <fullName>DealCloud_Prime_Count__c</fullName>
+                <default>false</default>
+                <label>DealCloud_Prime_Count__c</label>
+            </value>
+            <value>
+                <fullName>Intapp_Prime_Count__c</fullName>
+                <default>false</default>
+                <label>Intapp_Prime_Count__c</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

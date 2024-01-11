@@ -28,6 +28,11 @@
                 <label>Billstream - Legacy Contract Replacement</label>
             </value>
             <value>
+                <fullName>DC Retention Program</fullName>
+                <default>false</default>
+                <label>DC Retention Program</label>
+            </value>
+            <value>
                 <fullName>Relationship Intelligence</fullName>
                 <default>false</default>
                 <label>Relationship Intelligence</label>
@@ -36,16 +41,6 @@
                 <fullName>Walls Special Program</fullName>
                 <default>false</default>
                 <label>Walls Special Program</label>
-            </value>
-            <value>
-                <fullName>DC Retention Program</fullName>
-                <default>false</default>
-                <label>DC Retention Program</label>
-            </value>
-            <value>
-                <fullName>Acquisition – Polar</fullName>
-                <default>false</default>
-                <label>Acquisition – Polar</label>
             </value>
             <value>
                 <fullName>DealCloud Blue</fullName>
@@ -66,6 +61,21 @@
                 <fullName>Exec Deal Sponsorship</fullName>
                 <default>false</default>
                 <label>Exec Deal Sponsorship</label>
+            </value>
+            <value>
+                <fullName>Services Demand Generation</fullName>
+                <default>false</default>
+                <label>Services Demand Generation</label>
+            </value>
+            <value>
+                <fullName>CSS Services Upsell</fullName>
+                <default>false</default>
+                <label>CSS Services Upsell</label>
+            </value>
+            <value>
+                <fullName>Acquisition – Polar</fullName>
+                <default>false</default>
+                <label>Acquisition – Polar</label>
             </value>
         </valueSetDefinition>
     </valueSet>

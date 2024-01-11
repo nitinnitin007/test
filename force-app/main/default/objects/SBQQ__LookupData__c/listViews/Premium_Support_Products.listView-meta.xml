@@ -6,6 +6,7 @@
     <columns>SBQQ__Category__c</columns>
     <columns>Markup__c</columns>
     <columns>Meter_Type__c</columns>
+    <columns>Product_Code__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>SBQQ__Category__c</field>

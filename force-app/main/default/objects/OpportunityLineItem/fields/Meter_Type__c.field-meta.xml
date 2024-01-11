@@ -64,12 +64,6 @@
                 <default>false</default>
                 <label>Named Users</label>
             </value>
-            <value>
-                <fullName>Named User</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Named User</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -19,5 +19,6 @@ formula changed according to BIZ-48358. Include Billing Ops User exception BIZ-5
    )
  )
 )</errorConditionFormula>
+    <errorDisplayField>Number_of_DLIs__c</errorDisplayField>
     <errorMessage>Only Ops users with &apos;Intapp CPQ Operations User Permission Set&apos;  are allowed to change the status to Contract Executed and Closed-Lost stage.</errorMessage>
 </ValidationRule>

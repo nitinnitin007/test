@@ -17,10 +17,5 @@
     <columns>OA_Error__c</columns>
     <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>OA_Invoice_ID__c</field>
-        <operation>equals</operation>
-        <value>16740</value>
-    </filters>
     <label>All</label>
 </ListView>

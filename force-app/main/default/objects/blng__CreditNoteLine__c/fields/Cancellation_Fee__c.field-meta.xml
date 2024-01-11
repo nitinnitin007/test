@@ -36,6 +36,18 @@
                 <default>false</default>
                 <label>No fee</label>
             </value>
+            <value>
+                <fullName>Greater than 10%</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Greater than 10%</label>
+            </value>
+            <value>
+                <fullName>Less than or equal to 10%</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Less than or equal to 10%</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

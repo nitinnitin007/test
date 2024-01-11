@@ -3,13 +3,25 @@
     <fullName>All1</fullName>
     <columns>Account_Name__c</columns>
     <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
     <columns>OSA_Number__c</columns>
     <columns>Status__c</columns>
     <columns>Subtotal__c</columns>
+    <columns>Taxes__c</columns>
     <columns>Amount_Invoiced__c</columns>
     <columns>Invoice_Status__c</columns>
     <columns>Due_Date__c</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Name__c</field>
+        <operation>equals</operation>
+        <value>Hodgson Russ LLP</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Paid In Full</value>
+    </filters>
     <label>All</label>
-    <language>en_US</language>
 </ListView>

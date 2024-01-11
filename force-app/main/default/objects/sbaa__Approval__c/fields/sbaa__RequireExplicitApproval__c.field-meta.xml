@@ -7,6 +7,7 @@
     <externalId>false</externalId>
     <inlineHelpText>By default, approving any Approval will auto-approve all other Approvals assigned to the same User. If this box is checked, an Approval originated by this Rule will not be auto-approved and must be explicitly approved.</inlineHelpText>
     <label>Require Explicit Approval</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

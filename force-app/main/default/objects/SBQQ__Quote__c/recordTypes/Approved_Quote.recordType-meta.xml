@@ -8,7 +8,35 @@
     <picklistValues>
         <picklist>ACV_Type__c</picklist>
         <values>
+            <fullName>Acquired Add-On Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquired New Contracting Entity</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Acquired New Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquired New Logo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquired New Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional ACV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Licenses</fullName>
             <default>false</default>
         </values>
         <values>
@@ -16,11 +44,47 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Assessment%2F POC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-Contracting Entity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-Logo</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Cancellation-Product</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>Consulting Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Contracting Entity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Logo</fullName>
             <default>false</default>
         </values>
         <values>
@@ -32,7 +96,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Platform Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Platform Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Services</fullName>
             <default>false</default>
         </values>
         <values>
@@ -40,11 +112,35 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Reduced Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>SFA</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>SOW Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Change Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Subscription Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade</fullName>
             <default>false</default>
         </values>
         <values>
@@ -106,7 +202,7 @@
         </values>
         <values>
             <fullName>Pending Submission</fullName>
-            <default>true</default>
+            <default>false</default>
         </values>
         <values>
             <fullName>Recalled</fullName>
@@ -136,6 +232,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>CSS Services Upsell</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>DC Retention Program</fullName>
             <default>false</default>
         </values>
@@ -156,35 +256,16 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Services Demand Generation</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Services SPIF Program</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Walls Special Program</fullName>
             <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Cancellation_fee__c</picklist>
-        <values>
-            <fullName>10%25 cancellation fee</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>25%25 cancellation fee</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>5%25 cancellation fee</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No fee</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Standard - all fees due</fullName>
-            <default>true</default>
         </values>
     </picklistValues>
     <picklistValues>
@@ -280,10 +361,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Existing Intapp MSSA plus Cloud and Annex</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Existing Intapp MSSA signed by Customer Affiliate</fullName>
             <default>false</default>
         </values>
@@ -320,7 +397,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Repstor Legacy Agreement Attached</fullName>
+            <fullName>Repstor Legacy</fullName>
             <default>false</default>
         </values>
         <values>
@@ -612,7 +689,15 @@
     <picklistValues>
         <picklist>Op4i_Sales_Segment_Picklist__c</picklist>
         <values>
+            <fullName>01-Legal NA North</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>01-Legal NA West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01-PS NA North</fullName>
             <default>false</default>
         </values>
         <values>
@@ -620,7 +705,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>02-Legal NA South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02-PS NA South%2FAPAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>03-Legal EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03-PS EMEA</fullName>
             <default>false</default>
         </values>
         <values>
@@ -632,6 +729,14 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>05-Legal Large Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>06-Accounting%2FConsulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>06-Legal Mid-Market</fullName>
             <default>false</default>
         </values>
@@ -640,7 +745,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>07-Corporate Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>08-Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>08-FS NA East New Sales</fullName>
             <default>false</default>
         </values>
         <values>
@@ -648,7 +761,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>09-FS NA West New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>10-Corporates AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10-FS APAC New Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11-FS EMEA New Sales</fullName>
             <default>false</default>
         </values>
         <values>
@@ -656,7 +781,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>12-FS AM Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>12-FS New Sales NA PCM East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13-FS AM Enterprise</fullName>
             <default>false</default>
         </values>
         <values>
@@ -664,11 +797,23 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>14-FS AM EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>14-FS New Sales EMEA</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>15-FS AM Portfolio</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>15-FS New Sales APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16-FS AM APAC</fullName>
             <default>false</default>
         </values>
         <values>
@@ -677,6 +822,10 @@
         </values>
         <values>
             <fullName>17-FS AM NA PCM East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17-Other</fullName>
             <default>false</default>
         </values>
         <values>
@@ -699,6 +848,14 @@
             <fullName>22-FS Strategics NA</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>23-Corporates EMEA AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24-Corporates Partners AM</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Pricing_Proposal_Approval__c</picklist>
@@ -712,7 +869,7 @@
         </values>
         <values>
             <fullName>Pending Submission</fullName>
-            <default>true</default>
+            <default>false</default>
         </values>
         <values>
             <fullName>Recalled</fullName>
@@ -1283,10 +1440,6 @@
             <fullName>QuantityBasedFormulaField%5F%5Fc</fullName>
             <default>false</default>
         </values>
-        <values>
-            <fullName>SplitT_M%5F%5Fc</fullName>
-            <default>true</default>
-        </values>
     </picklistValues>
     <picklistValues>
         <picklist>SBQQ__PaperSize__c</picklist>
@@ -1607,10 +1760,6 @@
         <picklist>SBQQ__Type__c</picklist>
         <values>
             <fullName>Amendment</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Migration Quote</fullName>
             <default>false</default>
         </values>
         <values>

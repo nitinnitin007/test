@@ -7,7 +7,35 @@
     <picklistValues>
         <picklist>ACV_Type__c</picklist>
         <values>
+            <fullName>Acquired Add-On Module</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquired New Contracting Entity</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Acquired New Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquired New Logo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Acquired New Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional ACV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Additional Licenses</fullName>
             <default>false</default>
         </values>
         <values>
@@ -15,11 +43,47 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Assessment%2F POC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-Contracting Entity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancellation-Logo</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Cancellation-Product</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>Consulting Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Contracting Entity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Logo</fullName>
             <default>false</default>
         </values>
         <values>
@@ -31,7 +95,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Platform Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Platform Fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime Services</fullName>
             <default>false</default>
         </values>
         <values>
@@ -39,11 +111,35 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Reduced Functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>SFA</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>SOW Amendment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Change Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Subscription Add-On</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade</fullName>
             <default>false</default>
         </values>
         <values>
@@ -55,10 +151,6 @@
         <picklist>Deal_Type__c</picklist>
         <values>
             <fullName>Acquired_Contract</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Add-On</fullName>
             <default>false</default>
         </values>
         <values>
@@ -160,10 +252,6 @@
     <picklistValues>
         <picklist>Meter_Type__c</picklist>
         <values>
-            <fullName>Employees</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Fee Earners</fullName>
             <default>false</default>
         </values>
@@ -177,10 +265,6 @@
         </values>
         <values>
             <fullName>Lawyers</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Named Users</fullName>
             <default>false</default>
         </values>
         <values>

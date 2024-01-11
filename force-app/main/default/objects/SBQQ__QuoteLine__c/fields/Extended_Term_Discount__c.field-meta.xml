@@ -4,7 +4,7 @@
     <description>Customfield to display the free months discount as a Currency value.
 Built according to US# BIZ-46272. Formula edited as part of BIZ-47197</description>
     <externalId>false</externalId>
-    <formula>IF(SBQQ__DistributorDiscount__c&gt;0, Customer_Sale_Price_Per_Month__c  * SBQQ__Quote__r.Free_Months__c  *  SBQQ__Quantity__c, NULL)</formula>
+    <formula>IF(SBQQ__DistributorDiscount__c&gt;0, Customer_Sale_Price_Per_Month__c  * SBQQ__Quote__r.Free_Months__c  *  SBQQ__Quantity__c, null)</formula>
     <label>Extended Term Credit</label>
     <precision>18</precision>
     <required>false</required>

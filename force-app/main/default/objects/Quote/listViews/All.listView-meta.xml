@@ -9,10 +9,5 @@
     <columns>QUOTE.SUBTOTAL</columns>
     <columns>QUOTE.TOTALPRICE</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>Date__c</field>
-        <operation>greaterThan</operation>
-        <value>12/28/2021</value>
-    </filters>
     <label>All Quotes</label>
 </ListView>

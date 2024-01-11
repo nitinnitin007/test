@@ -8,6 +8,7 @@
     <label>Rejection Template Id</label>
     <length>18</length>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

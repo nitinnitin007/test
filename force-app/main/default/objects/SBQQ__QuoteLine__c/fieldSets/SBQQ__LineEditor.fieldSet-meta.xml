@@ -218,16 +218,6 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Support_Level__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
-        <field>Override__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>SBQQ__Quantity__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>

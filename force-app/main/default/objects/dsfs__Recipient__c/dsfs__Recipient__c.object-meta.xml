@@ -154,13 +154,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Custom Contact</label>
+    <label>Recipient</label>
     <nameField>
         <displayFormat>CBR-{000000}</displayFormat>
         <label>Recipient Name</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Custom Contacts</pluralLabel>
+    <pluralLabel>Recipients</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

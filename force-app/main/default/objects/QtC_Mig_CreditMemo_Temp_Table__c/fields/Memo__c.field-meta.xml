@@ -3,9 +3,8 @@
     <fullName>Memo__c</fullName>
     <externalId>false</externalId>
     <label>Memo</label>
-    <length>255</length>
-    <required>false</required>
+    <length>131072</length>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>LongTextArea</type>
+    <visibleLines>2</visibleLines>
 </CustomField>

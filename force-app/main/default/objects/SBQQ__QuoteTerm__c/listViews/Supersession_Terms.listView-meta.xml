@@ -12,22 +12,16 @@
     <columns>LAST_ACTIVITY</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>SBQQ__Active__c</field>
-        <operation>equals</operation>
-        <value>1</value>
-    </filters>
-    <filters>
         <field>Term_Category__c</field>
         <operation>equals</operation>
         <value>Supersession</value>
     </filters>
     <filters>
-        <field>SBQQ__Type__c</field>
+        <field>SBQQ__Active__c</field>
         <operation>equals</operation>
-        <value>Standard</value>
+        <value>1</value>
     </filters>
     <label>Supersession Terms</label>
-    <language>en_US</language>
     <sharedTo>
         <allInternalUsers></allInternalUsers>
     </sharedTo>

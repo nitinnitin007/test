@@ -20,5 +20,10 @@
         <operation>equals</operation>
         <value>0</value>
     </filters>
+    <filters>
+        <field>UPDATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Keerthan N</value>
+    </filters>
     <label>All InActive PriceRules</label>
 </ListView>

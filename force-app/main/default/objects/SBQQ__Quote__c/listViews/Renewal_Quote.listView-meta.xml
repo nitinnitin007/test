@@ -20,5 +20,20 @@
         <operation>equals</operation>
         <value>Renewal</value>
     </filters>
+    <filters>
+        <field>Quote_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>Contract Executed</value>
+    </filters>
+    <filters>
+        <field>SBQQ__Ordered__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Renewal_Quote_Type__c</field>
+        <operation>equals</operation>
+        <value>Auto-Renewal</value>
+    </filters>
     <label>Renewal Quote</label>
 </ListView>

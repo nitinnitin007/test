@@ -3,7 +3,7 @@
     <fullName>dsfs__LastName__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>LastName</label>
+    <label>Last Name</label>
     <length>99</length>
     <required>false</required>
     <trackTrending>false</trackTrending>

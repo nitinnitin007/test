@@ -31,6 +31,12 @@ COntract consolidation - created while consolidating contracts</description>
                 <default>false</default>
                 <label>Consolidated-Quote</label>
             </value>
+            <value>
+                <fullName>Consolidate Quote</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Consolidate Quote</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

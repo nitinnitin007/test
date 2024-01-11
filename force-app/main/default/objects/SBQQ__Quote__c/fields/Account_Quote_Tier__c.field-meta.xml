@@ -2,7 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Account_Quote_Tier__c</fullName>
     <externalId>false</externalId>
-    <formula>If(ISBLANK(TEXT(SBQQ__Account__r.Legal_Tier_Split__c)),&apos;None&apos;, TEXT(SBQQ__Account__r.Legal_Tier_Split__c) )</formula>
+    <formula>If(Or (ISBLANK(TEXT(SBQQ__Account__r.Legal_Tier_Split__c)),TEXT(SBQQ__Account__r.Legal_Tier_Split__c)=&apos;--None--&apos;,TEXT(SBQQ__Account__r.Legal_Tier_Split__c)=&apos;(none)&apos;),
+&apos;None&apos;,
+TEXT(SBQQ__Account__r.Legal_Tier_Split__c) )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Account Quote Tier</label>
     <required>false</required>

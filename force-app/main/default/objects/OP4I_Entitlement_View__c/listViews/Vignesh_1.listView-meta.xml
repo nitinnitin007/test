@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Vignesh_1</fullName>
+    <columns>DLIP_Id__c</columns>
     <columns>Associated_OSA__c</columns>
     <columns>DLI_Product__c</columns>
     <columns>Sale_Price__c</columns>
@@ -19,7 +20,7 @@
     <filters>
         <field>Associated_OSA__c</field>
         <operation>equals</operation>
-        <value>23017</value>
+        <value>19222</value>
     </filters>
     <label>Vignesh</label>
     <language>en_US</language>

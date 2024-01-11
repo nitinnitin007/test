@@ -158,11 +158,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Tech</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Third Party Offerings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
             <default>false</default>
         </values>
     </picklistValues>

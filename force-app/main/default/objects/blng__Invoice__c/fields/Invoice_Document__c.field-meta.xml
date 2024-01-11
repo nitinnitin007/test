@@ -5,8 +5,8 @@
     <formula>&quot;&amp;solmgr=1&quot; + 
 &quot;&amp;username=&quot; + $User.Username +
 &quot;&amp;id=&quot; + Id +
-&quot;&amp;queryid= [LineItems]aHkD70000004Dr5KAE,[LineItems1]aHkD70000004Dr0KAE,[Acct]aHkD70000004DrFKAU,[Order]aHkD70000004Ds3KAE&quot; + 
-&quot;&amp;templateid=aHsD70000008PsxKAE&quot; + 
+&quot;&amp;queryid= [ParentInvoiceLine]aHxD7000000CbQTKA0,[OrderfromInvoice]aHxD7000000CbQYKA0&quot; + 
+&quot;&amp;templateid=aI5D70000008P70KAE&quot; + 
 &quot;&amp;fp0=1&quot; + 
 &quot;&amp;ac1=Invoice Generated&quot; +
 &quot;&amp;sc0=1&quot; + 
@@ -19,7 +19,7 @@
 &quot;&amp;geo=&quot; + $User.Country +
 &quot;&amp;emailtoid=&quot; +  blng__BillToContact__r.Id  +
 &quot;&amp;EmailAdditionalTo=&quot; + Additional_emails_to_send__c  +
-&quot;&amp;congaemailtemplateid=aHjD70000004D4HKAU&quot; + 
+&quot;&amp;congaemailtemplateid=aHwD700000033dYKAQ&quot; + 
 &quot;&amp;qmode=SendEmail&quot;</formula>
     <label>Invoice Document</label>
     <required>false</required>

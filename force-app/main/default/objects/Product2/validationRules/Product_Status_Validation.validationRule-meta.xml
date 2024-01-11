@@ -8,6 +8,5 @@ Built accordinjg to user story BIZ-45081.</description>
 NOT($Permission.Admin_Override),
 ISCHANGED(Status__c)
 )</errorConditionFormula>
-    <errorDisplayField>IsActive</errorDisplayField>
     <errorMessage>You can&apos;t update the Product Status Field, please contact Contract/CRM Ops user.</errorMessage>
 </ValidationRule>

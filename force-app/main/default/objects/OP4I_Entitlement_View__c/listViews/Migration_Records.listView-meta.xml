@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Migration_Records</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>DLI_Product__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Quote__c</columns>
+    <columns>Associated_OSA__c</columns>
+    <columns>OSA_Status__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Parent_Quote_Line__c</columns>
+    <columns>Migration_Status__c</columns>
+    <columns>Include_in_Select_Bundle__c</columns>
+    <columns>Total_Contract_Months__c</columns>
+    <columns>DLIP_Product_Type__c</columns>
+    <columns>Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>equals</operation>
+        <value>Lazard Freres &amp; Co. LLC.</value>
+    </filters>
+    <label>Migration Records</label>
+</ListView>

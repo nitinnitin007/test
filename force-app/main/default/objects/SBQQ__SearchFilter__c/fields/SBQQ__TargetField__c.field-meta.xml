@@ -43,6 +43,56 @@
                 <default>false</default>
                 <label>Status</label>
             </value>
+            <value>
+                <fullName>Guided_Selling_Type__c</fullName>
+                <default>false</default>
+                <label>Guided_Selling_Type__c</label>
+            </value>
+            <value>
+                <fullName>Is_Legal__c</fullName>
+                <default>false</default>
+                <label>Is_Legal__c</label>
+            </value>
+            <value>
+                <fullName>Is_IBA__c</fullName>
+                <default>false</default>
+                <label>Is_IBA__c</label>
+            </value>
+            <value>
+                <fullName>Is_Real_Assets__c</fullName>
+                <default>false</default>
+                <label>Is_Real_Assets__c</label>
+            </value>
+            <value>
+                <fullName>Is_PCM__c</fullName>
+                <default>false</default>
+                <label>Is_PCM__c</label>
+            </value>
+            <value>
+                <fullName>Iss_Corporate__c</fullName>
+                <default>false</default>
+                <label>Iss_Corporate__c</label>
+            </value>
+            <value>
+                <fullName>Is_Consulting__c</fullName>
+                <default>false</default>
+                <label>Is_Consulting__c</label>
+            </value>
+            <value>
+                <fullName>Is_Accounting__c</fullName>
+                <default>false</default>
+                <label>Is_Accounting__c</label>
+            </value>
+            <value>
+                <fullName>Product_Type_Sales__c</fullName>
+                <default>false</default>
+                <label>Product_Type_Sales__c</label>
+            </value>
+            <value>
+                <fullName>Status__c</fullName>
+                <default>false</default>
+                <label>Status__c</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>Product</controllingFieldValue>
@@ -64,6 +114,46 @@
             <controllingFieldValue>Product</controllingFieldValue>
             <controllingFieldValue>Asset</controllingFieldValue>
             <valueName>Product Description</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Guided_Selling_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Is_Legal__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Is_IBA__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Is_Real_Assets__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Is_PCM__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Iss_Corporate__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Is_Consulting__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Is_Accounting__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Product_Type_Sales__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <valueName>Status__c</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Asset</controllingFieldValue>

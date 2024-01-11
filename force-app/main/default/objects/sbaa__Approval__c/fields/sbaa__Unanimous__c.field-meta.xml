@@ -7,6 +7,7 @@
     <externalId>false</externalId>
     <inlineHelpText>If Approver is a Group, checked if all members need to Approve in order to consider the Approval approved</inlineHelpText>
     <label>Unanimous</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

@@ -165,8 +165,8 @@
     </nameField>
     <pluralLabel>Project Actuals Converted</pluralLabel>
     <searchLayouts>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
         <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <lookupDialogsAdditionalFields>pse__Project__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>pse__Time_Period__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>pse__Bookings__c</lookupDialogsAdditionalFields>

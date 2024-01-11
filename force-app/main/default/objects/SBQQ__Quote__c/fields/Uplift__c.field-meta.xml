@@ -3,13 +3,9 @@
     <fullName>Uplift__c</fullName>
     <description>BIZ-721 // Used in Contract Email Template</description>
     <externalId>false</externalId>
-    <formula>if(Second_Year_Software_Total__c!=0, &apos;2nd Year Uplift = &apos;+TEXT(Round((Second_Year_Software_Total__c- First_Year_Software_Total__c )/First_Year_Software_Total__c*100,2))+&apos;%&apos;, &apos;&apos;)&amp;&apos; &apos; &amp;
-
-if(Third_Year_Software_Total__c!=0,&apos;3rd Year Uplift = &apos;+TEXT(ROUND((Third_Year_Software_Total__c - Second_Year_Software_Total__c )/Second_Year_Software_Total__c*100,2))+&apos;%&apos;, &apos;&apos; )&amp;&apos; &apos; &amp;
-
-if(Fourth_Year_Software_Total__c!=0,&apos;4th Year Uplift = &apos;+TEXT(ROUND(( Fourth_Year_Software_Total__c - Third_Year_Software_Total__c )/Third_Year_Software_Total__c*100,2))+&apos;%&apos;, &apos;&apos; )&amp;&apos; &apos; &amp;
-
-if(Fifth_Year_Software_Total__c!=0,&apos;5th Year Uplift = &apos;+TEXT(ROUND(( Fifth_Year_Software_Total__c - Fourth_Year_Software_Total__c )/Fourth_Year_Software_Total__c*100,2))+&apos;%&apos;, &apos;&apos; )</formula>
+    <formula>if(Third_Year_Software_Net_Total__c!=0,&apos;&apos;+TEXT(ROUND(((Round((Second_Year_Software_Net_Total__c- First_Year_Software_Net_Total__c )/First_Year_Software_Net_Total__c*100,2)) +
+(ROUND((Third_Year_Software_Net_Total__c - Second_Year_Software_Net_Total__c )/Second_Year_Software_Net_Total__c*100,2)))/2,2)) +&apos;%&apos;,
+if(Second_Year_Software_Net_Total__c!=0, &apos;&apos;+TEXT(Round((Second_Year_Software_Net_Total__c- First_Year_Software_Net_Total__c )/First_Year_Software_Net_Total__c*100,2))+&apos;%&apos;, &apos;&apos;))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Uplift %</label>
     <required>false</required>

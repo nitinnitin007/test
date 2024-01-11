@@ -5,6 +5,7 @@
     <externalId>false</externalId>
     <label>Credit Memo Reasons</label>
     <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>

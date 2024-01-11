@@ -78,11 +78,6 @@
         <isRequired>false</isRequired>
     </displayedFields>
     <displayedFields>
-        <field>Business_Unit_New__c</field>
-        <isFieldManaged>false</isFieldManaged>
-        <isRequired>false</isRequired>
-    </displayedFields>
-    <displayedFields>
         <field>ProductCode</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
@@ -94,6 +89,16 @@
     </displayedFields>
     <displayedFields>
         <field>Description</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Guided_Selling_Type__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>Status__c</field>
         <isFieldManaged>false</isFieldManaged>
         <isRequired>false</isRequired>
     </displayedFields>
