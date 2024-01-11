@@ -1610,6 +1610,11 @@ created as per BIZ-45477</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Item_Master_Product__c.Sync_NetSuite__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>LegalEntity.CompanyName</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6385,6 +6390,11 @@ created as per BIZ-45477</description>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Product2.Per_Integrations__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Product2.ProductRollup__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -6711,6 +6721,11 @@ created as per BIZ-45477</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>SBQQ__LookupData__c.Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SBQQ__ProductOption__c.Per_Integrations__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -9261,6 +9276,11 @@ created as per BIZ-45477</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>SBQQ__Subscription__c.ACV_Change__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SBQQ__Subscription__c.Actual_End_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
