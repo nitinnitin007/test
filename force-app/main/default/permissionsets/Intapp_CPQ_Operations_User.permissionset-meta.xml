@@ -26,6 +26,10 @@
     </classAccesses>
     <customPermissions>
         <enabled>true</enabled>
+        <name>EditPermissionforWatermarkShown</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
         <name>Operations_User</name>
     </customPermissions>
     <customPermissions>
@@ -5834,11 +5838,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>SBQQ__QuoteLine__c.Price_Book__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>SBQQ__QuoteLine__c.Product_Family_Value__c</field>
         <readable>true</readable>
@@ -5850,22 +5849,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>SBQQ__QuoteLine__c.SBQQ__Dimension__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>SBQQ__QuoteLine__c.SBQQ__DistributorDiscount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>SBQQ__QuoteLine__c.SBQQ__PartnerDiscount__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>SBQQ__QuoteLine__c.SBQQ__PricebookEntryId__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -6556,13 +6545,13 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>SBQQ__QuoteLine__c</object>
-        <viewAllRecords>true</viewAllRecords>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
