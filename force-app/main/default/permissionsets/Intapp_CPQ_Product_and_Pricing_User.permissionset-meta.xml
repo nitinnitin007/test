@@ -138,6 +138,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Item_Master_Product__c.Sync_NetSuite__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Product2.Intapp_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
