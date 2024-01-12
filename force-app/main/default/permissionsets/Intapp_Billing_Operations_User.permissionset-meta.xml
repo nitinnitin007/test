@@ -5331,6 +5331,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>blng__Invoice__c.Pause_Dunning__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>blng__Invoice__c.Payment_Terms__c</field>
         <readable>true</readable>
     </fieldPermissions>

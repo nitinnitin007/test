@@ -9304,6 +9304,11 @@ created as per BIZ-45477</description>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>SBQQ__Subscription__c.Renewed_Contract_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>SBQQ__SummaryVariable__c.ExternalId__c</field>
         <readable>true</readable>
