@@ -45,7 +45,7 @@ global without sharing class  CloneQuote {
              quot.SBQQ__StartDate__c = startDate;
              quot.SBQQ__EndDate__c = null;
              quot.Quote_Stage__c = System.Label.Configure_Products;
-             quot.StaticBundleIds__c = '';
+             //quot.StaticBundleIds__c = '';
              Insert quot;
              List<SBQQ__QuoteLine__c> originalQuoteLines = Database.query(allFields('SBQQ__QuoteLine__c')+' Where SBQQ__Quote__c =: quotList');
              If(originalQuoteLines.size() > 0){

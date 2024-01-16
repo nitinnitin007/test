@@ -43,6 +43,7 @@ public class CloneQuoteLines {
                         clonedLineRec.SBQQ__PricebookEntryId__c = lookupDataList[i].PriceBookEntry_Id__c;
                         clonedLineRec.SBQQ__CustomerPrice__c =  parentQLI.SBQQ__CustomerPrice__c * (lookupDataList[i].Product_Allocation__c/100);
                         clonedLineRec.SBQQ__SegmentKey__c = lookupDataList[i].SBQQ__Value__c;
+                        clonedLineRec.SBQQ__Number__c = Decimal.ValueOf(lookupDataList[i].Segment_Key__c);
                         clonedLineRec.SBQQ__ListPrice__c = parentQLI.SBQQ__ListPrice__c * (lookupDataList[i].Product_Allocation__c/100);
                         clonedLineRec.SBQQ__NetPrice__c = (parentQLI.SBQQ__NetTotal__c * (lookupDataList[i].Product_Allocation__c/100))/parentQLI.SBQQ__Quantity__c;
                         clonedLineRec.Bypass_PriceRule__c = true;

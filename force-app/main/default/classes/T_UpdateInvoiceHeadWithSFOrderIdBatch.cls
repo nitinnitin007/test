@@ -7,8 +7,8 @@ public class T_UpdateInvoiceHeadWithSFOrderIdBatch implements Database.Batchable
 // Database.executeBatch(new T_UpdateInvoiceHeadWithSFOrderIdBatch(),200);
 public database.querylocator start(Database.BatchableContext bc)
     //Collecting the Temp Invoice Records for the Orders
-	{ String query ='Select Id,Order__c,Sales_Order_Internal_Id__c  from QtC_Mig_Invoice_Temp_Table__c '
-                     +' Where Sales_Order_Internal_Id__c != null and Order__c != null';
+	{ String query ='SELECT Id,Order__c,Sales_Order_Internal_Id__c FROM QtC_Mig_Invoice_Temp_Table__c '
+                     +' WHERE Sales_Order_Internal_Id__c != null';
      return Database.getQueryLocator(query);
     }
     //Passing the inv records to be executed

@@ -45,16 +45,22 @@ public class T_UpdPndngAndBilledAmtForPartialInvBatch implements Database.Batcha
                                                FROM OrderItem 
                                                WHERE Id in :sfOrderProdIdAndTempOrderPaidInFullMap.keyset() ];*/
         
-        List<OrderItem> sfOrderProdRecords = [SELECT Id,blng__PendingBillings__c,blng__BilledAmountwithouttax__c,T_IsUpdated__c,T_NS_OP_Pending_Balance__c,T_NS_Sales_Order_Internal_ID__c,T_NS_Sales_Order_Line_ID__c,T_NS_OP_Invoice_Status__c,T_NS_OP_Inv_Line_With_Tax__c 
-                                             FROM OrderItem 
-                                             WHERE Id in :sfOrderProdIdAndTempOrderMap.keyset() ];
+        List<OrderItem> sfOrderProdRecords = [SELECT Id,blng__PendingBillings__c,blng__BilledAmountwithouttax__c,T_IsUpdated__c,
+                                              T_NS_OP_Pending_Balance__c,T_NS_Sales_Order_Internal_ID__c,T_NS_Sales_Order_Line_ID__c,
+                                              T_NS_OP_Invoice_Status__c,T_NS_OP_Inv_Line_With_Tax__c 
+                                              FROM OrderItem 
+                                              WHERE Id IN :sfOrderProdIdAndTempOrderMap.keyset() ];
         Map<Id,OrderItem> sfOrderProdIdAndOrderProdMapNew = new Map<Id,OrderItem>(sfOrderProdRecords);
+        for(OrderItem orderItem : sfOrderProdRecords) {
+            sfOrderProdIdAndOrderProdMapNew.put(orderItem.Id, orderItem);
+        }
        /* Map<Id,OrderItem> sfOrderProdIdAndOrderProdMap = new Map<Id,OrderItem>(sfOrderProdList);
         Map<Id,OrderItem> sfOrderProdIdAndOrderProdFullMap = new Map<Id,OrderItem>(sfOrderProdFullList);*/
         //Updating the OrderItem partial amount and Total Billed amount
          List<OrderItem> summaryList = new List<OrderItem>();
         //List<OrderItem> summaryPendingList = new List<OrderItem>();
-        for(T_OrderLineDMSummary__c summary :tempOrderProdList){
+        for (String sfOrderProdId : sfOrderProdIdAndTempOrderMap.keySet()) {
+            T_OrderLineDMSummary__c summary = sfOrderProdIdAndTempOrderMap.get(sfOrderProdId);
             if(sfOrderProdIdAndOrderProdMapNew.containsKey(summary.SF_OrderProduct_Id__c)){
                 OrderItem ordItem = sfOrderProdIdAndOrderProdMapNew.get(summary.SF_OrderProduct_Id__c);
                 Decimal ilAmountWithoutTax = summary.NS_IL_Amount_Total__c == null ? 0.00 : summary.NS_IL_Amount_Total__c;

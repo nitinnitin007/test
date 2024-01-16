@@ -271,27 +271,19 @@ public class OpportunityProductTriggerHandler {
     } 
     
     public Static void opportunityProductEventafterDelete(list<OpportunityLineItem> oppprodOldList) {
-     List<OpportunityLineItem> opportunityItemList = new List<OpportunityLineItem>();
-     Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName()
-                 .get('Migration_Opportunity').getRecordTypeId();
-     set<Id> setOfOli = new set<id>();
-     for(OpportunityLineItem oli : oppprodOldList)
-     {
-       setOfOli.add(oli.id);     
-     }
-     String strQuery = createQuery(setOfOli);
-     List<OpportunityLineItem> lstOfOpportunityItem = Database.query(strQuery);
-     for(OpportunityLineItem oppLineItem : lstOfOpportunityItem){
-      if(oppLineItem.Opportunity.RecordTypeId != oppRecordTypeId){
-        opportunityItemList.add(oppLineItem);  
-      }     
-     }
-
-     if(opportunityItemList.Size() > 0)
-     {
-      IntegrationUtility.publishsObjectRecords(opportunityItemList,'OpportunityLineItem','Delete');
-     }
-    }
+      List<OpportunityLineItem> opportunityItemList = new List<OpportunityLineItem>();
+      Id oppRecordTypeId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName()
+          .get('Migration_Opportunity').getRecordTypeId();
+      set<Id> setOfOli = new set<id>();
+      for(OpportunityLineItem oli : oppprodOldList){
+          if(oli.Opportunity.RecordTypeId != oppRecordTypeId){
+              opportunityItemList.add(oli);
+          }
+      }
+      if(opportunityItemList.size()>0 && !opportunityItemList.isEmpty()){
+          IntegrationUtility.publishsObjectRecords(opportunityItemList,'OpportunityLineItem','Delete');
+      }
+  }
     
     public Static void publishOppLineItemAfterInsert(list<OpportunityLineItem> oppprodNewList) {
       if(!oppprodNewList.IsEmpty())

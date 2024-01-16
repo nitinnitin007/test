@@ -35,7 +35,7 @@ public without Sharing class CloneOptyWithLineItems {
             clonedRec.Name = clonedRec.Name + '_NYMYYear' + clonedRec.Segment_Index__c;
             clonedRec.OP4I_Deal_Id__c = '';
             clonedRec.Deal_Type__c = 'NextYear_MultiYear';
-            clonedRec.StageName = 'Pre-Funnel';
+            clonedRec.StageName = 'Qualify';
             clonedRec.OP4I_Deal_Status__c = '';
             if(clonedRec!=null){
                 insert clonedRec;

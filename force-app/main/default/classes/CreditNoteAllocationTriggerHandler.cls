@@ -15,7 +15,16 @@ public class CreditNoteAllocationTriggerHandler {
             if(creditnoteLineIds!=null && creditnoteLineIds.size()>0)
             {
                 processEvents(creditnoteLineIds,true);
-            }           
+            } 
+            for(blng__CreditNoteAllocation__c credNoteAllocation : credNewList){
+                if(credNoteAllocation.Sync_NetSuite__c == true && credNoteAllocation.Sync_NetSuite__c!=credOldMap.get(credNoteAllocation.id).Sync_NetSuite__c){
+                    creditnoteLineIds.add(credNoteAllocation.blng__CreditNoteLine__c);
+                }
+                if(creditnoteLineIds!=null && creditnoteLineIds.size()>0)
+                {
+                    processEvents(creditnoteLineIds,true);
+                } 
+            }
         }
     } 
     

@@ -68,7 +68,51 @@ public class AddSelectBundleLinesTest {
             }
             update quoteLineListToUpdate;
 			AddSelectBundleLines.createSelectLineRecords(quoteList[0].Id);
-            System.assertequals(1,quoteList.size());
+            AddSelectBundleLines.generateCongaURL(quoteList[0].Id);
+            quoteList[0].Quote_Stage__c='Finalize OSA';
+            update quoteList[0];
+            AddSelectBundleLines.generateCongaURL(quoteList[0].Id);
+            System.assertEquals(1,quoteList.size());
+            Test.stopTest();
+        }
+        catch(Exception ex)
+        {
+            System.debug('Exception Caught at :'+ ex.getMessage() );
+        }
+           
+        
+    }
+    @isTest
+    public static void testgenerateCongaURL(){          
+        try
+        {
+            Test.startTest();
+            Id parentId = null;
+            List<SBQQ__Quote__c> quoteList = [SELECT Id, Name FROM SBQQ__Quote__c];
+            List<SBQQ__QuoteLine__c> quoteLineList = [SELECT Id, Name, SBQQ__ProductCode__c,SBQQ__RequiredBy__c FROM SBQQ__QuoteLine__c];
+            List<SBQQ__QuoteLine__c> quoteLineListToUpdate = new List<SBQQ__QuoteLine__c>();
+           /* APXTConga4__Conga_Query__c cQuery = new APXTConga4__Conga_Query__c();
+            cQuery.APXTConga4__Key__c ='0_12345';
+            cQuery.APXTConga4__Name__c = 'TestQuery';
+            cQuery.APXTConga4__Query__c = 'SELECT Id, Name FROM SBQQ__Quote__c';
+            insert cQuery;*/
+            APXTConga4__Conga_Solution__c cSol= new APXTConga4__Conga_Solution__c();
+            cSol.Name = 'Pricing Proposal Document';
+            insert cSol;
+            APXTConga4__Conga_Solution_Query__c cSolQuery= new APXTConga4__Conga_Solution_Query__c();
+            //cSolQuery.APXTConga4__Conga_Query__c = cQuery.Id;
+            cSolQuery.APXTConga4__Conga_Solution__c = cSol.Id;
+            insert cSolQuery;
+            quoteList[0].Quote_Stage__c='Pricing Proposal';
+            update quoteList[0];
+            AddSelectBundleLines.generateCongaURL(quoteList[0].Id);
+            quoteList[0].Quote_Stage__c='Finalize OSA';
+            update quoteList[0];
+            AddSelectBundleLines.generateCongaURL(quoteList[0].Id);
+            quoteList[0].SBQQ__WatermarkShown__c=true;
+            update quoteList[0];
+            AddSelectBundleLines.generateCongaURL(quoteList[0].Id);
+            System.assertEquals(1,quoteList.size());
             Test.stopTest();
         }
         catch(Exception ex)

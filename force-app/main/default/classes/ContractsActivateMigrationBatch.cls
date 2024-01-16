@@ -76,7 +76,7 @@ global class ContractsActivateMigrationBatch implements Database.Batchable<sObje
                                      ,Associated_OSA__r.Superseded_by_OSA__c,Associated_OSA__r.Superseded_by_OSA_2__c,Associated_OSA__r.Superseded_by_OSA_3__c,Associated_OSA__r.Superseded_by_OSA_4__c
                                      ,Associated_OSA__r.Superseded_by_OSA_5__c,Associated_OSA__r.Support_SLA__c,Associated_OSA__r.Support_Stream__c,Associated_OSA__r.Time_Builder_Terms__c
                                      ,Associated_OSA__r.Total_Contract_Value__c,Associated_OSA__r.Type__c,Associated_OSA__r.Vera_s_Email_Address__c,Associated_OSA__r.Migration_Status__c,Associated_OSA__r.Processing_Status__c
-                                     ,Associated_OSA__r.VPN_Access_Limitation_Type__c,Associated_OSA__r.Warranty__c FROM OP4I_Entitlement_View__c 
+                                     ,Associated_OSA__r.VPN_Access_Limitation_Type__c,Associated_OSA__r.Warranty__c,Associated_OSA__r.Contract_Master_Terms__c,Associated_OSA__r.OSA_Signature_Date__c FROM OP4I_Entitlement_View__c 
                                      WHERE Associated_OSA__c IN: lstOfContracts];
                                      
                                      
@@ -331,5 +331,7 @@ global class ContractsActivateMigrationBatch implements Database.Batchable<sObje
         contractObj.Type__c = existingContract.Type__c;
         contractObj.Vera_s_Email_Address__c = existingContract.Vera_s_Email_Address__c;
         contractObj.Warranty__c = existingContract.Warranty__c;
+        contractObj.OSA_Signature_Date__c = existingContract.OSA_Signature_Date__c;
+        contractObj.Contract_Master_Terms__c = existingContract.Contract_Master_Terms__c;
     }
 }

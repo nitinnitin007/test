@@ -18,6 +18,9 @@ public class PaymentAllocationTriggerHandler {
                 if(payAlloc.blng__Unallocated__c != payOldMap.get(payAlloc.Id).blng__Unallocated__c && payAlloc.blng__Unallocated__c == true){
                     paymentAllocList.add(payAlloc);
                 }
+                if(payAlloc.Sync_NetSuite__c == true && payAlloc.Sync_NetSuite__c!=payOldMap.get(payAlloc.id).Sync_NetSuite__c){
+                    paymentAllocList.add(payAlloc);
+                }
             }
         }
         IntegrationUtility.publishsObjectRecords(paymentAllocList,'blng__PaymentAllocationInvoiceLine__c');

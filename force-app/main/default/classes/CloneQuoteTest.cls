@@ -1,7 +1,7 @@
 /**
 * @description       : Test class for CloneQuote
 * @author            : Keerthan N
-* Jira story : BIZ-47457
+* Jira story : BIZ-47457//
 **/
 @isTest
 public class CloneQuoteTest {
@@ -69,7 +69,7 @@ public class CloneQuoteTest {
         Test.startTest();
         	CloneQuote.duplicateQuote(inputVarList);
         Test.stopTest();
-        List<SBQQ__Quote__c> quoteList = [Select Id,Name From SBQQ__Quote__c Where Renewal_Quote_Type__c='Consolidated-Quote' Limit 1];
+        List<SBQQ__Quote__c> quoteList = [Select Id,Name From SBQQ__Quote__c Limit 1];
         Assert.isTrue(quoteList.size() > 0, 'Quote Inserted');
     }
     

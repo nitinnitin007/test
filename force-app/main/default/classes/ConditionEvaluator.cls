@@ -12,17 +12,21 @@ public without sharing class ConditionEvaluator {
         this.term = term;
         this.quote = quote;
         this.productCodes = productCodes;
+        System.debug('Constructor----->termId--'+term.Id+'quoteId---'+quote.id);
     }
     
     public Term_Quote__c evaluateConditionsAndInstantiateQuoteTerm() {
         Boolean result = false;
         Term_Quote__c termToCreate;
         if(!term.SBQQ__UseConditions__r.isEmpty()) {
+            System.debug('inside evaluateConditionsAndInstantiateQuoteTerm');
         	result = evaluateTermConditions(term.SBQQ__UseConditions__r); 
+            System.debug('result'+result);
         } else {
             result = true;
         }
         if(result) {
+            System.debug('termId--'+term.Id+'quoteId---'+quote.id);
             termToCreate = new Term_Quote__c();
             termToCreate.Quote__c = quote.Id;
             termToCreate.Term__c = term.Id;
@@ -34,7 +38,7 @@ public without sharing class ConditionEvaluator {
             termToCreate.Body__c = body;
             termToCreate.Print_Order__c = Integer.valueOf(term.SBQQ__PrintOrder__c);
         }
-        
+        System.debug('ConditionEvaluator.evaluateConditionsAndInstantiateQuoteTerm ---termToCreate'+termToCreate);
         return termToCreate;
     }
     /**
@@ -79,7 +83,7 @@ public without sharing class ConditionEvaluator {
     }
 
     private Boolean evaluateTermConditionsWithCustom(Map<String, Boolean> indexResultMap, String advancedConditions) {
-        
+        System.debug('advancedConditions--'+ advancedConditions);
         List<String> tokens = tokenise(advancedConditions, indexResultMap);
         Map<String, String> tokenDefs = tokenDefs();
 
@@ -210,6 +214,7 @@ public without sharing class ConditionEvaluator {
     }
 	
     private String getUpdatedTermBody(String body) {
+        System.debug('*******getUpdatedTermBody METHOD STARTS ');
         List<String> wordList = body.split(' ');
         for(Integer i = 0; i< wordList.size(); i++ ){
             String word = wordList[i];
@@ -218,11 +223,17 @@ public without sharing class ConditionEvaluator {
                 if(fieldname.contains('<')) {
                     fieldname = fieldname.substringBefore('<');
                 }
+                if(fieldname.contains(',')) {
+                    fieldname = fieldname.substringBefore(',');// Added by Dhiraj to overcome the spacing issue on 11-01-2024 BIZ-50814
+                }
+                if(fieldname.contains('.')) {
+                    fieldname = fieldname.substringBefore('.');// Added by Dhiraj to overcome the spacing issue on 11-01-2024  BIZ-50814
+                }
                 System.debug('error>>'+fieldname+' '+quote.get(fieldname));
                 if(quote.get(fieldname) != null) {
                  	String value = String.valueOf(quote.get(fieldname));
                     if(value.contains(':') && value.split(':').size() == 3) {
-                        value = value.split(' ')[0];
+                        value = value.split(' ')[0];     
                     }
                     wordList[i] = word.replace('SBQQ__Quote__c.'+fieldname, value);
                 }
