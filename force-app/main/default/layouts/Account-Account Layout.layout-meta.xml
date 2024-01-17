@@ -787,6 +787,25 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>blng__InvoiceDate__c</fields>
+        <fields>blng__TotalAmount__c</fields>
+        <fields>blng__Balance__c</fields>
+        <fields>blng__ARStatus__c</fields>
+        <fields>blng__StatusFlag__c</fields>
+        <relatedList>blng__Invoice__c.blng__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>blng__CreditNoteDate__c</fields>
+        <fields>blng__TotalAmount__c</fields>
+        <fields>blng__Allocations__c</fields>
+        <fields>blng__Unallocations__c</fields>
+        <fields>blng__Balance__c</fields>
+        <fields>blng__Status__c</fields>
+        <relatedList>blng__CreditNote__c.blng__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <fields>Product_line_link__c</fields>
         <fields>License_basis_link__c</fields>
         <fields>Status__c</fields>
@@ -846,6 +865,21 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>DMAPP__Account_Political_Map__c.DMAPP__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>blng__PaymentDate__c</fields>
+        <fields>blng__PaymentType__c</fields>
+        <fields>blng__Amount__c</fields>
+        <fields>blng__Allocations__c</fields>
+        <fields>blng__Unallocations__c</fields>
+        <fields>blng__Balance__c</fields>
+        <fields>blng__Status__c</fields>
+        <relatedList>blng__Payment__c.blng__Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>blng__PaymentTransaction__c.blng__Account__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

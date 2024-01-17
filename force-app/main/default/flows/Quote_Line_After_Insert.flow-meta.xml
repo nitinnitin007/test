@@ -230,13 +230,6 @@
             <name>Is_Child_Bundle_Created</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.SBQQ__Quote__r.StaticBundleIds__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.SBQQ__RequiredBy__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
@@ -459,7 +452,7 @@ Static Bundle changes appended BIZ-47580</description>
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>countOfLookUpRecord</name>
         <dataType>Number</dataType>

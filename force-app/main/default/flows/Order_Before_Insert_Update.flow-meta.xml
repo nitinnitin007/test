@@ -5,7 +5,7 @@
         <name>Assign_Bill_Now_time</name>
         <label>Assign Bill Now time</label>
         <locationX>50</locationX>
-        <locationY>503</locationY>
+        <locationY>695</locationY>
         <assignmentItems>
             <assignToReference>$Record.Latest_Bill_Now_Date_Time__c</assignToReference>
             <operator>Assign</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Update_Billing_and_Shipping_Details_from_Quote</name>
         <label>Update Billing and Shipping Details from Quote</label>
-        <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
         <assignmentItems>
             <assignToReference>$Record.BillingCity</assignToReference>
             <operator>Assign</operator>
@@ -114,7 +114,7 @@
         <name>Update_contract_number_and_End_date</name>
         <label>Update contract number and End date</label>
         <locationX>50</locationX>
-        <locationY>803</locationY>
+        <locationY>995</locationY>
         <assignmentItems>
             <assignToReference>$Record.ContractNumber__c</assignToReference>
             <operator>Assign</operator>
@@ -134,7 +134,7 @@
         <name>Check_if_Bill_now_is_checked</name>
         <label>Check if Bill now is checked</label>
         <locationX>182</locationX>
-        <locationY>395</locationY>
+        <locationY>587</locationY>
         <defaultConnector>
             <targetReference>Check_Start_Date</targetReference>
         </defaultConnector>
@@ -160,7 +160,7 @@
         <name>Check_Start_Date</name>
         <label>Check Start Date</label>
         <locationX>182</locationX>
-        <locationY>695</locationY>
+        <locationY>887</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Start_Date_Not_Null</name>
@@ -185,7 +185,32 @@
             <label>Start Date Not Null</label>
         </rules>
     </decisions>
-    <description>Updating Order fields related to Shipping and Billing with Quote fields. BIZ-47699,BIZ-48699
+    <decisions>
+        <name>Is_New_Order</name>
+        <label>Is New Order</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_Bill_now_is_checked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>isNewOrder</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Billing_and_Shipping_Details_from_Quote</targetReference>
+            </connector>
+            <label>isNewOrder</label>
+        </rules>
+    </decisions>
+    <description>Updating Order fields related to Shipping and Billing with Quote fields. BIZ-47699,BIZ-48699, BIZ-51309
 Seena Nair : Updated to set Latest bill now time</description>
     <environments>Default</environments>
     <formulas>
@@ -193,6 +218,11 @@ Seena Nair : Updated to set Latest bill now time</description>
         <name>Enddatevalue</name>
         <dataType>Date</dataType>
         <expression>ADDMONTHS({!$Record.SBQQ__Quote__r.SBQQ__StartDate__c},{!$Record.SBQQ__Quote__r.SBQQ__SubscriptionTerm__c})-1</expression>
+    </formulas>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>isNew()</expression>
     </formulas>
     <formulas>
         <name>NOW</name>
@@ -224,7 +254,7 @@ Seena Nair : Updated to set Latest bill now time</description>
         <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Billing_and_Shipping_Details_from_Quote</targetReference>
+            <targetReference>Is_New_Order</targetReference>
         </connector>
         <object>Order</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

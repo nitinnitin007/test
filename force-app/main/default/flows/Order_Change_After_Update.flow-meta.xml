@@ -4,7 +4,7 @@
         <name>Send_email_to_Customer</name>
         <label>Send email to Customer</label>
         <locationX>182</locationX>
-        <locationY>2855</locationY>
+        <locationY>2663</locationY>
         <actionName>Order_Change__c.Order_change_fields_updated_in_Order_for_Customer_notification</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -21,7 +21,7 @@
         <name>Send_email_to_OM_Order_management_team</name>
         <label>Send email to OM &amp; Contract ops team</label>
         <locationX>182</locationX>
-        <locationY>2747</locationY>
+        <locationY>2555</locationY>
         <actionName>Order_Change__c.Update_Billing_Fields_in_Order_Notification</actionName>
         <actionType>emailAlert</actionType>
         <connector>
@@ -39,10 +39,26 @@
     </actionCalls>
     <apiVersion>58.0</apiVersion>
     <assignments>
+        <name>Assign_BF_to_OP</name>
+        <label>Assign BF to OP</label>
+        <locationX>138</locationX>
+        <locationY>2063</locationY>
+        <assignmentItems>
+            <assignToReference>LoopOP.SBQQ__BillingFrequency__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Billing_Frequency_New__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>LoopOP</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assign_Bill_to_contact</name>
         <label>Assign Bill to contact</label>
         <locationX>50</locationX>
-        <locationY>1739</locationY>
+        <locationY>1439</locationY>
         <assignmentItems>
             <assignToReference>get_order.BillToContactId</assignToReference>
             <operator>Assign</operator>
@@ -120,22 +136,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_New_account</name>
-        <label>Assign New account</label>
-        <locationX>50</locationX>
-        <locationY>1439</locationY>
-        <assignmentItems>
-            <assignToReference>get_order.blng__BillingAccount__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.New_Account__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Check_Bill_to_contact</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_payment_terms</name>
         <label>Assign payment terms</label>
         <locationX>50</locationX>
@@ -164,7 +164,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Check_Bill_to_account</targetReference>
+            <targetReference>Check_Bill_to_contact</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -242,35 +242,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Check_Bill_to_account</name>
-        <label>Check Bill to account</label>
-        <locationX>182</locationX>
-        <locationY>1331</locationY>
-        <defaultConnector>
-            <targetReference>Check_Bill_to_contact</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>If_New_Account</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.New_Account__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_New_account</targetReference>
-            </connector>
-            <label>If New Account</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Check_Bill_to_contact</name>
         <label>Check Bill to contact</label>
         <locationX>182</locationX>
-        <locationY>1631</locationY>
+        <locationY>1331</locationY>
         <defaultConnector>
             <targetReference>Update_Order1</targetReference>
         </defaultConnector>
@@ -297,7 +272,7 @@
         <locationX>182</locationX>
         <locationY>1031</locationY>
         <defaultConnector>
-            <targetReference>Check_Bill_to_account</targetReference>
+            <targetReference>Check_Bill_to_contact</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -320,7 +295,7 @@
         <name>Copy_1_of_BF_null</name>
         <label>Copy 1 of Billing Freq null</label>
         <locationX>182</locationX>
-        <locationY>2039</locationY>
+        <locationY>1739</locationY>
         <defaultConnector>
             <targetReference>Update_the_status_as_CHange_applied_to_Order_change</targetReference>
         </defaultConnector>
@@ -468,14 +443,14 @@
         <name>LoopOP</name>
         <label>LoopOP</label>
         <locationX>50</locationX>
-        <locationY>2255</locationY>
+        <locationY>1955</locationY>
         <collectionReference>Get_OP</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Copy_1_of_Update_Billing_Freq_in_OP</targetReference>
+            <targetReference>Assign_BF_to_OP</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_the_status_as_CHange_applied_to_Order_change</targetReference>
+            <targetReference>Update_Order_Product</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -501,7 +476,7 @@
         <name>Get_OP</name>
         <label>Get OP</label>
         <locationX>50</locationX>
-        <locationY>2147</locationY>
+        <locationY>1847</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>LoopOP</targetReference>
@@ -554,44 +529,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Copy_1_of_Update_Billing_Freq_in_OP</name>
-        <label>Update Billing Freq in OP</label>
-        <locationX>138</locationX>
-        <locationY>2363</locationY>
-        <connector>
-            <targetReference>LoopOP</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>LoopOP.Id</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>SBQQ__BillingFrequency__c</field>
-            <value>
-                <elementReference>$Record.Billing_Frequency_New__c</elementReference>
-            </value>
-        </inputAssignments>
-        <object>OrderItem</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Order1</name>
         <label>Update Order1</label>
         <locationX>182</locationX>
-        <locationY>1931</locationY>
+        <locationY>1631</locationY>
         <connector>
             <targetReference>Copy_1_of_BF_null</targetReference>
         </connector>
         <inputReference>get_order</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_Order_Product</name>
+        <label>Update Order Product</label>
+        <locationX>50</locationX>
+        <locationY>2255</locationY>
+        <connector>
+            <targetReference>Update_the_status_as_CHange_applied_to_Order_change</targetReference>
+        </connector>
+        <inputReference>LoopOP</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_the_status_as_CHange_applied_to_Order_change</name>
         <label>Update the status as CHange applied to Order change</label>
         <locationX>182</locationX>
-        <locationY>2639</locationY>
+        <locationY>2447</locationY>
         <connector>
             <targetReference>Send_email_to_OM_Order_management_team</targetReference>
         </connector>
@@ -621,7 +582,7 @@
             <field>Order_Change_Status__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Validated by Contract Ops</stringValue>
+                <stringValue>Approved by Order Management</stringValue>
             </value>
         </filters>
         <filters>

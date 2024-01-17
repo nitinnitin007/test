@@ -56,7 +56,7 @@
                 <targetReference>Activate_Order</targetReference>
             </connector>
             <label>Order Activation</label>
-            <offsetNumber>0</offsetNumber>
+            <offsetNumber>1</offsetNumber>
             <offsetUnit>Minutes</offsetUnit>
             <recordField>CreatedDate</recordField>
             <timeSource>RecordField</timeSource>

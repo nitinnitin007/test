@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Consolidated_Service_Invoice</name>
+        <label>Send Consolidated Service Invoice</label>
+        <locationX>176</locationX>
+        <locationY>947</locationY>
+        <actionName>SFDC_Services_Project__c.Conga_Trigger_Send_Service_Invoice</actionName>
+        <actionType>outboundMessage</actionType>
+        <connector>
+            <targetReference>Update_null_to_Project_record</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>SFDC_Services_Project__c.Conga_Trigger_Send_Service_Invoice</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_summary_of_Invoice_fields</name>
         <label>Assign summary of Invoice fields</label>
-        <locationX>979</locationX>
-        <locationY>320</locationY>
+        <locationX>264</locationX>
+        <locationY>539</locationY>
         <assignmentItems>
             <assignToReference>SubtotalfromInvoices</assignToReference>
             <operator>Add</operator>
@@ -39,20 +53,32 @@
         </connector>
     </assignments>
     <environments>Default</environments>
+    <formulas>
+        <name>DueDate</name>
+        <dataType>Date</dataType>
+        <expression>{!LastDayOfTheMonth} + 30</expression>
+    </formulas>
+    <formulas>
+        <name>LastDayOfTheMonth</name>
+        <dataType>Date</dataType>
+        <expression>IF( MONTH(TODAY()) = 12, 
+DATE( YEAR(TODAY()), 12, 31 ), 
+DATE( YEAR(TODAY()), MONTH(TODAY()) + 1, 1) - 1)</expression>
+    </formulas>
     <interviewLabel>Service Project Create/Update {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Service Project Create/Update</label>
+    <label>Service Project After Insert Update</label>
     <loops>
         <name>Loop_Invoices</name>
         <label>Loop Invoices</label>
-        <locationX>831</locationX>
-        <locationY>279</locationY>
-        <collectionReference>Get_Invoice</collectionReference>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Get_Invoices</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>Assign_summary_of_Invoice_fields</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_Service_Project_Fields</targetReference>
+            <targetReference>Get_Invoice</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -64,7 +90,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -77,8 +103,38 @@
     <recordLookups>
         <name>Get_Invoice</name>
         <label>Get Invoice</label>
-        <locationX>835</locationX>
-        <locationY>162</locationY>
+        <locationX>176</locationX>
+        <locationY>731</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Service_Project_Fields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SFDC_Services_Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Service_Invoice_Batch_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Latest_Service_Invoice_Batch__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>blng__Invoice__c</object>
+        <sortField>blng__InvoicePostedDate__c</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Invoices</name>
+        <label>Get Invoices</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Invoices</targetReference>
@@ -91,15 +147,80 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Service_Invoice_Batch_Number__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Latest_Service_Invoice_Batch__c</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>blng__Invoice__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <name>Update_null_to_Project_record</name>
+        <label>Update null to Project record</label>
+        <locationX>176</locationX>
+        <locationY>1055</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Latest_Service_Invoice_Batch__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Send_Invoice_for_this_month__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Latest_Service_Invoice_Batch__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Send_Invoice_for_this_month__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Service_Project_Fields</name>
         <label>Update Service Project Fields</label>
-        <locationX>820</locationX>
-        <locationY>470</locationY>
+        <locationX>176</locationX>
+        <locationY>839</locationY>
+        <connector>
+            <targetReference>Send_Consolidated_Service_Invoice</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Batch_Due_Date__c</field>
+            <value>
+                <elementReference>DueDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bill_to_Contact__c</field>
+            <value>
+                <elementReference>Get_Invoice.Contract__r.Invoicing_Contact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Contract__c</field>
+            <value>
+                <elementReference>Get_Invoice.Contract__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Invoice_Date__c</field>
+            <value>
+                <elementReference>LastDayOfTheMonth</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Net_Total_from_Invoices__c</field>
             <value>
@@ -127,11 +248,20 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>373</locationX>
-        <locationY>48</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Invoice</targetReference>
+            <targetReference>Get_Invoices</targetReference>
         </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Send_Invoice_for_this_month__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>SFDC_Services_Project__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

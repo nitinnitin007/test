@@ -1,59 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
-    <assignments>
-        <name>Assign_Project_ID_in_Order</name>
-        <label>Assign Project ID in Order</label>
-        <locationX>303</locationX>
-        <locationY>604</locationY>
-        <assignmentItems>
-            <assignToReference>projectID</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Project__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Order_with_Project_ID</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>If_Service_Invoice_Line</name>
-        <label>If Service Invoice Line</label>
-        <locationX>491</locationX>
-        <locationY>525</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>If_service_product</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.CreatedFromServiceBillingBatch__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.blng__OrderProduct__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Project_ID_in_Order</targetReference>
-            </connector>
-            <label>If service product</label>
-        </rules>
-    </decisions>
     <decisions>
         <name>Product_Type</name>
         <label>Product Type</label>
         <locationX>491</locationX>
         <locationY>351</locationY>
-        <defaultConnector>
-            <targetReference>If_Service_Invoice_Line</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Product_Type_Tax_Only</name>
@@ -95,58 +47,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Order_with_Project_ID</name>
-        <label>Update Order with Project ID</label>
-        <locationX>297</locationX>
-        <locationY>736</locationY>
-        <connector>
-            <targetReference>Update_Project_with_Latest_Order_ID</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.blng__OrderProduct__r.OrderId</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>SFDC_Services_Project__c</field>
-            <value>
-                <elementReference>projectID</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Order</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Project_with_Latest_Order_ID</name>
-        <label>Update Project with Latest Order ID</label>
-        <locationX>299</locationX>
-        <locationY>865</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>projectID</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>Order__c</field>
-            <value>
-                <elementReference>$Record.blng__OrderProduct__r.OrderId</elementReference>
-            </value>
-        </inputAssignments>
-        <object>SFDC_Services_Project__c</object>
-    </recordUpdates>
-    <recordUpdates>
         <name>Update_Tax_details_in_Invoice_Line</name>
         <label>Update Tax details in Invoice Line</label>
         <locationX>323</locationX>
         <locationY>414</locationY>
-        <connector>
-            <targetReference>If_Service_Invoice_Line</targetReference>
-        </connector>
         <inputAssignments>
             <field>blng__BillingRule__c</field>
             <value>

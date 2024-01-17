@@ -380,7 +380,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.blng__ARStatus__c</fieldItem>
                 <identifier>Recordblng_ARStatus_cField</identifier>
@@ -390,7 +390,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.blng__Action__c</fieldItem>
                 <identifier>Recordblng_Action_cField</identifier>
