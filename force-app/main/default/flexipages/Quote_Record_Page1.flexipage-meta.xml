@@ -127,10 +127,16 @@
                         <valueListItems>
                             <value>SBQQ__Quote__c.Sync_Doc_to_OP4I</value>
                             <visibilityRule>
+                                <booleanFilter>1 OR 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Quote_Stage__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Configure Products</rightValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Finalize OSA</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Quote_Stage__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Pricing Proposal</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
@@ -747,6 +753,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Additional_emails_to_send__c</fieldItem>
+                <identifier>RecordAdditional_emails_to_send_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.SBQQ__MasterContract__c</fieldItem>
                 <identifier>RecordSBQQ_MasterContract_cField2</identifier>
             </fieldInstance>
@@ -883,6 +899,16 @@
                         <rightValue>Existing Intapp MSSA signed by Customer Affiliate</rightValue>
                     </criteria>
                 </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.SBQQ__WatermarkShown__c</fieldItem>
+                <identifier>RecordSBQQ_WatermarkShown_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-c0203c7f-ae45-446d-ae7d-c534cf761897</name>

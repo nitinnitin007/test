@@ -106,7 +106,7 @@ For any other questions (including Salesforce and reporting questions), please c
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>pageSize</name>
-                    <value>5</value>
+                    <value>3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
                 <identifier>flexipage_filterListCard</identifier>

@@ -7,9 +7,6 @@
                     <name>actionNames</name>
                     <valueList>
                         <valueListItems>
-                            <value>Submit</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>CustomButton.blng__CreditNote__c.Apply_Tax_and_Post</value>
                         </valueListItems>
                         <valueListItems>
@@ -20,6 +17,9 @@
                         </valueListItems>
                         <valueListItems>
                             <value>blng__CreditNote__c.blng__CancelTax</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>blng__CreditNote__c.blng__ApplyTax</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -151,8 +151,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.blng__Notes__c</fieldItem>
-                <identifier>Recordblng_Notes_cField</identifier>
+                <fieldItem>Record.Credit_Note_Explanation__c</fieldItem>
+                <identifier>RecordCredit_Note_Explanation_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-13cfea02-bd63-4a26-8798-69415e1f9a28</name>
@@ -399,6 +399,26 @@
                 <identifier>RecordRamping_Users_cField2</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Invoice_Type__c</fieldItem>
+                <identifier>RecordInvoice_Type_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Deal_Conversion__c</fieldItem>
+                <identifier>RecordDeal_Conversion_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-60c4233e-5e18-456b-8e32-1211841221b8</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -449,16 +469,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.NS_Error__c</fieldItem>
-                <identifier>RecordNS_Error_cField2</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.SF_OSA_Contract_Number__c</fieldItem>
                 <identifier>RecordSF_OSA_Contract_Number_cField2</identifier>
             </fieldInstance>
@@ -479,8 +489,28 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Deal_Conversion__c</fieldItem>
-                <identifier>RecordDeal_Conversion_cField2</identifier>
+                <fieldItem>Record.Termination_with_Cancellation_Fee__c</fieldItem>
+                <identifier>RecordTermination_with_Cancellation_Fee_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sync_NetSuite__c</fieldItem>
+                <identifier>RecordSync_NetSuite_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.NS_Error__c</fieldItem>
+                <identifier>RecordNS_Error_cField2</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-fba29a74-dc20-47bd-a8d4-8944e3aeed85</name>
@@ -850,33 +880,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>decorate</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Please Submit for Approval. Credit note needs to be approved.&lt;/strong&gt;&lt;/p&gt;</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:richText</componentName>
-                <identifier>flexipage_richText</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 AND 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.blng__CreditNoteSourceAction__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Cancel &amp; Rebill</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Approval_Status__c}</leftValue>
-                        <operator>NE</operator>
-                        <rightValue>Approved</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
