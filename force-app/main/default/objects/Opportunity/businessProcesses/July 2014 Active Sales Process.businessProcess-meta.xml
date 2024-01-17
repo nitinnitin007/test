@@ -16,6 +16,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>Closed - Superseded By New Contract</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Closed - Superseded By Newer Contract</fullName>
         <default>false</default>
     </values>

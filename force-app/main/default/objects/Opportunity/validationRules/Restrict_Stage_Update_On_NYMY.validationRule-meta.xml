@@ -3,6 +3,6 @@
     <fullName>Restrict_Stage_Update_On_NYMY</fullName>
     <active>true</active>
     <description>NYMY opportunity should not go beyond initial Stage</description>
-    <errorConditionFormula>AND(Related_Opportunity__c!=null,(ISPICKVAL(PRIORVALUE( StageName),&apos;Pre-Funnel&apos;)), ISCHANGED(StageName))</errorConditionFormula>
-    <errorMessage>NYMY opportunity should not go beyond ‘Pre-Funnel’ stage.</errorMessage>
+    <errorConditionFormula>AND(Related_Opportunity__c!=null,(ISPICKVAL(PRIORVALUE( StageName),&apos;Qualify&apos;)), ISCHANGED(StageName))</errorConditionFormula>
+    <errorMessage>NYMY opportunity should not go beyond ‘Qualify&apos; stage.</errorMessage>
 </ValidationRule>

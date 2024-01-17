@@ -23,7 +23,7 @@ public without sharing class AddSelectBundleLines {
             List<Select_Bundle_Lines__c> finalLstOfBundleLineToInsert = new List<Select_Bundle_Lines__c>();
             
 			String message;
-                Map<Id,SBQQ__QuoteLine__c> mapOfSelectBundle = new Map<Id,SBQQ__QuoteLine__c>([Select Id,Name,SBQQ__RequiredBy__c,SBQQ__ProductName__c,SBQQ__PackageTotal__c, SBQQ__StartDate__c, 
+                 Map<Id,SBQQ__QuoteLine__c> mapOfSelectBundle = new Map<Id,SBQQ__QuoteLine__c>([Select Id,Name,SBQQ__RequiredBy__c,SBQQ__ProductName__c,SBQQ__PackageTotal__c, SBQQ__StartDate__c, 
                                                                                                SBQQ__RequiredBy__r.Name,SBQQ__Product__c,SBQQ__EndDate__c, SBQQ__SegmentIndex__c,SBQQ__Quote__c,
                                                                                                SBQQ__PackageProductDescription__c,SBQQ__Quote__r.SegmentIndex_Max__c,SBQQ__Quantity__c
                                                                                                FROM SBQQ__QuoteLine__c 
@@ -104,7 +104,7 @@ public without sharing class AddSelectBundleLines {
                             else {
                                 // Operation failed, so get all errors                
                                 for(Database.Error err : sr.getErrors()) {
-                                    Message = 'ERROR : ' + err.getMessage();                    
+                                    Message = 'ERROR : ' + err.getMessage();                  
                                     
                                 }
                             }
@@ -131,7 +131,7 @@ public without sharing class AddSelectBundleLines {
             String pricingTempId = System.Label.Pricing_Proposal_Document_Key;
             String osaTempId = System.Label.OSA_Document_Key;
             Map<String,String> mapCongaQuery = new Map<String,String>();
-            SBQQ__Quote__c qtr = [Select id,Name,Account_Name__c,Quote_Stage__c,SBQQ__ExpirationDate__c,OSA_Number__c,Line_of_Business__c 
+            SBQQ__Quote__c qtr = [Select id,Name,Account_Name__c,Quote_Stage__c,SBQQ__ExpirationDate__c,OSA_Number__c,Line_of_Business__c,SBQQ__WatermarkShown__c 
                                   From SBQQ__Quote__c 
                                   Where id=:quoteId];
             quoteId = String.valueOf(quoteId).substring(0, 15);
@@ -143,17 +143,19 @@ public without sharing class AddSelectBundleLines {
             }
             congaURL=congaPrefix +quoteId+ '&QueryId=';
             for(String str:mapCongaQuery.keyset()){
-                if(str!=null){
-                    congaURL+= '['+str+']' + mapCongaQuery.get(str)+ '%3Fpv0%3D'+quoteId+',';
+                if(str!=null){congaURL+= '['+str+']' + mapCongaQuery.get(str)+ '%3Fpv0%3D'+quoteId+',';
                 }
             }
             congaURL = congaURL.removeEnd(',');
             System.Debug('congaURLValue '+congaURL);
             if(qtr.Quote_Stage__c=='Pricing Proposal'){
             	congaURL = congaURL + '&TemplateId='+ pricingTempId + '&defaultpdf=1&DS7=1&SC0=1&SC1=Attachments&zipfiles=0&OFN=Pricing Proposal-'+qtr.Account_Name__c+'-'+qtr.Name;
+            }else if(qtr.Quote_Stage__c=='Finalize OSA' && qtr.SBQQ__WatermarkShown__c == true){
+                congaURL = congaURL + '&TemplateId='+ osaTempId + '&defaultpdf=1&DS7=1&SC0=1&SC1=Attachments&zipfiles=0&DV0=Draft&OFN='+qtr.SBQQ__ExpirationDate__c+'_Bundle'+qtr.OSA_Number__c+'_'+qtr.Line_of_Business__c+'_'+qtr.Account_Name__c;
             }else{
                 congaURL = congaURL + '&TemplateId='+ osaTempId + '&defaultpdf=1&DS7=1&SC0=1&SC1=Attachments&zipfiles=0&OFN='+qtr.SBQQ__ExpirationDate__c+'_Bundle'+qtr.OSA_Number__c+'_'+qtr.Line_of_Business__c+'_'+qtr.Account_Name__c;
             }
+
             return congaURL;
         }catch(Exception ex)
         {

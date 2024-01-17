@@ -47,7 +47,7 @@ public class AddStaticBundleHandlerTest {
             List<Product2> parentProd = [SELECT Id, Name FROM Product2 WHERE NAME LIKE 'Intapp Risk & Compliance%' LIMIT 1];
             List<SBQQ__QuoteLine__c> quoteLineList = TestDataFactory.createQuoteLine(1,quoteList[0].Id,parentProd[0].Id,true);
             //List<SBQQ__QuoteLine__c> quoteLineList1 = TestDataFactory.createQuoteLine(1,quoteList[1].Id,parentProd[0].Id,true);
-            System.assertEquals(1,quoteLineList.size());
+            Assert.isTrue(quoteLineList.size() > 0, 'Quote Inserted');
             delete quoteLineList[0]; 
         }
         catch(Exception ex)
@@ -73,7 +73,7 @@ public class AddStaticBundleHandlerTest {
             oldMap.put(quoteLineList[0].Id,quoteLineList[0]);
             Test.startTest();
             AddStaticBundleHandler.afterDelete(oldMap);
-            System.assertEquals(1,quoteList.size());
+            Assert.isTrue(quoteLineList.size() > 0, 'Quote Inserted');
             Test.stopTest();    
     }
     

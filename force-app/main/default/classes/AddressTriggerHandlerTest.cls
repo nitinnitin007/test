@@ -39,7 +39,7 @@ public class AddressTriggerHandlerTest {
             Address__c a =[Select id,Default_Billing_Address__c,Default_Shipping_Address__c from Address__c where id=:createAddress[0].id];
             System.assertEquals(false, a.Default_Billing_Address__c);
             System.assertNotEquals(false, a.Default_Shipping_Address__c);
-        }
+       }
     }
 /**
 * ***********************************************************
@@ -59,6 +59,6 @@ public class AddressTriggerHandlerTest {
             Address__c a =[Select id,Default_Shipping_Address__c,Default_Billing_Address__c from Address__c where id=:createAddress[0].id];
             System.assertEquals(false, a.Default_Shipping_Address__c);
             System.assertNotEquals(false, a.Default_Billing_Address__c);
-        }
+       }
     }
 }

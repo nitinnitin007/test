@@ -19,10 +19,10 @@ public class QuoteTermValidatorTest {
         List<Account> accList = TestDataFactory.createAccount(1,True);              
         List<Opportunity> opportunityList = TestDataFactory.createOppty(1, accList[0].Id, true);
         List<SBQQ__Quote__c> quoteList = TestDataFactory.createQuote(1, opportunityList[0].Id, true);
-        SBQQ__QuoteTerm__c quoteTerm = new SBQQ__QuoteTerm__c(SBQQ__Body__c='Subsidiary__c',SBQQ__PrintOrder__c=26,SBQQ__Active__c=true);
-        insert quoteTerm;        
-        Term_Quote__c termQuote = new Term_Quote__c(Quote__c=quoteList[0].Id,Term__c=quoteTerm.Id,Body__c='Test',Print_Order__c=300);
-        insert termQuote;
+        List<SBQQ__QuoteTerm__c> quoteTermList = TestDataFactory.createQuoteTerm(20,true);
+        //Term_Quote__c termQuote = new Term_Quote__c(Quote__c=quoteList[0].Id,Term__c=quoteTermList[0].Id,Body__c='Test',Print_Order__c=300);
+        Term_Quote__c termQuote1 = new Term_Quote__c(Quote__c=quoteList[0].Id,Term__c=quoteTermList[0].Id,Body__c='Test<p>',Print_Order__c=200,Modified__c=true);
+        insert termQuote1;
     }
     
     /**
@@ -48,6 +48,9 @@ public class QuoteTermValidatorTest {
             quoteTerm.SBQQ__ConditionsMet__c='Any';
             update quoteTerm;
             QuoteTermValidator.generateQuoteTerms(quoteList[0].Id);
+        	GetTermQuote gt = new GetTermQuote();
+        	gt.relatedId = quoteList[0].Id;
+        	gt.getTermQuotes();
             System.assertEquals(1,quoteList.size());
         Test.stopTest();
     }

@@ -1,11 +1,13 @@
-/***** Name :ServiceBillingProcess 
- ***** Created By : KPMG - Seena
- ***** Created On : Oct 09th, 2023
- ***** Description : From Slip Header, Create the Invoices
-					 From the OA Slip records generate Resource Summaries at Resource level aggregation , 
-					 Then aggregate the Resource Summaries at Order Product Level and  Create Invoice lines
-                     After insert update the Slip Header Records, Slip Records are procesed.
- *****             : This file is just for Demo Purpose, Main file name is: ServiceBillingProcessBatch
+/***** @name        : ServiceBillingProcess 
+ ***** @author      : KPMG - Seena
+ ***** @date        : Oct 09th, 2023
+ ***** @description : From Slip Header, collect the details to create Invoices
+					  Step 1: From the OA Slip records generate Resource Summaries at Resource level aggregation.
+					  Step 2: Then aggregate the Resource Summaries at Order Product Level 
+					  Step 3: Create Invoices based on the Resource Summaries aggregation (2).
+					  Step 4: Create Invoice lines based with the Invoice (3) and Resource Summay Aggregation (2).
+                      Step 5: After inserting the Invoices and Invoice Lines ,update the Slip Header Records, Slip Records are procesed.
+ *****               : This file is just for Demo Purpose, Main file name is: ServiceBillingProcessBatch
 ******/
 //Create Invoice lines based on the OA Slip records
 public with sharing class ServiceBillingProcess {
@@ -606,7 +608,7 @@ Map<String,List<Resource_Summary__c> pjtToSummary;
        return resourceSummaryForInvLinesList;
    }
     //Get the aggregated values for Project
-public static List<Resource_Summary__c> getAggregatedValuesForProject(String project, List<OA_Slip__c> pjtToOASlipList, Map<String, List<OA_Slip__c>> invoiceToOASlipMap, Map<String, List<OA_Slip__c>> productToOASlipMap, Map<String, List<OA_Slip__c>> resourceToOASlipMap) {
+    public static List<Resource_Summary__c> getAggregatedValuesForProject(String project, List<OA_Slip__c> pjtToOASlipList, Map<String, List<OA_Slip__c>> invoiceToOASlipMap, Map<String, List<OA_Slip__c>> productToOASlipMap, Map<String, List<OA_Slip__c>> resourceToOASlipMap) {
     List<Resource_Summary__c> resourceSummaryList = new List<Resource_Summary__c>();
     for (OA_Slip__c pjt : pjtToOASlipList) {
         if (invoiceToOASlipMap.containsKey(pjt.Project__c+'-'+pjt.OA_Invoice_ID__c) && pjt.Project__c == project) {
@@ -665,9 +667,9 @@ public static List<Resource_Summary__c> getAggregatedValuesForProject(String pro
     return resourceSummaryList;
 }
 
-
-public static Map<String,List<OA_Slip__c>> getResources(List<OA_Slip__c> products,String invProject , String invInvoice)
-{
+    //Get Aggregated values for resources.
+    public static Map<String,List<OA_Slip__c>> getResources(List<OA_Slip__c> products,String invProject , String invInvoice)
+    {
     Map<String,List<OA_Slip__c>> resourceMap = new Map<String,List<OA_Slip__c>>();
     for(OA_Slip__c prod : products)
     {

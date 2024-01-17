@@ -60,7 +60,7 @@ public without sharing class AddStaticBundleHandler {
             Map<Id,List<SBQQ__LookupData__c>> mapOfLookupData = new Map<Id,List<SBQQ__LookupData__c>>();// Key - Parent Product Id, Value - Records of LookupData object corresponding to product Id
             Map<Id,Set<Id>> mapOfQuoteByParentProductId = new Map<Id,Set<Id>>();
             Map<Id,boolean> mapOfQuoteByFlag = new Map<Id,boolean>();
-            SBQQ.TriggerControl.disable();
+           // SBQQ.TriggerControl.disable();
             
             if(newQuoteLineList != null && !newQuoteLineList.isEmpty())
             {
@@ -76,7 +76,7 @@ public without sharing class AddStaticBundleHandler {
 
                 if(quoteIds != null && !quoteIds.isEmpty())
                 {
-                    for(SBQQ__Quote__c quote : [Select Id,StaticBundleIds__c,(Select Id,Static_Bundle_Id__c,Transaction_Type__c FROM Validation_Checklists__r WHERE Transaction_Type__c = 'Static Bundle') 
+                    for(SBQQ__Quote__c quote : [Select Id,(Select Id,Static_Bundle_Id__c,Transaction_Type__c FROM Validation_Checklists__r WHERE Transaction_Type__c = 'Static Bundle') 
                                                FROM SBQQ__Quote__c WHERE ID IN : quoteIds])
                     {
                         if(quote.Validation_Checklists__r.size()==0)
@@ -174,7 +174,7 @@ public without sharing class AddStaticBundleHandler {
             System.debug('Exception Caught  :'+ex.getMessage() + ' **Line Number : '+ex.getLineNumber());
         }
         finally{
-            SBQQ.TriggerControl.enable();
+            //SBQQ.TriggerControl.enable();
         }
     }    
    
@@ -187,7 +187,7 @@ public without sharing class AddStaticBundleHandler {
     {
         System.debug('getLookupData METHOD STARTS');
         Map<Id,List<SBQQ__LookupData__c>> mapOfChildProductsByParentProduct = new Map<Id,List<SBQQ__LookupData__c>>(); // Key - ParentProductId , Value - List of SBQQ__LookupData__c
-        for(SBQQ__LookupData__c lookupObj: [Select Id,SBQQ__Product__c,Child_Product__c,Product_Allocation__c,PriceBookEntry_Id__c,Dimension_Id__c,Child_Product_Code__c,SBQQ__Value__c,CurrencyIsoCode
+        for(SBQQ__LookupData__c lookupObj: [Select Id,SBQQ__Product__c,Child_Product__c,Product_Allocation__c,PriceBookEntry_Id__c,Dimension_Id__c,Child_Product_Code__c,SBQQ__Value__c,CurrencyIsoCode,Segment_Key__c
                                             FROM SBQQ__LookupData__c WHERE SBQQ__Product__c IN : parentProductId AND Child_Product__c != null])
         {
             if(mapOfChildProductsByParentProduct.containskey(lookupObj.SBQQ__Product__c))

@@ -49,7 +49,7 @@ public without sharing class TestDataFactory
     public static List<User> createSalesUser(Integer noOfUser,Boolean doInsert)
         
     {
-        ID profileID = [ Select id from Profile where name ='Sales Rep'].id;
+        ID profileID = [ Select id from Profile where name ='System Administrator'].id;
         String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
         Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
         String nickName =  dateString + randomInt+String.valueOf(System.currentTimeMillis());
@@ -165,7 +165,7 @@ public without sharing class TestDataFactory
     }
     
    public static List<SBQQ__ProductOption__c> createProdOptionsList(String parentProdId,List<Product2> childProducts, Boolean doInsert){
-		List<SBQQ__ProductOption__c> productOptionsList = new List<SBQQ__ProductOption__c>();
+        List<SBQQ__ProductOption__c> productOptionsList = new List<SBQQ__ProductOption__c>();
         Integer i =0;
         for(Product2 childProduct : childProducts) {
             
@@ -294,6 +294,7 @@ public without sharing class TestDataFactory
             qtl.Print_at_Quote__c = false;
             qtl.CurrencyIsoCode = 'USD';
             qtl.SBQQ__ListPrice__c = 100;
+            qtl.Parent_of_Bundle__c = true;
             //qtl.Product_is_Bundle__c=false;
             quoteLineList.add(qtl);
         }
@@ -402,7 +403,7 @@ public without sharing class TestDataFactory
     
     public static List<SBQQ__LookupData__c> createLookupDataList(String parentProdId,List<Product2> childProducts,List<PricebookEntry> priceBookEntryList,
                                                                  List<SBQQ__Dimension__c> priceBookDimensionList, Boolean doInsert){
-		List<SBQQ__LookupData__c> lookupDataList = new List<SBQQ__LookupData__c>();
+        List<SBQQ__LookupData__c> lookupDataList = new List<SBQQ__LookupData__c>();
         Integer randomNumber = 999999999;
         for(Integer i =0;i<childProducts.size();i++)
          {

@@ -8,43 +8,46 @@
 *  06/01/14        Vasu Pulipati                   Created
 ********************************************************************************/
 public class ContractTriggerHandler {
+    Public static Boolean firstcall = false;
     
     public static void afterUpdate (List<Contract> contracts,Map<Id,Contract> contractOldMap){
-    List<Contract> lstOfContractsToSend = new List<Contract>();
+        List<Contract> lstOfContractsToSend = new List<Contract>();
         if(!contracts.IsEmpty())
         {
-          for(Contract contr : contracts)
-          {
-              if(contr.SBQQ__Quote__r.SBQQ__Type__c != 'Migration Quote'){
-              lstOfContractsToSend.add(contr);              
-              }
-          }        
+            for(Contract contr : contracts)
+            {
+                if(contr.SBQQ__Quote__r.SBQQ__Type__c != 'Migration Quote'){
+                    lstOfContractsToSend.add(contr);              
+                }
+            }        
         }
         
         if(!lstOfContractsToSend.IsEmpty() && lstOfContractsToSend.size() > 0)
         {
-          IntegrationHandler.CreateSignedCustomer(lstOfContractsToSend);
+            IntegrationHandler.CreateSignedCustomer(lstOfContractsToSend);
         }
         ContractTriggerHandler.contractEventAfterUpdate(contracts,contractOldMap);
     }
     
     public static void afterInsert (List<Contract> contracts){
-    List<Contract> lstOfContractsToSend = new List<Contract>();
+        List<Contract> lstOfContractsToSend = new List<Contract>();
         if(!contracts.IsEmpty())
         {
-          for(Contract contr : contracts)
-          {
-              if(contr.SBQQ__Quote__r.SBQQ__Type__c != 'Migration Quote'){
-              lstOfContractsToSend.add(contr);              
-              }
-          }        
+            for(Contract contr : contracts)
+            {
+                if(contr.SBQQ__Quote__r.SBQQ__Type__c != 'Migration Quote'){
+                    lstOfContractsToSend.add(contr);              
+                }
+            }        
         }
         
         if(!lstOfContractsToSend.IsEmpty() && lstOfContractsToSend.size() > 0)
         {
-          IntegrationHandler.CreateSignedCustomer(contracts);
+            IntegrationHandler.CreateSignedCustomer(contracts);
         }
-     }
+        ContractTriggerHandler.contractEventAfterInsert(contracts);
+    }
+    
     public static void populateBillingAccount(List<Contract> newContracts){
         Map<Id, Id> mapAcct2ParentId = new Map<Id, Id>();
         for(Contract con: newContracts){
@@ -61,54 +64,61 @@ public class ContractTriggerHandler {
             }
         }    
     }
+    
+    public Static void contractEventAfterInsert(list<Contract> contractNewList) {
+        if(!firstcall)
+            IntegrationUtility.publishsObjectRecords(contractNewList,'Contract');
+        firstcall = true;
+    }
+    
     public Static void contractEventAfterUpdate(list<Contract> contractNewList, Map<Id,Contract> contractOldMap) {
-        List<Contract> contractEligibleList = new List<Contract>();
         List<Account> eligibleAccountList = new List<Account>();
         Set<id> setOfAccountId = new Set<id>();
-         if(!contractNewList.isEmpty())
-        {
-            for(Contract contractObj : contractNewList)
+        if(!firstcall) {
+            if(!contractNewList.isEmpty())
             {
-                if(contractObj.Status == 'Activated')
+                for(Contract contractObj : contractNewList)
                 {
-                    contractEligibleList.add(contractObj);
-                }  
-                if(contractObj.Status == 'In Force' && contractObj.Subsidiary__c != null)
+                    IntegrationUtility.publishsObjectRecords(contractNewList,'Contract');
+                    
+                    if(contractObj.Status == 'In Force' && contractObj.Subsidiary__c != null)
+                    {
+                        setOfAccountId.add(contractObj.AccountId);
+                    }      
+                } 
+                if(setOfAccountId!=null)
                 {
-                    setOfAccountId.add(contractObj.AccountId);
-                }      
-            } 
-            if(setOfAccountId!=null)
-            {
-              String strQuery = createQuery(setOfAccountId);
-              String strQueryUpd = strQuery.replace('setOfAccount' , 'setOfAccountId');
-              eligibleAccountList = Database.query(strQueryUpd);
+                    String strQuery = createQuery(setOfAccountId);
+                    String strQueryUpd = strQuery.replace('setOfAccount' , 'setOfAccountId');
+                    eligibleAccountList = Database.query(strQueryUpd);
+                }
+                
+                if(!eligibleAccountList.isEmpty()){
+                    IntegrationUtility.publishsObjectRecords(eligibleAccountList,'Account');
+                }
             }
-        } 
-        if(!eligibleAccountList.isEmpty()){
-        IntegrationUtility.publishsObjectRecords(eligibleAccountList,'Account');
+            firstcall = true;
         }
-        if(!contractEligibleList.isEmpty()){
-        IntegrationUtility.publishsObjectRecords(contractEligibleList,'Contract');
-        }
+        
     }
+    
     public static string createQuery(set<Id> setOfAccount)
     {
-      set<String> fieldNames = new set<String>();
-      Schema.SObjectType targetObjType = Schema.getGlobalDescribe().get('Account');
-      Map<String, Schema.SObjectField> fieldMap = targetObjType.getDescribe().fields.getMap();
-      fieldNames = fieldMap.keyset();
-      List<String> fields = new List<String>(fieldNames);
-      String query =  ' SELECT ' +
-                              String.join( fields, ',' ) +
-                          ' FROM ' +
-                              'Account' +
-                          ' WHERE ' +
-                              ' Id IN: setOfAccount';
-
-      String strQuery1 = query.remove('{');
-      String strQuery2 = strQuery1.remove('}');
-
-      return strQuery2;
+        set<String> fieldNames = new set<String>();
+        Schema.SObjectType targetObjType = Schema.getGlobalDescribe().get('Account');
+        Map<String, Schema.SObjectField> fieldMap = targetObjType.getDescribe().fields.getMap();
+        fieldNames = fieldMap.keyset();
+        List<String> fields = new List<String>(fieldNames);
+        String query =  ' SELECT ' +
+            String.join( fields, ',' ) +
+            ' FROM ' +
+            'Account' +
+            ' WHERE ' +
+            ' Id IN: setOfAccount';
+        
+        String strQuery1 = query.remove('{');
+        String strQuery2 = strQuery1.remove('}');
+        
+        return strQuery2;
     }   
 }

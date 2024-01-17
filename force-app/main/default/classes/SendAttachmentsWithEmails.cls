@@ -1,33 +1,37 @@
+/**
+* @description       : This class is used in Approval Email Template.
+* @author            : Rajani
+* @last modified on  : 01-08-2024
+* @last modified by  : Pankaj Kumar
+**/
 public class SendAttachmentsWithEmails {
-    
-/* method to send attachments with email alerts*/
-	
-	public  String controllerValue;
+
+    public  String controllerValue;
     public  Boolean attachmentFound{get;set;}
     
     public SendAttachmentsWithEmails(){
         attachmentFound =false;
     }
- 	public  void  setControllerValue (String s) {
-      
+    public  void  setControllerValue (String s) {      
         try{ 
-	ContentDocumentLink cdl = [select id,LinkedEntityId, ContentDocumentId  from ContentDocumentLink 
-                               where LinkedEntityId =: s AND (ContentDocument.Title like '%Pricing Proposal%' OR ContentDocument.Title like '%OSA%')
-                               ORDER BY ContentDocument.CreatedDate DESC LIMIT 1];
-			
-            if(cdl.ContentDocumentId !=null){		
-    		controllerValue = URL.getOrgDomainURL().toExternalForm()+'/sfc/servlet.shepherd/document/download/'+cdl.ContentDocumentId+'?operationContext=S1';
-            attachmentFound = true;
+            SBQQ__QuoteDocument__c cdl = [select Id,SBQQ__AttachmentId__c,SBQQ__DocumentId__c,SBQQ__Quote__c from SBQQ__QuoteDocument__c 
+                                          where SBQQ__Quote__c =: s 
+                                          ORDER BY CreatedDate DESC LIMIT 1];    
+            
+            if(cdl.SBQQ__DocumentId__c !=null){       
+                controllerValue = URL.getOrgDomainURL().toExternalForm()+'/servlet/servlet.FileDownload?file='+cdl.SBQQ__DocumentId__c;
+                attachmentFound = true;
+            }else if(cdl.SBQQ__AttachmentId__c !=null){
+                controllerValue = URL.getOrgDomainURL().toExternalForm()+'/servlet/servlet.FileDownload?file='+cdl.SBQQ__AttachmentId__c;
+                attachmentFound = true;            
             }
-   }
-        catch(Exception ex)
-        {
+       }
+        catch(Exception ex){
             System.debug('Exception Caught  :'+ex.getMessage() + ' **Line Number : '+ex.getLineNumber());
         } 
     }
-
-  public  String getControllerValue() {
-    return controllerValue;
-  } 
-   
+    
+    public  String getControllerValue() {
+        return controllerValue;
+    }   
 }

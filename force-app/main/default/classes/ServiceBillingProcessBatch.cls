@@ -2,26 +2,26 @@
  ***** @author      : KPMG
  ***** @date        : Oct 09th, 2023
  ***** @description : From Slip Header, collect the details to create Invoices
-					  Type T : Goes to Res Summary >Billing Inv and Invoice Lines
+                      Type T : Goes to Res Summary >Billing Inv and Invoice Lines
                       Type F : Goes to Billing Inv and Invoice Lines
                       Differentiator : Billing Invoice and Invoice Lines have CreatedFromServiceBillingBatch flag
 
-					  Step 1: From the OA Slip records generate Resource Summaries at Resource,Role level aggregation.
-					  Step 2: Then aggregate the Resource Summaries at Order Product Level
+                      Step 1: From the OA Slip records generate Resource Summaries at Resource,Role level aggregation.
+                      Step 2: Then aggregate the Resource Summaries at Order Product Level
                       Step 2.1: If no Order Products, then Aggregate at Contract level.
-					  Step 3: Create Invoices based on the Resource Summaries aggregation (2).
-					  Step 4: Create Invoice lines based on the Invoice (3) and Resource Summay Aggregation (2).
+                      Step 3: Create Invoices based on the Resource Summaries aggregation (2).
+                      Step 4: Create Invoice lines based on the Invoice (3) and Resource Summay Aggregation (2).
                       Step 5: After inserting the Invoices and Invoice Lines ,update the Slip Headers and Slip Records are procesed.
                       Type T:
-					  Group By: By Project then By OA Invoice Id,Contract then By Order Product, then By Resource,Resource Role ==>Roll up Hours and Minutes,Total - Save it in Resource Summary
+                      Group By: By Project then By OA Invoice Id,Contract then By Order Product, then By Resource,Resource Role ==>Roll up Hours and Minutes,Total - Save it in Resource Summary
                       Group By: From Resource Summary, Group By Project, OA Invoice Id, Contract,Order Product , then Create Invoice and Invoice Lines.
-					  Type F:
-					  Group By: By Project then By OA Invoice Id,Contract then By Order Product,Description  ==>Roll up Total , don't save it in Resource Summary.Just used to hold the values.
+                      Type F:
+                      Group By: By Project then By OA Invoice Id,Contract then By Order Product,Description  ==>Roll up Total , don't save it in Resource Summary.Just used to hold the values.
                       Group By: From Resource Summary (not inserted), Group By Project, OA Invoice Id, Contract,Order Product , then Create Invoice and Invoice Lines.
-					  Note:One invoice mapped to One Order ,One Order mapped to one Project
+                      Note:One invoice mapped to One Order ,One Order mapped to one Project
 Enhancement          :* The OA Slip Headers and Lines will be pushed at any time, any day, this batch logic has changed to:
                         Step 1: Collect the OA Headers based on Processed flag.
-					    Step 2: Do the same aggregation logic and Before creating Invoices:
+                        Step 2: Do the same aggregation logic and Before creating Invoices:
                              * Check the Header OA exists in Billing Invoice with Type exists get the Invoice Id and Insert only Invoice Lines.
                              * Else create the Billing Invoices and Invoice Lines.
                              * Update the OA Slip lines are Processed.
@@ -31,7 +31,7 @@ Enhancement          :* The OA Slip Headers and Lines will be pushed at any time
 //Database.executeBatch(new ServiceBillingProcessBatch(),100);
 //To run as a scheduled job
 ServiceBillingProcessBatch batch = new ServiceBillingProcessBatch();
-String sch = '0 0 21 * * ?';//	Class runs every night at 9:00 PM.
+String sch = '0 0 21 * * ?';//  Class runs every night at 9:00 PM.
 System.schedule('Service Billing Process Batch - Create Invoice and Lines', sch, batch);
 */
 //Run it for every 1 hr: 5:30 then 6:30
@@ -54,8 +54,8 @@ public static FINAL String ERR_STATUS_SUCCESS = 'Success';
 public static FINAL String ERR_STATUS_ERROR = 'Error';
 public static FINAL String BILLING_INVOICE_STATUS_DRAFT = 'Draft';
 public Map<String,String> errorMessagesMap = new Map<String,String>();//ResourceSummary
-public Map<String,String> invErrorMessagesMap = new Map<String,	String>();//Billing Invoice
-public Map<String,String> invLineErrorMessagesMap = new Map<String,	String>();//Billing Invoice Lines
+public Map<String,String> invErrorMessagesMap = new Map<String, String>();//Billing Invoice
+public Map<String,String> invLineErrorMessagesMap = new Map<String, String>();//Billing Invoice Lines
 public Map<String,List<blng__Invoice__c>> oaInvoiceHeaderToBlngInvIdsMap = new Map<String,List<blng__Invoice__c>>();//OA Header to Billing Invoices
 public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Header__c>();
 /**
@@ -64,7 +64,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
  * @return:List of Slip Headers
  */ 
   public Database.QueryLocator start(Database.BatchableContext bc) {
-	//Get the Slip Headers which are not processed
+    //Get the Slip Headers which are not processed
     String query = 'SELECT ID,Name,OA_Invoice_ID__c,OA_Invoice_Name__c,Invoice_Date__c,Processed__c,Processed_On__c,OA_Invoice_Subtotal__c, '
                    + ' OA_Invoice_Subtotal_Currency__c,Process_Status__c  '
                    + ' FROM OA_Slip_Header__c WHERE Processed__c = FALSE AND OA_Invoice_ID__c != NULL AND OA_Invoice_Subtotal__c != NULL ';
@@ -135,7 +135,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         for(String project : pjtToOASlipMap.keySet())
         {
             //Get the List of OASlip records per Project
-			List<OA_Slip__c> oaSlipPerProject = pjtToOASlipMap.get(project);   
+            List<OA_Slip__c> oaSlipPerProject = pjtToOASlipMap.get(project);   
             if(oaSlipPerProject != null)
             {
                 //Key : Project +Invoice
@@ -148,7 +148,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         for(String invoice : invToOASlipMap.keySet())
         {
             //Get the List of OASlip records per Contract
-			List<OA_Slip__c> oaSlipPerInvoice = invToOASlipMap.get(invoice);   
+            List<OA_Slip__c> oaSlipPerInvoice = invToOASlipMap.get(invoice);   
             if(oaSlipPerInvoice != null)
             {
                 contractToOASlipMap.putAll(getContractToOASlipMap(oaSlipPerInvoice));
@@ -160,7 +160,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         for(String invoice : invToOASlipMap.keySet())
         {
             //Get the List of OASlip records per Invoice
-			List<OA_Slip__c> oaSlipPerInvoice = invToOASlipMap.get(invoice);   
+            List<OA_Slip__c> oaSlipPerInvoice = invToOASlipMap.get(invoice);   
             if(oaSlipPerInvoice != null)
             {
                 productToOASlipMap.putAll(getTheSlipPerInvoice(oaSlipPerInvoice));
@@ -172,7 +172,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         for(String contract : contractToOASlipMap.keySet())
         {
             //Get the List of OASlip records per contract
-			List<OA_Slip__c> oaSlipPerContract = productToOASlipMap.get(contract);   
+            List<OA_Slip__c> oaSlipPerContract = productToOASlipMap.get(contract);   
             if(oaSlipPerContract != null)
             {
                 resourceToOASlipMap.putAll(getTheResourceRoleToOASlipMap(oaSlipPerContract));
@@ -184,7 +184,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         for(String product : productToOASlipMap.keySet())
         {
             //Get the List of OASlip records per Product
-			List<OA_Slip__c> oaSlipPerProduct = productToOASlipMap.get(product);   
+            List<OA_Slip__c> oaSlipPerProduct = productToOASlipMap.get(product);   
             if(oaSlipPerProduct != null)
             {
                 resourceToOASlipMap.putAll(getTheResourceRoleToOASlipMap(oaSlipPerProduct));
@@ -210,7 +210,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                     //Get the unique records 
                     for(Resource_Summary__c summary : resourceSummaryListPerProject){
                        if(! resourceSummaryList.contains(summary)){
-                    	resourceSummaryList.add(summary);
+                        resourceSummaryList.add(summary);
                         }
                     }
                 }
@@ -238,10 +238,10 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                     {successIds.add(result.getId());}
                     else{ 
                         // Operation failed, so get all errors                
-       					 for(Database.Error err : result.getErrors()) {
-            			 //System.debug('The following error has occurred.');                    
-            			 //System.debug(err.getStatusCode() + ': ' + err.getMessage());
-            			 //System.debug('Fields that affected this error: ' + err.getFields());
+                         for(Database.Error err : result.getErrors()) {
+                         //System.debug('The following error has occurred.');                    
+                         //System.debug(err.getStatusCode() + ': ' + err.getMessage());
+                         //System.debug('Fields that affected this error: ' + err.getFields());
                          if(! errorMessagesMap.containsKey(result.Id))
                             {errorMessagesMap.put(result.Id,err.getStatusCode() + ': ' + err.getMessage() + ': '+err.getFields());}
                          }
@@ -271,7 +271,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
  * @return: Map of Header with OA Invoice Ids without Error Headers
  */
     public static Map<String,OA_Slip_Header__c> updateErrorRecords(Map<String,OA_Slip_Header__c> slipHeadersMap){
-		List<OA_Slip__c> oaSlipErrorRecordsUpdate = new List<OA_Slip__c>();
+        List<OA_Slip__c> oaSlipErrorRecordsUpdate = new List<OA_Slip__c>();
         List<OA_Slip_Header__c> oaSlipErrorHeaderRecordsUpdate = new List<OA_Slip_Header__c>();
         Map<String,List<String>> slipErrorHeaderIdsMap = new Map<String,List<String>>();
         Set<Id> slipErrorIdsSet = new Set<Id>();
@@ -310,7 +310,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                 List<Database.saveResult> results = Database.update(oaSlipErrorRecordsUpdate);
                 if(results!= null){for(Database.saveResult result : results){if(result.isSuccess()){slipErrorIdsSet.add(result.getId());}}}
                 //Update the Header Records
-				for( String headerOAInvId : slipErrorHeaderIdsMap.keySet()) {
+                for( String headerOAInvId : slipErrorHeaderIdsMap.keySet()) {
                     if(slipHeadersMap.containsKey(headerOAInvId)){
                         OA_Slip_Header__c header = slipHeadersMap.get(headerOAInvId);
                         if(header != null){
@@ -371,31 +371,31 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                         {
                             List<Database.SaveResult> results = Database.insert(invLinesForCreate);
                             for(Database.SaveResult result : results)
-                			{
-                    		   if(result.isSuccess())
-                    			{successIds.add(result.getId());}
+                            {
+                               if(result.isSuccess())
+                                {successIds.add(result.getId());}
                                 else{ 
                                 // Operation failed, so get all errors                
-       					        for(Database.Error err : result.getErrors()) {
-            			 		//System.debug('The following error has occurred.');                    
-            			 		//System.debug(err.getStatusCode() + ': ' + err.getMessage());
-            			 		//System.debug('Fields that affected this error: ' + err.getFields());
-                         		if(! invLineErrorMessagesMap.containsKey(result.Id))
-                            	{invLineErrorMessagesMap.put(result.Id,err.getStatusCode() + ': ' + err.getMessage() + ': '+err.getFields());}
+                                for(Database.Error err : result.getErrors()) {
+                                //System.debug('The following error has occurred.');                    
+                                //System.debug(err.getStatusCode() + ': ' + err.getMessage());
+                                //System.debug('Fields that affected this error: ' + err.getFields());
+                                if(! invLineErrorMessagesMap.containsKey(result.Id))
+                                {invLineErrorMessagesMap.put(result.Id,err.getStatusCode() + ': ' + err.getMessage() + ': '+err.getFields());}
                                 }
                                 }
                             }
-                        	//Update the Processed Records in Slip Object
-                        	for(OA_Slip__c slip : oaSlipRecords){
+                            //Update the Processed Records in Slip Object
+                            for(OA_Slip__c slip : oaSlipRecords){
                                 //Update the records for Type F
                                 if(slip.Type__c != null && slip.Type__c == SLIP_LINE_TYPE_F){
-                        		slip.Processed__c  = true;
-                            	slip.Process_Status__c = ERR_STATUS_SUCCESS;
-                            	slip.Processed_On__c = System.DateTime.Now();
-                        		oaSlipListForProcessedUpdate.add(slip);
+                                slip.Processed__c  = true;
+                                slip.Process_Status__c = ERR_STATUS_SUCCESS;
+                                slip.Processed_On__c = System.DateTime.Now();
+                                oaSlipListForProcessedUpdate.add(slip);
                                 }
-                        	}
-                         	if(oaSlipListForProcessedUpdate.size() > 0)
+                            }
+                            if(oaSlipListForProcessedUpdate.size() > 0)
                             {Database.update(oaSlipListForProcessedUpdate);}
                         }
                     }
@@ -426,36 +426,31 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                         {
                             List<Database.SaveResult> results = Database.insert(invLinesForCreate);
                             for(Database.SaveResult result : results)
-                			{
-                    		   if(result.isSuccess())
-                    			{successIds.add(result.getId());}
+                            {
+                               if(result.isSuccess())
+                                {successIds.add(result.getId());}
                                 else{ 
                                 // Operation failed, so get all errors                
-       					        for(Database.Error err : result.getErrors()) {
-            			 		//System.debug('The following error has occurred.');                    
-            			 		//System.debug(err.getStatusCode() + ': ' + err.getMessage());
-            			 		//System.debug('Fields that affected this error: ' + err.getFields());
-                         		if(! invLineErrorMessagesMap.containsKey(result.Id))
-                            	{invLineErrorMessagesMap.put(result.Id,err.getStatusCode() + ': ' + err.getMessage() + ': '+err.getFields());}
+                                for(Database.Error err : result.getErrors()) {
+                                //System.debug('The following error has occurred.');                    
+                                //System.debug(err.getStatusCode() + ': ' + err.getMessage());
+                                //System.debug('Fields that affected this error: ' + err.getFields());
+                                if(! invLineErrorMessagesMap.containsKey(result.Id))
+                                {invLineErrorMessagesMap.put(result.Id,err.getStatusCode() + ': ' + err.getMessage() + ': '+err.getFields());}
                                 }
                                 }
                             }
-                        	//Update the Processed Records in Slip Object
-                        	for(OA_Slip__c slip : oaSlipRecords){
+                            //Update the Processed Records in Slip Object
+                            for(OA_Slip__c slip : oaSlipRecords){
                                 if(slip.Type__c != null && slip.Type__c == SLIP_LINE_TYPE_T_AND_M){
-                        		slip.Processed__c  = true;
+                                slip.Processed__c  = true;
                                 slip.Process_Status__c = ERR_STATUS_SUCCESS;
-                            	slip.Processed_On__c = System.DateTime.Now();
-                        		oaSlipListForProcessedUpdate.add(slip);
-                        	}
+                                slip.Processed_On__c = System.DateTime.Now();
+                                oaSlipListForProcessedUpdate.add(slip);
                             }
-                         	if(oaSlipHeaderListForProcessedUpdate.size() > 0){
-                         	Database.update(oaSlipHeaderListForProcessedUpdate);
-                         	if(oaSlipListForProcessedUpdate.size() > 0)
-                         	{
-                                Database.update(oaSlipListForProcessedUpdate);
                             }
-                         }
+                            if(oaSlipListForProcessedUpdate.size() > 0)
+                            {Database.update(oaSlipListForProcessedUpdate);}
                         }
                     }
     }
@@ -465,7 +460,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
  * @return: Map of Project to Slips
  */
     public static Map<String,List<OA_Slip__c>> getPjtToOASlipMap(List<OA_Slip__c> oaSlipRecords){
-     		Map<String,List<OA_Slip__c>> pjtToOASlipMap = new Map<String,List<OA_Slip__c>>();
+            Map<String,List<OA_Slip__c>> pjtToOASlipMap = new Map<String,List<OA_Slip__c>>();
             for(OA_Slip__c osaSli : oaSlipRecords)
             {
                 if(pjtToOASlipMap.containsKey(osaSli.Project__c))
@@ -509,18 +504,18 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
  * @param: Slip Records
  * @return: Map of Resource to Slips
  */
-    public static Map<String,List<OA_Slip__c>>  getTheResourceToOASlipMap(List<OA_Slip__c> oaSlipPerProduct){
+    /*public static Map<String,List<OA_Slip__c>>  getTheResourceToOASlipMap(List<OA_Slip__c> oaSlipPerProduct){
         Map<String,List<OA_Slip__c>> resourceToOASlipMap = new Map<String,List<OA_Slip__c>>();
         for(OA_Slip__c slipForProd : oaSlipPerProduct)
                 {
                     //Check for the Type
                     if(slipForProd.Type__c == SLIP_LINE_TYPE_T_AND_M )//&& slipForProd.Job_Code_Resource_Role__c != null && slipForProd.Rate__c != null){
                     {    if(resourceToOASlipMap.containsKey(slipForProd.Resource__c))//+'-'+slipForProd.Job_Code_Resource_Role__c+'-'+slipForProd.Rate__c))
-                   		{resourceToOASlipMap.get(slipForProd.Resource__c).add(slipForProd);}
+                        {resourceToOASlipMap.get(slipForProd.Resource__c).add(slipForProd);}
                         else{resourceToOASlipMap.put(slipForProd.Resource__c,new List<OA_Slip__c>{slipForProd});}}
                 }
         return resourceToOASlipMap;
-    }
+    }*/
 /**
  * @description: Helper - Get Resource Role To OASlip Map For Type T
  * @param: Slip Records
@@ -535,7 +530,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                     //Check for the Type
                     if(slipForOrdProd.Type__c == SLIP_LINE_TYPE_T_AND_M && slipForOrdProd.Job_Code_Resource_Role__c != null && slipForOrdProd.Resource__c != null){
                        if(resourceRoleToOASlipMap.containsKey(slipForOrdProd.Resource__c+'-'+slipForOrdProd.Job_Code_Resource_Role__c))
-                   		{resourceRoleToOASlipMap.get(slipForOrdProd.Resource__c+'-'+slipForOrdProd.Job_Code_Resource_Role__c).add(slipForOrdProd);}
+                        {resourceRoleToOASlipMap.get(slipForOrdProd.Resource__c+'-'+slipForOrdProd.Job_Code_Resource_Role__c).add(slipForOrdProd);}
                         else{resourceRoleToOASlipMap.put(slipForOrdProd.Resource__c+'-'+slipForOrdProd.Job_Code_Resource_Role__c,new List<OA_Slip__c>{slipForOrdProd});}}
                 }
        
@@ -555,7 +550,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                     {   //if(slipForResourceRole.Job_Code_Resource_Role__c != null && 
                            //if(slipForResourceRole.Rate__c != null){}
                         if(resourceRateToOASlipMap.containsKey(slipForResourceRole.Resource__c +'-'+slipForResourceRole.Job_Code_Resource_Role__c+'-'+String.valueOf(slipForResourceRole.Rate__c)))
-                   		{resourceRateToOASlipMap.get(slipForResourceRole.Resource__c +'-'+slipForResourceRole.Job_Code_Resource_Role__c+'-'+String.valueOf(slipForResourceRole.Rate__c)).add(slipForResourceRole);}
+                        {resourceRateToOASlipMap.get(slipForResourceRole.Resource__c +'-'+slipForResourceRole.Job_Code_Resource_Role__c+'-'+String.valueOf(slipForResourceRole.Rate__c)).add(slipForResourceRole);}
                         else{resourceRateToOASlipMap.put(slipForResourceRole.Resource__c +'-'+slipForResourceRole.Job_Code_Resource_Role__c+'-'+String.valueOf(slipForResourceRole.Rate__c),new List<OA_Slip__c>{slipForResourceRole});}
                     }
                 
@@ -598,7 +593,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
             Map<String,Contract> contractToAccountMap = getContractIdToContractForAccount(resourceSummaryForInvLinesList);
             //Get the Produt Id To Product for Summaries: as the Type F Summaries are not stored in ResourceSummary 
             Map<String,Product2> prodIdToProdMap = getProdIdsToProducts(resourceSummaryForInvLinesList);
-			//Get the Order Product for Order Product Ids - not able to get the Project's Order Product's Tax details
+            //Get the Order Product for Order Product Ids - not able to get the Project's Order Product's Tax details
             Map<String,OrderItem> orderProdIdToOrderProd = getOrderProdForOrderProdIds(resourceSummaryForInvLinesList);
             Map<String,List<Resource_Summary__c>> resourceSummaryForInvoices = getAggregatedValuesForInvoices(resourceSummaryForInvLinesList);
             //Create Invoices
@@ -633,14 +628,14 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                                       {
                                          //Collect the Invoices and Create Only Invoice lines for these Invoices
                                           if(! summaryToExistingOABlngInvoiceMap.containsKey(invTemp.Id)){
-                        						summaryToExistingOABlngInvoiceMap.put(invTemp.Id,summary);
+                                                summaryToExistingOABlngInvoiceMap.put(invTemp.Id,summary);
                                           }
                                        }
                                     //For Legacy Slip Lines , Only Contrat exists, no Order Product
                                     else if(invTemp.blng__Order__c == null && invTemp.Contract__c != null && invTemp.Contract__c == summary.Contract__c ){
                                          //Collect the Invoices and Create Only Invoice lines for these Invoices
                                           if(! summaryToExistingOABlngInvoiceMap.containsKey(invTemp.Id)){
-                        						summaryToExistingOABlngInvoiceMap.put(invTemp.Id,summary);
+                                                summaryToExistingOABlngInvoiceMap.put(invTemp.Id,summary);
                                           }
                                     }
                                     //Else Create New Invoice and Invoice Lines for those new Invoices
@@ -649,10 +644,10 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                                          if(! existingOAInvoiceNewToInsert.contains(summary)){existingOAInvoiceNewToInsert.add(summary);
                                         // if(orderProdToOrder != null && orderProdToOrder.keySet().size() > 0 && orderProdToOrder.containsKey(summary.Order_Product__c))
                                          //{
-                            				 //Create Billing Invoice - For new OA Invoice Ids
-                             				blng__Invoice__c invoice = createBillingInvoice(summary,contractToAccountMap,orderProdToOrder,slipHeadersMap);
-                             				if(invoice != null && (! invoicesForCreate.contains(invoice)))
-                             				{invoicesForCreate.add(invoice);}
+                                             //Create Billing Invoice - For new OA Invoice Ids
+                                            blng__Invoice__c invoice = createBillingInvoice(summary,contractToAccountMap,orderProdToOrder,slipHeadersMap);
+                                            if(invoice != null && (! invoicesForCreate.contains(invoice)))
+                                            {invoicesForCreate.add(invoice);}
                                         // }
                                                                                              }
                                     }
@@ -689,10 +684,10 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                     {invIds.add(result.getId());}
                   else{ 
                         // Operation failed, so get all errors                
-       					 for(Database.Error err : result.getErrors()) {
-            			 //System.debug('The following error has occurred.');                    
-            			 //System.debug(err.getStatusCode() + ': ' + err.getMessage());
-            			 //System.debug('Fields that affected this error: ' + err.getFields());
+                         for(Database.Error err : result.getErrors()) {
+                         //System.debug('The following error has occurred.');                    
+                         //System.debug(err.getStatusCode() + ': ' + err.getMessage());
+                         //System.debug('Fields that affected this error: ' + err.getFields());
                          if(! invErrorMessagesMap.containsKey(result.Id))
                             {invErrorMessagesMap.put(result.Id,err.getStatusCode() + ': ' + err.getMessage() + ': '+err.getFields());}
                          }
@@ -716,9 +711,9 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                 {
                    for(blng__Invoice__c newInv : newInvoices){
                        if(newInv.blng__Order__c != null){
-                     	  if(! orderToInvoiceMap.containsKey(newInv.blng__Order__c)){
+                          if(! orderToInvoiceMap.containsKey(newInv.blng__Order__c)){
                           orderToInvoiceMap.put(newInv.blng__Order__c,newInv);
-                     	}
+                        }
                        }
                        else{
                           if(! contractToInvoiceMap.containsKey(newInv.Contract__c+':'+newInv.OA_Invoice_ID__c)){
@@ -790,13 +785,14 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                   //invLine.Resource__c = resSummary.Resource__c; // No Need for Invoice Lines
                   /* Qty = 1 For Type Fixed, Order Prod is null ;
                      Qty = Invoice Line amount / Order Product Amount. For Type Fixed, Order Prod is not null ;
-					 Qty = 1 For Type T&M, Order Prod is null ; 
-					 Qty = Rollup hours with Minutes, For Type T&M, Order Prod is not null ; 					
-				 */
+                     Qty = 1 For Type T&M, Order Prod is null ; 
+                     Qty = 1 For Type T&M,//Rollup hours with Minutes, For Type T&M, Order Prod is not null ;                   
+                 */
                     if(resSummary.Type__c != null ){
                         if(resSummary.Type__c == SLIP_LINE_TYPE_T_AND_M){ 
-                            if(resSummary.Order_Product__c == null){invLine.blng__Quantity__c = DEFAULT_QUANTITY_FOR_BILLING;}
-                            else { invLine.blng__Quantity__c = resSummary.Hours__c;}
+                            /*if(resSummary.Order_Product__c == null){invLine.blng__Quantity__c = DEFAULT_QUANTITY_FOR_BILLING;}
+                            else { invLine.blng__Quantity__c = resSummary.Hours__c;}*/
+                            invLine.blng__Quantity__c = DEFAULT_QUANTITY_FOR_BILLING;
                         }
                         if(resSummary.Type__c == SLIP_LINE_TYPE_F){ 
                             if(resSummary.Order_Product__c == null){invLine.blng__Quantity__c = DEFAULT_QUANTITY_FOR_BILLING;}
@@ -822,10 +818,10 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
             //if(resSummary.Order_Product__c == null && (resSummary.Contract__c != null ) && (resSummary.Product__c != null && resSummary.Product__r.SBQQ__TaxCode__c != null)){}
             if(resSummary.Contract__r.Subsidiary__c  != null && resSummary.Product__r.SBQQ__TaxCode__c != null){
                 String legalEntityName = resSummary.Contract__r.Subsidiary__c.split(':')[0];
-           		if(! prodTaxToTaxTreatMentMap.containsKey(resSummary.Product__r.SBQQ__TaxCode__c+ '-'+legalEntityName)){
-                	prodTaxToTaxTreatMentMap.put(resSummary.Product__r.SBQQ__TaxCode__c + '-'+legalEntityName,'');
+                if(! prodTaxToTaxTreatMentMap.containsKey(resSummary.Product__r.SBQQ__TaxCode__c+ '-'+legalEntityName)){
+                    prodTaxToTaxTreatMentMap.put(resSummary.Product__r.SBQQ__TaxCode__c + '-'+legalEntityName,'');
                 }
-           		//else {prodTaxToSummariesMap.put(resSummary.Product__r.SBQQ__TaxCode__c + '-'+legalEntityName, new List<Resource_Summary__c> {resSummary});}
+                //else {prodTaxToSummariesMap.put(resSummary.Product__r.SBQQ__TaxCode__c + '-'+legalEntityName, new List<Resource_Summary__c> {resSummary});}
                //Get the tax codes
                taxCodesSet.add(resSummary.Product__r.SBQQ__TaxCode__c);
                //Get the Legal Entities
@@ -841,7 +837,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         if(taxTreatments.size() > 0){
             for(blng__TaxTreatment__c taxTreatment : taxTreatments ){
              if(prodTaxToTaxTreatMentMap.containsKey(taxTreatment.blng__TaxCode__c+ '-'+taxTreatment.blng__TaxLegalEntity__r.Name)){
-                	prodTaxToTaxTreatMentMap.put(taxTreatment.blng__TaxCode__c+ '-'+taxTreatment.blng__TaxLegalEntity__r.Name,taxTreatment.Id);
+                    prodTaxToTaxTreatMentMap.put(taxTreatment.blng__TaxCode__c+ '-'+taxTreatment.blng__TaxLegalEntity__r.Name,taxTreatment.Id);
                 }
             }
         }
@@ -856,8 +852,8 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         for(Resource_Summary__c resSummary : resourceSummaryForInvLinesList ){
             if(resSummary.Contract__r.Subsidiary__c  != null ){
                 String legalEntityName = resSummary.Contract__r.Subsidiary__c.split(':')[0];
-           		if(! nameToLegalEntityMap.containsKey(legalEntityName)){
-                	nameToLegalEntityMap.put(legalEntityName,'');
+                if(! nameToLegalEntityMap.containsKey(legalEntityName)){
+                    nameToLegalEntityMap.put(legalEntityName,'');
                 }            
             }
         }
@@ -869,7 +865,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         if(legalEntities.size() > 0){
             for(blng__LegalEntity__c  legalEntity : legalEntities ){
              if(nameToLegalEntityMap.containsKey(legalEntity.Name)){
-                	nameToLegalEntityMap.put(legalEntity.Name,legalEntity.Id);
+                    nameToLegalEntityMap.put(legalEntity.Name,legalEntity.Id);
                 }
             }
         }
@@ -1051,10 +1047,10 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
            List<Resource_Summary__c> summaryForInv =  pjtToResSummaryMap.get(pjt);
            if(summaryForInv != null){
                for(Resource_Summary__c inv :summaryForInv)
-               {	if(invToResSummaryMap.containsKey(inv.Project__c+'-'+inv.OA_Invoice_ID__c))
-           			{invToResSummaryMap.get(inv.Project__c+'-'+inv.OA_Invoice_ID__c).add(inv);}
-           			else
-           			{invToResSummaryMap.put(inv.Project__c+'-'+inv.OA_Invoice_ID__c,new List<Resource_Summary__c>{inv});}
+               {    if(invToResSummaryMap.containsKey(inv.Project__c+'-'+inv.OA_Invoice_ID__c))
+                    {invToResSummaryMap.get(inv.Project__c+'-'+inv.OA_Invoice_ID__c).add(inv);}
+                    else
+                    {invToResSummaryMap.put(inv.Project__c+'-'+inv.OA_Invoice_ID__c,new List<Resource_Summary__c>{inv});}
                }
            }
        }
@@ -1067,10 +1063,10 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
            List<Resource_Summary__c> summaryForInv =  invToResSummaryMap.get(pjt);
            if(summaryForInv != null){
                for(Resource_Summary__c ordProd :summaryForInv)
-               {	if(orderProdToResSummaryMap.containsKey(ordProd.Contract__c+'-'+ordProd.Order_Product__c))
-           			{orderProdToResSummaryMap.get(ordProd.Contract__c+'-'+ordProd.Order_Product__c).add(ordProd);}
-           			else
-           			{orderProdToResSummaryMap.put(ordProd.Contract__c+'-'+ordProd.Order_Product__c,new List<Resource_Summary__c>{ordProd});}
+               {    if(orderProdToResSummaryMap.containsKey(ordProd.Contract__c+'-'+ordProd.Order_Product__c))
+                    {orderProdToResSummaryMap.get(ordProd.Contract__c+'-'+ordProd.Order_Product__c).add(ordProd);}
+                    else
+                    {orderProdToResSummaryMap.put(ordProd.Contract__c+'-'+ordProd.Order_Product__c,new List<Resource_Summary__c>{ordProd});}
                }
            }
        }
@@ -1083,11 +1079,11 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
            List<Resource_Summary__c> summaryForResource =  orderProdToResSummaryMap.get(pjt);
            if(summaryForResource != null){
                for(Resource_Summary__c ordProd :summaryForResource)
-               {	if(ordProd.Resource__c != null){
+               {    if(ordProd.Resource__c != null){
                     if(resourceToResSummaryMap.containsKey(ordProd.Resource__c))
-           			{resourceToResSummaryMap.get(ordProd.Resource__c).add(ordProd);}
-           			else
-           			{resourceToResSummaryMap.put(ordProd.Resource__c,new List<Resource_Summary__c>{ordProd});}
+                    {resourceToResSummaryMap.get(ordProd.Resource__c).add(ordProd);}
+                    else
+                    {resourceToResSummaryMap.put(ordProd.Resource__c,new List<Resource_Summary__c>{ordProd});}
                }
                }
            }
@@ -1131,11 +1127,11 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                                       // if(resource.Type__c == SLIP_LINE_TYPE_F){
                                            //Generate Resource Summary for each records - Aggregated the amount earlier at Per Project function.
                                            //Create Resource Summary with Aggregated values for Invoice Lines and Invoice Creation
-                       					Resource_Summary__c resSummary = new Resource_Summary__c();
-       								    resSummary.Project__c = resource.Project__c;
-                        		        resSummary.OA_Invoice_ID__c = resource.OA_Invoice_ID__c;
-                        		        resSummary.Product__c = resource.Product__c;
-                        		        resSummary.Order_Product__c = resource.Order_Product__c;
+                                        Resource_Summary__c resSummary = new Resource_Summary__c();
+                                        resSummary.Project__c = resource.Project__c;
+                                        resSummary.OA_Invoice_ID__c = resource.OA_Invoice_ID__c;
+                                        resSummary.Product__c = resource.Product__c;
+                                        resSummary.Order_Product__c = resource.Order_Product__c;
                                         resSummary.Type__c = resource.Type__c;
                                         //resSummary.Hours__c = ;
                                         resSummary.Total__c = resource.Total__c;
@@ -1150,11 +1146,11 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                            }
                            if(summaryFororderProd.Type__c == SLIP_LINE_TYPE_T_AND_M){
                            //Create Resource Summary with Aggregated values for Invoice Lines and Invoice Creation
-                       		Resource_Summary__c resSummary = new Resource_Summary__c();
-       							 resSummary.Project__c = summaryFororderProd.Project__c;
-                        		 resSummary.OA_Invoice_ID__c = summaryFororderProd.OA_Invoice_ID__c;
-                        		 resSummary.Product__c = summaryFororderProd.Product__c;
-                        		 resSummary.Order_Product__c = summaryFororderProd.Order_Product__c;
+                            Resource_Summary__c resSummary = new Resource_Summary__c();
+                                 resSummary.Project__c = summaryFororderProd.Project__c;
+                                 resSummary.OA_Invoice_ID__c = summaryFororderProd.OA_Invoice_ID__c;
+                                 resSummary.Product__c = summaryFororderProd.Product__c;
+                                 resSummary.Order_Product__c = summaryFororderProd.Order_Product__c;
                                  resSummary.Type__c = summaryFororderProd.Type__c;
                                  resSummary.Hours__c =  hours;
                                  resSummary.Total__c = amount;
@@ -1210,15 +1206,15 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                         if(orderToFixedAggregatedAmt != null){
                             for(String ordProdWithTypeNarrativeKey : orderToFixedAggregatedAmt.keySet()){
                                 Resource_Summary__c resSummary = new Resource_Summary__c();
-                       		    resSummary.Project__c = project;
+                                resSummary.Project__c = project;
                                 resSummary.OA_Invoice_ID__c = inv.OA_Invoice_ID__c;
                                 resSummary.Product__c = inv.Product__c;
                                 resSummary.Order_Product__c = inv.Order_Product__c;
-                        		resSummary.Type__c = SLIP_LINE_TYPE_F;
+                                resSummary.Type__c = SLIP_LINE_TYPE_F;
                                 resSummary.Contract__c = inv.Contract__c;
                                 //inv.Order_Product__c + '-' + F_TYPE_NARRATIVE_YES)) or F_TYPE_NARRATIVE_NO
                                 resSummary.Total__c = orderToFixedAggregatedAmt.get(ordProdWithTypeNarrativeKey);//amount;
-                        		if (!resourceSummaryList.contains(resSummary)) {
+                                if (!resourceSummaryList.contains(resSummary)) {
                                 resourceSummaryList.add(resSummary);
                                 }
                             }
@@ -1241,7 +1237,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
                             //Map<String,String> resMap = new Map<String,String>();
                             for (OA_Slip__c resource : resources) {
                                 Decimal resMinute = resource.Minute__c == null ? 0.0 : resource.Minute__c;
-								/*Integer modValue = resMinute > 59 ? System.Math.Mod(Integer.valueOf(resMinute),60) : Integer.valueOf(resMinute);
+                                /*Integer modValue = resMinute > 59 ? System.Math.Mod(Integer.valueOf(resMinute),60) : Integer.valueOf(resMinute);
                                 Integer hoursFromMinutes = resMinute > 59 ? Integer.valueOf(resMinute)/60 : 0;
                                 hours = hours + resource.Hour__c + hoursFromMinutes;*/
                                 hours = hours + resource.Hour__c;
@@ -1360,7 +1356,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
        //Get the Invoice Amount to validate ot with OA Header map
        Map<String,Decimal> oaInvoiceIdToBillingInvAmount = new Map<String,Decimal>();
        Map<String,List<blng__Invoice__c>> oaInvoiceToBillingMap = new Map<String,List<blng__Invoice__c>>();
-       List<blng__Invoice__c> invoices = [SELECT Id,OA_Invoice_Id__c,CreatedFromServiceBillingBatch__c,OA_Slip_Header__c
+       List<blng__Invoice__c> invoices = [SELECT Id,OA_Invoice_Id__c,blng__TotalAmount__c,CreatedFromServiceBillingBatch__c,OA_Slip_Header__c
                                            FROM blng__Invoice__c
                                            WHERE OA_Invoice_Id__c in :slipHeadersMap.keySet()
                                            AND OA_Invoice_Id__c != NULL
@@ -1369,18 +1365,17 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
         if(invoices.size() > 0){
         //Step 1: Get the OA Invoice Amount from Billing Invoices
         for(blng__Invoice__c inv : invoices){
-            if(oaInvoiceToBillingMap.containsKey(inv.OA_Invoice_ID__c)){
+           // if(oaInvoiceToBillingMap.containsKey(inv.OA_Invoice_ID__c)){
                 if(oaInvoiceIdToBillingInvAmount.containsKey(inv.OA_Invoice_ID__c)){
                    oaInvoiceIdToBillingInvAmount.put(inv.OA_Invoice_ID__c,(oaInvoiceIdToBillingInvAmount.get(inv.OA_Invoice_ID__c) + inv.blng__TotalAmount__c));
                 }
                 else {oaInvoiceIdToBillingInvAmount.put(inv.OA_Invoice_ID__c,inv.blng__TotalAmount__c);}
-            }
-        }
+         }
         //Step 2: Compare the OA Invoice Amount from OA Header
         //Step 3: If same , mark the OA Header record as Processed.
          List<OA_Slip_Header__c> headerToUpdateProcessedList = new List<OA_Slip_Header__c>();
            for(String oaInvId : slipHeadersMap.keySet()){
-               if(oaInvoiceToBillingMap.containsKey(oaInvId)){
+               if(oaInvoiceIdToBillingInvAmount.containsKey(oaInvId)){
                    if(slipHeadersMap.get(oaInvId).OA_Invoice_Subtotal__c != null &&
                       slipHeadersMap.get(oaInvId).OA_Invoice_Subtotal__c == oaInvoiceIdToBillingInvAmount.get(oaInvId)){
                        OA_Slip_Header__c header = slipHeadersMap.get(oaInvId);
@@ -1411,7 +1406,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
             String finalstr = 'Erro Id,Message\n';
             String attName = 'ServiceBillingProcessBatch_ResourceSummaryErrors_' + System.now().format('YYYYMMDDhhmm') + '.csv';
             for(String errId  : errorMessagesMap.keySet()){
-				String recordString = '"'+ errId +'","'+errorMessagesMap.get(errId)+'"\n';
+                String recordString = '"'+ errId +'","'+errorMessagesMap.get(errId)+'"\n';
                 finalstr = finalstr +recordString;
             }
             // Create the email attachment    
@@ -1426,7 +1421,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
             String finalstr = 'Erro Id,Message\n';
             String attName = 'ServiceBillingProcessBatch_InvoiceErrors_' + System.now().format('YYYYMMDDhhmm') + '.csv';
             for(String errId  : invErrorMessagesMap.keySet()){
-				String recordString = '"'+errId+'","'+invErrorMessagesMap.get(errId)+'"\n';
+                String recordString = '"'+errId+'","'+invErrorMessagesMap.get(errId)+'"\n';
                 finalstr = finalstr +recordString;
             }
             // Create the email attachment    
@@ -1441,7 +1436,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
             String finalstr = 'Erro Id,Message\n';
             String attName = 'ServiceBillingProcessBatch_Invoice_Line_Errors_' + System.now().format('YYYYMMDDhhmm') + '.csv';
             for(String errId  : invLineErrorMessagesMap.keySet()){
-				String recordString = '"'+errId+'","'+invLineErrorMessagesMap.get(errId)+'"\n';
+                String recordString = '"'+errId+'","'+invLineErrorMessagesMap.get(errId)+'"\n';
                 finalstr = finalstr +recordString;
             }
             // Create the email attachment    
@@ -1459,7 +1454,7 @@ public Map<String,OA_Slip_Header__c> slipHeadersMap = new Map<String,OA_Slip_Hea
             if(emailAttList.size() > 0)
             // Sends the email
             {Messaging.SendEmailResult [] result = Messaging.sendEmail(new Messaging.SingleEmailMessage[] {email});
-             System.debug('Result:'+result);}
+             }
     }
  /** 
   * @description : Schedule the Batch
