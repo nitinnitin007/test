@@ -10,10 +10,5 @@
     <columns>Renewal_Quote__c</columns>
     <columns>Status__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>Days_remaining_for_Renewal__c</field>
-        <operation>equals</operation>
-        <value>30</value>
-    </filters>
     <label>All</label>
 </ListView>

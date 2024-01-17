@@ -13,9 +13,9 @@
     <columns>CREATED_DATE</columns>
     <columns>Processed__c</columns>
     <columns>Type__c</columns>
-    <columns>OA_Slip_Id__c</columns>
     <columns>OA_Error__c</columns>
     <columns>LAST_UPDATE</columns>
+    <columns>Process_Status__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

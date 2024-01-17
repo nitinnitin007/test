@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Deal Type</label>
     <required>false</required>
-    <trackFeedHistory>true</trackFeedHistory>
+    <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
@@ -16,11 +16,6 @@
                 <fullName>Acquired_Contract</fullName>
                 <default>false</default>
                 <label>Acquired_Contract</label>
-            </value>
-            <value>
-                <fullName>AddOn</fullName>
-                <default>false</default>
-                <label>AddOn</label>
             </value>
             <value>
                 <fullName>Cancellation</fullName>
@@ -88,16 +83,21 @@
                 <label>Services Replacement</label>
             </value>
             <value>
+                <fullName>Add-On</fullName>
+                <default>false</default>
+                <label>Add-On Amendment</label>
+            </value>
+            <value>
                 <fullName>Acquired Contract</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Acquired Contract</label>
             </value>
             <value>
-                <fullName>Add-On</fullName>
+                <fullName>AddOn</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
-                <label>Add-On</label>
+                <label>AddOn</label>
             </value>
             <value>
                 <fullName>Contract Replacement</fullName>

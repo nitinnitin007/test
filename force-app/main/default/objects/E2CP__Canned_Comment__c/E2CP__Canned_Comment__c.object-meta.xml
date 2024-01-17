@@ -155,14 +155,14 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Canned Comment</label>
+    <label>Canned Response</label>
     <nameField>
         <displayFormat>{0000}</displayFormat>
-        <label>Canned Comment Number</label>
+        <label>Canned Response Number</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Canned Comments</pluralLabel>
+    <pluralLabel>Canned Responses</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>E2CP__Active__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>E2CP__Title__c</customTabListAdditionalFields>

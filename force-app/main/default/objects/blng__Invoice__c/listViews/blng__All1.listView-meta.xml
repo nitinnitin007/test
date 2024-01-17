@@ -14,6 +14,8 @@
     <columns>OA_Invoice_ID__c</columns>
     <columns>OA_Invoice_Subtotal__c</columns>
     <columns>blng__PaymentStatus__c</columns>
+    <columns>Subsidiary_Address__c</columns>
+    <columns>Subsidiary_Payment_Details__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CreatedFromServiceBillingBatch__c</field>

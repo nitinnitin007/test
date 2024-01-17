@@ -13,5 +13,15 @@
     <columns>ORDERS.CREATED_DATE</columns>
     <columns>NS_Order_Type__c</columns>
     <filterScope>Everything</filterScope>
+    <filters>
+        <field>Deal_Type__c</field>
+        <operation>equals</operation>
+        <value>Add-On</value>
+    </filters>
+    <filters>
+        <field>ORDERS.STATUS</field>
+        <operation>equals</operation>
+        <value>Draft</value>
+    </filters>
     <label>All Orders</label>
 </ListView>
