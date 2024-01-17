@@ -19,10 +19,5 @@
         <operation>equals</operation>
         <value>In Force</value>
     </filters>
-    <filters>
-        <field>SBQQ__RenewalForecast__c</field>
-        <operation>equals</operation>
-        <value>0</value>
-    </filters>
     <label>In Force Contracts</label>
 </ListView>

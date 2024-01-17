@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <label>NS Order Category</label>
     <required>false</required>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>

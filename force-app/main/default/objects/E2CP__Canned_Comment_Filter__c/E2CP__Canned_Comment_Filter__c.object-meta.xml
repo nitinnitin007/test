@@ -144,7 +144,7 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Used to determine which Canned Comments Categories are available for use from the New Comment page based on the selected Controlling Field and Values.</description>
+    <description>Used to determine which Canned Responses Categories are available for use from the New Comment page based on the selected Controlling Field and Values.</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -155,13 +155,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>Canned Comment Filter</label>
+    <label>Canned Response Filter</label>
     <nameField>
         <displayFormat>{0000}</displayFormat>
-        <label>Canned Comment Filter Number</label>
+        <label>Canned Response Filter Number</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Canned Comment Filters</pluralLabel>
+    <pluralLabel>Canned Response Filters</pluralLabel>
     <searchLayouts>
         <customTabListAdditionalFields>E2CP__Description__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>E2CP__Controlling_Field__c</customTabListAdditionalFields>

@@ -16,5 +16,10 @@
         <operation>equals</operation>
         <value>Activated</value>
     </filters>
+    <filters>
+        <field>Deal_Type__c</field>
+        <operation>equals</operation>
+        <value>Add-On</value>
+    </filters>
     <label>All Activated Orders</label>
 </ListView>
