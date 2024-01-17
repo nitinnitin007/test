@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Credit_Note_Date</name>
         <label>Assign Credit Note Date</label>
-        <locationX>802</locationX>
-        <locationY>821</locationY>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
         <assignmentItems>
             <assignToReference>$Record.blng__EffectiveTaxDate__c</assignToReference>
             <operator>Assign</operator>
@@ -27,8 +27,8 @@
     <assignments>
         <name>Assign_Date</name>
         <label>Assign Date</label>
-        <locationX>781</locationX>
-        <locationY>612</locationY>
+        <locationX>50</locationX>
+        <locationY>731</locationY>
         <assignmentItems>
             <assignToReference>$Record.blng__EffectiveTaxDate__c</assignToReference>
             <operator>Assign</operator>
@@ -43,8 +43,8 @@
     <assignments>
         <name>Assign_Related_Invoice</name>
         <label>Assign Related Invoice</label>
-        <locationX>779</locationX>
-        <locationY>380</locationY>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
         <assignmentItems>
             <assignToReference>$Record.PO__c</assignToReference>
             <operator>Assign</operator>
@@ -115,47 +115,29 @@
                 <elementReference>$Record.blng__RelatedInvoice__r.blng__Order__r.NS_Order_Type__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Termination_with_Cancellation_Fee__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.blng__RelatedInvoice__r.blng__Order__r.Termination_with_Cancellation_Fee__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Invoice_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.blng__RelatedInvoice__r.Invoice_Type__c</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Manual_Creation</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <name>Cancel_Rebill</name>
-        <label>Cancel &amp; Rebill</label>
-        <locationX>491</locationX>
-        <locationY>369</locationY>
-        <defaultConnector>
-            <targetReference>Manual_Creation</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>CN_Src_Action_Cancel_Rebill</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.blng__CreditNoteSourceAction__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Cancel &amp; Rebill</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.blng__RelatedInvoice__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Related_Invoice</targetReference>
-            </connector>
-            <label>CN Src Action = Cancel &amp; Rebill</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Credit_Note_Approved</name>
         <label>Credit Note Approved</label>
-        <locationX>494</locationX>
-        <locationY>799</locationY>
+        <locationX>182</locationX>
+        <locationY>923</locationY>
         <defaultConnector>
             <targetReference>Update_the_Assign_Record</targetReference>
         </defaultConnector>
@@ -185,10 +167,49 @@
         </rules>
     </decisions>
     <decisions>
+        <name>If_Cancel_Rebill_negative_lines</name>
+        <label>If Cancel &amp; Rebill &amp; negative lines</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Manual_Creation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CN_Src_Action_Not_manual</name>
+            <conditionLogic>(1 OR 3) AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.blng__CreditNoteSourceAction__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancel &amp; Rebill</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__RelatedInvoice__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__CreditNoteSourceAction__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Negative Lines Conversion</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Related_Invoice</targetReference>
+            </connector>
+            <label>CN Src Action = Not manual</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Manual_Creation</name>
         <label>Manual Creation</label>
-        <locationX>489</locationX>
-        <locationY>581</locationY>
+        <locationX>182</locationX>
+        <locationY>623</locationY>
         <defaultConnector>
             <targetReference>Credit_Note_Approved</targetReference>
         </defaultConnector>
@@ -224,7 +245,7 @@
         <expression>TODAY()</expression>
     </formulas>
     <interviewLabel>Credit Note After Create/Update {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Credit Note After Create &amp; Update</label>
+    <label>Credit Note After insert Update</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -234,7 +255,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -247,15 +268,15 @@
     <recordUpdates>
         <name>Update_the_Assign_Record</name>
         <label>Update the Assign Record</label>
-        <locationX>653</locationX>
-        <locationY>1057</locationY>
+        <locationX>182</locationX>
+        <locationY>1223</locationY>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>373</locationX>
-        <locationY>48</locationY>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Cancel_Rebill</targetReference>
+            <targetReference>If_Cancel_Rebill_negative_lines</targetReference>
         </connector>
         <object>blng__CreditNote__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>

@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Send_Conga_invoice_mail</name>
         <label>Send Conga invoice mail</label>
-        <locationX>143</locationX>
+        <locationX>842</locationX>
         <locationY>600</locationY>
         <actionName>blng__Invoice__c.Conga_Trigger_SendEmail</actionName>
         <actionType>outboundMessage</actionType>
@@ -12,10 +12,67 @@
         <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Add_1_to_custom_batch_number</name>
+        <label>Add 1 to custom batch number</label>
+        <locationX>314</locationX>
+        <locationY>1032</locationY>
+        <assignmentItems>
+            <assignToReference>Get_next_batch_number.Next_Invoice_Batch_Number__c</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Custom_Batch_Number</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignNumberOfProjectInvoice</name>
+        <label>AssignNumberOfProjectInvoice</label>
+        <locationX>182</locationX>
+        <locationY>492</locationY>
+        <assignmentItems>
+            <assignToReference>CountOfServiceProjectInvoices</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>Get_Invoices_of_same_Project_month</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_if_there_is_existing_batch_number</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_if_there_is_existing_batch_number</name>
+        <label>Check if there is existing batch number</label>
+        <locationX>182</locationX>
+        <locationY>600</locationY>
+        <defaultConnector>
+            <targetReference>Get_next_batch_number</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_there_are_existing_Invoices</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CountOfServiceProjectInvoices</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Existing_Batch_Number</targetReference>
+            </connector>
+            <label>If there are existing Invoices</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Check_Invoice_status</name>
         <label>Check Invoice status</label>
-        <locationX>473</locationX>
+        <locationX>1172</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -49,6 +106,13 @@
                     <stringValue>Completed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__Order__r.NetSuite_Document_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_status_as_Posted</targetReference>
             </connector>
@@ -56,9 +120,45 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_service_Invoice_posted</name>
+        <label>Check service Invoice posted</label>
+        <locationX>380</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_service_Invoice_posted</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.blng__InvoiceStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Posted</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SFDC_Services_Project__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Service_Invoice_Batch_Number__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Invoices_of_same_Project_month</targetReference>
+            </connector>
+            <label>If service Invoice posted</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>If_Invoice_is_Posted</name>
         <label>If Invoice is Posted</label>
-        <locationX>275</locationX>
+        <locationX>974</locationX>
         <locationY>492</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -86,6 +186,20 @@
     </decisions>
     <description>Delaying Invoice Posting to allow time for tax calculation to complete. Checking Tax status</description>
     <environments>Default</environments>
+    <formulas>
+        <name>LastDayofPostedMonth</name>
+        <dataType>Date</dataType>
+        <expression>IF( MONTH({!$Record.blng__InvoicePostedDate__c}) = 12, 
+DATE( YEAR({!$Record.blng__InvoicePostedDate__c}), 12, 31 ), 
+DATE( YEAR({!$Record.blng__InvoicePostedDate__c}), MONTH({!$Record.blng__InvoicePostedDate__c}) + 1, 1) - 1)</expression>
+    </formulas>
+    <formulas>
+        <name>StartOfInvoiceMonth</name>
+        <dataType>Date</dataType>
+        <expression>DATE(YEAR({!$Record.blng__InvoicePostedDate__c}),
+MONTH({!$Record.blng__InvoicePostedDate__c}),
+1)</expression>
+    </formulas>
     <interviewLabel>Invoice : After Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Invoice : After Insert Update</label>
     <processMetadataValues>
@@ -107,10 +221,132 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Invoices_of_same_Project_month</name>
+        <label>Get Invoices of same Project &amp; month</label>
+        <locationX>182</locationX>
+        <locationY>384</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AssignNumberOfProjectInvoice</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SFDC_Services_Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SFDC_Services_Project__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>blng__InvoiceStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Posted</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Service_Invoice_Batch_Number__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>blng__InvoicePostedDate__c</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>StartOfInvoiceMonth</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>blng__InvoicePostedDate__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>LastDayofPostedMonth</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>blng__Invoice__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_next_batch_number</name>
+        <label>Get next batch number</label>
+        <locationX>314</locationX>
+        <locationY>708</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Batch_Number_To_Invoice</targetReference>
+        </connector>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Service_Invoice_Batch_Number__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Batch_Number_To_Invoice</name>
+        <label>Update Batch Number To Invoice</label>
+        <locationX>314</locationX>
+        <locationY>816</locationY>
+        <connector>
+            <targetReference>Update_Project_Batch_Number</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Service_Invoice_Batch_Number__c</field>
+            <value>
+                <elementReference>Get_next_batch_number.Next_Invoice_Batch_Number__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Custom_Batch_Number</name>
+        <label>Update Custom Batch Number</label>
+        <locationX>314</locationX>
+        <locationY>1140</locationY>
+        <inputReference>Get_next_batch_number</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Existing_Batch_Number</name>
+        <label>Update Existing Batch Number</label>
+        <locationX>50</locationX>
+        <locationY>708</locationY>
+        <inputAssignments>
+            <field>Service_Invoice_Batch_Number__c</field>
+            <value>
+                <elementReference>$Record.SFDC_Services_Project__r.Latest_Service_Invoice_Batch__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Project_Batch_Number</name>
+        <label>Update Project Batch Number</label>
+        <locationX>314</locationX>
+        <locationY>924</locationY>
+        <connector>
+            <targetReference>Add_1_to_custom_batch_number</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SFDC_Services_Project__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Latest_Service_Invoice_Batch__c</field>
+            <value>
+                <elementReference>Get_next_batch_number.Next_Invoice_Batch_Number__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SFDC_Services_Project__c</object>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_status_as_Posted</name>
         <label>Update status as Posted</label>
-        <locationX>275</locationX>
+        <locationX>974</locationX>
         <locationY>384</locationY>
         <connector>
             <targetReference>If_Invoice_is_Posted</targetReference>
@@ -124,8 +360,11 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>650</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_service_Invoice_posted</targetReference>
+        </connector>
         <object>blng__Invoice__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <scheduledPaths>
@@ -136,10 +375,42 @@
             <label>Post Invoice after 2 mins</label>
             <offsetNumber>2</offsetNumber>
             <offsetUnit>Minutes</offsetUnit>
-            <recordField>CreatedDate</recordField>
+            <recordField>LastModifiedDate</recordField>
             <timeSource>RecordField</timeSource>
         </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>CountOfServiceProjectInvoices</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>GetBatchNumber</name>
+        <dataType>Number</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+    <variables>
+        <name>LatestInvoiceBatchNumber</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>NextBatchNumber</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
 </Flow>

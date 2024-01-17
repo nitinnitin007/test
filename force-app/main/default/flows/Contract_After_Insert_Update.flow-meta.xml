@@ -325,6 +325,11 @@ BIZ-47716 - If cloned quote is marked primary but does not move to &apos;Contrac
         <scale>2</scale>
     </formulas>
     <formulas>
+        <name>Termination_Date_Formula</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.SBQQ__Quote__r.SBQQ__StartDate__c} - 1</expression>
+    </formulas>
+    <formulas>
         <name>Today</name>
         <dataType>Date</dataType>
         <expression>TODAY()</expression>
@@ -703,7 +708,7 @@ BIZ-47716 - If cloned quote is marked primary but does not move to &apos;Contrac
         <inputAssignments>
             <field>SBQQ__TerminatedDate__c</field>
             <value>
-                <elementReference>$Record.SBQQ__Quote__r.SBQQ__StartDate__c</elementReference>
+                <elementReference>Termination_Date_Formula</elementReference>
             </value>
         </inputAssignments>
         <object>SBQQ__Subscription__c</object>

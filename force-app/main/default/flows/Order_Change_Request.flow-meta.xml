@@ -7,87 +7,10 @@
         <locationX>176</locationX>
         <locationY>350</locationY>
         <assignmentItems>
-            <assignToReference>Orderchange.Payment_terms_Old__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.SBQQ__PaymentTerm__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__City__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingCity</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__CountryCode__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingCountry</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__GeocodeAccuracy__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingGeocodeAccuracy</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__Latitude__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingLatitude</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__Longitude__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingLongitude</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__PostalCode__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingPostalCode</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__StateCode__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingState</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Address_Old__Street__s</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.BillingStreet</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>Orderchange.Order__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_Orders.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Billing_Frequency_Old__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.SBQQ__Quote__r.SBQQ__BillingFrequency__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Orderchange.Old_Account__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Orders.AccountId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -187,7 +110,24 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>12</stringValue>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Order_Change_Request_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>Orderchange.Reason_Code__c</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -205,7 +145,19 @@
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>Orderchange.Reason_Code__c</objectFieldReference>
+                    <objectFieldReference>Orderchange.New_PO_Number__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>Orderchange.Shipping_Address_New__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>Orderchange.Billing_Frequency_New__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -222,47 +174,19 @@
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
-                    <objectFieldReference>Orderchange.New_PO_Number__c</objectFieldReference>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Order_Change_Request_Section3</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Order_Change_Request_Section3_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <fieldType>ObjectProvided</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                     <objectFieldReference>Orderchange.New_Invoicing_Contact__c</objectFieldReference>
                 </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Order_Change_Request_Section3_Column2</name>
-                <fieldType>Region</fieldType>
                 <fields>
                     <fieldType>ObjectProvided</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <objectFieldReference>Orderchange.Billing_Address_New__c</objectFieldReference>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>Orderchange.Payment_terms_New__c</objectFieldReference>
                 </fields>
                 <inputParameters>
                     <name>width</name>

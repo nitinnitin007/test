@@ -228,12 +228,48 @@
         <nameSegment>SBQQ__Quote__c.Send_email_to_Contracts_Operations_and_LegalOps_ONLY_Rita_Rodriguez_Vera_Friss_L</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
+    <actionCalls>
+        <name>Update_Opportunity_Async</name>
+        <label>Update Opportunity Async</label>
+        <locationX>204</locationX>
+        <locationY>11700</locationY>
+        <actionName>ClsAsyncOpportunityUpdate</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>AccountNotNull</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>lstOpportunity</name>
+            <value>
+                <elementReference>lstUpdateOpportunity</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>ClsAsyncOpportunityUpdate</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Add_Update_Opportunity_to_List</name>
+        <label>Add Update Opportunity to List</label>
+        <locationX>204</locationX>
+        <locationY>11592</locationY>
+        <assignmentItems>
+            <assignToReference>lstUpdateOpportunity</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>UpdateOpportunity</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opportunity_Async</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assign_approver_records_to_quote</name>
         <label>Assign approver records to quote</label>
         <locationX>204</locationX>
-        <locationY>12192</locationY>
+        <locationY>12300</locationY>
         <assignmentItems>
             <assignToReference>UpdateQuoteRecord.Segment_Lead__c</assignToReference>
             <operator>Assign</operator>
@@ -319,7 +355,7 @@
         <name>Assign_Original_Quote</name>
         <label>Assign Original Quote</label>
         <locationX>72</locationX>
-        <locationY>13200</locationY>
+        <locationY>13308</locationY>
         <assignmentItems>
             <assignToReference>OriginalQuote</assignToReference>
             <operator>Assign</operator>
@@ -335,7 +371,7 @@
         <name>Assign_Quarterly_Y1_for_year_1</name>
         <label>Assign Quarterly Y1 for year 1</label>
         <locationX>556</locationX>
-        <locationY>14616</locationY>
+        <locationY>14724</locationY>
         <assignmentItems>
             <assignToReference>QuoteLineUpdate.Id</assignToReference>
             <operator>Assign</operator>
@@ -358,7 +394,7 @@
         <name>Assign_Quarterly_Y1_only_other_year</name>
         <label>Assign Quarterly Y1 only other year</label>
         <locationX>820</locationX>
-        <locationY>14616</locationY>
+        <locationY>14724</locationY>
         <assignmentItems>
             <assignToReference>QuoteLineUpdate.Id</assignToReference>
             <operator>Assign</operator>
@@ -381,7 +417,7 @@
         <name>Assign_Semiannual_Y1_for_year_1</name>
         <label>Assign Semiannual Y1 for year 1</label>
         <locationX>1084</locationX>
-        <locationY>14616</locationY>
+        <locationY>14724</locationY>
         <assignmentItems>
             <assignToReference>QuoteLineUpdate.Id</assignToReference>
             <operator>Assign</operator>
@@ -404,7 +440,7 @@
         <name>Assign_Semiannual_Y1_only_other_year</name>
         <label>Assign Semiannual Y1 only other year</label>
         <locationX>1348</locationX>
-        <locationY>14616</locationY>
+        <locationY>14724</locationY>
         <assignmentItems>
             <assignToReference>QuoteLineUpdate.Id</assignToReference>
             <operator>Assign</operator>
@@ -427,7 +463,7 @@
         <name>Assign_STD_Billing_Freq</name>
         <label>Assign STD Billing Freq</label>
         <locationX>292</locationX>
-        <locationY>14616</locationY>
+        <locationY>14724</locationY>
         <assignmentItems>
             <assignToReference>QuoteLineUpdate.Id</assignToReference>
             <operator>Assign</operator>
@@ -514,7 +550,7 @@
         <name>Copy_1_of_Assign_Original_Quote</name>
         <label>Assign Original Quote</label>
         <locationX>336</locationX>
-        <locationY>13200</locationY>
+        <locationY>13308</locationY>
         <assignmentItems>
             <assignToReference>OriginalQuote</assignToReference>
             <operator>Assign</operator>
@@ -530,7 +566,7 @@
         <name>Copy_1_of_Update_Quote</name>
         <label>Update Quote</label>
         <locationX>446</locationX>
-        <locationY>13608</locationY>
+        <locationY>13716</locationY>
         <assignmentItems>
             <assignToReference>UpdQuote</assignToReference>
             <operator>Assign</operator>
@@ -1076,7 +1112,7 @@
         <name>Update_approver_name_and_Level</name>
         <label>Update approver name and Level</label>
         <locationX>204</locationX>
-        <locationY>12792</locationY>
+        <locationY>12900</locationY>
         <assignmentItems>
             <assignToReference>UpdateQuoteRecord.Approval_Level_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -1250,7 +1286,7 @@
         <name>Update_Quote</name>
         <label>Update Quote</label>
         <locationX>182</locationX>
-        <locationY>13608</locationY>
+        <locationY>13716</locationY>
         <assignmentItems>
             <assignToReference>UpdQuote</assignToReference>
             <operator>Assign</operator>
@@ -1280,7 +1316,7 @@
         <name>Update_Quote_Line</name>
         <label>Update Quote Line</label>
         <locationX>952</locationX>
-        <locationY>14808</locationY>
+        <locationY>14916</locationY>
         <assignmentItems>
             <assignToReference>QuoteLineList</assignToReference>
             <operator>Add</operator>
@@ -1296,7 +1332,7 @@
         <name>Update_Quote_pricing_proposal_status</name>
         <label>Update Quote pricing proposal status</label>
         <locationX>204</locationX>
-        <locationY>12492</locationY>
+        <locationY>12600</locationY>
         <assignmentItems>
             <assignToReference>UpdateQuoteRecord.Pricing_Proposal_Approval__c</assignToReference>
             <operator>Assign</operator>
@@ -1335,7 +1371,7 @@
         <name>AccountNotNull</name>
         <label>AccountNotNull</label>
         <locationX>336</locationX>
-        <locationY>11784</locationY>
+        <locationY>11892</locationY>
         <defaultConnector>
             <targetReference>Sales_Segment_Update</targetReference>
         </defaultConnector>
@@ -1360,7 +1396,7 @@
         <name>Approval_field_changes_to_update_approval_level</name>
         <label>Approval field changes to update approval level</label>
         <locationX>336</locationX>
-        <locationY>12684</locationY>
+        <locationY>12792</locationY>
         <defaultConnector>
             <targetReference>Check_Quote_Type</targetReference>
         </defaultConnector>
@@ -1476,7 +1512,7 @@
         <name>Check_Appl_Level</name>
         <label>Check Appl Level</label>
         <locationX>94</locationX>
-        <locationY>13500</locationY>
+        <locationY>13608</locationY>
         <defaultConnector>
             <targetReference>Update_Quote</targetReference>
         </defaultConnector>
@@ -1501,7 +1537,7 @@
         <name>Check_Approval_Threshold</name>
         <label>Check Approval Threshold</label>
         <locationX>336</locationX>
-        <locationY>13392</locationY>
+        <locationY>13500</locationY>
         <defaultConnector>
             <targetReference>For_new_quotes</targetReference>
         </defaultConnector>
@@ -1603,7 +1639,7 @@
         <name>Check_if_status_of_quote_is_pricing_and_proposal</name>
         <label>Check if status of quote is pricing and proposal</label>
         <locationX>336</locationX>
-        <locationY>12384</locationY>
+        <locationY>12492</locationY>
         <defaultConnector>
             <targetReference>Approval_field_changes_to_update_approval_level</targetReference>
         </defaultConnector>
@@ -1635,7 +1671,7 @@
         <name>Check_Quote_Type</name>
         <label>Check Quote Type</label>
         <locationX>336</locationX>
-        <locationY>12984</locationY>
+        <locationY>13092</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Quote_Rec_Is_Not_Null</targetReference>
@@ -2093,7 +2129,7 @@
         <name>For_new_quotes</name>
         <label>For new quotes</label>
         <locationX>578</locationX>
-        <locationY>13500</locationY>
+        <locationY>13608</locationY>
         <defaultConnector>
             <targetReference>Quote_Rec_Is_Not_Null</targetReference>
         </defaultConnector>
@@ -2118,7 +2154,7 @@
         <name>If_Billing_Frequency</name>
         <label>If Billing Frequency</label>
         <locationX>952</locationX>
-        <locationY>14508</locationY>
+        <locationY>14616</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>collectionQL</targetReference>
@@ -3236,7 +3272,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OpporNOtNull</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>UpdOpp</leftValueReference>
                 <operator>EqualTo</operator>
@@ -3244,22 +3280,8 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Quote_Stage__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Isnew</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>Update_Opportunity</targetReference>
+                <targetReference>Add_Update_Opportunity_to_List</targetReference>
             </connector>
             <label>OpporNOtNull</label>
         </rules>
@@ -3293,7 +3315,7 @@
         <name>Quote_Rec_Is_Not_Null</name>
         <label>Quote Rec Is Not Null</label>
         <locationX>336</locationX>
-        <locationY>13884</locationY>
+        <locationY>13992</locationY>
         <defaultConnector>
             <targetReference>Quote_Update</targetReference>
         </defaultConnector>
@@ -3318,7 +3340,7 @@
         <name>Quote_Update</name>
         <label>Quote Update</label>
         <locationX>336</locationX>
-        <locationY>14184</locationY>
+        <locationY>14292</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Conditions_check</name>
@@ -3512,7 +3534,7 @@
         <name>Sales_Segment_Update</name>
         <label>Sales Segment Update</label>
         <locationX>336</locationX>
-        <locationY>11976</locationY>
+        <locationY>12084</locationY>
         <defaultConnector>
             <targetReference>Check_if_status_of_quote_is_pricing_and_proposal</targetReference>
         </defaultConnector>
@@ -3596,7 +3618,9 @@
 Updated: RR/17/11: Updated Pricing and proposal status decisions and formula
 Updated RR:11/21: Updated formula field for approval check
 Updated RR: update Not required only when new quote is created. Updating the description
-Updated RR:  Trigger email alert</description>
+Updated RR:  Trigger email alert
+BIZ-52845: AB : Added Async path
+RR: added logic to updated order id</description>
     <environments>Default</environments>
     <formulas>
         <description>To populated the value of billing frequency when Billing frequency approval level is highest</description>
@@ -4002,7 +4026,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>collectionQL</name>
         <label>collectionQL</label>
         <locationX>204</locationX>
-        <locationY>14400</locationY>
+        <locationY>14508</locationY>
         <collectionReference>lookup_quote_lines</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -4029,7 +4053,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>Copy_1_of_Get_Original_Quote_For_Amendment</name>
         <label>Get Original Quote For Renewal</label>
         <locationX>336</locationX>
-        <locationY>13092</locationY>
+        <locationY>13200</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Assign_Original_Quote</targetReference>
@@ -4051,7 +4075,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>Get_Approver_Matrix</name>
         <label>Get Approver  Matrix</label>
         <locationX>204</locationX>
-        <locationY>12084</locationY>
+        <locationY>12192</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_approver_records_to_quote</targetReference>
@@ -4079,7 +4103,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>Get_Original_Quote_For_Amendment</name>
         <label>Get Original Quote For Amendment</label>
         <locationX>72</locationX>
-        <locationY>13092</locationY>
+        <locationY>13200</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Original_Quote</targetReference>
@@ -4100,7 +4124,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>lookup_quote_lines</name>
         <label>lookup quote lines</label>
         <locationX>204</locationX>
-        <locationY>14292</locationY>
+        <locationY>14400</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>collectionQL</targetReference>
@@ -4128,7 +4152,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>Update_collectionQL</name>
         <label>Update collectionQL</label>
         <locationX>204</locationX>
-        <locationY>15000</locationY>
+        <locationY>15108</locationY>
         <inputReference>QuoteLineList</inputReference>
     </recordUpdates>
     <recordUpdates>
@@ -4140,16 +4164,6 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
             <targetReference>OppNotNull</targetReference>
         </connector>
         <inputReference>UpdateAssociatedContr</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Opportunity</name>
-        <label>Update Opportunity</label>
-        <locationX>204</locationX>
-        <locationY>11592</locationY>
-        <connector>
-            <targetReference>AccountNotNull</targetReference>
-        </connector>
-        <inputReference>UpdateOpportunity</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>updateOp4I_Deal_ID</name>
@@ -4168,7 +4182,7 @@ IF(({!$Record.Services_Discount_Percentage__c}) &lt; 20, 6,IF((({!$Record.Servic
         <name>UpdateQuote</name>
         <label>UpdateQuote</label>
         <locationX>204</locationX>
-        <locationY>13992</locationY>
+        <locationY>14100</locationY>
         <connector>
             <targetReference>Quote_Update</targetReference>
         </connector>
@@ -4275,6 +4289,15 @@ Note: Please do not reply to this email as it is not monitored, and your message
     </textTemplates>
     <triggerOrder>50</triggerOrder>
     <variables>
+        <description>This collection stores list of opportunities to be updated.</description>
+        <name>lstUpdateOpportunity</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
         <name>OriginalQuote</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
@@ -4327,6 +4350,15 @@ Note: Please do not reply to this email as it is not monitored, and your message
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <description>This variable stores the Opportunity to be updated outside the quote update context.</description>
+        <name>updateOpportunityAsync</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
         <objectType>Opportunity</objectType>
     </variables>
     <variables>

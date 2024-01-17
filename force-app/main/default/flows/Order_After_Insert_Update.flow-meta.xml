@@ -2,8 +2,19 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
     <description>Created as per BIZ-45643, BIZ-46203
-Contract creation and Order lookup updation.</description>
+Contract creation and Order lookup updation.
+Case Creation as per BIZ-50366</description>
     <environments>Default</environments>
+    <formulas>
+        <name>ISNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
     <interviewLabel>Order : After Insert Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Order : After Insert Update</label>
     <processMetadataValues>
@@ -15,7 +26,7 @@ Contract creation and Order lookup updation.</description>
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -28,8 +39,8 @@ Contract creation and Order lookup updation.</description>
     <recordUpdates>
         <name>Update_NS_Order_id</name>
         <label>Update NS Order id</label>
-        <locationX>336</locationX>
-        <locationY>582</locationY>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
         <inputAssignments>
             <field>NS_Order_id__c</field>
             <value>
@@ -41,8 +52,8 @@ Contract creation and Order lookup updation.</description>
     <recordUpdates>
         <name>Update_Related_Quote_Lookup</name>
         <label>Update Related Quote Lookup</label>
-        <locationX>336</locationX>
-        <locationY>394</locationY>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
         <connector>
             <targetReference>Update_NS_Order_id</targetReference>
         </connector>
@@ -54,6 +65,13 @@ Contract creation and Order lookup updation.</description>
                 <elementReference>$Record.SBQQ__Quote__c</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>Opportunity_Stage__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>Order__c</field>
             <value>
@@ -63,8 +81,8 @@ Contract creation and Order lookup updation.</description>
         <object>SBQQ__Quote__c</object>
     </recordUpdates>
     <start>
-        <locationX>401</locationX>
-        <locationY>48</locationY>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Update_Related_Quote_Lookup</targetReference>
         </connector>
@@ -81,4 +99,14 @@ Contract creation and Order lookup updation.</description>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>CaseSubjectforOrderActivation</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Order {!$Record.OrderNumber} ready for Review and Activation.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CaseSubjectforOrderContracting</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Order {!$Record.OrderNumber} ready for Contracting.</text>
+    </textTemplates>
 </Flow>

@@ -344,7 +344,7 @@ refactor code</description>
         <inputAssignments>
             <field>StageName</field>
             <value>
-                <stringValue>Closed - Superseded New Contract</stringValue>
+                <stringValue>Closed - Superseded By New Contract</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

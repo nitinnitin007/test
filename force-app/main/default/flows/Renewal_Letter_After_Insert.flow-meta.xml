@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Conga_Trigger_Send_Proforma_Invoice</name>
+        <label>Conga Trigger Send Proforma Invoice</label>
+        <locationX>50</locationX>
+        <locationY>384</locationY>
+        <actionName>Proforma_Invoice__c.Conga_Trigger_Send_Proforma_Invoice</actionName>
+        <actionType>outboundMessage</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>Proforma_Invoice__c.Conga_Trigger_Send_Proforma_Invoice</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>58.0</apiVersion>
     <assignments>
         <name>Assign_Payment_Allocation</name>
         <label>Assign Payment Allocation</label>
-        <locationX>1282</locationX>
+        <locationX>1722</locationX>
         <locationY>1032</locationY>
         <assignmentItems>
             <assignToReference>GetPA.blng__InvoiceLine__c</assignToReference>
@@ -48,7 +59,7 @@
     <assignments>
         <name>PostedInvoiceLines</name>
         <label>PostedInvoiceLines</label>
-        <locationX>1326</locationX>
+        <locationX>1766</locationX>
         <locationY>600</locationY>
         <assignmentItems>
             <assignToReference>InvoiceLinesCount</assignToReference>
@@ -64,7 +75,7 @@
     <decisions>
         <name>Check_if_status_is_Payment_received</name>
         <label>Check if status is Payment received</label>
-        <locationX>710</locationX>
+        <locationX>1150</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -93,7 +104,7 @@
     <decisions>
         <name>Check_Invoice_lines_are_posted</name>
         <label>Check Invoice lines are posted</label>
-        <locationX>1326</locationX>
+        <locationX>1766</locationX>
         <locationY>708</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -115,7 +126,7 @@
     <decisions>
         <name>If_Invoice_posted</name>
         <label>If Invoice posted</label>
-        <locationX>1524</locationX>
+        <locationX>1964</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -137,7 +148,7 @@
     <decisions>
         <name>If_payment_received_not_allocated</name>
         <label>If payment received &amp; not allocated</label>
-        <locationX>182</locationX>
+        <locationX>622</locationX>
         <locationY>276</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -163,14 +174,37 @@
             <label>if received &amp; not allocated</label>
         </rules>
     </decisions>
-    <description>Modified from version 12</description>
+    <decisions>
+        <name>Send_Proforma_Invoice</name>
+        <label>Send Proforma Invoice</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Initiated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Conga_Trigger_Send_Proforma_Invoice</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Modified from version 12, Mergred Send Proforma Invoice flow in this flow</description>
     <environments>Default</environments>
     <interviewLabel>Renewal Letter - After Insert {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Renewal Letter - After Update</label>
+    <label>Renewal Letter - After Insert</label>
     <loops>
         <name>Get_Loop</name>
         <label>Get Loop</label>
-        <locationX>1194</locationX>
+        <locationX>1634</locationX>
         <locationY>924</locationY>
         <collectionReference>Get_Invoice_Lines</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -203,7 +237,7 @@
     <recordCreates>
         <name>Create_Payment_Allocations</name>
         <label>Create Payment Allocations</label>
-        <locationX>1194</locationX>
+        <locationX>1634</locationX>
         <locationY>1224</locationY>
         <connector>
             <targetReference>Update_status_as_allocated</targetReference>
@@ -213,7 +247,7 @@
     <recordLookups>
         <name>Get_Invoice_from_Renewal_Letter</name>
         <label>Get Invoice from Renewal Letter</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -234,7 +268,7 @@
     <recordLookups>
         <name>Get_Invoice_Lines</name>
         <label>Get Invoice Lines</label>
-        <locationX>1326</locationX>
+        <locationX>1766</locationX>
         <locationY>492</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -262,7 +296,7 @@
     <recordLookups>
         <name>Get_Orders_from_Renewal_Quote</name>
         <label>Get Orders from Renewal Quote</label>
-        <locationX>578</locationX>
+        <locationX>1018</locationX>
         <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -283,7 +317,7 @@
     <recordLookups>
         <name>Get_Payment_Record_from_renewalletter</name>
         <label>Get Payment Record from Renewal letter</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>600</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -304,7 +338,7 @@
     <recordLookups>
         <name>Get_Posted_Invoice_from_Renewal_Letter</name>
         <label>Get Posted Invoice from Renewal Letter</label>
-        <locationX>1326</locationX>
+        <locationX>1766</locationX>
         <locationY>384</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -325,7 +359,7 @@
     <recordLookups>
         <name>Get_Posted_Payment_Record_from_Renewal_letter</name>
         <label>Get posted Payment Record from Renewal letter</label>
-        <locationX>1194</locationX>
+        <locationX>1634</locationX>
         <locationY>816</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -346,7 +380,7 @@
     <recordUpdates>
         <name>Activate_the_Renewal_Order1</name>
         <label>Activate the Renewal Order</label>
-        <locationX>578</locationX>
+        <locationX>1018</locationX>
         <locationY>492</locationY>
         <connector>
             <targetReference>Invoice_the_Renewal_Order1</targetReference>
@@ -389,7 +423,7 @@
     <recordUpdates>
         <name>Invoice_the_Renewal_Order1</name>
         <label>Invoice the Renewal Order</label>
-        <locationX>578</locationX>
+        <locationX>1018</locationX>
         <locationY>600</locationY>
         <connector>
             <targetReference>Update_renewal_letter_checkbox</targetReference>
@@ -420,7 +454,7 @@
     <recordUpdates>
         <name>Post_the_Payment</name>
         <label>Post the Payment</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>816</locationY>
         <connector>
             <targetReference>Update_Renewal_Letter_as_Invoice_posted</targetReference>
@@ -451,7 +485,7 @@
     <recordUpdates>
         <name>Update_Invoice_as_Posted</name>
         <label>Update Invoice as Posted</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>492</locationY>
         <connector>
             <targetReference>Get_Payment_Record_from_renewalletter</targetReference>
@@ -482,7 +516,7 @@
     <recordUpdates>
         <name>Update_Payment_s_Invoice</name>
         <label>Update Payment&apos;s Invoice</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>708</locationY>
         <connector>
             <targetReference>Post_the_Payment</targetReference>
@@ -513,7 +547,7 @@
     <recordUpdates>
         <name>Update_Renewal_Letter_as_Invoice_posted</name>
         <label>Update Renewal Letter as Invoice posted</label>
-        <locationX>50</locationX>
+        <locationX>490</locationX>
         <locationY>924</locationY>
         <inputAssignments>
             <field>Activity_Status__c</field>
@@ -526,7 +560,7 @@
     <recordUpdates>
         <name>Update_renewal_letter_checkbox</name>
         <label>Update renewal letter checkbox</label>
-        <locationX>578</locationX>
+        <locationX>1018</locationX>
         <locationY>708</locationY>
         <inputAssignments>
             <field>Activity_Status__c</field>
@@ -539,7 +573,7 @@
     <recordUpdates>
         <name>Update_status_as_allocated</name>
         <label>Update status as allocated</label>
-        <locationX>1194</locationX>
+        <locationX>1634</locationX>
         <locationY>1332</locationY>
         <inputAssignments>
             <field>Status__c</field>
@@ -550,8 +584,11 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>529</locationX>
+        <locationX>947</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Proforma_Invoice</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Status__c</field>
@@ -561,7 +598,7 @@
             </value>
         </filters>
         <object>Proforma_Invoice__c</object>
-        <recordTriggerType>Update</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <scheduledPaths>
             <name>Post_Invoice_Payment_After_2_mins</name>
             <connector>

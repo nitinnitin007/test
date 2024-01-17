@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>57.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_Renewal_Contract</name>
         <label>Assign Renewal Contract</label>
         <locationX>50</locationX>
-        <locationY>503</locationY>
+        <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.Renewed_Contract__c</assignToReference>
             <operator>Assign</operator>
@@ -22,7 +22,7 @@
         <name>MDQ_Renewal_Behaviour_assignment</name>
         <label>MDQ Renewal Behaviour assignment</label>
         <locationX>182</locationX>
-        <locationY>287</locationY>
+        <locationY>395</locationY>
         <assignmentItems>
             <assignToReference>$Record.SBQQ__PreserveBundleStructureUponRenewals__c</assignToReference>
             <operator>Assign</operator>
@@ -45,7 +45,7 @@
         <name>populateContractvaluesFromQuote</name>
         <label>populateContractvaluesFromQuote</label>
         <locationX>50</locationX>
-        <locationY>803</locationY>
+        <locationY>911</locationY>
         <assignmentItems>
             <assignToReference>$Record.Shipping_Account__c</assignToReference>
             <operator>Assign</operator>
@@ -324,10 +324,42 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Total_One_Time_Subscription_Count</name>
+        <label>Total One Time Subscription Count</label>
+        <locationX>1018</locationX>
+        <locationY>935</locationY>
+        <assignmentItems>
+            <assignToReference>varCountOfOneTimeSubscriptions</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loopSubscriptionsLst</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Total_Subscription_Count</name>
+        <label>Total Subscription Count</label>
+        <locationX>930</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>varCountOfSubscription</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>getAllSubscriptionRecords</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loopSubscriptionsLst</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>UpdateOSACustomerName</name>
         <label>UpdateOSACustomerName</label>
         <locationX>50</locationX>
-        <locationY>1103</locationY>
+        <locationY>1211</locationY>
         <assignmentItems>
             <assignToReference>$Record.OSA_Customer_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -340,7 +372,7 @@
         <name>Check_Quote_Type</name>
         <label>Check Quote Type</label>
         <locationX>182</locationX>
-        <locationY>395</locationY>
+        <locationY>503</locationY>
         <defaultConnector>
             <targetReference>CheckContractFieldValues</targetReference>
         </defaultConnector>
@@ -365,7 +397,7 @@
         <name>CheckContractFieldValues</name>
         <label>CheckContractFieldValues</label>
         <locationX>182</locationX>
-        <locationY>695</locationY>
+        <locationY>803</locationY>
         <defaultConnector>
             <targetReference>Null_Check_Check_OSA_Customer_Name</targetReference>
         </defaultConnector>
@@ -387,10 +419,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Insert_OR_Update</name>
+        <label>Insert OR Update</label>
+        <locationX>633</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Renewal_Forecast_and_Renewal_Quote_Enabled</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Update - True</defaultConnectorLabel>
+        <rules>
+            <name>Is_New_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>MDQ_Renewal_Behaviour_assignment</targetReference>
+            </connector>
+            <label>Is New - True</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Null_Check_Check_OSA_Customer_Name</name>
         <label>Null Check Check OSA Customer Name</label>
         <locationX>182</locationX>
-        <locationY>995</locationY>
+        <locationY>1103</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>OSA_Customer_Name</name>
@@ -408,6 +465,96 @@
             <label>OSA Customer Name</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>One_Time_Product_Validation</name>
+        <label>One Time Product Validation</label>
+        <locationX>1150</locationX>
+        <locationY>827</locationY>
+        <defaultConnector>
+            <targetReference>loopSubscriptionsLst</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
+        <rules>
+            <name>Is_One_Time_Product</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>loopSubscriptionsLst.SBQQ__ProductSubscriptionType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>One-time</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Total_One_Time_Subscription_Count</targetReference>
+            </connector>
+            <label>Is One Time Product</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Renewal_Forecast_and_Renewal_Quote_Enabled</name>
+        <label>Renewal Forecast and Renewal Quote Enabled</label>
+        <locationX>1084</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>True</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4) OR (1 AND 2) OR (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__RenewalForecast__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__RenewalForecast__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__RenewalQuoted__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.SBQQ__RenewalQuoted__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getAllSubscriptionRecords</targetReference>
+            </connector>
+            <label>True</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Renewal_Opportunity_for_One_Time_Product_Validation</name>
+        <label>Renewal Opportunity for One Time Product Validation</label>
+        <locationX>930</locationX>
+        <locationY>1211</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Renewal_Opportunity_Validation_is_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varCountOfSubscription</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>varCountOfOneTimeSubscriptions</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Custom_Error_Message</targetReference>
+            </connector>
+            <label>Renewal Opportunity Validation is True?</label>
+        </rules>
+    </decisions>
     <description>BIZ-44228 On creation of a new contract the &apos;OSA customer name&apos; field should be update with  Account name.
 Used to map fields from quote to contract BIZ-47720,BIZ-48699
  Modified as part of BIZ-47461 , 47145 and 47619.
@@ -419,8 +566,27 @@ BIZ-50474 Quote to Contract Field Mapping
 BIZ-50208 Quote To Contract Booking Date Field Mapping.
 BIZ-51293 modified to add-Renewed Contract</description>
     <environments>Default</environments>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
     <interviewLabel>Contract Before Insert {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Contract Before Insert</label>
+    <label>Contract Before Insert Update</label>
+    <loops>
+        <name>loopSubscriptionsLst</name>
+        <label>loopSubscriptionsLst</label>
+        <locationX>930</locationX>
+        <locationY>719</locationY>
+        <collectionReference>getAllSubscriptionRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>One_Time_Product_Validation</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Renewal_Opportunity_for_One_Time_Product_Validation</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -440,15 +606,59 @@ BIZ-51293 modified to add-Renewed Contract</description>
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>getAllSubscriptionRecords</name>
+        <label>getAllSubscriptionRecords</label>
+        <locationX>930</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Total_Subscription_Count</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SBQQ__Contract__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>SBQQ__Subscription__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
-        <locationX>56</locationX>
+        <locationX>507</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>MDQ_Renewal_Behaviour_assignment</targetReference>
+            <targetReference>Insert_OR_Update</targetReference>
         </connector>
         <object>Contract</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <description>To count number of One Time  Products</description>
+        <name>varCountOfOneTimeSubscriptions</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>varCountOfSubscription</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
 </Flow>

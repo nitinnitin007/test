@@ -1,74 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>58.0</apiVersion>
-    <assignments>
-        <name>AssignOrdersCount</name>
-        <label>AssignOrdersCount</label>
-        <locationX>358</locationX>
-        <locationY>576</locationY>
-        <assignmentItems>
-            <assignToReference>OrderCount</assignToReference>
-            <operator>AssignCount</operator>
-            <value>
-                <elementReference>Get_orders</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>IfOrderCreated</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>IfOrderCreated</name>
-        <label>IfOrderCreated</label>
-        <locationX>358</locationX>
-        <locationY>684</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>OrderCount0</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>OrderCount</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>0.0</numberValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>UpdateQuoteasunordered</targetReference>
-            </connector>
-            <label>OrderCount0</label>
-        </rules>
-        <rules>
-            <name>Ordercount1</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>OrderCount</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <numberValue>1.0</numberValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>LoopOrders</targetReference>
-            </connector>
-            <label>Ordercount1</label>
-        </rules>
-    </decisions>
     <description>Scheduled flow to activate Order and generate Invoices for Renewal Letters 30 days before Contract End Date. Updated Status value in condition</description>
     <environments>Default</environments>
     <interviewLabel>Proforma Invoice - Scheduled {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Proforma Invoice - Scheduled</label>
-    <loops>
-        <name>LoopOrders</name>
-        <label>LoopOrders</label>
-        <locationX>402</locationX>
-        <locationY>792</locationY>
-        <collectionReference>Get_orders</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Update_Order_as_Activated</targetReference>
-        </nextValueConnector>
-    </loops>
+    <label>Renewal Letter - Scheduled</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -91,11 +27,11 @@
     <recordLookups>
         <name>Get_orders</name>
         <label>Get orders</label>
-        <locationX>358</locationX>
-        <locationY>468</locationY>
+        <locationX>176</locationX>
+        <locationY>684</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>AssignOrdersCount</targetReference>
+            <targetReference>Update_Order_as_Activated</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -105,17 +41,17 @@
                 <elementReference>$Record.Renewal_Quote__c</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Order</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
         <name>Update_Opp_as_Closed_won</name>
         <label>Update Opp as Closed won</label>
-        <locationX>358</locationX>
+        <locationX>176</locationX>
         <locationY>360</locationY>
         <connector>
-            <targetReference>Get_orders</targetReference>
+            <targetReference>Update_quote_status_as_Ordered</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -136,24 +72,24 @@
     <recordUpdates>
         <name>Update_Order_as_Activated</name>
         <label>Update Order as Activated</label>
-        <locationX>490</locationX>
-        <locationY>900</locationY>
+        <locationX>176</locationX>
+        <locationY>792</locationY>
         <connector>
             <targetReference>Update_renewal_as_order_activated</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>LoopOrders.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
             <field>Status</field>
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Draft</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_orders.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -173,7 +109,7 @@
     <recordUpdates>
         <name>Update_quote_status_as_Contracted</name>
         <label>Update quote status as Contracted</label>
-        <locationX>358</locationX>
+        <locationX>176</locationX>
         <locationY>252</locationY>
         <connector>
             <targetReference>Update_Opp_as_Closed_won</targetReference>
@@ -195,69 +131,44 @@
         <object>SBQQ__Quote__c</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_renewal_as_order_activated</name>
-        <label>Update renewal as order activated</label>
-        <locationX>490</locationX>
-        <locationY>1008</locationY>
+        <name>Update_quote_status_as_Ordered</name>
+        <label>Update quote status as Ordered</label>
+        <locationX>176</locationX>
+        <locationY>468</locationY>
+        <connector>
+            <targetReference>Wait_Until_1_Min</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Renewal_Quote__r.Id</elementReference>
+            </value>
+        </filters>
         <inputAssignments>
-            <field>Order_Activated__c</field>
+            <field>SBQQ__Ordered__c</field>
             <value>
                 <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_renewal_as_order_activated</name>
+        <label>Update renewal as order activated</label>
+        <locationX>176</locationX>
+        <locationY>900</locationY>
+        <inputAssignments>
+            <field>Activity_Status__c</field>
+            <value>
+                <stringValue>Order Activated</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>UpdateQuoteasOrdered_0</name>
-        <label>UpdateQuoteAsOrdered</label>
-        <locationX>50</locationX>
-        <locationY>900</locationY>
-        <connector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Get_orders</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Renewal_Quote__c</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>SBQQ__Ordered__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>SBQQ__Quote__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>UpdateQuoteasunordered</name>
-        <label>UpdateQuoteAsUnordered</label>
-        <locationX>50</locationX>
-        <locationY>792</locationY>
-        <connector>
-            <targetReference>UpdateQuoteasOrdered_0</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Renewal_Quote__c</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>SBQQ__Ordered__c</field>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </inputAssignments>
-        <object>SBQQ__Quote__c</object>
-    </recordUpdates>
     <start>
-        <locationX>232</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Update_quote_status_as_Contracted</targetReference>
@@ -277,22 +188,15 @@
                 <numberValue>30.0</numberValue>
             </value>
         </filters>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>RL-0000348</stringValue>
-            </value>
-        </filters>
         <object>Proforma_Invoice__c</object>
         <schedule>
             <frequency>Daily</frequency>
-            <startDate>2023-08-18</startDate>
-            <startTime>05:00:00.000Z</startTime>
+            <startDate>2023-12-17</startDate>
+            <startTime>01:33:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>OrderCount</name>
         <dataType>Number</dataType>
@@ -304,4 +208,21 @@
             <numberValue>0.0</numberValue>
         </value>
     </variables>
+    <waits>
+        <name>Wait_Until_1_Min</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait Until 1 Min</label>
+        <locationX>176</locationX>
+        <locationY>576</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Get_orders</targetReference>
+            </connector>
+            <label>el_0</label>
+            <offset>1</offset>
+            <offsetUnit>Minutes</offsetUnit>
+        </waitEvents>
+    </waits>
 </Flow>

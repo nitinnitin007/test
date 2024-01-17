@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
+    <choices>
+        <name>X1_No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>X1_Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>CheckBundleOSA</name>
+        <label>CheckBundleOSA</label>
+        <locationX>578</locationX>
+        <locationY>566</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Bundle_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Do_you_need_to_bundle_the_OSA_Document</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>X1_Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>createAdditionalDoc</targetReference>
+            </connector>
+            <label>BundleYes</label>
+        </rules>
+        <rules>
+            <name>BundleNo</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Do_you_need_to_bundle_the_OSA_Document</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>X1_No</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getQuoteOSADoc</targetReference>
+            </connector>
+            <label>BundleNo</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>checkDocType</name>
         <label>checkDocType</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>350</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Pricing_Proposal</name>
             <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId.Quote_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pricing Proposal</stringValue>
+                </rightValue>
+            </conditions>
             <conditions>
                 <leftValueReference>getDocument.Name</leftValueReference>
                 <operator>Contains</operator>
@@ -26,6 +86,13 @@
             <name>OSA_Bundle</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
+                <leftValueReference>recordId.Quote_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Finalize OSA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
                 <leftValueReference>getDocument.Name</leftValueReference>
                 <operator>Contains</operator>
                 <rightValue>
@@ -33,7 +100,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>getQuoteOSADoc</targetReference>
+                <targetReference>Bundle_OSA_Document</targetReference>
             </connector>
             <label>OSA Bundle</label>
         </rules>
@@ -41,7 +108,7 @@
     <decisions>
         <name>Doc_Found</name>
         <label>Doc Found</label>
-        <locationX>578</locationX>
+        <locationX>974</locationX>
         <locationY>242</locationY>
         <defaultConnector>
             <targetReference>Failure</targetReference>
@@ -63,7 +130,8 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>BIZ-51228: Flow to create quote document record</description>
+    <description>BIZ-51228: Flow to create quote document record
+BIZ-49800: Bundle OSA Document</description>
     <environments>Default</environments>
     <formulas>
         <name>fxName</name>
@@ -114,6 +182,47 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <name>createAdditionalDoc</name>
+        <label>createAdditionalDoc</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <connector>
+            <targetReference>Copy_1_of_Success</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>getDocument.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__DisplayOrder__c</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__ExternalId__c</field>
+            <value>
+                <elementReference>getDocument.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Quote__c</field>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SBQQ__Required__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__RelatedContent__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>createQuoteDoc</name>
         <label>createQuoteDoc</label>
         <locationX>50</locationX>
@@ -157,8 +266,8 @@
     <recordCreates>
         <name>createQuoteOSADoc</name>
         <label>createQuoteOSADoc</label>
-        <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
         <connector>
             <targetReference>Success</targetReference>
         </connector>
@@ -198,7 +307,7 @@
     <recordLookups>
         <name>getDocument</name>
         <label>getDocument</label>
-        <locationX>578</locationX>
+        <locationX>974</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -251,8 +360,8 @@
     <recordLookups>
         <name>getQuoteOSADoc</name>
         <label>getQuoteOSADoc</label>
-        <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>createQuoteOSADoc</targetReference>
@@ -279,16 +388,90 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
-        <name>Failure</name>
-        <label>Failure</label>
-        <locationX>842</locationX>
-        <locationY>350</locationY>
+        <name>Bundle_OSA_Document</name>
+        <label>Bundle OSA Document</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>CheckBundleOSA</targetReference>
+        </connector>
+        <fields>
+            <name>Bundle_OSA</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 20px;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Bundle OSA Document&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Do_you_need_to_bundle_the_OSA_Document</name>
+            <choiceReferences>X1_Yes</choiceReferences>
+            <choiceReferences>X1_No</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Do you need to bundle the OSA Document?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>IfYes</name>
+            <fieldText>&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;OSA document will be generated and added to the “Additional Document”.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;After you have added other additional documents like SOW, please click on “Generate OSA Bundle” to collate the additional documents.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Saving the Generate OSA Bundle will generate the new bundled OSA document in the Quote Document and it will sync with OP4I.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>1</conditionLogic>
+                <conditions>
+                    <leftValueReference>Do_you_need_to_bundle_the_OSA_Document</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>X1_Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>IfNo</name>
+            <fieldText>&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;The OSA Document will be added to the Quote Document and it will be synched with OP4I.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Please Note:&lt;/strong&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; No additional documents will be bundled with the OSA document.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>1</conditionLogic>
+                <conditions>
+                    <leftValueReference>Do_you_need_to_bundle_the_OSA_Document</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>X1_No</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Copy_1_of_Success</name>
+        <label>Success</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_2_of_Success1</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;OSA Document has been added to the Additional Document. Please upload other required documents that needs to be bundled by clicking “Add Document” button.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Failure</name>
+        <label>Failure</label>
+        <locationX>1370</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
         <fields>
             <name>Failure1</name>
-            <fieldText>&lt;p&gt;No document is found. Please generate Pricing Proposal/OSA Document before synching to OP4I.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;No document is found. Please generate Pricing Proposal/OSA Document before synching to OP4I.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -297,14 +480,14 @@
     <screens>
         <name>Success</name>
         <label>Success</label>
-        <locationX>314</locationX>
-        <locationY>674</locationY>
-        <allowBack>true</allowBack>
+        <locationX>578</locationX>
+        <locationY>890</locationY>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <fields>
             <name>Success1</name>
-            <fieldText>&lt;p&gt;Quote document has been created -&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!createQuoteOSADoc}.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;OSA Document has been added to the Quote Document.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -315,19 +498,19 @@
         <label>Success</label>
         <locationX>50</locationX>
         <locationY>674</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <fields>
             <name>Copy_1_of_Success1</name>
-            <fieldText>&lt;p&gt;Quote document has been created -{!createQuoteDoc}.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(23, 43, 77); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;Pricing Proposal Document has been added to the Quote Document and will be synched with OP4I.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>452</locationX>
+        <locationX>848</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>getDocument</targetReference>

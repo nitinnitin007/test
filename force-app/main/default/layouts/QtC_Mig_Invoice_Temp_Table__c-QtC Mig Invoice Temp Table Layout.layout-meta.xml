@@ -91,6 +91,10 @@
                 <behavior>Edit</behavior>
                 <field>Created_From__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Next_Billing_Date__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

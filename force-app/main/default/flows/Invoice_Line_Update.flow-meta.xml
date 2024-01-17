@@ -1,74 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
-    <assignments>
-        <name>Assign_Project_ID_in_Order</name>
-        <label>Assign Project ID in Order</label>
-        <locationX>303</locationX>
-        <locationY>604</locationY>
-        <assignmentItems>
-            <assignToReference>projectID</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.Project__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Order_with_Project_ID</targetReference>
-        </connector>
-    </assignments>
-    <decisions>
-        <name>If_Service_Invoice_Line</name>
-        <label>If Service Invoice Line</label>
-        <locationX>491</locationX>
-        <locationY>525</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>If_service_product</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.CreatedFromServiceBillingBatch__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.blng__OrderProduct__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assign_Project_ID_in_Order</targetReference>
-            </connector>
-            <label>If service product</label>
-        </rules>
-    </decisions>
     <decisions>
         <name>Product_Type</name>
         <label>Product Type</label>
         <locationX>491</locationX>
         <locationY>351</locationY>
-        <defaultConnector>
-            <targetReference>If_Service_Invoice_Line</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Product_Type_Tax_Only</name>
-            <conditionLogic>and</conditionLogic>
+            <name>Invoice_type_check</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.blng__Product__r.Product_Type__c</leftValueReference>
+                <leftValueReference>$Record.blng__Invoice__r.Invoice_Type__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Tax Only</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__Invoice__r.Invoice_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Marketing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__Invoice__r.Invoice_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Expense</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.blng__InvoiceLineStatus__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Posted</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Tax_details_in_Invoice_Line</targetReference>
             </connector>
-            <label>Product Type = Tax Only?</label>
+            <label>Invoice type check</label>
         </rules>
     </decisions>
     <description>Set Billing and Tax relates rules on Tax Only Invoices - BIZ-48453</description>
@@ -94,58 +67,48 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Update_Order_with_Project_ID</name>
-        <label>Update Order with Project ID</label>
-        <locationX>297</locationX>
-        <locationY>736</locationY>
+    <recordLookups>
+        <name>Get_Tax_Treatment</name>
+        <label>Get Tax Treatment</label>
+        <locationX>464</locationX>
+        <locationY>515</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Project_with_Latest_Order_ID</targetReference>
+            <targetReference>Update_tax_treatment</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Id</field>
+            <field>blng__Active__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.blng__OrderProduct__r.OrderId</elementReference>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <inputAssignments>
-            <field>SFDC_Services_Project__c</field>
-            <value>
-                <elementReference>projectID</elementReference>
-            </value>
-        </inputAssignments>
-        <object>Order</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Project_with_Latest_Order_ID</name>
-        <label>Update Project with Latest Order ID</label>
-        <locationX>299</locationX>
-        <locationY>865</locationY>
-        <filterLogic>and</filterLogic>
         <filters>
-            <field>Id</field>
+            <field>blng__TaxLegalEntity__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>projectID</elementReference>
+                <elementReference>$Record.blng__LegalEntity__c</elementReference>
             </value>
         </filters>
-        <inputAssignments>
-            <field>Order__c</field>
+        <filters>
+            <field>blng__TaxCode__c</field>
+            <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.blng__OrderProduct__r.OrderId</elementReference>
+                <elementReference>$Record.blng__Product__r.SBQQ__TaxCode__c</elementReference>
             </value>
-        </inputAssignments>
-        <object>SFDC_Services_Project__c</object>
-    </recordUpdates>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>blng__TaxTreatment__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Tax_details_in_Invoice_Line</name>
         <label>Update Tax details in Invoice Line</label>
         <locationX>323</locationX>
         <locationY>414</locationY>
         <connector>
-            <targetReference>If_Service_Invoice_Line</targetReference>
+            <targetReference>Get_Tax_Treatment</targetReference>
         </connector>
         <inputAssignments>
             <field>blng__BillingRule__c</field>
@@ -156,13 +119,26 @@
         <inputAssignments>
             <field>blng__ChargeType__c</field>
             <value>
-                <elementReference>$Record.blng__ChargeType__c</elementReference>
+                <elementReference>$Record.blng__Product__r.SBQQ__ChargeType__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>blng__TaxRule__c</field>
             <value>
-                <elementReference>$Record.blng__TaxRule__c</elementReference>
+                <elementReference>$Record.blng__Product__r.blng__TaxRule__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_tax_treatment</name>
+        <label>Update tax treatment</label>
+        <locationX>594</locationX>
+        <locationY>515</locationY>
+        <inputAssignments>
+            <field>blng__TaxTreatment__c</field>
+            <value>
+                <elementReference>Get_Tax_Treatment.Id</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>

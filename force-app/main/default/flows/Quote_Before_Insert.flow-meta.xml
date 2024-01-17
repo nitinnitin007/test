@@ -362,13 +362,6 @@
         <locationX>116</locationX>
         <locationY>1427</locationY>
         <assignmentItems>
-            <assignToReference>$Record.Deal_Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Record.SBQQ__Opportunity2__r.SBQQ__AmendedContract__r.Deal_Type__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>$Record.Line_of_Business__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -485,6 +478,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.SBQQ__Opportunity2__r.SBQQ__AmendedContract__r.ROR_Expiration_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Deal_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Add-On</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -691,7 +691,7 @@
             <assignToReference>$Record.Deal_Type__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record.SBQQ__Opportunity2__r.SBQQ__RenewedContract__r.Deal_Type__c</elementReference>
+                <stringValue>Renewal</stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>

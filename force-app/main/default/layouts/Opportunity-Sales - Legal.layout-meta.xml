@@ -106,6 +106,10 @@
                 <behavior>Edit</behavior>
                 <field>SBQQ__Contracted__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Deal_Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
