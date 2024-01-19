@@ -110,6 +110,106 @@
         <default>false</default>
         <label>22-FS Strategics NA</label>
     </customValue>
+    <customValue>
+        <fullName>24-Corporates Partners AM</fullName>
+        <default>false</default>
+        <label>24-Corporates Partners AM</label>
+    </customValue>
+    <customValue>
+        <fullName>23-Corporates EMEA AM</fullName>
+        <default>false</default>
+        <label>23-Corporates EMEA AM</label>
+    </customValue>
+    <customValue>
+        <fullName>01-PS NA North</fullName>
+        <default>false</default>
+        <label>01-PS NA North</label>
+    </customValue>
+    <customValue>
+        <fullName>02-PS NA South/APAC</fullName>
+        <default>false</default>
+        <label>02-PS NA South/APAC</label>
+    </customValue>
+    <customValue>
+        <fullName>03-PS EMEA</fullName>
+        <default>false</default>
+        <label>03-PS EMEA</label>
+    </customValue>
+    <customValue>
+        <fullName>08-FS NA East New Sales</fullName>
+        <default>false</default>
+        <label>08-FS NA East New Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>09-FS NA West New Sales</fullName>
+        <default>false</default>
+        <label>09-FS NA West New Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>10-FS APAC New Sales</fullName>
+        <default>false</default>
+        <label>10-FS APAC New Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>01-Legal NA North</fullName>
+        <default>false</default>
+        <label>01-Legal NA North</label>
+    </customValue>
+    <customValue>
+        <fullName>02-Legal NA South</fullName>
+        <default>false</default>
+        <label>02-Legal NA South</label>
+    </customValue>
+    <customValue>
+        <fullName>05-Legal Large Accounts</fullName>
+        <default>false</default>
+        <label>05-Legal Large Accounts</label>
+    </customValue>
+    <customValue>
+        <fullName>06-Accounting/Consulting</fullName>
+        <default>false</default>
+        <label>06-Accounting/Consulting</label>
+    </customValue>
+    <customValue>
+        <fullName>07-Corporate Legal</fullName>
+        <default>false</default>
+        <label>07-Corporate Legal</label>
+    </customValue>
+    <customValue>
+        <fullName>11-FS EMEA New Sales</fullName>
+        <default>false</default>
+        <label>11-FS EMEA New Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>12-FS AM Core</fullName>
+        <default>false</default>
+        <label>12-FS AM Core</label>
+    </customValue>
+    <customValue>
+        <fullName>13-FS AM Enterprise</fullName>
+        <default>false</default>
+        <label>13-FS AM Enterprise</label>
+    </customValue>
+    <customValue>
+        <fullName>14-FS AM EMEA</fullName>
+        <default>false</default>
+        <label>14-FS AM EMEA</label>
+    </customValue>
+    <customValue>
+        <fullName>15-FS AM Portfolio</fullName>
+        <default>false</default>
+        <label>15-FS AM Portfolio</label>
+    </customValue>
+    <customValue>
+        <fullName>16-FS AM APAC</fullName>
+        <default>false</default>
+        <label>16-FS AM APAC</label>
+    </customValue>
+    <customValue>
+        <fullName>17-Other</fullName>
+        <default>false</default>
+        <label>17-Other</label>
+    </customValue>
     <description>Op4I Sales Segment</description>
     <masterLabel>Op4I Sales Segment</masterLabel>
     <sorted>false</sorted>

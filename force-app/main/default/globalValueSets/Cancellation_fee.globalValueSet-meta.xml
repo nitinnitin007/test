@@ -28,13 +28,11 @@
     <customValue>
         <fullName>Less than or equal to 10%</fullName>
         <default>false</default>
-        <isActive>false</isActive>
         <label>Less than or equal to 10%</label>
     </customValue>
     <customValue>
         <fullName>Greater than 10%</fullName>
         <default>false</default>
-        <isActive>false</isActive>
         <label>Greater than 10%</label>
     </customValue>
     <description>Global picklist value set for cancellation fee.
